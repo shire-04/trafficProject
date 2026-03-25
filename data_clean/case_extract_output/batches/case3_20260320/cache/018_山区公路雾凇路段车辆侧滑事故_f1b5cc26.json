@@ -1,0 +1,248 @@
+{
+  "case_id": "018_山区公路雾凇路段车辆侧滑事故_f1b5cc26",
+  "title": "山区公路雾凇路段车辆侧滑事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "山区公路因雾凇导致湿滑，一辆中型客车发生侧滑碰撞山体，造成人员轻伤和被困，道路封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F4726E4011",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_METEO_ROAD"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_D05163F761",
+      "name": "车辆侧滑",
+      "entity_type": "Event",
+      "evidence": "一辆中型客车行驶中发生侧滑，碰撞路边山体后停在边坡旁",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F4726E4011",
+      "final_entity_name": "车辆侧滑",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F4726E4011",
+      "primary_event_name": "车辆侧滑",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_METEO_ROAD"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "公路气象灾害"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F4726E4011",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_METEO_ROAD"
+      ],
+      "query_event_names": [
+        "车辆侧滑",
+        "公路交通突发事件",
+        "公路气象灾害"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_METEO_ROAD"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件",
+        "公路气象灾害"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_0365EB14D7",
+      "name": "雾凇",
+      "entity_type": "Event",
+      "evidence": "路面形成雾凇导致湿滑",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_7FF0D5B34D",
+      "final_entity_name": "雾凇",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_7FF0D5B34D",
+      "primary_event_name": "雾凇",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_7FF0D5B34D"
+      ],
+      "query_event_names": [
+        "雾凇"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_68BAF6960F",
+      "name": "除冰车",
+      "entity_type": "Resource",
+      "evidence": "交通部门调用除冰车对路面进行除冰、撒布融雪剂",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.425,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_28E01FEA55",
+      "final_entity_name": "除冰车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_3511AEA22B",
+      "name": "融雪剂",
+      "entity_type": "Resource",
+      "evidence": "交通部门调用除冰车对路面进行除冰、撒布融雪剂",
+      "confidence": 0.8,
+      "normalized_id": "RES_SNOW_AGENT",
+      "normalized_name": "融雪剂",
+      "normalized_score": 1.0,
+      "matched_alias": "融雪剂",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_SNOW_AGENT",
+      "final_entity_name": "融雪剂",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_451D8D848F",
+      "name": "除冰",
+      "entity_type": "Action",
+      "evidence": "交通部门调用除冰车对路面进行除冰、撒布融雪剂",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_30A3FDD934",
+      "final_entity_name": "除冰",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "雾凇",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_0365EB14D7",
+      "source_final_id": "EVT_CASE_7FF0D5B34D",
+      "source_final_name": "雾凇",
+      "source_query_event_ids": [
+        "EVT_CASE_7FF0D5B34D"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧滑",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_D05163F761",
+      "target_final_id": "EVT_CASE_F4726E4011",
+      "target_final_name": "车辆侧滑",
+      "target_query_event_ids": [
+        "EVT_CASE_F4726E4011",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_METEO_ROAD"
+      ],
+      "evidence": "因气温骤降，路面形成雾凇导致湿滑，一辆中型客车行驶中发生侧滑",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "除冰",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_451D8D848F",
+      "source_final_id": "MEA_CASE_30A3FDD934",
+      "source_final_name": "除冰",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "除冰车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_68BAF6960F",
+      "target_final_id": "RES_CASE_28E01FEA55",
+      "target_final_name": "除冰车",
+      "target_query_event_ids": [],
+      "evidence": "交通部门调用除冰车对路面进行除冰、撒布融雪剂",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "除冰",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_451D8D848F",
+      "source_final_id": "MEA_CASE_30A3FDD934",
+      "source_final_name": "除冰",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "融雪剂",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_3511AEA22B",
+      "target_final_id": "RES_SNOW_AGENT",
+      "target_final_name": "融雪剂",
+      "target_query_event_ids": [],
+      "evidence": "交通部门调用除冰车对路面进行除冰、撒布融雪剂",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法实施条例》"
+  ],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某山区公路雾凇路段，因气温骤降，路面形成雾凇导致湿滑，一辆中型客车行驶中发生侧滑，碰撞路边山体后停在边坡旁，客车内有22名乘客，当时能见度不足100米。",
+    "consequence_text": "造成客车上1名乘客轻伤、驾驶员1人轻微冻伤，22名乘客全部被困，山区公路双向交通封闭，雾凇持续存在导致路面湿滑风险加重。",
+    "measure_text": "应急管理部门协调交警、消防、医疗部门赶赴现场，消防救援队伍使用绳索装备解救被困乘客；交警部门封闭公路，疏导过往车辆绕行；医疗部门对受伤乘客进行保暖、救治；交通部门调用除冰车对路面进行除冰、撒布融雪剂；依据《道路交通安全法实施条例》开展处置，3小时后路面清理完毕，公路恢复通行。"
+  }
+}

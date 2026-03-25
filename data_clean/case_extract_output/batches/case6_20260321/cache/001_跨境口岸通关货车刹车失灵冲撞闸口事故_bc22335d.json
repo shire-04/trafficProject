@@ -1,0 +1,131 @@
+{
+  "case_id": "001_跨境口岸通关货车刹车失灵冲撞闸口事故_bc22335d",
+  "title": "跨境口岸通关货车刹车失灵冲撞闸口事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "跨境口岸通关货车因刹车失灵冲撞闸口，造成人员伤亡和口岸设施损毁，通关中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_B9F0C9D9AC",
+    "expanded_event_ids": [
+      "EVT_ROAD_DAMAGE",
+      "EVT_ROAD_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_9EF1F8D73F",
+      "name": "车辆冲撞",
+      "entity_type": "Event",
+      "evidence": "一辆满载进口货物的重型半挂货车，因长下坡刹车过热失灵，冲撞口岸入境闸口",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_B9F0C9D9AC",
+      "final_entity_name": "货车冲撞口岸",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_B9F0C9D9AC",
+      "primary_event_name": "货车冲撞口岸",
+      "expanded_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "公路损毁",
+        "公路中断"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_B9F0C9D9AC",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "货车冲撞口岸",
+        "公路损毁",
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "alias_patch_target_names": [
+        "公路损毁",
+        "公路中断"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_1C0A3F70E5",
+      "name": "刹车失灵",
+      "entity_type": "Action",
+      "evidence": "因长下坡刹车过热失灵",
+      "confidence": 0.85,
+      "normalized_id": "MEA_CASE_80354268E0",
+      "normalized_name": "刹车失灵",
+      "normalized_score": 1.0,
+      "matched_alias": "刹车失灵",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_80354268E0",
+      "final_entity_name": "刹车失灵",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆冲撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_9EF1F8D73F",
+      "source_final_id": "EVT_CASE_B9F0C9D9AC",
+      "source_final_name": "货车冲撞口岸",
+      "source_query_event_ids": [
+        "EVT_CASE_B9F0C9D9AC",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "relation": "TRIGGERS",
+      "target": "刹车失灵",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_1C0A3F70E5",
+      "target_final_id": "MEA_CASE_80354268E0",
+      "target_final_name": "刹车失灵",
+      "target_query_event_ids": [],
+      "evidence": "因长下坡刹车过热失灵",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《中华人民共和国出境入境管理法》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "信息较为完整，实体抽取准确。",
+    "The relationships are based on the provided text and entity catalog. Some relationships could be inferred but are not included to adhere to the instructions.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某陆路口岸入境通关车道，一辆满载进口货物的重型半挂货车，因长下坡刹车过热失灵，冲撞口岸入境闸口，撞毁通关查验设备、隔离栏，与前方待查验的2辆小型轿车发生碰撞，货车车头严重变形，驾驶员被困车内，口岸通关现场人流密集。",
+    "consequence_text": "造成货车驾驶员1人重伤、轿车内2人轻伤，口岸通关闸口、查验设备完全损毁，口岸双向通关完全中断，出入境车辆、人员滞留约2公里，冲撞导致闸口海关监管设施受损，存在通关数据丢失、监管漏洞风险。",
+    "measure_text": "口岸边检、海关部门立即启动口岸突发事件应急预案，封锁通关现场，疏散滞留人员、车辆，保护海关监管区域；消防救援队伍赶赴现场，使用破拆工具解救被困驾驶员，排查车辆起火隐患；医疗部门派遣救护车转运受伤人员至医院；交警部门开展现场勘查和责任认定；口岸技术部门紧急抢修查验设备，启用备用通关通道；依据《中华人民共和国出境入境管理法》《道路交通安全法》开展事故调查，3小时后备用通道启用，口岸恢复通关。"
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "case_id": "009_农村出殡队列占道引发多车追尾事故_631152b6",
+  "title": "农村出殡队列占道引发多车追尾事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某乡村公路发生多车追尾事故，系因出殡队列占道行驶、违规燃放鞭炮导致视线受阻和交通拥堵。造成2人轻微受伤，4辆车受损，交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_4D219D5D07",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_521432A53D",
+      "name": "追尾事故",
+      "entity_type": "Event",
+      "evidence": "后方跟随的3辆小型轿车、1辆轻型货车因视线受阻、跟车过近，接连发生连环追尾",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_4D219D5D07",
+      "final_entity_name": "追尾事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_4D219D5D07",
+      "primary_event_name": "追尾事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "追尾事故",
+        "交通事故",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_DCC5E51070",
+      "name": "违规停车",
+      "entity_type": "Action",
+      "evidence": "违规停车燃放鞭炮",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1405,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_A01D41EE67",
+      "final_entity_name": "违规停车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_16207C2F70",
+      "name": "违规燃放鞭炮",
+      "entity_type": "Action",
+      "evidence": "违规停车燃放鞭炮",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1239,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_F02874E69E",
+      "final_entity_name": "违规燃放鞭炮",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_521432A53D",
+      "source_final_id": "EVT_CASE_4D219D5D07",
+      "source_final_name": "追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "relation": "TRIGGERS",
+      "target": "违规停车",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_DCC5E51070",
+      "target_final_id": "MEA_CASE_A01D41EE67",
+      "target_final_name": "违规停车",
+      "target_query_event_ids": [],
+      "evidence": "违规停车燃放鞭炮",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_521432A53D",
+      "source_final_id": "EVT_CASE_4D219D5D07",
+      "source_final_name": "追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "relation": "TRIGGERS",
+      "target": "违规燃放鞭炮",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_16207C2F70",
+      "target_final_id": "MEA_CASE_F02874E69E",
+      "target_final_name": "违规燃放鞭炮",
+      "target_query_event_ids": [],
+      "evidence": "违规停车燃放鞭炮",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《烟花爆竹安全管理条例》"
+  ],
+  "quality_notes": [
+    "信息较为完整，实体抽取准确。",
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡村公路，一支数十辆车辆组成的出殡队列，在公路上低速占道行驶、违规停车燃放鞭炮，后方跟随的3辆小型轿车、1辆轻型货车因视线受阻、跟车过近，接连发生连环追尾，事故车辆均不同程度受损，出殡队列与事故车辆混杂，现场秩序混乱。",
+    "consequence_text": "造成2人轻微受伤，4辆事故车辆不同程度损毁，乡村公路双向交通完全中断，车辆滞留约5公里，违规燃放鞭炮易引发火灾、人员炸伤事故，出殡群众情绪激动，易引发纠纷与二次事故。",
+    "measure_text": "当地派出所、交警部门立即赶赴现场，疏散拥堵车辆、群众，安抚出殡群众情绪，开展现场勘查和责任认定；医疗部门对受伤人员进行现场处置；路政部门清理事故车辆，恢复路面通行；对出殡队列违规占道、燃放鞭炮的行为进行批评教育与处罚；依据《道路交通安全法》《烟花爆竹安全管理条例》开展处置，1.5小时后道路恢复通行。"
+  }
+}

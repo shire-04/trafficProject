@@ -1,5 +1,47 @@
 # 交通应急处置策略生成系统 - vectorDB 向量数据库模块
 
+## 当前状态
+
+当前运行主线已经切换到新编排架构：`DispatcherAgent -> RetrievalLogicAgent -> CommanderAgent -> EvaluatorAgent -> PipelineOrchestrator`。
+
+- 默认大模型调用已切换为 **Google AI Studio API**，仅保留远程 API 方案
+- 默认模型可通过环境变量覆盖，当前默认使用 `gemma-3-27b-it`
+
+- `src/app.py` 已只保留新编排链路入口
+- 旧 `BaseAgent` 会话式链路已从运行代码中移除
+- 正式双库仍保持收敛：`国家交通应急预案` 图谱 + `traffic_documents_v2`
+
+## 重构进度（契约与编排主线）
+
+当前已引入统一数据契约文件 `src/contracts.py`，用于后续多智能体编排与审查闭环。
+
+- 已定义输入契约：`IncidentInput`、`ExtractedEntities`、`CasualtyEstimate`
+- 已定义检索契约：`Neo4jConstraint`、`ChromaEvidence`、`RetrievalContext`
+- 已定义生成与审查契约：`StrategyDraft`、`ReviewResult`、`PipelineResult`
+- 当前这些契约已经被 `src/retrieval_logic.py`、`src/agents.py`、`src/orchestrator.py` 和 `src/app.py` 实际使用
+
+可使用 `Tools/check_contracts.py` 进行最小自检。
+
+## Neo4j 图谱实体规则
+
+在当前 `data_clean/neo4j_import/*.csv` 导入规范下，图谱实体身份由 `id` 决定，而不是由 `name` 决定。
+
+- 关系建立在 `:START_ID` 与 `:END_ID` 之间
+- 节点使用 `id:ID` 作为唯一主键进行 `MERGE`
+- 若两个实体 `name` 不同但 `id` 相同，则它们在图谱中视为同一实体
+- 若两个实体 `name` 相同但 `id` 不同，则它们在图谱中视为不同实体
+- `name` 的作用是标准展示名，不承担实体唯一性
+
+## 当前正式双库
+
+当前重构中的正式双库范围已收敛到同一来源：`国家交通应急预案`。
+
+- **Neo4j 实例**: 独立实例 `traffic_plan_v2`，当前使用默认数据库 `neo4j`
+- **Neo4j 内容**: 来自 `data_clean/neo4j_import/*.csv` 的结构化图谱
+- **Chroma collection**: `traffic_documents_v2`
+- **Chroma 内容**: 仅 `data_raw/国家交通应急预案.txt`
+- **统一查询接口**: `src/retrieval_logic.py` 中的 `DualRetrievalService`
+
 ## 概述
 
 `vectorDB.py` 模块提供了完整的 ChromaDB 向量数据库管道，用于为本地 LLM 的 RAG（检索增强生成）功能提供上下文文档。主要功能包括：
@@ -15,6 +57,34 @@
 ```bash
 pip install -r requirements.txt
 ```
+
+## Google AI Studio 配置
+
+运行主链路前，请先配置 Google AI Studio API Key：
+
+```powershell
+$env:GEMINI_API_KEY="你的_google_ai_studio_api_key"
+```
+
+也兼容旧变量名：
+
+```powershell
+$env:GOOGLE_API_KEY="你的_google_ai_studio_api_key"
+```
+
+可选环境变量：
+
+```powershell
+$env:TRAFFIC_LLM_PROVIDER="google_ai_studio"
+$env:TRAFFIC_LLM_MODEL="gemma-3-27b-it"
+$env:DISPATCHER_VISION_MODEL="gemma-3-27b-it"
+$env:DISPATCHER_TEXT_MODEL="gemma-3-27b-it"
+$env:MATCHER_TEXT_MODEL="gemma-3-27b-it"
+$env:COMMANDER_TEXT_MODEL="gemma-3-27b-it"
+$env:EVALUATOR_TEXT_MODEL="gemma-3-27b-it"
+```
+
+若未配置 `GEMINI_API_KEY`（或兼容变量 `GOOGLE_API_KEY`），主链路中的 LLM 调用会返回空结果，并在调试日志中给出提示。
 
 安装以下依赖包：
 - `chromadb`: 向量数据库，支持本地持久化存储
@@ -465,8 +535,8 @@ vector_store.persist()
 ### 工作流 3: LLM 集成开发
 
 ```python
-# 1. 启动本地 LLM（如 Ollama、vLLM 等）
-# ollama run llama2
+# 1. 配置远程 LLM API（Google AI Studio）
+# $env:GEMINI_API_KEY="你的_api_key"
 
 # 2. 在应用中集成 RAG
 from vectorDB import ChromaDBVectorStore

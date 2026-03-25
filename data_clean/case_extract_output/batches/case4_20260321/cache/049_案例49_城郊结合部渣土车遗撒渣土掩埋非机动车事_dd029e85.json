@@ -1,0 +1,157 @@
+{
+  "case_id": "049_案例49_城郊结合部渣土车遗撒渣土掩埋非机动车事_dd029e85",
+  "title": "案例49：城郊结合部渣土车遗撒渣土掩埋非机动车事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "渣土车遗撒渣土导致电动自行车侧翻，骑行者被掩埋。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ROAD_EMERGENCY",
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_ROAD_DAMAGE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_FF7F817F22",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "一辆电动自行车行驶中撞上土堆，车辆侧翻",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路交通突发事件",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "公路中断",
+        "公路交通突发事件",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路交通突发事件",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_A2346A2470",
+      "name": "渣土遗撒",
+      "entity_type": "Event",
+      "evidence": "大量渣土遗撒路面",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_D44DBBBD83",
+      "final_entity_name": "渣土遗撒",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_D44DBBBD83",
+      "primary_event_name": "渣土遗撒",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_D44DBBBD83"
+      ],
+      "query_event_names": [
+        "渣土遗撒"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "渣土遗撒",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_A2346A2470",
+      "source_final_id": "EVT_CASE_D44DBBBD83",
+      "source_final_name": "渣土遗撒",
+      "source_query_event_ids": [
+        "EVT_CASE_D44DBBBD83"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧翻",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_FF7F817F22",
+      "target_final_id": "EVT_CASE_9CC62EF2EB",
+      "target_final_name": "车辆侧翻",
+      "target_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "大量渣土遗撒路面，堆积成小土堆，一辆电动自行车行驶中撞上土堆，车辆侧翻",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本中的直接描述，可能存在未提及的隐含关系。",
+    "confidence score is estimated."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "城郊公路，一辆渣土车未加盖篷布，大量渣土遗撒路面，堆积成小土堆，一辆电动自行车行驶中撞上土堆，车辆侧翻，骑行者被渣土掩埋半身，无法自主起身。",
+    "consequence_text": "骑行者轻微窒息、擦伤，电动车受损，渣土掩埋路面，非机动车道拥堵，遗撒渣土易持续引发事故。",
+    "measure_text": "交警到场，救出被困骑行者，控制渣土车驾驶员；消防人员清理掩埋渣土；医疗人员对伤者进行吸氧、包扎；路政部门全面清理路面渣土，对驾驶员从严处罚；2小时后道路恢复通行。"
+  }
+}

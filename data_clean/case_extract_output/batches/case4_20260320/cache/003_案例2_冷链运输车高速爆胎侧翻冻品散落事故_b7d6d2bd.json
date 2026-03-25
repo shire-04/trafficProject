@@ -1,0 +1,141 @@
+{
+  "case_id": "003_案例2_冷链运输车高速爆胎侧翻冻品散落事故_b7d6d2bd",
+  "title": "案例2：冷链运输车高速爆胎侧翻冻品散落事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "冷链运输车高速爆胎侧翻，导致冻品散落，造成交通拥堵和食品安全风险。",
+  "confidence": 0.95,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_FOOD_OCCUPATIONAL",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_E96EB0F3D0",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "车辆失控侧翻在行车道与应急车道之间",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_FOOD_OCCUPATIONAL",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "食品安全和职业危害",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_FOOD_OCCUPATIONAL",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "车辆积压",
+        "食品安全和职业危害",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_FOOD_OCCUPATIONAL",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "食品安全和职业危害",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_392FE2C8B0",
+      "name": "高速爆胎",
+      "entity_type": "Event",
+      "evidence": "因左后轮长期未更换高速爆胎",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_627C2CA797",
+      "final_entity_name": "高速爆胎",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_627C2CA797",
+      "primary_event_name": "高速爆胎",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_627C2CA797"
+      ],
+      "query_event_names": [
+        "高速爆胎"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "高速爆胎",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_392FE2C8B0",
+      "source_final_id": "EVT_CASE_627C2CA797",
+      "source_final_name": "高速爆胎",
+      "source_query_event_ids": [
+        "EVT_CASE_627C2CA797"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧翻",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_E96EB0F3D0",
+      "target_final_id": "EVT_CASE_9CC62EF2EB",
+      "target_final_name": "车辆侧翻",
+      "target_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_FOOD_OCCUPATIONAL",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "因左后轮长期未更换高速爆胎，车辆失控侧翻",
+      "confidence": 0.98,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取主要基于文本中的因果和执行关系。",
+    "部分关系存在隐含信息，抽取结果可能存在偏差。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某沿海高速路段，一辆装载进口冷冻肉类的冷链运输车，因左后轮长期未更换高速爆胎，车辆失控侧翻在行车道与应急车道之间，车厢破损，大量冻品包装箱散落路面，部分箱体破裂，冷链机组停止运行。",
+    "consequence_text": "驾驶员与副驾2人轻微擦伤，无重伤死亡，车辆侧翻占用2条车道，高速单向拥堵8公里，散落冻品易被过往车辆碾压引发爆胎，冻品暴露常温下加速变质，存在食品安全与路面污染双重风险。",
+    "measure_text": "交警封闭事故路段，开启高速预警提示，疏导车辆从就近出口分流；消防人员到场排查车辆漏油、起火隐患，协助救援人员转移被困人员；交通部门调集吊车、清障车、冷链转运车，先将未破损冻品紧急转运，再清理散落包装箱和车辆残骸；医疗人员对伤者进行简单处置；路政部门对污染路面进行清洗消毒，4小时后路面恢复通行，同步协调市场监管部门做好冻品处置。"
+  }
+}

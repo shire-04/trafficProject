@@ -1,0 +1,205 @@
+{
+  "case_id": "034_案例33_山区公路岩石风化脱落砸中客车事故_065bef11",
+  "title": "案例33：山区公路岩石风化脱落砸中客车事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "山区公路临崖路段发生岩石脱落砸中客车事故，造成车辆受损，部分乘客轻微划伤，道路封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F1D2D6D1DA",
+    "expanded_event_ids": [
+      "EVT_ROAD_DAMAGE",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_A893DA5F55",
+      "name": "岩石落山",
+      "entity_type": "Event",
+      "evidence": "山区公路临崖路段，一块风化岩石因长期风吹雨淋脱落，砸中正常行驶的中型客车车顶",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F1D2D6D1DA",
+      "final_entity_name": "岩石落山",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F1D2D6D1DA",
+      "primary_event_name": "岩石落山",
+      "expanded_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "公路损毁",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F1D2D6D1DA",
+        "EVT_ROAD_DAMAGE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "岩石落山",
+        "公路损毁",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "公路损毁",
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_4793131064",
+      "name": "岩石脱落",
+      "entity_type": "Event",
+      "evidence": "一块风化岩石因长期风吹雨淋脱落",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_DFC8B576A4",
+      "final_entity_name": "岩石脱落",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_DFC8B576A4",
+      "primary_event_name": "岩石脱落",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_DFC8B576A4"
+      ],
+      "query_event_names": [
+        "岩石脱落"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_515D74645F",
+      "name": "车辆滞留",
+      "entity_type": "Event",
+      "evidence": "车辆滞留3公里",
+      "confidence": 0.7,
+      "normalized_id": "EVT_VEHICLE_BACKLOG",
+      "normalized_name": "车辆积压",
+      "normalized_score": 0.2079,
+      "matched_alias": "车辆滞留",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_VEHICLE_BACKLOG",
+      "final_entity_name": "车辆积压",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_VEHICLE_BACKLOG",
+      "primary_event_name": "车辆积压",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_B6161BA696",
+      "name": "道路封闭",
+      "entity_type": "Action",
+      "evidence": "山区公路封闭",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_72E84ECB20",
+      "final_entity_name": "道路封闭",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "岩石脱落",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_4793131064",
+      "source_final_id": "EVT_CASE_DFC8B576A4",
+      "source_final_name": "岩石脱落",
+      "source_query_event_ids": [
+        "EVT_CASE_DFC8B576A4"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆滞留",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_515D74645F",
+      "target_final_id": "EVT_VEHICLE_BACKLOG",
+      "target_final_name": "车辆积压",
+      "target_query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "evidence": "山区公路封闭，车辆滞留3公里",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "岩石脱落",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_4793131064",
+      "source_final_id": "EVT_CASE_DFC8B576A4",
+      "source_final_name": "岩石脱落",
+      "source_query_event_ids": [
+        "EVT_CASE_DFC8B576A4"
+      ],
+      "relation": "TRIGGERS",
+      "target": "道路封闭",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_B6161BA696",
+      "target_final_id": "MEA_CASE_72E84ECB20",
+      "target_final_name": "道路封闭",
+      "target_query_event_ids": [],
+      "evidence": "岩石脱落区域有二次落石风险，山区公路封闭",
+      "confidence": 0.75,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 5,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "山区公路临崖路段，一块风化岩石因长期风吹雨淋脱落，砸中正常行驶的中型客车车顶，车顶凹陷，车窗破碎，部分乘客被碎玻璃划伤，客车紧急停靠路边。",
+    "consequence_text": "5名乘客轻微划伤，驾驶员无伤亡，客车受损，山区公路封闭，车辆滞留3公里，岩石脱落区域有二次落石风险，乘客被困车上。",
+    "measure_text": "交警到场，设置警戒区域，转移乘客至安全地带；消防人员清理脱落岩石，排查山体落石隐患；医疗人员对伤者进行包扎；路政部门修复客车受损部位，拖移车辆；自然资源部门对山体进行监测，增设防护网与警示标志，3小时后道路恢复通行。"
+  }
+}

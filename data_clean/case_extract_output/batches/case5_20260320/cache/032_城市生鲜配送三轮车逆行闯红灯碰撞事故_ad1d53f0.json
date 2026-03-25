@@ -1,0 +1,213 @@
+{
+  "case_id": "032_城市生鲜配送三轮车逆行闯红灯碰撞事故_ad1d53f0",
+  "title": "城市生鲜配送三轮车逆行闯红灯碰撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "某市主城区早高峰路口，一辆生鲜配送电动三轮车逆行闯红灯与小型轿车发生碰撞，造成一人重伤，车辆受损，货物散落污染路面，并导致交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_695C0653A5",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_8D8BD8F2C5",
+      "name": "交通碰撞事故",
+      "entity_type": "Event",
+      "evidence": "一辆生鲜配送电动三轮车为赶配送时效，逆行闯红灯通过路口，与正常绿灯通行的一辆小型轿车发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_695C0653A5",
+      "final_entity_name": "交通碰撞事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_695C0653A5",
+      "primary_event_name": "交通碰撞事故",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_695C0653A5",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "交通碰撞事故",
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_680A2AE52F",
+      "name": "逆行闯红灯",
+      "entity_type": "Action",
+      "evidence": "逆行闯红灯",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1622,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_985239D14D",
+      "final_entity_name": "逆行闯红灯",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_0BB2D0185B",
+      "name": "三轮车侧翻",
+      "entity_type": "Event",
+      "evidence": "三轮车侧翻",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_9197CC1E77",
+      "final_entity_name": "三轮车侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9197CC1E77",
+      "primary_event_name": "三轮车侧翻",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_9197CC1E77"
+      ],
+      "query_event_names": [
+        "三轮车侧翻"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_D9D3C411FD",
+      "name": "路口交通拥堵",
+      "entity_type": "Event",
+      "evidence": "路口双向交通拥堵",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_D21CBE8E3B",
+      "final_entity_name": "路口交通拥堵",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_D21CBE8E3B",
+      "primary_event_name": "路口交通拥堵",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_D21CBE8E3B"
+      ],
+      "query_event_names": [
+        "路口交通拥堵"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "交通碰撞事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_8D8BD8F2C5",
+      "source_final_id": "EVT_CASE_695C0653A5",
+      "source_final_name": "交通碰撞事故",
+      "source_query_event_ids": [
+        "EVT_CASE_695C0653A5",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "逆行闯红灯",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_680A2AE52F",
+      "target_final_id": "MEA_CASE_985239D14D",
+      "target_final_name": "逆行闯红灯",
+      "target_query_event_ids": [],
+      "evidence": "逆行闯红灯",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "交通碰撞事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_8D8BD8F2C5",
+      "source_final_id": "EVT_CASE_695C0653A5",
+      "source_final_name": "交通碰撞事故",
+      "source_query_event_ids": [
+        "EVT_CASE_695C0653A5",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "三轮车侧翻",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_0BB2D0185B",
+      "target_final_id": "EVT_CASE_9197CC1E77",
+      "target_final_name": "三轮车侧翻",
+      "target_query_event_ids": [
+        "EVT_CASE_9197CC1E77"
+      ],
+      "evidence": "造成三轮车驾驶员1人重伤，三轮车完全损毁，轿车轻微受损，生鲜货物散落污染路面，路口双向交通拥堵，早高峰通勤受到影响，散落货物易引发二次事故。",
+      "confidence": 0.6,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "confidence score is estimated.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市主城区早高峰路口，一辆生鲜配送电动三轮车为赶配送时效，逆行闯红灯通过路口，与正常绿灯通行的一辆小型轿车发生碰撞，三轮车侧翻，车内生鲜货物散落一地，三轮车驾驶员被压在车下，轿车车头轻微受损。",
+    "consequence_text": "造成三轮车驾驶员1人重伤，三轮车完全损毁，轿车轻微受损，生鲜货物散落污染路面，路口双向交通拥堵，早高峰通勤受到影响，散落货物易引发二次事故。",
+    "measure_text": "交警部门立即封锁事故现场，疏导过往车辆绕行，开展现场勘查和责任认定；消防救援队伍到场抬起侧翻三轮车，解救被困驾驶员；医疗部门派遣救护车转运受伤驾驶员至医院；城管部门协助清理散落的生鲜货物，清洗污染路面；依据《道路交通安全法》对三轮车逆行闯红灯行为进行从严处罚，同时对生鲜配送企业进行交通安全警示教育，1小时后路口恢复正常通行。"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "case_id": "008_案例7_高速公路养护作业区车辆闯入撞伤工人事故_07cfeba7",
+  "title": "案例7：高速公路养护作业区车辆闯入撞伤工人事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "高速公路养护作业区，小型轿车因驾驶员分心驾驶闯入作业区，撞伤3名养护工人，造成2人重伤1人轻伤，并导致作业设备报废和交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_55F238E968",
+    "expanded_event_ids": [
+      "EVT_CONSTRUCTION_SAFETY",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_7CABA8332F",
+      "name": "施工区域车辆撞人",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车因驾驶员分心驾驶，未留意施工警示，闯入封闭作业区，直接撞上正在路面作业的3名养护工人",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_55F238E968",
+      "final_entity_name": "施工区域车辆撞人",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_55F238E968",
+      "primary_event_name": "施工区域车辆撞人",
+      "expanded_event_ids": [
+        "EVT_CONSTRUCTION_SAFETY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "施工安全事故",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_55F238E968",
+        "EVT_CONSTRUCTION_SAFETY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "施工区域车辆撞人",
+        "施工安全事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_CONSTRUCTION_SAFETY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "施工安全事故",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_CB2AABCCBF",
+      "name": "分心驾驶",
+      "entity_type": "Action",
+      "evidence": "因驾驶员分心驾驶",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1317,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_5FC20D97EE",
+      "final_entity_name": "分心驾驶",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "施工区域车辆撞人",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_7CABA8332F",
+      "source_final_id": "EVT_CASE_55F238E968",
+      "source_final_name": "施工区域车辆撞人",
+      "source_query_event_ids": [
+        "EVT_CASE_55F238E968",
+        "EVT_CONSTRUCTION_SAFETY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "分心驾驶",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_CB2AABCCBF",
+      "target_final_id": "MEA_CASE_5FC20D97EE",
+      "target_final_name": "分心驾驶",
+      "target_query_event_ids": [],
+      "evidence": "因驾驶员分心驾驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取主要基于文本中的直接描述，对于隐含关系未进行抽取。",
+    "confidence score is estimated.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高速养护作业区段，施工单位已设置警示标志、反光锥和减速带，一辆小型轿车因驾驶员分心驾驶，未留意施工警示，闯入封闭作业区，直接撞上正在路面作业的3名养护工人，作业设备被撞毁，车辆撞上施工围挡后停下。",
+    "consequence_text": "造成2名养护工人重伤、1名工人轻伤，轿车驾驶员轻微擦伤，作业设备报废，高速养护作业中断，事故路段封闭，后方车辆滞留6公里，易引发后续车辆再次闯入作业区风险。",
+    "measure_text": "交警快速封闭作业区周边车道，疏导车辆绕行，控制肇事驾驶员，开展现场勘查；消防人员救出受伤工人，排查车辆漏油隐患；医疗人员紧急转运伤者就医；路政部门暂停养护作业，清理现场残骸，加固施工围挡，增设多重警示装置；依据《道路交通安全法》对分心驾驶行为追责，督促施工单位优化作业区防护措施，2小时后恢复局部通行，作业逐步重启。"
+  }
+}

@@ -1,42 +1,166 @@
 import json
-import re
 
 import streamlit as st
-import ollama
-from reasoning_engine import TrafficReasoningEngine
-from agents import BaseAgent, PROMPT_ANALYST, PROMPT_LEGAL, PROMPT_CRITIC, PROMPT_COMMANDER
+
+from contracts import IncidentInput
+from orchestrator import PipelineOrchestrator
 
 
-def _extract_json_block(text: str) -> str:
-    """Attempt to extract the first JSON object from the model response."""
-    if not text:
-        return ""
-
-    cleaned = text.strip()
-
-    # Handle fenced code blocks, e.g. ```json { ... } ```
-    fenced_match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", cleaned, re.DOTALL)
-    if fenced_match:
-        return fenced_match.group(1).strip()
-
-    # Fallback: grab the first JSON-looking block
-    plain_match = re.search(r"\{.*\}", cleaned, re.DOTALL)
-    if plain_match:
-        return plain_match.group(0).strip()
-
-    return ""
-
-
-def parse_critic_response(response: str) -> dict:
-    """Parse critic JSON response; return empty dict when parsing fails."""
-    json_block = _extract_json_block(response)
-    if not json_block:
-        return {}
-
+def run_new_pipeline(user_input: str, image_bytes: bytes | None, show_debug: bool) -> None:
+    orchestrator = PipelineOrchestrator()
     try:
-        return json.loads(json_block)
-    except json.JSONDecodeError:
-        return {}
+        spinner_text = "正在执行 LLM + 双库编排链路..."
+        if image_bytes:
+            spinner_text = "正在执行 LLM + 双库编排链路（含图片分析，本地多模态模型可能需要 1-3 分钟）..."
+
+        with st.spinner(spinner_text):
+            incident = IncidentInput(raw_text=user_input, image_bytes=image_bytes)
+            result = orchestrator.run_once(incident)
+    finally:
+        orchestrator.close()
+
+    st.divider()
+    st.subheader("📢 LLM + 双库编排会议纪要")
+
+    with st.chat_message("assistant", avatar="📞"):
+        st.write("**接警解析专家** 已完成结构化抽取。")
+        st.json(
+            {
+                "incident_type_raw": result.entities.incident_type_raw,
+                "incident_type": result.entities.incident_type,
+                "matched_events": [
+                    {
+                        "surface_form": item.surface_form,
+                        "normalized_name": item.normalized_name,
+                        "node_id": item.node_id,
+                        "match_confidence": item.match_confidence,
+                        "match_reason": item.match_reason,
+                    }
+                    for item in result.entities.matched_events
+                ],
+                "severity": result.entities.severity,
+                "severity_reason": result.entities.severity_reason,
+                "severity_confidence": result.entities.severity_confidence,
+                "weather": result.entities.weather,
+                "hazards": result.entities.hazards,
+                "vehicles": result.entities.vehicles,
+                "location_features": result.entities.location_features,
+                "casualty_estimate": {
+                    "deaths": result.entities.casualty_estimate.deaths,
+                    "injuries": result.entities.casualty_estimate.injuries,
+                    "missing": result.entities.casualty_estimate.missing,
+                    "unknown": result.entities.casualty_estimate.unknown,
+                },
+                "extract_confidence": result.entities.extract_confidence,
+                "evidence_from_image": result.entities.evidence_from_image,
+            },
+            expanded=False,
+        )
+        if result.entities.evidence_from_image:
+            st.caption("图片证据摘要")
+            for item in result.entities.evidence_from_image:
+                st.write(f"- {item}")
+
+    with st.chat_message("assistant", avatar="🧭"):
+        st.write("**检索与逻辑专家** 已返回双库约束与证据。")
+        st.write(f"- 当前判级：`{result.context.severity}`")
+        st.write(f"- 判级来源：`{result.context.severity_source}`")
+        st.write(f"- 图谱约束数：`{len(result.context.neo4j_constraints)}`")
+        st.write(f"- 向量证据数：`{len(result.context.chroma_evidence)}`")
+
+    with st.chat_message("assistant", avatar="👮"):
+        st.write("**指挥调度专家** 已输出单方案。")
+        st.write(f"聚焦：{result.draft.focus}")
+        for index, step in enumerate(result.draft.steps, start=1):
+            st.markdown(f"{index}. {step}")
+
+    with st.chat_message("assistant", avatar="🛡️"):
+        st.write("**推演评估专家** 已完成审查。")
+        review_payload = {
+            "status": result.review.status,
+            "reason": result.review.reason,
+            "retry_count": result.review.retry_count,
+            "missing_actions": result.review.missing_actions,
+            "risk_notes": result.review.risk_notes,
+            "failure_type": result.review.failure_type,
+        }
+        st.code(json.dumps(review_payload, ensure_ascii=False, indent=2), language="json")
+        if result.review.status == "APPROVED":
+            st.success("✅ 新编排链路审查通过")
+        else:
+            st.warning("⚠️ 新编排链路仍需人工接管")
+
+    st.divider()
+    st.header("🚦 最终下达管控策略")
+    for index, step in enumerate(result.draft.steps, start=1):
+        st.markdown(f"{index}. {step}")
+
+    if result.draft.required_resources:
+        st.subheader("🧰 资源需求")
+        st.write("、".join(result.draft.required_resources))
+
+    if result.draft.legal_references:
+        st.subheader("📚 法规依据")
+        st.write("、".join(result.draft.legal_references))
+
+    if result.human_handoff:
+        st.warning("当前结果建议人工复核后再下达。")
+    else:
+        st.success("当前结果可作为默认推荐方案输出。")
+
+    if show_debug:
+        with st.sidebar:
+            st.write("---")
+            st.subheader("底层数据监控")
+            st.json(
+                {
+                    "entities": {
+                        "incident_type_raw": result.entities.incident_type_raw,
+                        "incident_type": result.entities.incident_type,
+                        "matched_events": [
+                            {
+                                "surface_form": item.surface_form,
+                                "normalized_name": item.normalized_name,
+                                "node_id": item.node_id,
+                                "match_confidence": item.match_confidence,
+                                "match_reason": item.match_reason,
+                            }
+                            for item in result.entities.matched_events
+                        ],
+                        "severity": result.entities.severity,
+                        "severity_reason": result.entities.severity_reason,
+                        "severity_confidence": result.entities.severity_confidence,
+                        "weather": result.entities.weather,
+                        "hazards": result.entities.hazards,
+                        "vehicles": result.entities.vehicles,
+                        "location_features": result.entities.location_features,
+                        "evidence_from_image": result.entities.evidence_from_image,
+                        "extract_confidence": result.entities.extract_confidence,
+                    },
+                    "retrieval": {
+                        "severity": result.context.severity,
+                        "severity_source": result.context.severity_source,
+                        "neo4j_constraints": [
+                            {
+                                "rule": item.rule,
+                                "source_node": item.source_node,
+                                "relation": item.relation,
+                                "target_node": item.target_node,
+                            }
+                            for item in result.context.neo4j_constraints[:12]
+                        ],
+                        "chroma_evidence": [
+                            {
+                                "file_name": item.file_name,
+                                "chunk_id": item.chunk_id,
+                                "distance": item.distance,
+                            }
+                            for item in result.context.chroma_evidence[:5]
+                        ],
+                    },
+                    "review": review_payload,
+                }
+            )
 # --- 页面配置 ---
 st.set_page_config(page_title="E-KELL 交通管控智脑", layout="wide")
 
@@ -48,187 +172,28 @@ with st.sidebar:
     st.header("系统状态")
     st.success("✅ Neo4j 知识图谱已连接")
     st.success("✅ ChromaDB 向量库已就绪")
-    st.info("🧠 模型加载: Qwen3-vl:4b")
+    st.info("🧠 当前运行: LLM + 双库编排链路")
     st.header("📸 现场多模态输入")
     uploaded_file = st.file_uploader("上传事故现场照片", type=['jpg', 'png'])
     if uploaded_file:
         st.info("检测到图像输入，已加载 Vision Encoder...")
-        # 你的 VL 模型天然支持这个！
-        # 未来你只需要把图片转为 base64 传给 qwen3-vl 即可
-    # 模拟一个“调试模式”开关
+        st.caption("新链路会将图片分析结果并入接警解析阶段。")
+        st.caption("若远程模型首轮冷启动较慢，页面可能等待 1-3 分钟；超时后会自动退回文本链路。")
     show_debug = st.checkbox("显示推理思维链 (Chain-of-Thought)", value=True)
 
 # --- 主界面 ---
 user_input = st.text_input("请输入突发交通事件描述：", placeholder="例如：路口发生泥头车右转碾压电动车事故...")
 
-# --- 修改后的核心逻辑区 ---
-if st.button("启动联合指挥研判") and user_input:
-    engine = TrafficReasoningEngine()
-    # 处理图片
-    image_bytes = None
-    if uploaded_file:
-        image_bytes = uploaded_file.getvalue() # 获取二进制数据
-        # 注意：这里需要把 bytes 转为 base64 或者保存为临时文件传给 Ollama
-        # 简单起见，这里假设 Agent 能处理
-    
-    # 1. 工具层：先默默把数据查好 (Data Fetching)
-    with st.spinner("正在连接指挥中心数据库..."):
-        # Step 0: 提取关键词 (保留你原来的优秀逻辑)
-        extract_prompt = f"提取'{user_input}'的核心风险事件词(如追尾)，不要修饰词，直接输出词汇。"
-        try:
-            res = ollama.chat(model='qwen3-vl:4b', messages=[{'role': 'user', 'content': extract_prompt}])
-            core_keyword = res['message']['content'].strip()
-        except:
-            core_keyword = user_input
-            
-        # Step A: 查图谱
-        graph_data = engine.query_graph(core_keyword)
+if st.button("启动联合指挥研判"):
+    if not user_input and not uploaded_file:
+        st.warning("请至少输入事件描述或上传现场图片。")
+    else:
+        effective_input = user_input.strip() or "请结合现场图片生成交通事故处置建议。"
+        image_bytes = None
+        if uploaded_file:
+            image_bytes = uploaded_file.getvalue()
 
-    # 2. 实例化四个智能体 (Agents Initialization)
-    analyst = BaseAgent("情报员", PROMPT_ANALYST)
-    legal = BaseAgent("法规参谋", PROMPT_LEGAL)
-    critic = BaseAgent("审查员", PROMPT_CRITIC)
-    commander = BaseAgent("指挥官", PROMPT_COMMANDER)
-
-    # 3. 演绎层：多智能体协作流程 (The Workflow)
-    st.divider()
-    st.subheader("📢 联合指挥中心会议纪要")
-
-    # Round 1: 情报研判先行
-    msg_analyst = ""
-    col_a, col_b = st.columns(2)
-
-    with col_a:
-        with st.chat_message("analyst", avatar="🕵️"):
-            st.write("**情报研判员** 正在发言...")
-            msg_analyst = analyst.speak(
-                user_input,
-                context_data=str(graph_data),
-                image_data=image_bytes
-            )
-            st.info(msg_analyst)
-
-    # 基于情报结果检索法规
-    semantic_hint = msg_analyst if msg_analyst and msg_analyst.strip() else ""
-    with st.spinner("根据情报结果检索法规依据..."):
-        vector_context = engine.query_vector_db(user_input, semantic_hint=semantic_hint)
-
-    engine.close()
-
-    with col_b:
-        with st.chat_message("legal", avatar="⚖️"):
-            st.write("**法规参谋** 正在发言...")
-            legal_context = (
-                "【情报摘要】\n"
-                f"{msg_analyst}\n\n"
-                "【法规检索片段】\n"
-                f"{vector_context}"
-            )
-            msg_legal = legal.speak(user_input, context_data=legal_context)
-            st.success(msg_legal)
-
-    # Round 2: 指挥官生成初稿
-    with st.chat_message("commander", avatar="👮"):
-        st.write("**首席指挥官**：收到，正在拟定初版方案...")
-        draft_input = f"情报结论：{msg_analyst}\n法规依据：{msg_legal}"
-        msg_draft = commander.speak(user_input, context_data=draft_input)
-        with st.expander("查看初版拟定方案", expanded=False):
-            st.write(msg_draft)
-
-    # Round 3: 审查员介入
-    critic_payload = {}
-    critic_status = "REJECTED"
-    critic_reason = ""
-    critic_missing = []
-    critic_risks = []
-
-    with st.chat_message("critic", avatar="🛡️"):
-        st.write("**安全审查员** 正在审核...")
-        critic_input = (
-            "初版方案如下：\n"
-            f"{msg_draft}\n"
-            "请基于你的职责输出结构化 JSON 审核结果。"
-        )
-        critic_raw = critic.speak(user_input, context_data=critic_input)
-
-        # --- 调试代码：把原始输出打印到终端，方便排查 ---
-        print(f"DEBUG: 审查员的原始输出 -> [{critic_raw}]")
-
-        critic_data = parse_critic_response(critic_raw)
-
-        if not critic_raw or not critic_raw.strip():
-            st.warning("⚠️ 审查员未输出文字，系统自动触发修订流程。")
-
-        if not critic_data:
-            st.warning("⚠️ 审查员输出格式异常，系统将按照驳回处理。")
-            st.code(critic_raw or "无输出", language="json")
-            critic_status = "REJECTED"
-            critic_reason = "输出格式异常，系统自动要求重新修订方案。"
-            critic_missing = []
-            critic_risks = []
-            critic_payload = {
-                "status": critic_status,
-                "reason": critic_reason,
-                "missing_actions": critic_missing,
-                "risk_notes": critic_risks,
-                "raw": critic_raw or ""
-            }
-        else:
-            critic_status = str(critic_data.get("status", "")).upper()
-            critic_reason = critic_data.get("reason", "").strip()
-            critic_missing = critic_data.get("missing_actions") or []
-            critic_risks = critic_data.get("risk_notes") or []
-            critic_payload = critic_data
-
-            st.code(json.dumps(critic_data, ensure_ascii=False, indent=2), language="json")
-
-        approved_markers = {"APPROVED", "PASS", "PASSED"}
-
-        if critic_status in approved_markers:
-            display_reason = critic_reason or "方案审核通过"
-            st.success(f"✅ 审核意见：{display_reason}")
-            if critic_missing:
-                st.info(f"提醒：{'; '.join(critic_missing)}")
-            if critic_risks:
-                st.caption(f"风险提示：{'; '.join(critic_risks)}")
-            final_plan = msg_draft
-        else:
-            st.warning("⚠️ 驳回意见：")
-            if critic_reason:
-                st.write(f"- 原因：{critic_reason}")
-            if critic_missing:
-                st.write(f"- 缺失动作：{', '.join(critic_missing)}")
-            if critic_risks:
-                st.write(f"- 风险提示：{'; '.join(critic_risks)}")
-
-            st.code(json.dumps(critic_payload, ensure_ascii=False, indent=2), language="json")
-
-            # Round 4: 修正
-            with st.spinner("🔄 指挥官正在根据审查意见修订方案..."):
-                fix_context = json.dumps(critic_payload, ensure_ascii=False)
-                fix_input = (
-                    "原方案被审查员驳回。\n"
-                    f"审查员结构化意见：{fix_context}\n"
-                    "请你参考上述意见，或自行检查原方案漏洞，生成修正后的最终方案。"
-                )
-                final_plan = commander.speak(user_input, context_data=fix_input)
-
-    # 4. 最终结果展示
-    st.divider()
-    st.header("🚦 最终下达管控策略")
-    st.markdown(final_plan)
-
-    # 5. (可选) 侧边栏调试信息保持不变
-    if show_debug:
-        with st.sidebar:
-            st.write("---")
-            st.subheader("底层数据监控")
-            st.json(graph_data)
-            st.text(vector_context)
-            if critic_payload:
-                st.json(critic_payload)
-            else:
-                st.json({"status": critic_status, "reason": critic_reason})
+        run_new_pipeline(effective_input, image_bytes, show_debug)
 
 # --- 页脚 ---
 st.divider()

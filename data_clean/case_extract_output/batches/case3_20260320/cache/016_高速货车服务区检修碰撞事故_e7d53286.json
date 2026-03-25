@@ -1,0 +1,139 @@
+{
+  "case_id": "016_高速货车服务区检修碰撞事故_e7d53286",
+  "title": "高速货车服务区检修碰撞事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "高速服务区货车检修区发生车辆溜车碰撞事故，造成人员伤亡和设备损坏，服务区业务中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9BDDC88CCC",
+    "expanded_event_ids": [
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_CONSTRUCTION_ACCIDENT",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_5D863F6CF5",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆重型货车在检修刹车时，因车辆未拉手刹发生溜车，与检修区旁的另一辆重型货车发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9BDDC88CCC",
+      "final_entity_name": "车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9BDDC88CCC",
+      "primary_event_name": "车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路交通运输生产事故",
+        "公路工程建设事故",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞",
+        "公路交通运输生产事故",
+        "公路工程建设事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路交通运输生产事故",
+        "公路工程建设事故",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_A3E384DB8A",
+      "name": "溜车",
+      "entity_type": "Action",
+      "evidence": "因车辆未拉手刹发生溜车",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_02ED2FB31E",
+      "final_entity_name": "溜车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_5D863F6CF5",
+      "source_final_id": "EVT_CASE_9BDDC88CCC",
+      "source_final_name": "车辆碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "溜车",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_A3E384DB8A",
+      "target_final_id": "MEA_CASE_02ED2FB31E",
+      "target_final_name": "溜车",
+      "target_query_event_ids": [],
+      "evidence": "因车辆未拉手刹发生溜车",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "安全生产法"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本中的明确信息，避免了猜测。",
+    "部分关系的置信度较低，因为文本中描述较为简略。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高速服务区货车检修区，一辆重型货车在检修刹车时，因车辆未拉手刹发生溜车，与检修区旁的另一辆重型货车发生碰撞，碰撞导致检修区的维修设备损坏，检修区有2名维修人员被困。",
+    "consequence_text": "造成2名维修人员1人重伤、1人轻伤，检修区设备严重损坏，货车检修业务中断，服务区货车停放区域出现短暂拥堵。",
+    "measure_text": "服务区管理人员立即报警，保护事故现场；消防救援队伍解救被困维修人员；医疗部门转运受伤人员至医院；交警部门勘查现场，认定检修单位责任；交通部门协调其他服务区派遣维修人员；依据《安全生产法》开展处置，2小时后检修区逐步恢复运营。"
+  }
+}

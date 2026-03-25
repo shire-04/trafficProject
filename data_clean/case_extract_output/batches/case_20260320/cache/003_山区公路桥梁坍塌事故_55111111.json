@@ -1,0 +1,181 @@
+{
+  "case_id": "003_山区公路桥梁坍塌事故_55111111",
+  "title": "山区公路桥梁坍塌事故",
+  "source_file": "交通应急处理案例.txt",
+  "summary": "山区二级公路跨河桥梁因强降雨导致桥梁基础冲刷受损，一辆中型客车和两辆小型轿车受困，造成3人受伤，交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+    "expanded_event_ids": [
+      "EVT_ROAD_DAMAGE",
+      "EVT_ROAD_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_853591047E",
+      "name": "桥梁坍塌",
+      "entity_type": "Event",
+      "evidence": "某山区二级公路跨河桥梁，因连续强降雨导致桥梁基础冲刷受损，一辆中型客车（载有18名乘客）行驶至桥梁中段时，桥梁突然发生部分坍塌",
+      "confidence": 0.9,
+      "normalized_id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+      "normalized_name": "特大桥梁安全事故",
+      "normalized_score": 0.0,
+      "matched_alias": "特大桥梁安全事故",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+      "final_entity_name": "特大桥梁安全事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+      "primary_event_name": "特大桥梁安全事故",
+      "expanded_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "公路损毁",
+        "公路中断"
+      ],
+      "query_event_ids": [
+        "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "特大桥梁安全事故",
+        "公路损毁",
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_MAJOR_BRIDGE_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "特大桥梁安全事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_80D103F760",
+      "name": "强降雨",
+      "entity_type": "Event",
+      "evidence": "因连续强降雨",
+      "confidence": 0.85,
+      "normalized_id": "EVT_RAINSTORM",
+      "normalized_name": "暴雨",
+      "normalized_score": 0.1812,
+      "matched_alias": "强降雨",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_RAINSTORM",
+      "final_entity_name": "暴雨",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_RAINSTORM",
+      "primary_event_name": "暴雨",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "query_event_names": [
+        "暴雨"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_67C919959C",
+      "name": "洪水预警",
+      "entity_type": "Action",
+      "evidence": "及时发布洪水预警",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.425,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B0EFDFCDBD",
+      "final_entity_name": "洪水预警",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "强降雨",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_80D103F760",
+      "source_final_id": "EVT_RAINSTORM",
+      "source_final_name": "暴雨",
+      "source_query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "relation": "CAUSES",
+      "target": "桥梁坍塌",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_853591047E",
+      "target_final_id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+      "target_final_name": "特大桥梁安全事故",
+      "target_query_event_ids": [
+        "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "evidence": "因连续强降雨导致桥梁基础冲刷受损，一辆中型客车（载有18名乘客）行驶至桥梁中段时，桥梁突然发生部分坍塌",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "桥梁坍塌",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_853591047E",
+      "source_final_id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+      "source_final_name": "特大桥梁安全事故",
+      "source_query_event_ids": [
+        "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "relation": "TRIGGERS",
+      "target": "洪水预警",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_67C919959C",
+      "target_final_id": "MEA_CASE_B0EFDFCDBD",
+      "target_final_name": "洪水预警",
+      "target_query_event_ids": [],
+      "evidence": "强降雨持续导致桥梁剩余部分有进一步坍塌风险，可能引发坠车、人员落水等次生事故；水利部门监测河流水位变化，及时发布洪水预警",
+      "confidence": 0.75,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《公路安全保护条例》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息和实体目录，可能存在信息不完整或歧义的情况。",
+    "confidence score represents the certainty of the relation based on the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某山区二级公路跨河桥梁，因连续强降雨导致桥梁基础冲刷受损，一辆中型客车（载有18名乘客）行驶至桥梁中段时，桥梁突然发生部分坍塌，客车半个车身悬空，另有2辆小型轿车被困桥梁两端，桥梁下方为湍急河流。",
+    "consequence_text": "造成客车内3人受伤，18名乘客全部被困，2辆小型轿车内人员无伤亡但无法撤离，桥梁坍塌路段交通完全中断，周边村庄出行受阻，强降雨持续导致桥梁剩余部分有进一步坍塌风险，可能引发坠车、人员落水等次生事故。",
+    "measure_text": "应急管理部门立即启动《桥梁突发事件应急预案》，协调消防救援队伍使用高空救援设备、绳索装备对被困乘客进行转移，同步设置防护网防止人员坠落；交警部门封闭桥梁两端道路，设置警戒区域，禁止无关车辆、人员靠近；交通部门组织桥梁检测专业队伍对桥梁坍塌情况进行勘查，评估剩余结构安全；医疗部门派遣救护车在现场待命，对受伤人员进行紧急救治后转运至医院；水利部门监测河流水位变化，及时发布洪水预警；后续交通部门调用大型设备对坍塌桥梁进行清理，搭建临时便桥保障周边群众出行，依据《公路安全保护条例》开展事故调查。"
+  }
+}

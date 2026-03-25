@@ -1,0 +1,208 @@
+{
+  "case_id": "042_边境巡逻路界碑附近车辆坠崖事故_590f5f80",
+  "title": "边境巡逻路界碑附近车辆坠崖事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某边境线巡逻公路临崖路段，边境巡逻警车因连续降雨导致路面湿滑、山体落石，失控坠入约50米深的悬崖，造成4名边境民警受伤被困，边境巡逻公路双向封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_5C5AB0B1F3",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_ROAD_DAMAGE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_14F71F0EF9",
+      "name": "车辆坠崖",
+      "entity_type": "Event",
+      "evidence": "一辆边境巡逻警车在执行巡逻任务时，因连续降雨导致路面湿滑、山体落石，车辆失控冲出路面，坠入约50米深的悬崖下",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_5C5AB0B1F3",
+      "final_entity_name": "车辆坠崖",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_5C5AB0B1F3",
+      "primary_event_name": "车辆坠崖",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_5C5AB0B1F3",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆坠崖",
+        "公路中断",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_FC723842D8",
+      "name": "落石",
+      "entity_type": "Event",
+      "evidence": "山体落石",
+      "confidence": 0.6,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_2688158F89",
+      "final_entity_name": "落石",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_2688158F89",
+      "primary_event_name": "落石",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_2688158F89"
+      ],
+      "query_event_names": [
+        "落石"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_36F79FB40B",
+      "name": "降雨",
+      "entity_type": "Event",
+      "evidence": "连续降雨",
+      "confidence": 0.6,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_BDDB5B36D2",
+      "final_entity_name": "降雨",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_BDDB5B36D2",
+      "primary_event_name": "降雨",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_BDDB5B36D2"
+      ],
+      "query_event_names": [
+        "降雨"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "降雨",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_36F79FB40B",
+      "source_final_id": "EVT_CASE_BDDB5B36D2",
+      "source_final_name": "降雨",
+      "source_query_event_ids": [
+        "EVT_CASE_BDDB5B36D2"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆坠崖",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_14F71F0EF9",
+      "target_final_id": "EVT_CASE_5C5AB0B1F3",
+      "target_final_name": "车辆坠崖",
+      "target_query_event_ids": [
+        "EVT_CASE_5C5AB0B1F3",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "因连续降雨导致路面湿滑、山体落石，车辆失控冲出路面，坠入约50米深的悬崖下",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "落石",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_FC723842D8",
+      "source_final_id": "EVT_CASE_2688158F89",
+      "source_final_name": "落石",
+      "source_query_event_ids": [
+        "EVT_CASE_2688158F89"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆坠崖",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_14F71F0EF9",
+      "target_final_id": "EVT_CASE_5C5AB0B1F3",
+      "target_final_name": "车辆坠崖",
+      "target_query_event_ids": [
+        "EVT_CASE_5C5AB0B1F3",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "因连续降雨导致路面湿滑、山体落石，车辆失控冲出路面，坠入约50米深的悬崖下",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《人民警察法》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text. Some inferences are avoided to maintain high precision.",
+    "Confidence scores reflect the clarity and directness of the evidence supporting each relationship."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 4,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某边境线巡逻公路临崖路段，一辆边境巡逻警车在执行巡逻任务时，因连续降雨导致路面湿滑、山体落石，车辆失控冲出路面，坠入约50米深的悬崖下，车身严重变形，车内4名边境民警被困，通讯信号中断，持续降雨导致仍有落石、滑坡风险。",
+    "consequence_text": "造成车内4名民警不同程度受伤被困，警车完全损毁，边境巡逻公路双向封闭，边境巡逻任务中断，持续降雨、落石导致救援难度极大，边境管控受到影响。",
+    "measure_text": "边境管理支队立即启动边境突发事件应急预案，协调消防救援队伍、医疗部门、应急管理部门组建联合救援队伍，携带救援装备、通讯设备赶赴现场；自然资源部门对山体进行实时监测，预警落石、滑坡风险；救援队伍克服降雨、落石影响，使用绳索、担架搭建救援通道，分批转移受伤民警至安全区域；医疗部门对受伤民警进行紧急救治后，转运至医院；交警部门封闭事故路段，排查道路安全隐患；依据《人民警察法》《道路交通安全法》开展后续处置，6小时后所有被困民警被成功救出。"
+  }
+}

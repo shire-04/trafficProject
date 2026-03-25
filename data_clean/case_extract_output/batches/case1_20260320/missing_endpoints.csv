@@ -1,0 +1,4 @@
+﻿start_id,end_id,relation_type,case_id,case_title,missing_type
+MEA_CASE_641D68DEBE,RES_CASE_05C13962FE,REQUIRES,002_城市隧道内危化品车追尾泄漏事故_1606f9a2,城市隧道内危化品车追尾泄漏事故,start_missing
+EVT_MAJOR_BRIDGE_ACCIDENT,MEA_CASE_2F25F27432,TRIGGERS,003_山区公路桥梁坍塌事故_55111111,山区公路桥梁坍塌事故,end_missing
+EVT_ENVIRONMENT,MEA_CASE_0B78E0C051,TRIGGERS,006_乡村道路货车侧翻伤人事故_739eb5da,乡村道路货车侧翻伤人事故,end_missing

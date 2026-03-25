@@ -1,0 +1,172 @@
+{
+  "case_id": "046_高速公路服务区匝道逆行引发碰撞事故_4194887c",
+  "title": "高速公路服务区匝道逆行引发碰撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "高速公路服务区匝道发生一起由逆行驾驶员引发的碰撞事故，造成人员伤亡和车辆损毁，并导致匝道封闭和车辆滞留。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_1976BD705A",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_581E8BA328",
+      "name": "高速公路逆行碰撞",
+      "entity_type": "Event",
+      "evidence": "某高速公路服务区出口匝道，一辆小型轿车驾驶员错过服务区入口，从出口匝道逆行驶入服务区，与正常驶出服务区的一辆中型客车发生正面碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_1976BD705A",
+      "final_entity_name": "高速公路逆行碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_1976BD705A",
+      "primary_event_name": "高速公路逆行碰撞",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_1976BD705A",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "高速公路逆行碰撞",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_88A901B9B1",
+      "name": "交警部门",
+      "entity_type": "Department",
+      "evidence": "交警部门立即封闭服务区出入口匝道",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.6114,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_C08151231F",
+      "final_entity_name": "交警部门",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_6CE1185D1A",
+      "name": "车辆积压",
+      "entity_type": "Event",
+      "evidence": "进出服务区车辆滞留约3公里",
+      "confidence": 0.8,
+      "normalized_id": "EVT_VEHICLE_BACKLOG",
+      "normalized_name": "车辆积压",
+      "normalized_score": 0.1934,
+      "matched_alias": "车辆滞留",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_VEHICLE_BACKLOG",
+      "final_entity_name": "车辆积压",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_VEHICLE_BACKLOG",
+      "primary_event_name": "车辆积压",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_772FEFD69B",
+      "name": "匝道封闭",
+      "entity_type": "Action",
+      "evidence": "服务区出入口匝道完全封闭",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_EE66DF83B2",
+      "final_entity_name": "匝道封闭",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "匝道封闭",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_772FEFD69B",
+      "source_final_id": "MEA_CASE_EE66DF83B2",
+      "source_final_name": "匝道封闭",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "交警部门",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_88A901B9B1",
+      "target_final_id": "ORG_CASE_C08151231F",
+      "target_final_name": "交警部门",
+      "target_query_event_ids": [],
+      "evidence": "交警部门立即封闭服务区出入口匝道",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高速公路服务区出口匝道，一辆小型轿车驾驶员错过服务区入口，从出口匝道逆行驶入服务区，与正常驶出服务区的一辆中型客车发生正面碰撞，轿车车头严重变形，驾驶员被困车内，客车紧急制动，车内10余名乘客受到冲击摔倒。",
+    "consequence_text": "造成轿车驾驶员1人重伤、客车内2名乘客轻微擦伤，轿车完全损毁，客车车身轻微受损，服务区出入口匝道完全封闭，进出服务区车辆滞留约3公里，存在二次碰撞的重大风险。",
+    "measure_text": "交警部门立即封闭服务区出入口匝道，设置警戒区域，疏导车辆绕行相邻服务区；消防救援队伍使用破拆工具解救被困轿车驾驶员；医疗部门派遣救护车转运受伤人员至医院；路政部门清理事故车辆，修复路面设施；依据《道路交通安全法》对高速公路匝道逆行驾驶员进行从严处罚与追责，2小时后匝道清理完毕，恢复正常通行。"
+  }
+}

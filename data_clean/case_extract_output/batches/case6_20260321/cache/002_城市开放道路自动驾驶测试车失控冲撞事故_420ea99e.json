@@ -1,0 +1,195 @@
+{
+  "case_id": "002_城市开放道路自动驾驶测试车失控冲撞事故_420ea99e",
+  "title": "城市开放道路自动驾驶测试车失控冲撞事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "自动驾驶测试车辆在路口发生交通事故，冲撞多辆非机动车，造成人员伤亡和交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_C5AE31900F",
+    "expanded_event_ids": [
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_1DC78D643B",
+      "name": "自动驾驶车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆搭载L4级自动驾驶系统的测试车辆，在路口直行时系统突发故障，无视红灯信号，高速冲撞路口正常等待的非机动车队列，接连撞倒3辆电动自行车、2辆共享单车，车辆撞上路边护栏后停下。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_C5AE31900F",
+      "final_entity_name": "自动驾驶车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_C5AE31900F",
+      "primary_event_name": "自动驾驶车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "公路交通运输生产事故",
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_C5AE31900F",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "自动驾驶车辆碰撞",
+        "公路交通运输生产事故",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路交通运输生产事故",
+        "公路损毁"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_055BC3C497",
+      "name": "自动驾驶车辆",
+      "entity_type": "Resource",
+      "evidence": "一辆搭载L4级自动驾驶系统的测试车辆",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.6833,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_7BD2136F09",
+      "final_entity_name": "自动驾驶车辆",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_F657BE174B",
+      "name": "现场勘查",
+      "entity_type": "Action",
+      "evidence": "开展现场勘查和责任认定",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_C2D9BE1EAA",
+      "normalized_name": "现场勘查",
+      "normalized_score": 1.0,
+      "matched_alias": "现场勘查",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_C2D9BE1EAA",
+      "final_entity_name": "现场勘查",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_E0116EE443",
+      "name": "责任认定",
+      "entity_type": "Action",
+      "evidence": "开展现场勘查和责任认定",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_3BEB23D29A",
+      "normalized_name": "责任认定",
+      "normalized_score": 1.0,
+      "matched_alias": "责任认定",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_3BEB23D29A",
+      "final_entity_name": "责任认定",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "现场勘查",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_F657BE174B",
+      "source_final_id": "MEA_CASE_C2D9BE1EAA",
+      "source_final_name": "现场勘查",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "自动驾驶车辆",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_055BC3C497",
+      "target_final_id": "RES_CASE_7BD2136F09",
+      "target_final_name": "自动驾驶车辆",
+      "target_query_event_ids": [],
+      "evidence": "开展现场勘查",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "责任认定",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_E0116EE443",
+      "source_final_id": "MEA_CASE_3BEB23D29A",
+      "source_final_name": "责任认定",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "自动驾驶车辆",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_055BC3C497",
+      "target_final_id": "RES_CASE_7BD2136F09",
+      "target_final_name": "自动驾驶车辆",
+      "target_query_event_ids": [],
+      "evidence": "开展现场勘查和责任认定",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《智能网联汽车道路测试与示范应用管理规范》"
+  ],
+  "quality_notes": [
+    "Relationships are extracted based on explicit mentions in the text.",
+    "Confidence scores are assigned based on the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 5,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市自动驾驶开放测试道路，一辆搭载L4级自动驾驶系统的测试车辆，在路口直行时系统突发故障，无视红灯信号，高速冲撞路口正常等待的非机动车队列，接连撞倒3辆电动自行车、2辆共享单车，车辆撞上路边护栏后停下，现场人流密集。",
+    "consequence_text": "造成2名骑行者重伤、3名骑行者轻伤，多辆非机动车完全损毁，测试车辆车头受损，路口双向交通拥堵，周边通勤受到严重影响，自动驾驶系统故障引发群众对测试车辆的安全质疑，社会影响较大。",
+    "measure_text": "交警部门立即封锁事故现场，疏散围观群众，开展现场勘查和责任认定；医疗部门派遣救护车转运受伤人员至医院；自动驾驶测试企业立即暂停所有道路测试，配合事故调查，封存车辆行驶数据；城管部门协助清理现场，恢复路口通行秩序；依据《道路交通安全法》《智能网联汽车道路测试与示范应用管理规范》开展事故调查，1.5小时后路口恢复正常通行。"
+  }
+}

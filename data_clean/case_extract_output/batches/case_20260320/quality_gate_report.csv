@@ -1,0 +1,11 @@
+﻿case_id,case_title,object_type,object_name,object_role,risk_level,risk_reason,confidence,evidence,import_action
+006_乡村道路货车侧翻伤人事故_739eb5da,乡村道路货车侧翻伤人事故,entity,超速行驶,Action,MEDIUM,action_weak_semantics,0.8000,因驾驶员超速行驶,kept_with_risk
+007_高架道路车辆冲撞护栏坠桥事故_47596a34,高架道路车辆冲撞护栏坠桥事故,entity,车辆冲撞护栏,Action,MEDIUM,action_weak_semantics,0.8500,车辆失控冲撞高架护栏,kept_with_risk
+007_高架道路车辆冲撞护栏坠桥事故_47596a34,高架道路车辆冲撞护栏坠桥事故,entity,高架护栏,Resource,MEDIUM,resource_weak_semantics,0.9000,冲撞高架护栏，护栏被撞断,kept_with_risk
+009_港口道路危化品运输车倾覆泄漏事故_ace2077d,港口道路危化品运输车倾覆泄漏事故,relation,危化品泄漏-TRIGGERS-堵漏,Event->Action,MEDIUM,relation_fallback_inferred,0.6200,对泄漏点进行堵漏,kept_with_risk
+009_港口道路危化品运输车倾覆泄漏事故_ace2077d,港口道路危化品运输车倾覆泄漏事故,relation,危化品泄漏-TRIGGERS-采样监测,Event->Action,MEDIUM,relation_fallback_inferred,0.6200,对泄漏区域土壤、水体进行采样监测,kept_with_risk
+009_港口道路危化品运输车倾覆泄漏事故_ace2077d,港口道路危化品运输车倾覆泄漏事故,relation,危化品泄漏-TRIGGERS-现场处置,Event->Action,MEDIUM,relation_fallback_inferred,0.6200,对轻伤驾驶员进行现场处置,kept_with_risk
+009_港口道路危化品运输车倾覆泄漏事故_ace2077d,港口道路危化品运输车倾覆泄漏事故,relation,危化品泄漏-TRIGGERS-疏导,Event->Action,MEDIUM,relation_fallback_inferred,0.6200,疏导过往车辆和人员,kept_with_risk
+009_港口道路危化品运输车倾覆泄漏事故_ace2077d,港口道路危化品运输车倾覆泄漏事故,relation,危化品泄漏-TRIGGERS-安全转运,Event->Action,MEDIUM,relation_fallback_inferred,0.6200,对剩余危化品进行安全转运,kept_with_risk
+009_港口道路危化品运输车倾覆泄漏事故_ace2077d,港口道路危化品运输车倾覆泄漏事故,relation,危化品泄漏-TRIGGERS-清理和腐蚀修复,Event->Action,MEDIUM,relation_fallback_inferred,0.6200,对路面进行清理和腐蚀修复,kept_with_risk
+010_施工路段交通事故致人被困事故_508789f5,施工路段交通事故致人被困事故,case,施工路段交通事故致人被困事故,case,HIGH,case_empty_relations,0.8500,某国道施工路段，施工单位已设置警示标志和围挡，但未安排专人现场疏导，一辆小型轿车因未注意施工警示，闯入施工区域，与施工机械（挖掘机）发生碰撞，轿车车头严重变形，驾驶员被困车内，施工机械轻微受损，施工路段堆积的砂石阻碍交通。,needs_reextract

@@ -1,0 +1,119 @@
+{
+  "case_id": "010_案例9_城市高架路宠物窜出引发多车急刹追尾事故_772f45c7",
+  "title": "案例9：城市高架路宠物窜出引发多车急刹追尾事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "高架路因宠物狗突然窜出导致多车追尾事故，造成拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_4D219D5D07",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_EDA4207CDF",
+      "name": "追尾事故",
+      "entity_type": "Event",
+      "evidence": "后方3辆轿车、1辆MPV紧急刹车避让，接连发生追尾碰撞，车辆首尾相接",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_4D219D5D07",
+      "final_entity_name": "追尾事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_4D219D5D07",
+      "primary_event_name": "追尾事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "追尾事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_774F6227A5",
+      "name": "紧急刹车",
+      "entity_type": "Action",
+      "evidence": "紧急刹车避让",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_0F40324895",
+      "final_entity_name": "紧急刹车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_EDA4207CDF",
+      "source_final_id": "EVT_CASE_4D219D5D07",
+      "source_final_name": "追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "紧急刹车",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_774F6227A5",
+      "target_final_id": "MEA_CASE_0F40324895",
+      "target_final_name": "紧急刹车",
+      "target_query_event_ids": [],
+      "evidence": "紧急刹车避让",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在不确定性。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "市区高架快速路，一辆小型轿车内宠物狗突然窜出车窗，跑至行车道中央，后方3辆轿车、1辆MPV紧急刹车避让，接连发生追尾碰撞，车辆首尾相接，部分车辆车头、车尾变形，现场无人员被困。",
+    "consequence_text": "无人员伤亡，4辆车辆不同程度受损，高架路单向拥堵7公里，晚高峰通勤受阻，宠物狗受惊乱跑易再次引发事故，路面散落车辆碎片影响通行。",
+    "measure_text": "交警快速到场，先将受惊宠物转移至安全区域，再划定警戒区域，疏导后方车辆从就近匝道下桥；路政人员快速清理路面碎片，对轻微事故车辆进行快速定损、引导撤离，对受损严重车辆拖移；快速路管理部门通过广播、导航发布拥堵提示，1小时后事故车辆清理完毕，高架路恢复正常通行，后续加强高架路宠物管控宣传。"
+  }
+}

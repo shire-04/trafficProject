@@ -1,0 +1,2 @@
+﻿entity_id,entity_name,entity_type,alias,alias_type,source
+EVT_ROAD_INTERRUPTION,公路中断,Event,车辆侧滑碰撞,scene_expression,案例抽取自动补充:008_冰雪天气高速公路车辆侧滑碰撞事故_35ff869e

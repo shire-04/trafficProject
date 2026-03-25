@@ -1,0 +1,132 @@
+{
+  "case_id": "031_案例31_高速公路应急车道停车被追尾事故_9438af49",
+  "title": "案例31：高速公路应急车道停车被追尾事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "高速公路应急车道发生追尾事故，造成人员重伤和车辆严重受损，并导致交通拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_4D219D5D07",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_39C476EB5B",
+      "name": "追尾事故",
+      "entity_type": "Event",
+      "evidence": "后方一辆货车行驶中未留意，直接撞上轿车尾部",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_4D219D5D07",
+      "final_entity_name": "追尾事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_4D219D5D07",
+      "primary_event_name": "追尾事故",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "追尾事故",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_AC9DFC820A",
+      "name": "车辆滞留",
+      "entity_type": "Event",
+      "evidence": "高速应急车道与行车道拥堵，车辆滞留7公里",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_3B6CFC25B4",
+      "final_entity_name": "车辆滞留",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_3B6CFC25B4",
+      "primary_event_name": "车辆滞留",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_3B6CFC25B4"
+      ],
+      "query_event_names": [
+        "车辆滞留"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_39C476EB5B",
+      "source_final_id": "EVT_CASE_4D219D5D07",
+      "source_final_name": "追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆滞留",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_AC9DFC820A",
+      "target_final_id": "EVT_CASE_3B6CFC25B4",
+      "target_final_name": "车辆滞留",
+      "target_query_event_ids": [
+        "EVT_CASE_3B6CFC25B4"
+      ],
+      "evidence": "高速应急车道与行车道拥堵，车辆滞留7公里",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于提供的文本和实体目录，未进行外部知识推理。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "高速公路路段，一辆小型轿车无故违规占用应急车道停车，未设置警示标志，驾驶员下车查看车辆，后方一辆货车行驶中未留意，直接撞上轿车尾部，轿车被撞前移，驾驶员被夹在车辆与护栏之间。",
+    "consequence_text": "轿车驾驶员重伤，两车严重受损，高速应急车道与行车道拥堵，车辆滞留7公里，违规停车引发事故，易造成二次伤亡。",
+    "measure_text": "交警快速到场，救出被困驾驶员，划定警戒区域；消防人员排查车辆漏油隐患；医疗人员转运伤者就医；对违规占用应急车道驾驶员进行追责，货车驾驶员一并调查；路政部门清理事故车辆，恢复交通；2小时后道路恢复正常通行，加强应急车道管控宣传。"
+  }
+}

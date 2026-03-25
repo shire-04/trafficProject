@@ -1,0 +1,198 @@
+{
+  "case_id": "002_案例1_城市BRT公交站台电动车闯入撞人事故_31bdc65a",
+  "title": "案例1：城市BRT公交站台电动车闯入撞人事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "某市BRT公交站台发生电动自行车闯入撞人事故，造成人员轻伤，BRT车道临时封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_E558F7CE44",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_PRODUCTION_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_EF3BA94750",
+      "name": "电动自行车闯入撞人",
+      "entity_type": "Event",
+      "evidence": "一辆超标电动自行车为躲避路口交警，违规闯入封闭BRT车道，高速冲向正在候车的10余名乘客，撞上站台护栏后失控倒地，剐蹭多名候车群众，部分乘客被撞倒挤压",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_E558F7CE44",
+      "final_entity_name": "电动自行车闯入撞人",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_E558F7CE44",
+      "primary_event_name": "电动自行车闯入撞人",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路交通运输生产事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_E558F7CE44",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "query_event_names": [
+        "电动自行车闯入撞人",
+        "交通事故",
+        "公路交通运输生产事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "公路交通运输生产事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_37E635F067",
+      "name": "报警",
+      "entity_type": "Action",
+      "evidence": "拨打120、122报警",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2643,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B396D82FB5",
+      "final_entity_name": "报警",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_CEF91B8ADA",
+      "name": "清理",
+      "entity_type": "Action",
+      "evidence": "城管部门协助清理现场",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2643,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_F2C178773D",
+      "final_entity_name": "清理",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_0246A6F1E5",
+      "name": "城管部门",
+      "entity_type": "Department",
+      "evidence": "城管部门协助清理现场",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.6429,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_095104B964",
+      "final_entity_name": "城管部门",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "电动自行车闯入撞人",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_EF3BA94750",
+      "source_final_id": "EVT_CASE_E558F7CE44",
+      "source_final_name": "电动自行车闯入撞人",
+      "source_query_event_ids": [
+        "EVT_CASE_E558F7CE44",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "报警",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_37E635F067",
+      "target_final_id": "MEA_CASE_B396D82FB5",
+      "target_final_name": "报警",
+      "target_query_event_ids": [],
+      "evidence": "BRT站台工作人员立即启动应急预案，拨打120、122报警",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "清理",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_CEF91B8ADA",
+      "source_final_id": "MEA_CASE_F2C178773D",
+      "source_final_name": "清理",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "城管部门",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_0246A6F1E5",
+      "target_final_id": "ORG_CASE_095104B964",
+      "target_final_name": "城管部门",
+      "target_query_event_ids": [],
+      "evidence": "城管部门协助清理现场",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取主要基于文本中的直接描述，对于需要推理的关系未进行抽取。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 4,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市BRT专用车道公交站台，一辆超标电动自行车为躲避路口交警，违规闯入封闭BRT车道，高速冲向正在候车的10余名乘客，撞上站台护栏后失控倒地，剐蹭多名候车群众，部分乘客被撞倒挤压，现场瞬间混乱。",
+    "consequence_text": "造成3名乘客轻伤、1名老人软组织挫伤，电动自行车骑行者轻微擦伤，BRT车道临时封闭，多条公交线路晚点，站台周边短暂拥堵，候车群众出现恐慌，易引发踩踏、二次碰撞风险。",
+    "measure_text": "BRT站台工作人员立即启动应急预案，疏散候车乘客，拨打120、122报警；交警快速到场控制肇事骑行者，划定警戒区域，疏导后续公交绕行；医疗人员对受伤群众进行现场包扎，转运轻伤人员就医；城管部门协助清理现场，修复受损护栏；依据《道路交通安全法》对违规闯入行为从严处罚，后续在BRT车道入口加装隔离桩和监控，2小时后站台恢复正常运营。"
+  }
+}

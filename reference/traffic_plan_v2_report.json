@@ -1,0 +1,1247 @@
+{
+  "connection": {
+    "uri": "bolt://localhost:7687",
+    "user": "neo4j",
+    "requested_database": "traffic_plan_v2",
+    "inspected_database": "neo4j"
+  },
+  "system": {
+    "databases": [
+      {
+        "name": "neo4j",
+        "type": "standard",
+        "aliases": [],
+        "access": "read-write",
+        "address": "localhost:7687",
+        "role": "primary",
+        "writer": true,
+        "currentStatus": "online",
+        "default": true,
+        "home": true
+      },
+      {
+        "name": "system",
+        "type": "system",
+        "aliases": [],
+        "access": "read-write",
+        "address": "localhost:7687",
+        "role": "primary",
+        "writer": true,
+        "currentStatus": "online",
+        "default": false,
+        "home": false
+      }
+    ]
+  },
+  "database_report": {
+    "database": "neo4j",
+    "node_count": 240,
+    "relationship_count": 182,
+    "label_counts": [
+      {
+        "label": "PlanEntity",
+        "count": 240
+      },
+      {
+        "label": "Action",
+        "count": 92
+      },
+      {
+        "label": "Resource",
+        "count": 51
+      },
+      {
+        "label": "Event",
+        "count": 50
+      },
+      {
+        "label": "Department",
+        "count": 35
+      },
+      {
+        "label": "EventLevel",
+        "count": 4
+      },
+      {
+        "label": "Response",
+        "count": 4
+      },
+      {
+        "label": "Warning",
+        "count": 4
+      }
+    ],
+    "relationship_type_counts": [
+      {
+        "rel_type": "IMPLEMENTED_BY",
+        "count": 54
+      },
+      {
+        "rel_type": "CAUSES",
+        "count": 45
+      },
+      {
+        "rel_type": "REQUIRES",
+        "count": 44
+      },
+      {
+        "rel_type": "TRIGGERS",
+        "count": 35
+      },
+      {
+        "rel_type": "CLASSIFIED_AS",
+        "count": 4
+      }
+    ],
+    "schema_patterns": [
+      {
+        "source_label": "PlanEntity",
+        "rel_type": "IMPLEMENTED_BY",
+        "target_label": "Department",
+        "count": 54
+      },
+      {
+        "source_label": "PlanEntity",
+        "rel_type": "IMPLEMENTED_BY",
+        "target_label": "PlanEntity",
+        "count": 54
+      },
+      {
+        "source_label": "Action",
+        "rel_type": "IMPLEMENTED_BY",
+        "target_label": "Department",
+        "count": 46
+      },
+      {
+        "source_label": "Action",
+        "rel_type": "IMPLEMENTED_BY",
+        "target_label": "PlanEntity",
+        "count": 46
+      },
+      {
+        "source_label": "Event",
+        "rel_type": "CAUSES",
+        "target_label": "Event",
+        "count": 45
+      },
+      {
+        "source_label": "Event",
+        "rel_type": "CAUSES",
+        "target_label": "PlanEntity",
+        "count": 45
+      },
+      {
+        "source_label": "PlanEntity",
+        "rel_type": "CAUSES",
+        "target_label": "Event",
+        "count": 45
+      },
+      {
+        "source_label": "PlanEntity",
+        "rel_type": "CAUSES",
+        "target_label": "PlanEntity",
+        "count": 45
+      },
+      {
+        "source_label": "Action",
+        "rel_type": "REQUIRES",
+        "target_label": "PlanEntity",
+        "count": 44
+      },
+      {
+        "source_label": "Action",
+        "rel_type": "REQUIRES",
+        "target_label": "Resource",
+        "count": 44
+      },
+      {
+        "source_label": "PlanEntity",
+        "rel_type": "REQUIRES",
+        "target_label": "PlanEntity",
+        "count": 44
+      },
+      {
+        "source_label": "PlanEntity",
+        "rel_type": "REQUIRES",
+        "target_label": "Resource",
+        "count": 44
+      },
+      {
+        "source_label": "PlanEntity",
+        "rel_type": "TRIGGERS",
+        "target_label": "PlanEntity",
+        "count": 35
+      },
+      {
+        "source_label": "PlanEntity",
+        "rel_type": "TRIGGERS",
+        "target_label": "Action",
+        "count": 27
+      },
+      {
+        "source_label": "Response",
+        "rel_type": "TRIGGERS",
+        "target_label": "Action",
+        "count": 15
+      },
+      {
+        "source_label": "Response",
+        "rel_type": "TRIGGERS",
+        "target_label": "PlanEntity",
+        "count": 15
+      },
+      {
+        "source_label": "EventLevel",
+        "rel_type": "TRIGGERS",
+        "target_label": "PlanEntity",
+        "count": 8
+      },
+      {
+        "source_label": "Event",
+        "rel_type": "TRIGGERS",
+        "target_label": "Action",
+        "count": 6
+      },
+      {
+        "source_label": "Event",
+        "rel_type": "TRIGGERS",
+        "target_label": "PlanEntity",
+        "count": 6
+      },
+      {
+        "source_label": "Warning",
+        "rel_type": "TRIGGERS",
+        "target_label": "Action",
+        "count": 6
+      },
+      {
+        "source_label": "Warning",
+        "rel_type": "TRIGGERS",
+        "target_label": "PlanEntity",
+        "count": 6
+      },
+      {
+        "source_label": "Event",
+        "rel_type": "CLASSIFIED_AS",
+        "target_label": "EventLevel",
+        "count": 4
+      },
+      {
+        "source_label": "Event",
+        "rel_type": "CLASSIFIED_AS",
+        "target_label": "PlanEntity",
+        "count": 4
+      },
+      {
+        "source_label": "EventLevel",
+        "rel_type": "TRIGGERS",
+        "target_label": "Response",
+        "count": 4
+      },
+      {
+        "source_label": "EventLevel",
+        "rel_type": "TRIGGERS",
+        "target_label": "Warning",
+        "count": 4
+      },
+      {
+        "source_label": "PlanEntity",
+        "rel_type": "CLASSIFIED_AS",
+        "target_label": "EventLevel",
+        "count": 4
+      },
+      {
+        "source_label": "PlanEntity",
+        "rel_type": "CLASSIFIED_AS",
+        "target_label": "PlanEntity",
+        "count": 4
+      },
+      {
+        "source_label": "PlanEntity",
+        "rel_type": "TRIGGERS",
+        "target_label": "Response",
+        "count": 4
+      },
+      {
+        "source_label": "PlanEntity",
+        "rel_type": "TRIGGERS",
+        "target_label": "Warning",
+        "count": 4
+      },
+      {
+        "source_label": "Response",
+        "rel_type": "IMPLEMENTED_BY",
+        "target_label": "Department",
+        "count": 4
+      },
+      {
+        "source_label": "Response",
+        "rel_type": "IMPLEMENTED_BY",
+        "target_label": "PlanEntity",
+        "count": 4
+      },
+      {
+        "source_label": "Warning",
+        "rel_type": "IMPLEMENTED_BY",
+        "target_label": "Department",
+        "count": 4
+      },
+      {
+        "source_label": "Warning",
+        "rel_type": "IMPLEMENTED_BY",
+        "target_label": "PlanEntity",
+        "count": 4
+      }
+    ],
+    "top_out_degree": [
+      {
+        "labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "id": "MEA_REPAIR_AND_RECOVER",
+        "name": "组织公路抢修保通",
+        "out_degree": 22
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Response"
+        ],
+        "id": "RESP_I",
+        "name": "Ⅰ级应急响应",
+        "out_degree": 16
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "id": "MEA_ASSIST_ACCIDENT_RESPONSE",
+        "name": "协助处置安全事故",
+        "out_degree": 11
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "id": "EVT_ROAD_EMERGENCY",
+        "name": "公路交通突发事件",
+        "out_degree": 9
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Warning"
+        ],
+        "id": "WARN_I",
+        "name": "Ⅰ级预警",
+        "out_degree": 7
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "id": "MEA_REQUISITION_RESOURCE",
+        "name": "征用应急保障资源",
+        "out_degree": 4
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "id": "MEA_PROPOSE_RESOURCE_REQUISITION",
+        "name": "提出应急保障资源征用方案",
+        "out_degree": 4
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "EventLevel"
+        ],
+        "id": "LVL_I",
+        "name": "Ⅰ级（特别重大）",
+        "out_degree": 2
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "EventLevel"
+        ],
+        "id": "LVL_II",
+        "name": "Ⅱ级（重大）",
+        "out_degree": 2
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "EventLevel"
+        ],
+        "id": "LVL_III",
+        "name": "Ⅲ级（较大）",
+        "out_degree": 2
+      }
+    ],
+    "top_in_degree": [
+      {
+        "labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "id": "EVT_ROAD_EMERGENCY",
+        "name": "公路交通突发事件",
+        "in_degree": 12
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Department"
+        ],
+        "id": "ORG_ROAD_CLEARANCE_GROUP",
+        "name": "公路抢通小组",
+        "in_degree": 8
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Department"
+        ],
+        "id": "ORG_LEAD_GROUP",
+        "name": "应急领导小组",
+        "in_degree": 7
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "id": "EVT_NATURAL_DISASTER",
+        "name": "自然灾害",
+        "in_degree": 7
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Department"
+        ],
+        "id": "ORG_ROUTE_CENTER",
+        "name": "路网中心",
+        "in_degree": 7
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "id": "EVT_METEOROLOGICAL",
+        "name": "气象灾害",
+        "in_degree": 6
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Department"
+        ],
+        "id": "ORG_MOT",
+        "name": "交通运输部",
+        "in_degree": 4
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "id": "EVT_PUBLIC_HEALTH",
+        "name": "公共卫生事件",
+        "in_degree": 4
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Department"
+        ],
+        "id": "ORG_TRANSPORT_SUPPORT_GROUP",
+        "name": "运输保障小组",
+        "in_degree": 4
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "id": "EVT_PRODUCTION_ACCIDENT",
+        "name": "公路交通运输生产事故",
+        "in_degree": 3
+      }
+    ],
+    "sample_nodes": [
+      {
+        "labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "id": "MEA_ACCIDENT_INSURANCE",
+        "name": "投保人身意外险",
+        "props": {
+          "name": "投保人身意外险",
+          "graph_version": "v2",
+          "id": "MEA_ACCIDENT_INSURANCE",
+          "entity_type_cn": "措施",
+          "source": "国家交通应急预案"
+        }
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "id": "MEA_PLAN_TRANSPORT_COMPENSATION",
+        "name": "拟定应急运输征用补偿方案",
+        "props": {
+          "name": "拟定应急运输征用补偿方案",
+          "graph_version": "v2",
+          "id": "MEA_PLAN_TRANSPORT_COMPENSATION",
+          "entity_type_cn": "措施",
+          "source": "国家交通应急预案"
+        }
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Resource"
+        ],
+        "id": "RES_EXCAVATOR",
+        "name": "挖掘机",
+        "props": {
+          "name": "挖掘机",
+          "graph_version": "v2",
+          "id": "RES_EXCAVATOR",
+          "entity_type_cn": "应急资源",
+          "source": "国家交通应急预案"
+        }
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "id": "MEA_PREPARE_RESPONSE",
+        "name": "开展应急筹备",
+        "props": {
+          "name": "开展应急筹备",
+          "graph_version": "v2",
+          "id": "MEA_PREPARE_RESPONSE",
+          "entity_type_cn": "措施",
+          "source": "国家交通应急预案"
+        }
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "id": "MEA_UPDATE_PLAN",
+        "name": "更新应急预案",
+        "props": {
+          "name": "更新应急预案",
+          "graph_version": "v2",
+          "id": "MEA_UPDATE_PLAN",
+          "entity_type_cn": "措施",
+          "source": "国家交通应急预案"
+        }
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "id": "EVT_ROAD_BLOCKAGE",
+        "name": "公路阻塞",
+        "props": {
+          "name": "公路阻塞",
+          "graph_version": "v2",
+          "id": "EVT_ROAD_BLOCKAGE",
+          "entity_type_cn": "突发事件",
+          "source": "国家交通应急预案"
+        }
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "id": "MEA_REPORT_FILES",
+        "name": "报送应急工作文件",
+        "props": {
+          "name": "报送应急工作文件",
+          "graph_version": "v2",
+          "id": "MEA_REPORT_FILES",
+          "entity_type_cn": "措施",
+          "source": "国家交通应急预案"
+        }
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "id": "MEA_BUILD_PLATFORM",
+        "name": "建立公路交通应急平台",
+        "props": {
+          "name": "建立公路交通应急平台",
+          "graph_version": "v2",
+          "id": "MEA_BUILD_PLATFORM",
+          "entity_type_cn": "措施",
+          "source": "国家交通应急预案"
+        }
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Department"
+        ],
+        "id": "ORG_NATIONAL_EMERGENCY_AUTH",
+        "name": "国家公路交通应急管理机构",
+        "props": {
+          "name": "国家公路交通应急管理机构",
+          "graph_version": "v2",
+          "id": "ORG_NATIONAL_EMERGENCY_AUTH",
+          "entity_type_cn": "部门",
+          "source": "国家交通应急预案"
+        }
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "id": "MEA_RELEASE_EVENT_INFO",
+        "name": "发布突发事件信息",
+        "props": {
+          "name": "发布突发事件信息",
+          "graph_version": "v2",
+          "id": "MEA_RELEASE_EVENT_INFO",
+          "entity_type_cn": "措施",
+          "source": "国家交通应急预案"
+        }
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Resource"
+        ],
+        "id": "RES_ANTISKID",
+        "name": "防滑料",
+        "props": {
+          "name": "防滑料",
+          "graph_version": "v2",
+          "id": "RES_ANTISKID",
+          "entity_type_cn": "应急资源",
+          "source": "国家交通应急预案"
+        }
+      },
+      {
+        "labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "name": "特大桥梁安全事故",
+        "props": {
+          "name": "特大桥梁安全事故",
+          "graph_version": "v2",
+          "id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+          "entity_type_cn": "突发事件",
+          "source": "国家交通应急预案"
+        }
+      }
+    ],
+    "sample_relationships": [
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "source_id": "MEA_REPORT_FILES",
+        "source_name": "报送应急工作文件",
+        "rel_type": "IMPLEMENTED_BY",
+        "target_labels": [
+          "PlanEntity",
+          "Department"
+        ],
+        "target_id": "ORG_COORDINATION_GROUP",
+        "target_name": "综合协调小组",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "实施主体"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "source_id": "MEA_REQUISITION_RESOURCE",
+        "source_name": "征用应急保障资源",
+        "rel_type": "REQUIRES",
+        "target_labels": [
+          "PlanEntity",
+          "Resource"
+        ],
+        "target_id": "RES_SUPPLIES",
+        "target_name": "物资",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "调用"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Response"
+        ],
+        "source_id": "RESP_I",
+        "source_name": "Ⅰ级应急响应",
+        "rel_type": "IMPLEMENTED_BY",
+        "target_labels": [
+          "PlanEntity",
+          "Department"
+        ],
+        "target_id": "ORG_MOT",
+        "target_name": "交通运输部",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "实施主体"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "source_id": "EVT_PRICE_SURGE",
+        "source_name": "物价大幅波动",
+        "rel_type": "CAUSES",
+        "target_labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "target_id": "EVT_EMERGENCY_MATERIAL_TRANSPORT",
+        "target_name": "紧急物资运输",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "引发"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Response"
+        ],
+        "source_id": "RESP_I",
+        "source_name": "Ⅰ级应急响应",
+        "rel_type": "TRIGGERS",
+        "target_labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "target_id": "MEA_DAILY_REPORT",
+        "target_name": "编写应急工作日报",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "触发"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Warning"
+        ],
+        "source_id": "WARN_I",
+        "source_name": "Ⅰ级预警",
+        "rel_type": "TRIGGERS",
+        "target_labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "target_id": "MEA_SEND_FILES",
+        "target_name": "下发应急工作文件",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "触发"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "source_id": "EVT_ROAD_EMERGENCY",
+        "source_name": "公路交通突发事件",
+        "rel_type": "CLASSIFIED_AS",
+        "target_labels": [
+          "PlanEntity",
+          "EventLevel"
+        ],
+        "target_id": "LVL_I",
+        "target_name": "Ⅰ级（特别重大）",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "定级为"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "source_id": "MEA_CALL_NATIONAL_STOCK",
+        "source_name": "下发国家应急物资调用指令",
+        "rel_type": "REQUIRES",
+        "target_labels": [
+          "PlanEntity",
+          "Resource"
+        ],
+        "target_id": "RES_NATIONAL_STOCK",
+        "target_name": "国家公路交通应急物资储备",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "调用"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "source_id": "EVT_TRAFFIC_ACCIDENT",
+        "source_name": "交通事故",
+        "rel_type": "CAUSES",
+        "target_labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "target_id": "EVT_PRODUCTION_ACCIDENT",
+        "target_name": "公路交通运输生产事故",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "引发"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "source_id": "EVT_ROAD_EMERGENCY",
+        "source_name": "公路交通突发事件",
+        "rel_type": "TRIGGERS",
+        "target_labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "target_id": "MEA_REPAIR_AND_RECOVER",
+        "target_name": "组织公路抢修保通",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "触发"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "source_id": "MEA_ISSUE_COMMAND",
+        "source_name": "发布指挥调度命令",
+        "rel_type": "IMPLEMENTED_BY",
+        "target_labels": [
+          "PlanEntity",
+          "Department"
+        ],
+        "target_id": "ORG_LEAD_GROUP",
+        "target_name": "应急领导小组",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "实施主体"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "source_id": "MEA_TRANSPORT_DONATIONS",
+        "source_name": "组织运送社会捐赠物品",
+        "rel_type": "IMPLEMENTED_BY",
+        "target_labels": [
+          "PlanEntity",
+          "Department"
+        ],
+        "target_id": "ORG_CIVIL_AFFAIRS",
+        "target_name": "民政部门",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "实施主体"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "source_id": "EVT_CONSTRUCTION_ACCIDENT",
+        "source_name": "公路工程建设事故",
+        "rel_type": "CAUSES",
+        "target_labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "target_id": "EVT_PRODUCTION_ACCIDENT",
+        "target_name": "公路交通运输生产事故",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "引发"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "source_id": "EVT_HAZMAT_ACCIDENT",
+        "source_name": "危险货物运输事故",
+        "rel_type": "CAUSES",
+        "target_labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "target_id": "EVT_PRODUCTION_ACCIDENT",
+        "target_name": "公路交通运输生产事故",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "引发"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Response"
+        ],
+        "source_id": "RESP_I",
+        "source_name": "Ⅰ级应急响应",
+        "rel_type": "TRIGGERS",
+        "target_labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "target_id": "MEA_TRANSPORT_SUPPORT",
+        "target_name": "组织应急运输保障",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "触发"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "source_id": "MEA_REPAIR_AND_RECOVER",
+        "source_name": "组织公路抢修保通",
+        "rel_type": "REQUIRES",
+        "target_labels": [
+          "PlanEntity",
+          "Resource"
+        ],
+        "target_id": "RES_GRAVEL",
+        "target_name": "碎石",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "调用"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "source_id": "MEA_START_24H_DUTY",
+        "source_name": "启动24小时值班制",
+        "rel_type": "IMPLEMENTED_BY",
+        "target_labels": [
+          "PlanEntity",
+          "Department"
+        ],
+        "target_id": "ORG_ROUTE_CENTER",
+        "target_name": "路网中心",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "实施主体"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "source_id": "MEA_REQUISITION_RESOURCE",
+        "source_name": "征用应急保障资源",
+        "rel_type": "REQUIRES",
+        "target_labels": [
+          "PlanEntity",
+          "Resource"
+        ],
+        "target_id": "RES_PERSONNEL",
+        "target_name": "人员",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "调用"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "source_id": "EVT_ROAD_EMERGENCY",
+        "source_name": "公路交通突发事件",
+        "rel_type": "TRIGGERS",
+        "target_labels": [
+          "PlanEntity",
+          "Action"
+        ],
+        "target_id": "MEA_CONTROL_SITUATION",
+        "target_name": "控制事态发展",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "触发"
+        }
+      },
+      {
+        "source_labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "source_id": "EVT_ANIMAL_EPIDEMIC",
+        "source_name": "动物疫情",
+        "rel_type": "CAUSES",
+        "target_labels": [
+          "PlanEntity",
+          "Event"
+        ],
+        "target_id": "EVT_PUBLIC_HEALTH",
+        "target_name": "公共卫生事件",
+        "rel_props": {
+          "graph_version": "v2",
+          "source": "国家交通应急预案",
+          "relation_cn": "引发"
+        }
+      }
+    ],
+    "event_samples": [
+      {
+        "id": "EVT_TSUNAMI",
+        "name": "海啸灾害"
+      },
+      {
+        "id": "EVT_ROAD_BLOCKAGE",
+        "name": "公路阻塞"
+      },
+      {
+        "id": "EVT_UNKNOWN_DISEASE",
+        "name": "群体性不明原因疾病"
+      },
+      {
+        "id": "EVT_INFECTIOUS_DISEASE",
+        "name": "传染病疫情"
+      },
+      {
+        "id": "EVT_TRAFFIC_ACCIDENT",
+        "name": "交通事故"
+      },
+      {
+        "id": "EVT_ROAD_EMERGENCY",
+        "name": "公路交通突发事件"
+      },
+      {
+        "id": "EVT_EMERGENCY_MATERIAL_TRANSPORT",
+        "name": "紧急物资运输"
+      },
+      {
+        "id": "EVT_MARINE",
+        "name": "海洋灾害"
+      },
+      {
+        "id": "EVT_ROAD_INTERRUPTION",
+        "name": "公路中断"
+      },
+      {
+        "id": "EVT_SUDDEN_GEOLOGICAL",
+        "name": "突发地质灾害"
+      },
+      {
+        "id": "EVT_FLOOD_DROUGHT",
+        "name": "水旱灾害"
+      },
+      {
+        "id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "name": "特大桥梁安全事故"
+      }
+    ],
+    "consequence_samples": [],
+    "action_samples": [
+      {
+        "id": "MEA_BUDGET_PROPOSAL",
+        "name": "提出年度应急经费预算建议"
+      },
+      {
+        "id": "MEA_ALLOCATE_EQUIPMENT",
+        "name": "调配应急机械及物资"
+      },
+      {
+        "id": "MEA_BASIC_LIFE_SUPPORT",
+        "name": "保障群众基本生活"
+      },
+      {
+        "id": "MEA_TRANSPORT_RELIEF",
+        "name": "组织运送救灾物资"
+      },
+      {
+        "id": "MEA_DRAFT_PLAN_RULES",
+        "name": "拟定应急预案和规章制度"
+      },
+      {
+        "id": "MEA_ASSIST_ACCIDENT_RESPONSE",
+        "name": "协助处置安全事故"
+      },
+      {
+        "id": "MEA_EVALUATE_RESPONSE",
+        "name": "总结评估"
+      },
+      {
+        "id": "MEA_RELEASE_WARN_NOTICE",
+        "name": "发布预警启动公告"
+      },
+      {
+        "id": "MEA_TECH_SUPPORT",
+        "name": "提供公路交通运输技术支持"
+      },
+      {
+        "id": "MEA_COMPENSATE_REQUISITION",
+        "name": "实施征用补偿"
+      },
+      {
+        "id": "MEA_IMPLEMENT_RECONSTRUCTION",
+        "name": "实施灾后恢复重建"
+      },
+      {
+        "id": "MEA_POST_DISASTER_SURVEY",
+        "name": "组织灾后调研"
+      }
+    ],
+    "resource_samples": [
+      {
+        "id": "RES_MOBILE_PLATFORM",
+        "name": "移动应急平台"
+      },
+      {
+        "id": "RES_EQUIPMENT_SUPPLIES",
+        "name": "应急机械及物资"
+      },
+      {
+        "id": "RES_DONATIONS",
+        "name": "社会捐赠物品"
+      },
+      {
+        "id": "RES_GRADER",
+        "name": "平地机"
+      },
+      {
+        "id": "RES_GENERATOR",
+        "name": "发电机"
+      },
+      {
+        "id": "RES_PROTECTIVE_GEAR",
+        "name": "防护衣物及装备"
+      },
+      {
+        "id": "RES_WATER",
+        "name": "饮水"
+      },
+      {
+        "id": "RES_STOCK_SUPPLIES",
+        "name": "储备物资"
+      },
+      {
+        "id": "RES_CRANE",
+        "name": "汽车起重机"
+      },
+      {
+        "id": "RES_CEMENT",
+        "name": "水泥"
+      },
+      {
+        "id": "RES_SAFETY_SIGN",
+        "name": "安全标志"
+      },
+      {
+        "id": "RES_LIGHTING",
+        "name": "照明"
+      }
+    ],
+    "constraints": [],
+    "indexes": [
+      {
+        "id": 1,
+        "name": "index_1b9dcc97",
+        "state": "ONLINE",
+        "populationPercent": 100.0,
+        "type": "LOOKUP",
+        "entityType": "RELATIONSHIP",
+        "labelsOrTypes": null,
+        "properties": null,
+        "indexProvider": "token-lookup-1.0",
+        "owningConstraint": null,
+        "lastRead": "2026-03-12T13:12:00.750000000+00:00",
+        "readCount": 135
+      },
+      {
+        "id": 0,
+        "name": "index_460996c0",
+        "state": "ONLINE",
+        "populationPercent": 100.0,
+        "type": "LOOKUP",
+        "entityType": "NODE",
+        "labelsOrTypes": null,
+        "properties": null,
+        "indexProvider": "token-lookup-1.0",
+        "owningConstraint": null,
+        "lastRead": "2026-03-12T13:33:46.149000000+00:00",
+        "readCount": 783
+      }
+    ]
+  }
+}

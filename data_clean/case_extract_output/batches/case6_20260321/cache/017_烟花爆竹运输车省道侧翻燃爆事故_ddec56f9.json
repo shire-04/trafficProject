@@ -1,0 +1,157 @@
+{
+  "case_id": "017_烟花爆竹运输车省道侧翻燃爆事故_ddec56f9",
+  "title": "烟花爆竹运输车省道侧翻燃爆事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某省级公路春节前运输高峰时段，一辆满载烟花爆竹的专用厢式运输车因驾驶员操作不当侧翻，导致烟花爆竹散落燃爆，造成人员轻伤、车辆损毁、道路中断，并存在引发森林火灾的风险。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_INTERRUPTION",
+    "expanded_event_ids": [
+      "EVT_HAZMAT_ACCIDENT",
+      "EVT_HAZMAT_LEAK"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_FC0E1D4756",
+      "name": "烟花爆竹车辆侧翻燃爆",
+      "entity_type": "Event",
+      "evidence": "一辆满载烟花爆竹的专用厢式运输车，因驾驶员操作不当，在弯道处发生侧翻，车厢破损，烟花爆竹散落至路面，部分烟花爆竹遇摩擦发生燃爆",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.0,
+      "matched_alias": "公路中断",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_HAZMAT_LEAK"
+      ],
+      "expanded_event_names": [
+        "危险货物运输事故",
+        "危险化学品运输泄漏事件"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_HAZMAT_LEAK"
+      ],
+      "query_event_names": [
+        "公路中断",
+        "危险货物运输事故",
+        "危险化学品运输泄漏事件"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_9E10208A20",
+      "name": "侧翻",
+      "entity_type": "Event",
+      "evidence": "发生侧翻",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_8A84EDA659",
+      "final_entity_name": "侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_8A84EDA659",
+      "primary_event_name": "侧翻",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_8A84EDA659"
+      ],
+      "query_event_names": [
+        "侧翻"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_1A910CC01E",
+      "name": "燃爆",
+      "entity_type": "Event",
+      "evidence": "部分烟花爆竹遇摩擦发生燃爆",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_1D0AC1FCC3",
+      "final_entity_name": "燃爆",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_1D0AC1FCC3",
+      "primary_event_name": "燃爆",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_1D0AC1FCC3"
+      ],
+      "query_event_names": [
+        "燃爆"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "侧翻",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_9E10208A20",
+      "source_final_id": "EVT_CASE_8A84EDA659",
+      "source_final_name": "侧翻",
+      "source_query_event_ids": [
+        "EVT_CASE_8A84EDA659"
+      ],
+      "relation": "CAUSES",
+      "target": "燃爆",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_1A910CC01E",
+      "target_final_id": "EVT_CASE_1D0AC1FCC3",
+      "target_final_name": "燃爆",
+      "target_query_event_ids": [
+        "EVT_CASE_1D0AC1FCC3"
+      ],
+      "evidence": "车厢破损，烟花爆竹散落至路面，部分烟花爆竹遇摩擦发生燃爆",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《烟花爆竹安全管理条例》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某省级公路春节前运输高峰时段，一辆满载烟花爆竹的专用厢式运输车，因驾驶员操作不当，在弯道处发生侧翻，车厢破损，烟花爆竹散落至路面，部分烟花爆竹遇摩擦发生燃爆，现场火光冲天、爆炸声不断，周边有村庄和山林，当时天气干燥。",
+    "consequence_text": "造成运输车驾驶员1人轻伤，车辆完全损毁，散落的烟花爆竹持续燃爆，省道双向交通完全中断，车辆滞留约8公里，燃爆产生的火星易引燃周边山林、村庄房屋，引发森林火灾、群众财产损失，存在二次燃爆的重大风险。",
+    "measure_text": "应急管理部门立即启动烟花爆竹突发事件应急预案，协调消防救援队伍、公安、林业部门赶赴现场；消防救援队伍采用水炮远距离压制燃爆火势，冷却车厢，防止二次燃爆，同时对周边山林、房屋进行洒水降温，防止火势蔓延；交警部门封闭事故路段，疏散周边村庄群众，疏导过往车辆绕行；林业部门监测周边山林火情，清理易燃物；应急管理部门组织烟花爆竹专业人员到场，处置未燃爆的烟花爆竹；依据《烟花爆竹安全管理条例》《道路交通安全法》开展事故调查，6小时后燃爆完全扑灭，道路恢复通行。"
+  }
+}

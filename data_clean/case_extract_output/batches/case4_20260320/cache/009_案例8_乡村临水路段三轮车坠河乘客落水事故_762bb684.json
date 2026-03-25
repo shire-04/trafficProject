@@ -1,0 +1,148 @@
+{
+  "case_id": "009_案例8_乡村临水路段三轮车坠河乘客落水事故_762bb684",
+  "title": "案例8：乡村临水路段三轮车坠河乘客落水事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "乡村临水路段，电动三轮车因避让不当坠河，造成人员落水和车辆报废的事故。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_6BDDB473ED",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_F182B49E60",
+      "name": "车辆坠水",
+      "entity_type": "Event",
+      "evidence": "一辆电动三轮车载4名村民...坠入2米深河中，车辆倒扣水中",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_6BDDB473ED",
+      "final_entity_name": "车辆坠水",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_6BDDB473ED",
+      "primary_event_name": "车辆坠水",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_6BDDB473ED",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "车辆坠水",
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_2BA3C27CC4",
+      "name": "电动三轮车",
+      "entity_type": "Resource",
+      "evidence": "一辆电动三轮车载4名村民",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3024,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_D7EB68391B",
+      "final_entity_name": "电动三轮车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_0C68F9F677",
+      "name": "清理河道",
+      "entity_type": "Action",
+      "evidence": "清理河道",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.425,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_68F53CC106",
+      "final_entity_name": "清理河道",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "清理河道",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_0C68F9F677",
+      "source_final_id": "MEA_CASE_68F53CC106",
+      "source_final_name": "清理河道",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "电动三轮车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_2BA3C27CC4",
+      "target_final_id": "RES_CASE_D7EB68391B",
+      "target_final_name": "电动三轮车",
+      "target_query_event_ids": [],
+      "evidence": "车辆沉入河底易堵塞河道，海事与路政部门协助打捞落水车辆，清理河道",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取主要基于文本中的直接描述，对于需要推理的关系未进行抽取。",
+    "部分关系的置信度较低，可能需要人工确认。"
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 1,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "乡村临水简易公路，一辆电动三轮车载4名村民赶集返程，因路面狭窄、会车时避让不当，车辆冲出无防护栏的临水路段，坠入2米深河中，车辆倒扣水中，驾乘人员全部落水，部分人员不会游泳，挣扎呼救。",
+    "consequence_text": "造成1名老人溺水轻伤、3人轻微呛水，电动三轮车完全报废，车辆沉入河底易堵塞河道，周边村民围观救援，路段临时封闭，无专业救援设备增加救援难度。",
+    "measure_text": "当地村委会第一时间组织村民开展初期救援，投放救生圈、竹竿辅助自救，同时拨打119、120报警；消防人员携带冲锋舟、救生衣赶赴现场，打捞落水人员，排查溺水隐患；医疗人员现场对呛水、受伤人员进行吸氧、包扎处置，转运至乡镇医院；海事与路政部门协助打捞落水车辆，清理河道，后续在临水路段加装简易防护栏和警示标志，1.5小时后路段恢复通行。"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "case_id": "003_案例3_城郊结合部渣土车闯红灯撞毁电动车事故_732687a5",
+  "title": "案例3：城郊结合部渣土车闯红灯撞毁电动车事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "城郊主干道发生渣土车闯红灯撞击电动两轮车和三轮车的事故，造成人员伤亡和交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_6B445BB3BF",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_83FC2C9450",
+      "name": "闯红灯交通事故",
+      "entity_type": "Event",
+      "evidence": "一辆重型渣土车超载运输渣土，无视红灯信号强行通过路口，与正常直行的电动两轮车、电动三轮车接连相撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_6B445BB3BF",
+      "final_entity_name": "闯红灯交通事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_6B445BB3BF",
+      "primary_event_name": "闯红灯交通事故",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_6B445BB3BF",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "闯红灯交通事故",
+        "公路中断",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_0FEA70635E",
+      "name": "公路中断",
+      "entity_type": "Event",
+      "evidence": "路口双向交通完全中断，交通瘫痪近1公里",
+      "confidence": 0.7,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.0681,
+      "matched_alias": "拖拉机与电动三轮车碰撞",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "闯红灯交通事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_83FC2C9450",
+      "source_final_id": "EVT_CASE_6B445BB3BF",
+      "source_final_name": "闯红灯交通事故",
+      "source_query_event_ids": [
+        "EVT_CASE_6B445BB3BF",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "公路中断",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_0FEA70635E",
+      "target_final_id": "EVT_ROAD_INTERRUPTION",
+      "target_final_name": "公路中断",
+      "target_query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "evidence": "路口双向交通完全中断，周边群众围观聚集，交通瘫痪近1公里",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《超载运输管理条例》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "confidence score is estimated."
+  ],
+  "casualties": {
+    "deaths": 1,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "城郊主干道红绿灯路口，一辆重型渣土车超载运输渣土，无视红灯信号强行通过路口，与正常直行的电动两轮车、电动三轮车接连相撞，两车瞬间被撞毁，驾乘人员被卷入车底附近，渣土车未及时刹车，滑行十余米才停下。",
+    "consequence_text": "造成电动两轮车骑行者当场死亡、三轮车驾乘2人重伤，两车完全报废，渣土车车头轻微受损，路口双向交通完全中断，周边群众围观聚集，交通瘫痪近1公里，肇事驾驶员涉嫌超载、闯红灯，社会影响恶劣。",
+    "measure_text": "交警第一时间封锁现场，疏散围观群众，控制肇事驾驶员，抽血检测是否存在酒驾、疲劳驾驶；消防人员使用破拆工具救出重伤人员，排查车辆渣土滑落风险；医疗部门开通绿色通道，紧急转运重伤人员；路政部门清理路面碎片，恢复路口交通；依据《道路交通安全法》《超载运输管理条例》从严追责，暂扣车辆，对渣土运输公司开展全面整改，1.5小时后路口恢复通行。"
+  }
+}

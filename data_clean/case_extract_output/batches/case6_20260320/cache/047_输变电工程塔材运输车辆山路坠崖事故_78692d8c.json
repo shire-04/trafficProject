@@ -1,0 +1,139 @@
+{
+  "case_id": "047_输变电工程塔材运输车辆山路坠崖事故_78692d8c",
+  "title": "输变电工程塔材运输车辆山路坠崖事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某超高压输变电工程山区道路，一辆满载输电铁塔塔材的重型货车因驾驶员操作不当坠崖，造成驾驶员重伤，车辆和塔材损毁，道路中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_5C5AB0B1F3",
+    "expanded_event_ids": [
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_B4723A18A7",
+      "name": "车辆坠崖",
+      "entity_type": "Event",
+      "evidence": "一辆满载输电铁塔塔材的重型货车，因路面狭窄、驾驶员操作不当，在急转弯处冲出路面，坠入约80米深的山崖下",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_5C5AB0B1F3",
+      "final_entity_name": "车辆坠崖",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_5C5AB0B1F3",
+      "primary_event_name": "车辆坠崖",
+      "expanded_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "公路交通运输生产事故",
+        "公路中断",
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_5C5AB0B1F3",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "车辆坠崖",
+        "公路交通运输生产事故",
+        "公路中断",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路交通运输生产事故",
+        "公路中断",
+        "公路损毁"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_F88563D200",
+      "name": "驾驶员操作不当",
+      "entity_type": "Action",
+      "evidence": "因路面狭窄、驾驶员操作不当",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1622,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_99E1D246E3",
+      "final_entity_name": "驾驶员操作不当",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆坠崖",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_B4723A18A7",
+      "source_final_id": "EVT_CASE_5C5AB0B1F3",
+      "source_final_name": "车辆坠崖",
+      "source_query_event_ids": [
+        "EVT_CASE_5C5AB0B1F3",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "relation": "TRIGGERS",
+      "target": "驾驶员操作不当",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_F88563D200",
+      "target_final_id": "MEA_CASE_99E1D246E3",
+      "target_final_name": "驾驶员操作不当",
+      "target_query_event_ids": [],
+      "evidence": "因路面狭窄、驾驶员操作不当",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《安全生产法》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本中的明确信息，未进行推断。",
+    "部分关系证据较弱，confidence较低。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某超高压输变电工程山区进场道路，一辆满载输电铁塔塔材的重型货车，因路面狭窄、驾驶员操作不当，在急转弯处冲出路面，坠入约80米深的山崖下，车辆完全损毁，塔材散落至山崖下，驾驶员被困车内，周边无村镇，通讯信号较弱。",
+    "consequence_text": "造成驾驶员1人重伤被困，货车完全损毁，整车塔材报废，输变电工程进场道路完全中断，铁塔组立施工进度受阻，山崖下地形复杂，持续有碎石滚落，救援难度极大。",
+    "measure_text": "工程建设单位立即启动安全生产事故应急预案，协调消防救援队伍、应急管理部门、医疗部门赶赴现场；消防救援队伍使用绳索、无人机、救援担架搭建救援通道，下到山崖下解救被困驾驶员，排查碎石滚落隐患；医疗部门对受伤驾驶员进行紧急救治后，转运至医院；交警部门封闭事故路段，疏导过往工程车辆；工程部门调集设备，清理散落塔材，修复受损道路；依据《安全生产法》《道路交通安全法》开展事故调查，8小时后驾驶员被成功救出。"
+  }
+}

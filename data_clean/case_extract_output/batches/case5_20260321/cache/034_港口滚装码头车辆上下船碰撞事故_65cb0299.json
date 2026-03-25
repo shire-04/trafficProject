@@ -1,0 +1,148 @@
+{
+  "case_id": "034_港口滚装码头车辆上下船碰撞事故_65cb0299",
+  "title": "港口滚装码头车辆上下船碰撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "某沿海港口汽车滚装码头，一辆小型轿车在上下船时失控撞上跳板护栏，造成驾驶员轻伤被困，车辆和护栏受损，滚装船装卸作业中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9BDDC88CCC",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_ROAD_DAMAGE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_E22FD92810",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车在滚装船跳板上上下船时，因驾驶员操作不当，车辆失控撞上跳板护栏",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9BDDC88CCC",
+      "final_entity_name": "车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9BDDC88CCC",
+      "primary_event_name": "车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞",
+        "公路中断",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_CBB26216B7",
+      "name": "驾驶员操作不当",
+      "entity_type": "Action",
+      "evidence": "因驾驶员操作不当，车辆失控",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.4619,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_99E1D246E3",
+      "final_entity_name": "驾驶员操作不当",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_E22FD92810",
+      "source_final_id": "EVT_CASE_9BDDC88CCC",
+      "source_final_name": "车辆碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "驾驶员操作不当",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_CBB26216B7",
+      "target_final_id": "MEA_CASE_99E1D246E3",
+      "target_final_name": "驾驶员操作不当",
+      "target_query_event_ids": [],
+      "evidence": "因驾驶员操作不当，车辆失控",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《港口经营管理规定》",
+    "《内河交通安全管理条例》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某沿海港口汽车滚装码头，一辆小型轿车在滚装船跳板上上下船时，因驾驶员操作不当，车辆失控撞上跳板护栏，护栏变形，车辆半个车身悬在跳板外侧，驾驶员被困车内，跳板下方为海面，滚装船车辆装卸作业完全中断。",
+    "consequence_text": "造成轿车驾驶员1人轻伤被困，轿车车身受损，跳板护栏变形，滚装船装卸作业中断，后续待上船、下船车辆滞留约20辆，港口车辆滚装运输受阻，车辆有坠海的重大风险。",
+    "measure_text": "港口管理部门立即启动应急预案，暂停滚装船所有装卸作业，固定跳板，设置警戒区域；消防救援队伍赶赴现场，使用绳索固定车辆，搭建安全通道，解救被困驾驶员；海事部门对周边海域进行警戒，防止坠海污染；港口作业人员修复变形护栏，对跳板进行安全检测；交警部门疏导滞留车辆有序通行，开展事故责任认定；依据《港口经营管理规定》《内河交通安全管理条例》开展处置，2小时后险情排除，滚装船恢复装卸作业。"
+  }
+}

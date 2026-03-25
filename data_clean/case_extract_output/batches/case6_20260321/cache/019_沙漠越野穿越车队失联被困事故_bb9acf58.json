@@ -1,0 +1,136 @@
+{
+  "case_id": "019_沙漠越野穿越车队失联被困事故_bb9acf58",
+  "title": "沙漠越野穿越车队失联被困事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某沙漠无人区，一支6辆越野车的车队遭遇沙尘暴，偏离路线，车辆陷入沙漠软沙无法脱困，与外界失联，车内12人面临高温、脱水等风险。救援队伍成功找到被困车队并安全转移。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_AFA16DED00",
+    "expanded_event_ids": [
+      "EVT_DUST_STORM",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_6FD288365C",
+      "name": "沙漠失联",
+      "entity_type": "Event",
+      "evidence": "某沙漠无人区越野穿越路段，一支由6辆越野车组成的民间越野穿越车队，进入无人区后遭遇强沙尘暴，偏离预定路线，车辆陷入沙漠软沙中无法脱困，车队卫星电话信号中断，与外界失联，车内共12人",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_AFA16DED00",
+      "final_entity_name": "沙漠失联",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_AFA16DED00",
+      "primary_event_name": "沙漠失联",
+      "expanded_event_ids": [
+        "EVT_DUST_STORM",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "沙尘暴",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_AFA16DED00",
+        "EVT_DUST_STORM",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "沙漠失联",
+        "沙尘暴",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_DUST_STORM",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "沙尘暴",
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_E505F78150",
+      "name": "沙尘暴",
+      "entity_type": "Event",
+      "evidence": "遭遇强沙尘暴",
+      "confidence": 0.95,
+      "normalized_id": "EVT_DUST_STORM",
+      "normalized_name": "沙尘暴",
+      "normalized_score": 0.18,
+      "matched_alias": "沙尘暴",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_DUST_STORM",
+      "final_entity_name": "沙尘暴",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_DUST_STORM",
+      "primary_event_name": "沙尘暴",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_DUST_STORM"
+      ],
+      "query_event_names": [
+        "沙尘暴"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "沙尘暴",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_E505F78150",
+      "source_final_id": "EVT_DUST_STORM",
+      "source_final_name": "沙尘暴",
+      "source_query_event_ids": [
+        "EVT_DUST_STORM"
+      ],
+      "relation": "CAUSES",
+      "target": "沙漠失联",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_6FD288365C",
+      "target_final_id": "EVT_CASE_AFA16DED00",
+      "target_final_name": "沙漠失联",
+      "target_query_event_ids": [
+        "EVT_CASE_AFA16DED00",
+        "EVT_DUST_STORM",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "evidence": "遭遇强沙尘暴，偏离预定路线，车辆陷入沙漠软沙中无法脱困，车队卫星电话信号中断，与外界失联",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《沙漠旅游安全管理办法》"
+  ],
+  "quality_notes": [
+    "事件描述较为完整，实体抽取准确。",
+    "The relationships are based on explicit statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": 12,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某沙漠无人区越野穿越路段，一支由6辆越野车组成的民间越野穿越车队，进入无人区后遭遇强沙尘暴，偏离预定路线，车辆陷入沙漠软沙中无法脱困，车队卫星电话信号中断，与外界失联，车内共12人，携带的饮用水、食品不足，当时白天气温高达42℃，地表温度超65℃。",
+    "consequence_text": "造成12人全部失联被困，6辆车辆陷入沙地无法移动，无人员伤亡，高温暴晒环境下被困人员面临中暑、脱水、死亡的重大风险，沙尘暴持续侵袭，车辆有被流沙掩埋的风险。",
+    "measure_text": "当地应急管理部门接到家属报警后，立即启动沙漠失联救援应急预案，协调消防救援队伍、公安特警、沙漠救援协会、气象部门开展联合救援；气象部门实时监测沙尘暴天气，提供定位气象数据；救援队伍使用无人机、卫星定位设备搜寻失联车队，携带救援装备、饮用水、食品、油料赶赴现场；经过30小时持续搜寻，成功找到被困车队，为被困人员提供补给，协助车辆脱困，将所有被困人员安全转移至就近安置点；依据《沙漠旅游安全管理办法》对穿越车队进行安全教育，后续加强无人区穿越管控。"
+  }
+}

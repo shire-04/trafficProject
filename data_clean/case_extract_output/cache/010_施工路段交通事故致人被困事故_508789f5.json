@@ -1,0 +1,80 @@
+{
+  "case_id": "010_施工路段交通事故致人被困事故_508789f5",
+  "title": "施工路段交通事故致人被困事故",
+  "source_file": "交通应急处理案例.txt",
+  "summary": "某国道施工路段发生交通事故，小型轿车与挖掘机碰撞，驾驶员被困，造成交通中断和施工进度受阻。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_98B5E9287E",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_CONSTRUCTION_SAFETY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_24ECDA80EE",
+      "name": "施工区域碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车因未注意施工警示，闯入施工区域，与施工机械（挖掘机）发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_98B5E9287E",
+      "final_entity_name": "施工区域碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_98B5E9287E",
+      "primary_event_name": "施工区域碰撞",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "施工安全事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_98B5E9287E",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "query_event_names": [
+        "施工区域碰撞",
+        "交通事故",
+        "施工安全事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "施工安全事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [
+    "道路交通安全法",
+    "建设工程安全生产管理条例"
+  ],
+  "quality_notes": [
+    "The confidence scores are estimates based on the clarity of the evidence in the text."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某国道施工路段，施工单位已设置警示标志和围挡，但未安排专人现场疏导，一辆小型轿车因未注意施工警示，闯入施工区域，与施工机械（挖掘机）发生碰撞，轿车车头严重变形，驾驶员被困车内，施工机械轻微受损，施工路段堆积的砂石阻碍交通。",
+    "consequence_text": "造成轿车驾驶员1人被困，腿部骨折，无法自行撤离，施工路段交通中断，施工进度受阻，周边过往车辆出现拥堵，施工区域内的砂石、施工机械存在二次伤人的风险。",
+    "measure_text": "施工单位立即停止施工，组织工作人员设置警戒区域，保护事故现场，并拨打119、120、122报警；消防救援队伍赶赴现场，使用破拆工具、液压扩张器等装备解救被困驾驶员；医疗部门派遣救护车在现场待命，驾驶员被解救后立即转运至医院进行治疗；交警部门到场开展现场勘查，认定事故责任，疏导周边交通；交通部门责令施工单位整改安全隐患，增设专人现场疏导，完善警示标志；施工单位组织人员清理路面砂石和事故车辆，恢复施工秩序，依据《道路交通安全法》《建设工程安全生产管理条例》开展事故调查，2小时后道路恢复通行。"
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "case_id": "006_危化品运输车与私家车碰撞泄漏事故_9a2ba735",
+  "title": "危化品运输车与私家车碰撞泄漏事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "某省道发生危化品运输车与私家车正面碰撞事故，导致液态氨泄漏，造成人员伤亡和环境污染。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_LEAK",
+    "expanded_event_ids": [
+      "EVT_HAZMAT_ACCIDENT",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_CB04BF1309",
+      "name": "危险化学品泄漏事故",
+      "entity_type": "Event",
+      "evidence": "危化品运输罐体轻微破损，液态氨少量泄漏，产生白色烟雾，现场气味刺鼻",
+      "confidence": 0.9,
+      "normalized_id": "EVT_HAZMAT_LEAK",
+      "normalized_name": "危险化学品运输泄漏事件",
+      "normalized_score": 0.0,
+      "matched_alias": "危险化学品运输泄漏事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_LEAK",
+      "final_entity_name": "危险化学品运输泄漏事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_LEAK",
+      "primary_event_name": "危险化学品运输泄漏事件",
+      "expanded_event_ids": [
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "危险货物运输事故",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "危险化学品运输泄漏事件",
+        "危险货物运输事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_HAZMAT_LEAK"
+      ],
+      "alias_patch_target_names": [
+        "危险化学品运输泄漏事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_CB7D7F1BE7",
+      "name": "正面碰撞",
+      "entity_type": "Action",
+      "evidence": "与一辆逆行的私家车发生正面碰撞",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_6BA428A393",
+      "final_entity_name": "正面碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "危险化学品泄漏事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_CB04BF1309",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "正面碰撞",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_CB7D7F1BE7",
+      "target_final_id": "MEA_CASE_6BA428A393",
+      "target_final_name": "正面碰撞",
+      "target_query_event_ids": [],
+      "evidence": "某省道，一辆装载液态氨的罐式危化品运输车，与一辆逆行的私家车发生正面碰撞，危化品运输罐体轻微破损，液态氨少量泄漏",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《危险化学品安全管理条例》"
+  ],
+  "quality_notes": [
+    "The relationships are based on direct textual evidence from the provided accident report.",
+    "Confidence scores reflect the clarity and directness of the evidence supporting each relationship."
+  ],
+  "casualties": {
+    "deaths": 1,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某省道，一辆装载液态氨的罐式危化品运输车，与一辆逆行的私家车发生正面碰撞，危化品运输罐体轻微破损，液态氨少量泄漏，产生白色烟雾，现场气味刺鼻，周边有农田和小型村庄。",
+    "consequence_text": "造成私家车驾驶员1人死亡、2人受伤，危化品运输车驾驶员1人轻伤，泄漏的液态氨具有腐蚀性和毒性，威胁周边村民人身安全，污染周边农田，事故路段双向交通封闭，村民紧急撤离至安全区域。",
+    "measure_text": "应急管理部门启动《危险化学品道路运输突发事件应急预案》，协调消防救援队伍携带防化装备、堵漏器材赶赴现场，对泄漏点进行堵漏，稀释泄漏的液态氨；医疗部门派遣救护车将受伤人员转运至医院救治；交警部门封闭事故路段，设置警戒区域，禁止无关车辆、人员进入；环保部门对周边农田、空气进行采样监测，评估污染程度；危化品专业处置队伍对剩余液态氨进行安全转运，依据《危险化学品安全管理条例》开展事故调查，4小时后泄漏得到控制，道路恢复通行。"
+  }
+}

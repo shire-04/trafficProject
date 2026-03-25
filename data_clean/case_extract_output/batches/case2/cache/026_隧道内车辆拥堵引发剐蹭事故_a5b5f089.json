@@ -1,0 +1,135 @@
+{
+  "case_id": "026_隧道内车辆拥堵引发剐蹭事故_a5b5f089",
+  "title": "隧道内车辆拥堵引发剐蹭事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "隧道内车辆拥堵引发剐蹭事故，造成轻微财产损失，无人员伤亡，并导致隧道内拥堵加剧。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F4AFE9A596",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_D24819E120",
+      "name": "车辆剐蹭",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车在缓慢行驶中，与前方一辆SUV发生剐蹭",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F4AFE9A596",
+      "final_entity_name": "车辆剐蹭",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F4AFE9A596",
+      "primary_event_name": "车辆剐蹭",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F4AFE9A596",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆剐蹭",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_2D6201F8EC",
+      "name": "车辆拥堵",
+      "entity_type": "Event",
+      "evidence": "隧道内发生拥堵，隧道内拥堵加剧，后方车辆滞留约2公里",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_028CA28AE4",
+      "final_entity_name": "车辆拥堵",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_028CA28AE4",
+      "primary_event_name": "车辆拥堵",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_028CA28AE4"
+      ],
+      "query_event_names": [
+        "车辆拥堵"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆拥堵",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_2D6201F8EC",
+      "source_final_id": "EVT_CASE_028CA28AE4",
+      "source_final_name": "车辆拥堵",
+      "source_query_event_ids": [
+        "EVT_CASE_028CA28AE4"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆剐蹭",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_D24819E120",
+      "target_final_id": "EVT_CASE_F4AFE9A596",
+      "target_final_name": "车辆剐蹭",
+      "target_query_event_ids": [
+        "EVT_CASE_F4AFE9A596",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "导致隧道内发生拥堵，一辆小型轿车在缓慢行驶中，与前方一辆SUV发生剐蹭",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通事故处理程序规定》"
+  ],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores are assigned based on the clarity of the relationship in the text."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某城市隧道（长1000米），因隧道出口施工，车辆通行缓慢，导致隧道内发生拥堵，一辆小型轿车在缓慢行驶中，与前方一辆SUV发生剐蹭，两车驾驶员发生争执，占用隧道内1条车道，导致拥堵加剧。",
+    "consequence_text": "造成两车轻微受损，无人员伤亡，隧道内拥堵加剧，后方车辆滞留约2公里，隧道内空气质量下降，驾驶员争执影响现场秩序，存在二次剐蹭事故风险，隧道出口施工进度受到影响。",
+    "measure_text": "交警部门接到报警后，立即赶赴现场，疏导隧道内拥堵车辆，调解驾驶员争执，开展现场勘查和责任认定；交通部门安排施工人员，加快隧道出口施工进度，拓宽通行通道；隧道管理部门开启隧道通风系统，改善隧道内空气质量；交警部门对两车进行拖移，清理现场，依据《道路交通事故处理程序规定》开展处置，1.5小时后隧道内拥堵缓解，道路恢复正常通行。"
+  }
+}

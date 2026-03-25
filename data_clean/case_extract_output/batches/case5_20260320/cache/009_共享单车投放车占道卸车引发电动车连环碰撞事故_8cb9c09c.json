@@ -1,0 +1,144 @@
+{
+  "case_id": "009_共享单车投放车占道卸车引发电动车连环碰撞事故_8cb9c09c",
+  "title": "共享单车投放车占道卸车引发电动车连环碰撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "共享单车投放车占道卸车导致电动自行车连环碰撞，造成人员轻伤和车辆受损，交通拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_6DA1DEA6C7",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_95E13658E9",
+      "name": "电动自行车碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆电动自行车行驶中避让堆放的单车，与对向逆行的2辆电动自行车接连相撞，车辆全部倒地，骑行人员摔倒受伤。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_6DA1DEA6C7",
+      "final_entity_name": "电动自行车碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_6DA1DEA6C7",
+      "primary_event_name": "电动自行车碰撞",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_6DA1DEA6C7",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "电动自行车碰撞",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_270A93BC56",
+      "name": "非机动车道",
+      "entity_type": "Resource",
+      "evidence": "某市主城区非机动车道",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3024,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_F90D9B6E29",
+      "final_entity_name": "非机动车道",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_4A93251BB2",
+      "name": "占道卸车",
+      "entity_type": "Action",
+      "evidence": "一辆共享单车投放货车违规占用非机动车道停车卸车",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_46E14B4BB4",
+      "final_entity_name": "占道卸车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "占道卸车",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_4A93251BB2",
+      "source_final_id": "MEA_CASE_46E14B4BB4",
+      "source_final_name": "占道卸车",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "非机动车道",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_270A93BC56",
+      "target_final_id": "RES_CASE_F90D9B6E29",
+      "target_final_name": "非机动车道",
+      "target_query_event_ids": [],
+      "evidence": "一辆共享单车投放货车违规占用非机动车道停车卸车",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《城市市容和环境卫生管理条例》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市主城区非机动车道，一辆共享单车投放货车违规占用非机动车道停车卸车，大量共享单车堆放在车道内，仅留狭窄通道，一辆电动自行车行驶中避让堆放的单车，与对向逆行的2辆电动自行车接连相撞，车辆全部倒地，骑行人员摔倒受伤。",
+    "consequence_text": "造成3名骑行者轻微擦伤，多辆电动自行车、共享单车受损，非机动车道完全拥堵，行人与非机动车混行混乱，占道卸车行为持续影响周边交通，易引发二次事故。",
+    "measure_text": "交警与城管部门联合到场，疏散拥堵人流车流，控制货车驾驶员，清理占道堆放的共享单车；医疗部门对受伤骑行者进行现场包扎处置；对货车违规占道卸车、共享单车运营公司违规投放行为进行从严处罚；责令运营公司立即清理所有占道单车，规范投放与卸车流程；依据《道路交通安全法》《城市市容和环境卫生管理条例》开展处置，1小时后非机动车道恢复正常通行。"
+  }
+}

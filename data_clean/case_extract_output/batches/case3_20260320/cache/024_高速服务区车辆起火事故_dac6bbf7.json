@@ -1,0 +1,121 @@
+{
+  "case_id": "024_高速服务区车辆起火事故_dac6bbf7",
+  "title": "高速服务区车辆起火事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "某高速服务区内，一辆小型轿车在充电时因电池短路起火，造成车辆烧毁，无人员伤亡，并存在蔓延风险。相关部门及时处置，服务区秩序受到影响。",
+  "confidence": 0.95,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_09C02D083D",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_8837C63F4A",
+      "name": "车辆起火",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车在停车场内充电时，因电池短路引发起火，火势迅速蔓延至车辆全身",
+      "confidence": 0.98,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_09C02D083D",
+      "final_entity_name": "车辆起火",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_09C02D083D",
+      "primary_event_name": "车辆起火",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_09C02D083D",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆起火",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_2997D2147A",
+      "name": "电池短路",
+      "entity_type": "Action",
+      "evidence": "因电池短路引发起火",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1758,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_5E9CDA061E",
+      "final_entity_name": "电池短路",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆起火",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_8837C63F4A",
+      "source_final_id": "EVT_CASE_09C02D083D",
+      "source_final_name": "车辆起火",
+      "source_query_event_ids": [
+        "EVT_CASE_09C02D083D",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "电池短路",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_2997D2147A",
+      "target_final_id": "MEA_CASE_5E9CDA061E",
+      "target_final_name": "电池短路",
+      "target_query_event_ids": [],
+      "evidence": "因电池短路引发起火",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《消防法》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高速服务区内，一辆小型轿车在停车场内充电时，因电池短路引发起火，火势迅速蔓延至车辆全身，停车场内另有10余辆车辆停放，距离加油站不足50米，现场有多名过往旅客围观。",
+    "consequence_text": "造成小型轿车完全烧毁，无人员伤亡，火势存在蔓延至周边车辆和加油站的重大风险，服务区停车场临时封闭，过往旅客无法正常休息、加油，高速服务区通行秩序混乱。",
+    "measure_text": "服务区工作人员立即启动应急预案，使用灭火器进行初期灭火，同时拨打119、122报警；消防救援队伍赶赴现场，采用水罐消防车压制火势，防止火势蔓延至加油站和周边车辆；交警部门封闭服务区入口，疏导过往车辆，疏散现场围观旅客；应急管理部门协调服务区做好旅客安置工作，提供饮用水和休息场所；消防队伍扑灭明火后，对车辆残骸进行清理，检测现场安全，依据《消防法》开展事故调查，1.5小时后服务区恢复正常运营。"
+  }
+}

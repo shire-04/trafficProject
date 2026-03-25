@@ -1,0 +1,173 @@
+{
+  "case_id": "004_农村逢集日集市路段货车失控冲撞事故_1ad077f7",
+  "title": "农村逢集日集市路段货车失控冲撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "农村集市逢集日，货车刹车失灵冲撞集市摊位，造成人员受伤和财产损失，集市交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_PRODUCTION_ACCIDENT",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_112D432985",
+      "name": "车辆失控冲撞",
+      "entity_type": "Event",
+      "evidence": "一辆轻型货车行驶至集市路段时，因刹车失灵失控，低速冲撞路边摊位，连续剐蹭3个摊位后停下",
+      "confidence": 0.9,
+      "normalized_id": "EVT_PRODUCTION_ACCIDENT",
+      "normalized_name": "公路交通运输生产事故",
+      "normalized_score": 0.0,
+      "matched_alias": "公路交通运输生产事故",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_PRODUCTION_ACCIDENT",
+      "final_entity_name": "公路交通运输生产事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_PRODUCTION_ACCIDENT",
+      "primary_event_name": "公路交通运输生产事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "公路交通运输生产事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_3B0A6258A0",
+      "name": "刹车失灵",
+      "entity_type": "Action",
+      "evidence": "因刹车失灵失控",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_80354268E0",
+      "normalized_name": "刹车失灵",
+      "normalized_score": 1.0,
+      "matched_alias": "刹车失灵",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_80354268E0",
+      "final_entity_name": "刹车失灵",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_8F67A7C2F5",
+      "name": "公路中断",
+      "entity_type": "Event",
+      "evidence": "集市路段交通完全中断",
+      "confidence": 0.6,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.1948,
+      "matched_alias": "货物散落",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆失控冲撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_112D432985",
+      "source_final_id": "EVT_PRODUCTION_ACCIDENT",
+      "source_final_name": "公路交通运输生产事故",
+      "source_query_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "刹车失灵",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_3B0A6258A0",
+      "target_final_id": "MEA_CASE_80354268E0",
+      "target_final_name": "刹车失灵",
+      "target_query_event_ids": [],
+      "evidence": "因刹车失灵失控",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆失控冲撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_112D432985",
+      "source_final_id": "EVT_PRODUCTION_ACCIDENT",
+      "source_final_name": "公路交通运输生产事故",
+      "source_query_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "公路中断",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_8F67A7C2F5",
+      "target_final_id": "EVT_ROAD_INTERRUPTION",
+      "target_final_name": "公路中断",
+      "target_query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "evidence": "造成5名赶集群众轻微擦伤、2名摊主软组织挫伤，摊位与货物损毁，集市路段交通完全中断，人流拥堵混乱，存在踩踏、二次冲撞的风险，涉事货车刹车故障未排除仍有安全隐患。",
+      "confidence": 0.6,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《农村公路安全保护条例》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 7,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡镇农村集市逢集日，集市摊位沿乡村公路两侧摆放，人流密集，一辆轻型货车行驶至集市路段时，因刹车失灵失控，低速冲撞路边摊位，连续剐蹭3个摊位后停下，摊位货物散落一地，多名赶集群众被碰倒。",
+    "consequence_text": "造成5名赶集群众轻微擦伤、2名摊主软组织挫伤，摊位与货物损毁，集市路段交通完全中断，人流拥堵混乱，存在踩踏、二次冲撞的风险，涉事货车刹车故障未排除仍有安全隐患。",
+    "measure_text": "当地乡镇应急办、派出所立即赶赴现场，疏散拥堵人流，控制货车驾驶员，划定警戒区域；医疗部门派遣乡镇卫生院救护车对受伤人员进行现场包扎处置，重伤员转运至县级医院；交警部门对货车刹车系统进行检测，开展事故责任认定；市场监管部门、村委会协助清理散落货物，规范集市摊位设置，严禁占用公路摆摊；依据《道路交通安全法》《农村公路安全保护条例》开展处置，1.5小时后集市路段恢复通行，后续加强逢集日交通疏导。"
+  }
+}

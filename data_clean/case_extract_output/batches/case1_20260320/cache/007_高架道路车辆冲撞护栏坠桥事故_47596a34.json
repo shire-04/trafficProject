@@ -1,0 +1,187 @@
+{
+  "case_id": "007_高架道路车辆冲撞护栏坠桥事故_47596a34",
+  "title": "高架道路车辆冲撞护栏坠桥事故",
+  "source_file": "交通应急处理案例.txt",
+  "summary": "某市高架快速路发生车辆冲撞护栏坠桥事故，造成人员伤亡和交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_1CFB4FE27C",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_DAMAGE",
+      "EVT_ROAD_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_3DB0835C84",
+      "name": "高架道路车辆坠桥事故",
+      "entity_type": "Event",
+      "evidence": "一辆小型越野车因驾驶员疲劳驾驶，车辆失控冲撞高架护栏，护栏被撞断后，越野车从高架道路坠落至地面非机动车道",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_1CFB4FE27C",
+      "final_entity_name": "高架道路车辆坠桥事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_1CFB4FE27C",
+      "primary_event_name": "高架道路车辆坠桥事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路损毁",
+        "公路中断"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_1CFB4FE27C",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "高架道路车辆坠桥事故",
+        "交通事故",
+        "公路损毁",
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "公路损毁",
+        "公路中断"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_B2E53BBD54",
+      "name": "车辆失控冲撞",
+      "entity_type": "Action",
+      "evidence": "车辆失控冲撞高架护栏",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B625E381A4",
+      "final_entity_name": "车辆失控冲撞",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_7DF3223AD3",
+      "name": "高架护栏",
+      "entity_type": "Resource",
+      "evidence": "冲撞高架护栏，护栏被撞断",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1918,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_6C085FD5C2",
+      "final_entity_name": "高架护栏",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_8FF829C16F",
+      "name": "车辆起火",
+      "entity_type": "Event",
+      "evidence": "发生轻微起火",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_09C02D083D",
+      "final_entity_name": "车辆起火",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_09C02D083D",
+      "primary_event_name": "车辆起火",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_09C02D083D"
+      ],
+      "query_event_names": [
+        "车辆起火"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆失控冲撞",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_B2E53BBD54",
+      "source_final_id": "MEA_CASE_B625E381A4",
+      "source_final_name": "车辆失控冲撞",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "高架护栏",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_7DF3223AD3",
+      "target_final_id": "RES_CASE_6C085FD5C2",
+      "target_final_name": "高架护栏",
+      "target_query_event_ids": [],
+      "evidence": "车辆失控冲撞高架护栏",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《城市道路管理条例》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on direct statements in the text. Some inferences were made to establish causality, but only when strongly supported by the text.",
+    "Confidence scores reflect the clarity and directness of the evidence supporting each relationship."
+  ],
+  "casualties": {
+    "deaths": 2,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市高架快速路（高度15米），一辆小型越野车因驾驶员疲劳驾驶，车辆失控冲撞高架护栏，护栏被撞断后，越野车从高架道路坠落至地面非机动车道，撞击地面后发生轻微起火，地面有2辆电动自行车被撞，高架道路护栏破损严重。",
+    "consequence_text": "造成越野车驾驶员1人死亡、2名电动自行车骑行者1死1伤，越野车完全损毁，地面非机动车道交通中断，高架道路受损护栏存在脱落风险，可能导致后续车辆失控坠桥，事故引发周边群众围观，影响现场处置秩序。",
+    "measure_text": "交警部门立即封闭高架道路事故路段和地面非机动车道，设置多层警戒区域，疏散围观群众；消防救援队伍赶赴现场扑灭车辆明火，清理事故残骸；医疗部门派遣救护车对受伤人员进行紧急救治，转运至医院；交通部门组织专业人员对高架护栏进行临时加固，检测高架道路结构安全，调用吊车将坠落车辆拖移；应急管理部门协调城管部门清理地面事故现场，疏导周边交通，依据《城市道路管理条例》开展事故调查，5小时后地面交通恢复通行，高架道路经检测合格后逐步恢复通行。"
+  }
+}

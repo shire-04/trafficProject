@@ -1,0 +1,176 @@
+{
+  "case_id": "025_城市地铁施工占道路段车辆与围挡碰撞事故_6955d8c4",
+  "title": "城市地铁施工占道路段车辆与围挡碰撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "某市主城区地铁施工路段，一辆小型轿车因驾驶员酒后驾驶撞上施工围挡，冲入施工区域撞上挖掘机，造成人员受伤和财产损失，施工中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_53582A46B0",
+    "expanded_event_ids": [
+      "EVT_ROAD_DAMAGE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_BDEA0978F1",
+      "name": "车辆碰撞施工设施",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车因驾驶员酒后驾驶，无视警示标志，高速撞上施工围挡，围挡倒塌后冲入施工区域，撞上施工挖掘机",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_53582A46B0",
+      "final_entity_name": "车辆碰撞施工设施",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_53582A46B0",
+      "primary_event_name": "车辆碰撞施工设施",
+      "expanded_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路损毁",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_53582A46B0",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞施工设施",
+        "公路损毁",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路损毁",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_A7CAA755A2",
+      "name": "酒后驾驶",
+      "entity_type": "Action",
+      "evidence": "一辆小型轿车因驾驶员酒后驾驶",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B9DE1F48C8",
+      "final_entity_name": "酒后驾驶",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_048AE3B831",
+      "name": "小型轿车",
+      "entity_type": "Resource",
+      "evidence": "一辆小型轿车因驾驶员酒后驾驶",
+      "confidence": 0.8,
+      "normalized_id": "RES_CASE_70407E27F9",
+      "normalized_name": "小型轿车",
+      "normalized_score": 1.0,
+      "matched_alias": "小型轿车",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_CASE_70407E27F9",
+      "final_entity_name": "小型轿车",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    }
+  ],
+  "relations": [
+    {
+      "source": "酒后驾驶",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_A7CAA755A2",
+      "source_final_id": "MEA_CASE_B9DE1F48C8",
+      "source_final_name": "酒后驾驶",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "小型轿车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_048AE3B831",
+      "target_final_id": "RES_CASE_70407E27F9",
+      "target_final_name": "小型轿车",
+      "target_query_event_ids": [],
+      "evidence": "一辆小型轿车因驾驶员酒后驾驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆碰撞施工设施",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_BDEA0978F1",
+      "source_final_id": "EVT_CASE_53582A46B0",
+      "source_final_name": "车辆碰撞施工设施",
+      "source_query_event_ids": [
+        "EVT_CASE_53582A46B0",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "酒后驾驶",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_A7CAA755A2",
+      "target_final_id": "MEA_CASE_B9DE1F48C8",
+      "target_final_name": "酒后驾驶",
+      "target_query_event_ids": [],
+      "evidence": "一辆小型轿车因驾驶员酒后驾驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《建设工程安全生产管理条例》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are assigned based on the clarity of the relationship in the text.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 4,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市主城区地铁施工占道路段，施工单位已设置施工围挡、警示标志和减速带，一辆小型轿车因驾驶员酒后驾驶，无视警示标志，高速撞上施工围挡，围挡倒塌后冲入施工区域，撞上施工挖掘机，轿车车头严重变形，驾驶员被困车内，施工区域内有3名施工人员受伤。",
+    "consequence_text": "造成轿车驾驶员1人重伤、3名施工人员轻伤，轿车完全损毁，施工围挡、挖掘机受损，地铁施工临时中断，施工路段双向交通封闭，周边主干道拥堵，存在施工材料坠落伤人的次生风险。",
+    "measure_text": "交警部门立即封锁事故现场，控制酒后驾驶的轿车驾驶员，开展现场勘查和责任认定；消防救援队伍使用破拆工具解救被困驾驶员，排查现场安全隐患；医疗部门派遣救护车转运受伤人员至医院；地铁施工单位暂停施工，清理倒塌围挡，修复受损设施，全面排查施工区域安全隐患；依据《道路交通安全法》《建设工程安全生产管理条例》对酒后驾驶驾驶员进行从严处罚，2.5小时后道路恢复通行，施工逐步恢复。"
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "case_id": "012_城市路口货车闯红灯撞人事故_bb08dee8",
+  "title": "城市路口货车闯红灯撞人事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "某市十字路口，一辆重型货车闯红灯与行人及电动自行车相撞，造成人员伤亡和交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_911BCF600E",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_F8255B3410",
+      "name": "道路交通碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆重型货车闯红灯行驶，与正在过马路的2名行人、1辆电动自行车发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_911BCF600E",
+      "final_entity_name": "道路交通碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_911BCF600E",
+      "primary_event_name": "道路交通碰撞",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_911BCF600E",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "道路交通碰撞",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_79483D4D8D",
+      "name": "闯红灯",
+      "entity_type": "Action",
+      "evidence": "一辆重型货车闯红灯行驶",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_CF67B7CA0F",
+      "final_entity_name": "闯红灯",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_450C16139A",
+      "name": "重型货车",
+      "entity_type": "Resource",
+      "evidence": "一辆重型货车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_7BEA479A9E",
+      "final_entity_name": "重型货车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    }
+  ],
+  "relations": [
+    {
+      "source": "闯红灯",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_79483D4D8D",
+      "source_final_id": "MEA_CASE_CF67B7CA0F",
+      "source_final_name": "闯红灯",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "重型货车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_450C16139A",
+      "target_final_id": "RES_CASE_7BEA479A9E",
+      "target_final_name": "重型货车",
+      "target_query_event_ids": [],
+      "evidence": "一辆重型货车闯红灯行驶",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "道路交通安全法"
+  ],
+  "quality_notes": [
+    "The confidence scores are estimates based on the clarity of the evidence in the text.",
+    "Some relationships could be inferred but were not included due to the strict requirement to only use entities from the provided catalog."
+  ],
+  "casualties": {
+    "deaths": 1,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市十字路口，一辆重型货车闯红灯行驶，与正在过马路的2名行人、1辆电动自行车发生碰撞，行人被撞倒在地，电动自行车被撞飞，货车刹车不及，继续行驶一段距离后停下，现场有大量群众围观，交通陷入瘫痪。",
+    "consequence_text": "造成2名行人1人死亡、1人重伤，电动自行车骑行者1人轻伤，电动自行车完全损坏，货车车头轻微受损，路口双向交通严重拥堵，周边多个路口出现车辆滞留，围观群众聚集易引发二次事故。",
+    "measure_text": "交警部门立即封锁事故现场，疏散围观群众，疏导过往车辆绕行，控制肇事驾驶员，开展现场勘查和责任认定；医疗部门派遣救护车赶赴现场，对受伤人员进行紧急救治后，转运至医院；城管部门协助清理现场，拖移受损电动自行车；依据《道路交通安全法》开展处置，2小时后事故现场清理完毕，路口恢复通行，后续对该路口增设闯红灯抓拍设备。"
+  }
+}

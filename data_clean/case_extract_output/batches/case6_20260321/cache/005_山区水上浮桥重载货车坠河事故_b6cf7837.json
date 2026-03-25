@@ -1,0 +1,199 @@
+{
+  "case_id": "005_山区水上浮桥重载货车坠河事故_b6cf7837",
+  "title": "山区水上浮桥重载货车坠河事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "山区河流钢制浮桥因超重货车导致桥面塌陷，货车坠河，驾驶员被困，交通中断，并存在河水污染风险。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_7B95449186",
+    "expanded_event_ids": [
+      "EVT_MAJOR_BRIDGE_ACCIDENT",
+      "EVT_ROAD_DAMAGE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_48698DE564",
+      "name": "桥梁车辆坠落事故",
+      "entity_type": "Event",
+      "evidence": "一辆超重重型砂石货车违规驶入浮桥，货车行至浮桥中段时，因超重导致浮桥承压舟断裂、桥面塌陷，货车连同桥面一同坠入约8米深的河流中",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_7B95449186",
+      "final_entity_name": "桥梁车辆坠落事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_7B95449186",
+      "primary_event_name": "桥梁车辆坠落事故",
+      "expanded_event_ids": [
+        "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "特大桥梁安全事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_7B95449186",
+        "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "桥梁车辆坠落事故",
+        "特大桥梁安全事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "特大桥梁安全事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_F5F5BCFCA7",
+      "name": "道路中断",
+      "entity_type": "Event",
+      "evidence": "浮桥双向通行完全中断",
+      "confidence": 0.8,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.0642,
+      "matched_alias": "暴风雪天气导致的道路交通中断",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_5A07DA19EF",
+      "name": "河水污染",
+      "entity_type": "Event",
+      "evidence": "货车漏油可能造成河水污染",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_E70C4DE1FA",
+      "final_entity_name": "河水污染",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_E70C4DE1FA",
+      "primary_event_name": "河水污染",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_E70C4DE1FA"
+      ],
+      "query_event_names": [
+        "河水污染"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "桥梁车辆坠落事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_48698DE564",
+      "source_final_id": "EVT_CASE_7B95449186",
+      "source_final_name": "桥梁车辆坠落事故",
+      "source_query_event_ids": [
+        "EVT_CASE_7B95449186",
+        "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "道路中断",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_F5F5BCFCA7",
+      "target_final_id": "EVT_ROAD_INTERRUPTION",
+      "target_final_name": "公路中断",
+      "target_query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "evidence": "货车连同桥面一同坠入约8米深的河流中，浮桥双向通行完全中断",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "桥梁车辆坠落事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_48698DE564",
+      "source_final_id": "EVT_CASE_7B95449186",
+      "source_final_name": "桥梁车辆坠落事故",
+      "source_query_event_ids": [
+        "EVT_CASE_7B95449186",
+        "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "河水污染",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_5A07DA19EF",
+      "target_final_id": "EVT_CASE_E70C4DE1FA",
+      "target_final_name": "河水污染",
+      "target_query_event_ids": [
+        "EVT_CASE_E70C4DE1FA"
+      ],
+      "evidence": "货车漏油可能造成河水污染",
+      "confidence": 0.75,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《内河交通安全管理条例》",
+    "《浮桥安全管理办法》"
+  ],
+  "quality_notes": [
+    "The confidence scores reflect the clarity of the relationships within the provided text.",
+    "Some relationships are inferred based on the context and may have lower confidence scores."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某山区河流钢制浮桥，一辆超重重型砂石货车违规驶入浮桥，货车行至浮桥中段时，因超重导致浮桥承压舟断裂、桥面塌陷，货车连同桥面一同坠入约8米深的河流中，驾驶员被困车内，浮桥双向通行完全中断，河水流速较快。",
+    "consequence_text": "造成货车驾驶员1人被困，生死未卜，货车完全沉没，浮桥桥面塌陷、承压舟断裂，两岸乡镇交通完全中断，村民出行受阻，浮桥剩余结构有进一步坍塌风险，货车漏油可能造成河水污染。",
+    "measure_text": "当地应急管理部门启动《水上浮桥突发事件应急预案》，协调消防救援队伍、海事部门、水利部门赶赴现场；海事部门对河流进行警戒，监测河水流速；消防救援队伍使用潜水设备、水下破拆工具搜救被困驾驶员，打捞落水车辆；水利部门实时监测上游来水情况；交通部门组织专业队伍对浮桥剩余结构进行加固，搭建临时摆渡船保障村民出行；环保部门监测河水水质，处置漏油污染；依据《内河交通安全管理条例》《浮桥安全管理办法》开展事故调查，6小时后临时摆渡通道启用，被困驾驶员被成功救出。"
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "case_id": "045_水稻田机耕路插秧机与电动三轮车碰撞事故_07013028",
+  "title": "水稻田机耕路插秧机与电动三轮车碰撞事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "春耕季节，插秧机与电动三轮车在泥泞机耕路上发生侧面碰撞，造成人员轻伤和财产损失，机耕路中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_DD6FC7FD67",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_33035B1149",
+      "name": "农机具碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆乘坐式高速插秧机正在田间作业后转场，行驶在狭窄机耕路上，与对向行驶的载满秧苗的电动三轮车会车时，因机耕路泥泞湿滑、视线受阻，发生侧面碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_DD6FC7FD67",
+      "final_entity_name": "农机具碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_DD6FC7FD67",
+      "primary_event_name": "农机具碰撞",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路中断"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_DD6FC7FD67",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "农机具碰撞",
+        "交通事故",
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "公路中断"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_A24BD9B639",
+      "name": "插秧机",
+      "entity_type": "Resource",
+      "evidence": "一辆乘坐式高速插秧机",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_1AFD3C9750",
+      "final_entity_name": "插秧机",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_97CEF1C1BC",
+      "name": "电动三轮车",
+      "entity_type": "Resource",
+      "evidence": "载满秧苗的电动三轮车",
+      "confidence": 0.95,
+      "normalized_id": "RES_CASE_D7EB68391B",
+      "normalized_name": "电动三轮车",
+      "normalized_score": 1.0,
+      "matched_alias": "电动三轮车",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_CASE_D7EB68391B",
+      "final_entity_name": "电动三轮车",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_C7CDDD94A9",
+      "name": "碰撞",
+      "entity_type": "Action",
+      "evidence": "发生侧面碰撞",
+      "confidence": 0.9,
+      "normalized_id": "MEA_CASE_6B219E66DE",
+      "normalized_name": "碰撞",
+      "normalized_score": 1.0,
+      "matched_alias": "碰撞",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_6B219E66DE",
+      "final_entity_name": "碰撞",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_F36E9162E2",
+      "name": "侧翻",
+      "entity_type": "Action",
+      "evidence": "电动三轮车侧翻至路边水田里",
+      "confidence": 0.85,
+      "normalized_id": "MEA_CASE_0BF2A9DC72",
+      "normalized_name": "侧翻",
+      "normalized_score": 1.0,
+      "matched_alias": "侧翻",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_0BF2A9DC72",
+      "final_entity_name": "侧翻",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "农机具碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_33035B1149",
+      "source_final_id": "EVT_CASE_DD6FC7FD67",
+      "source_final_name": "农机具碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_DD6FC7FD67",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "relation": "TRIGGERS",
+      "target": "碰撞",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_C7CDDD94A9",
+      "target_final_id": "MEA_CASE_6B219E66DE",
+      "target_final_name": "碰撞",
+      "target_query_event_ids": [],
+      "evidence": "事故描述中直接说明了农机具碰撞事件导致了碰撞的发生。",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "农机具碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_33035B1149",
+      "source_final_id": "EVT_CASE_DD6FC7FD67",
+      "source_final_name": "农机具碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_DD6FC7FD67",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "relation": "TRIGGERS",
+      "target": "侧翻",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_F36E9162E2",
+      "target_final_id": "MEA_CASE_0BF2A9DC72",
+      "target_final_name": "侧翻",
+      "target_query_event_ids": [],
+      "evidence": "事故描述中说明碰撞导致电动三轮车侧翻。",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "碰撞",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_C7CDDD94A9",
+      "source_final_id": "MEA_CASE_6B219E66DE",
+      "source_final_name": "碰撞",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "电动三轮车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_97CEF1C1BC",
+      "target_final_id": "RES_CASE_D7EB68391B",
+      "target_final_name": "电动三轮车",
+      "target_query_event_ids": [],
+      "evidence": "碰撞需要电动三轮车作为参与方。",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "碰撞",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_C7CDDD94A9",
+      "source_final_id": "MEA_CASE_6B219E66DE",
+      "source_final_name": "碰撞",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "插秧机",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_A24BD9B639",
+      "target_final_id": "RES_CASE_1AFD3C9750",
+      "target_final_name": "插秧机",
+      "target_query_event_ids": [],
+      "evidence": "碰撞需要插秧机作为参与方。",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《农业机械安全监督管理条例》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系补全主要基于事故描述、后果和措施文本，优先考虑了事件与动作之间的触发关系，以及部门行动与资源之间的关系。",
+    "由于实体数量有限，无法建立更复杂的关联关系。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某春耕季节水稻田机耕路，一辆乘坐式高速插秧机正在田间作业后转场，行驶在狭窄机耕路上，与对向行驶的载满秧苗的电动三轮车会车时，因机耕路泥泞湿滑、视线受阻，发生侧面碰撞，电动三轮车侧翻至路边水田里，车内3人被困水田中，插秧机紧急停下。",
+    "consequence_text": "造成电动三轮车内2人轻伤、1人轻微溺水，三轮车完全损毁，所载秧苗全部散落至水田中，机耕路完全中断，周边农田春耕作业受阻，事故现场引发周边村民聚集。",
+    "measure_text": "当地派出所、农业农村部门立即赶赴现场，疏散围观村民，救出被困水田中的人员，保护事故现场；医疗部门对受伤、溺水人员进行现场处置后，转运至乡镇卫生院；交警部门开展现场勘查和责任认定；农机部门对插秧机进行安全检测，对农机驾驶员进行安全操作培训；村委会协助清理散落的秧苗，恢复机耕路通行；依据《道路交通安全法》《农业机械安全监督管理条例》开展处置，1.5小时后机耕路恢复通行。"
+  }
+}

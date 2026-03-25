@@ -1,0 +1,123 @@
+{
+  "case_id": "031_城市老旧小区加装电梯施工车辆撞断燃气管道事故_634535d3",
+  "title": "城市老旧小区加装电梯施工车辆撞断燃气管道事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某市老旧小区加装电梯施工现场，混凝土泵车撞断燃气管道，造成天然气大量泄漏，存在爆炸、中毒风险。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_DC3A3BC3D2",
+    "expanded_event_ids": [
+      "EVT_CONSTRUCTION_SAFETY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_100C0F15D8",
+      "name": "燃气管道破损泄漏",
+      "entity_type": "Event",
+      "evidence": "一辆混凝土泵车在作业时，因驾驶员操作不当，车辆支腿撞断小区地下燃气管道，天然气大量泄漏",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_DC3A3BC3D2",
+      "final_entity_name": "燃气管道破损泄漏",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_DC3A3BC3D2",
+      "primary_event_name": "燃气管道破损泄漏",
+      "expanded_event_ids": [
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "expanded_event_names": [
+        "施工安全事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_DC3A3BC3D2",
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "query_event_names": [
+        "燃气管道破损泄漏",
+        "施工安全事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "alias_patch_target_names": [
+        "施工安全事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_2AC73F0369",
+      "name": "驾驶员操作不当",
+      "entity_type": "Action",
+      "evidence": "因驾驶员操作不当",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1622,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_99E1D246E3",
+      "final_entity_name": "驾驶员操作不当",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "燃气管道破损泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_100C0F15D8",
+      "source_final_id": "EVT_CASE_DC3A3BC3D2",
+      "source_final_name": "燃气管道破损泄漏",
+      "source_query_event_ids": [
+        "EVT_CASE_DC3A3BC3D2",
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "relation": "TRIGGERS",
+      "target": "驾驶员操作不当",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_2AC73F0369",
+      "target_final_id": "MEA_CASE_99E1D246E3",
+      "target_final_name": "驾驶员操作不当",
+      "target_query_event_ids": [],
+      "evidence": "因驾驶员操作不当",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《城镇燃气管理条例》",
+    "《建设工程安全生产管理条例》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取主要基于事故描述和措施描述，信息较为明确。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市老旧小区加装电梯施工现场，一辆混凝土泵车在作业时，因驾驶员操作不当，车辆支腿撞断小区地下燃气管道，天然气大量泄漏，现场弥漫浓烈天然气味，小区内有数百户居民，周边有人员吸烟、使用明火，存在爆炸、中毒的重大风险。",
+    "consequence_text": "无人员伤亡，燃气管道完全断裂，天然气持续泄漏，小区居民楼面临爆炸、火灾风险，小区加装电梯施工完全中断，居民用气被迫暂停，现场群众出现恐慌。",
+    "measure_text": "燃气公司接到报警后，立即关闭小区燃气总阀门，派遣抢修队伍赶赴现场，对泄漏管道进行封堵、抢修；消防救援队伍到场，对泄漏区域进行持续稀释驱散，疏散小区居民至安全区域，严禁现场任何明火；社区居委会、物业协助通知居民撤离，安抚居民情绪；交警部门封锁小区周边道路，疏导过往车辆、行人绕行；市场监管部门对施工单位、泵车驾驶员进行安全追责；依据《城镇燃气管理条例》《建设工程安全生产管理条例》开展处置，2小时后泄漏管道修复完毕，居民逐步返回，恢复供气。"
+  }
+}

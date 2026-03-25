@@ -1,0 +1,185 @@
+{
+  "case_id": "049_案例48_高速路暴雨天气车辆涉水熄火群困事故_33da7525",
+  "title": "案例48：高速路暴雨天气车辆涉水熄火群困事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "高速公路暴雨天气导致车辆涉水熄火，多人被困，后经救援人员疏导，积水排净，道路恢复通行。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_E68012F9D4",
+    "expanded_event_ids": [
+      "EVT_RAINSTORM",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_35C807D1D3",
+      "name": "车辆涉水熄火",
+      "entity_type": "Event",
+      "evidence": "高速公路低洼路段，突降暴雨，路面积水达50厘米，6辆小型轿车、2辆SUV依次驶入积水区熄火，车内共12人被困",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_E68012F9D4",
+      "final_entity_name": "车辆涉水熄火",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_E68012F9D4",
+      "primary_event_name": "车辆涉水熄火",
+      "expanded_event_ids": [
+        "EVT_RAINSTORM",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "暴雨",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_E68012F9D4",
+        "EVT_RAINSTORM",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆涉水熄火",
+        "暴雨",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_RAINSTORM",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "暴雨",
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_2BBA728821",
+      "name": "暴雨",
+      "entity_type": "Event",
+      "evidence": "突降暴雨",
+      "confidence": 0.8,
+      "normalized_id": "EVT_RAINSTORM",
+      "normalized_name": "暴雨",
+      "normalized_score": 0.2097,
+      "matched_alias": "暴雨天气",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_RAINSTORM",
+      "final_entity_name": "暴雨",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_RAINSTORM",
+      "primary_event_name": "暴雨",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "query_event_names": [
+        "暴雨"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_524CECC9F4",
+      "name": "路面积水",
+      "entity_type": "Event",
+      "evidence": "路面积水达50厘米",
+      "confidence": 0.75,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_106C22F38E",
+      "final_entity_name": "路面积水",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_106C22F38E",
+      "primary_event_name": "路面积水",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_106C22F38E"
+      ],
+      "query_event_names": [
+        "路面积水"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "暴雨",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_2BBA728821",
+      "source_final_id": "EVT_RAINSTORM",
+      "source_final_name": "暴雨",
+      "source_query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "relation": "CAUSES",
+      "target": "路面积水",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_524CECC9F4",
+      "target_final_id": "EVT_CASE_106C22F38E",
+      "target_final_name": "路面积水",
+      "target_query_event_ids": [
+        "EVT_CASE_106C22F38E"
+      ],
+      "evidence": "突降暴雨，路面积水达50厘米",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "路面积水",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_524CECC9F4",
+      "source_final_id": "EVT_CASE_106C22F38E",
+      "source_final_name": "路面积水",
+      "source_query_event_ids": [
+        "EVT_CASE_106C22F38E"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆涉水熄火",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_35C807D1D3",
+      "target_final_id": "EVT_CASE_E68012F9D4",
+      "target_final_name": "车辆涉水熄火",
+      "target_query_event_ids": [
+        "EVT_CASE_E68012F9D4",
+        "EVT_RAINSTORM",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "evidence": "路面积水达50厘米，6辆小型轿车、2辆SUV依次驶入积水区熄火",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "高速公路低洼路段，突降暴雨，路面积水达50厘米，6辆小型轿车、2辆SUV依次驶入积水区熄火，车内共12人被困，雨水持续上涨，车辆浸泡水中。",
+    "consequence_text": "12人被困，无人员伤亡，车辆浸泡受损，高速路段封闭，车辆滞留9公里，积水易导致车辆电路短路，漏电伤人。",
+    "measure_text": "交警封闭路段，发布暴雨预警；消防人员救出被困人员；市政部门调集排水车抽排积水；路政部门拖移熄火车辆，清洗路面；3小时后积水排净，道路恢复通行。"
+  }
+}

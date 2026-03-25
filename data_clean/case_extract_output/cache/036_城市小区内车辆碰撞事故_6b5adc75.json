@@ -1,0 +1,74 @@
+{
+  "case_id": "036_城市小区内车辆碰撞事故_6b5adc75",
+  "title": "城市小区内车辆碰撞事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "某市小区内，一辆小型轿车因驾驶员未观察路况与玩耍儿童发生碰撞，造成儿童轻伤，车辆轻微受损，小区交通受阻。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9BDDC88CCC",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_CEE6E83A27",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车在行驶中，因驾驶员未观察前方路况，与正在小区内玩耍的一名儿童发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9BDDC88CCC",
+      "final_entity_name": "车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9BDDC88CCC",
+      "primary_event_name": "车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "信息较为完整，可信度较高。",
+    "关系抽取基于提供的文本和实体目录，未进行外部知识推理。",
+    "confidence score is estimated."
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 1,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市小区内道路，一辆小型轿车在行驶中，因驾驶员未观察前方路况，与正在小区内玩耍的一名儿童发生碰撞，儿童被撞倒在地，轿车轻微受损，小区内道路狭窄，有多名居民围观，影响小区内交通秩序。",
+    "consequence_text": "造成儿童1人轻伤，需紧急救治，无其他人员伤亡，轿车轻微损坏，小区内交通拥堵，围观居民聚集，影响小区居民正常出行，引发居民对小区内车辆行驶安全的担忧。",
+    "measure_text": "小区保安立即拨打120、122报警，保护事故现场，疏散围观居民，防止二次事故；医疗部门派遣救护车赶赴现场，对受伤儿童进行紧急救治后，转运至医院；交警部门到场开展现场勘查，认定事故责任，对驾驶员进行处罚；小区物业在小区内增设减速带、警示标志，限制车辆行驶速度，安排专人引导车辆进出；依据《道路交通安全法》开展处置，1小时后事故现场清理完毕，小区内恢复正常秩序。"
+  }
+}

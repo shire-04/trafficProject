@@ -1,0 +1,173 @@
+{
+  "case_id": "030_案例29_城郊结合部网约车分心驾驶撞飞电动车事故_648d5644",
+  "title": "案例29：城郊结合部网约车分心驾驶撞飞电动车事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "网约车因分心驾驶撞击电动自行车，造成人员重伤和车辆报废，引发交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_695C0653A5",
+    "expanded_event_ids": [
+      "EVT_MAJOR_TRAFFIC_ACCIDENT",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_CB611A42D4",
+      "name": "交通碰撞事故",
+      "entity_type": "Event",
+      "evidence": "网约车驾驶员低头查看接单信息，分心驾驶，绿灯起步时未观察路况，直接撞飞正常横穿路口的电动自行车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_695C0653A5",
+      "final_entity_name": "交通碰撞事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_695C0653A5",
+      "primary_event_name": "交通碰撞事故",
+      "expanded_event_ids": [
+        "EVT_MAJOR_TRAFFIC_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "重大恶性交通事故",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_695C0653A5",
+        "EVT_MAJOR_TRAFFIC_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "交通碰撞事故",
+        "重大恶性交通事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_MAJOR_TRAFFIC_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "重大恶性交通事故",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_A672D19556",
+      "name": "网约车",
+      "entity_type": "Resource",
+      "evidence": "一辆网约车",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.425,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_286BE65ACA",
+      "final_entity_name": "网约车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_B5A41AB905",
+      "name": "分心驾驶",
+      "entity_type": "Action",
+      "evidence": "分心驾驶",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1317,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_5FC20D97EE",
+      "final_entity_name": "分心驾驶",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "交通碰撞事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_CB611A42D4",
+      "source_final_id": "EVT_CASE_695C0653A5",
+      "source_final_name": "交通碰撞事故",
+      "source_query_event_ids": [
+        "EVT_CASE_695C0653A5",
+        "EVT_MAJOR_TRAFFIC_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "分心驾驶",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_B5A41AB905",
+      "target_final_id": "MEA_CASE_5FC20D97EE",
+      "target_final_name": "分心驾驶",
+      "target_query_event_ids": [],
+      "evidence": "网约车驾驶员涉嫌分心驾驶，责任明确。",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "分心驾驶",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_B5A41AB905",
+      "source_final_id": "MEA_CASE_5FC20D97EE",
+      "source_final_name": "分心驾驶",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "网约车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_A672D19556",
+      "target_final_id": "RES_CASE_286BE65ACA",
+      "target_final_name": "网约车",
+      "target_query_event_ids": [],
+      "evidence": "一辆网约车驾驶员低头查看接单信息，分心驾驶",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "信息较为完整，事件和实体抽取准确。",
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "城郊红绿灯路口，一辆网约车驾驶员低头查看接单信息，分心驾驶，绿灯起步时未观察路况，直接撞飞正常横穿路口的电动自行车，电动车骑行者被撞出数米远，车辆完全报废。",
+    "consequence_text": "电动自行车骑行者重伤，网约车轻微受损，路口双向交通拥堵，周边群众围观，网约车驾驶员涉嫌分心驾驶，责任明确。",
+    "measure_text": "交警快速封锁现场，疏散围观群众，控制网约车驾驶员，开展现场勘查；消防人员协助转移伤者；医疗部门紧急转运重伤员就医；路政部门清理现场，恢复路口交通；依据《道路交通安全法》对分心驾驶行为从严追责，督促网约车平台加强驾驶员安全管理，1.5小时后路口恢复通行。"
+  }
+}

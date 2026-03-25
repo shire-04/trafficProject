@@ -1,0 +1,163 @@
+{
+  "case_id": "040_案例40_城郊公交站牌货车避让行人撞毁站牌事故_13b6f187",
+  "title": "案例40：城郊公交站牌货车避让行人撞毁站牌事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "货车在避让行人时撞毁公交站牌，造成道路拥堵和公交运营中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_A141A000B0",
+    "expanded_event_ids": [
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_04FD3813D8",
+      "name": "车辆碰撞设施",
+      "entity_type": "Event",
+      "evidence": "一辆货车紧急避让，猛打方向盘撞上公交站牌，站牌完全损毁，货车车头变形",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_A141A000B0",
+      "final_entity_name": "车辆碰撞设施",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_A141A000B0",
+      "primary_event_name": "车辆碰撞设施",
+      "expanded_event_ids": [
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_A141A000B0",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "车辆碰撞设施",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_DAMAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路损毁"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_6BA2444470",
+      "name": "避让行人",
+      "entity_type": "Action",
+      "evidence": "一辆货车紧急避让",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_1130894FD2",
+      "final_entity_name": "避让行人",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_7A26962939",
+      "name": "货车",
+      "entity_type": "Resource",
+      "evidence": "一辆货车紧急避让，货车车头变形",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_7CD39CFBB2",
+      "final_entity_name": "货车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    }
+  ],
+  "relations": [
+    {
+      "source": "避让行人",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_6BA2444470",
+      "source_final_id": "MEA_CASE_1130894FD2",
+      "source_final_name": "避让行人",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "货车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_7A26962939",
+      "target_final_id": "RES_CASE_7CD39CFBB2",
+      "target_final_name": "货车",
+      "target_query_event_ids": [],
+      "evidence": "一辆货车紧急避让",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆碰撞设施",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_04FD3813D8",
+      "source_final_id": "EVT_CASE_A141A000B0",
+      "source_final_name": "车辆碰撞设施",
+      "source_query_event_ids": [
+        "EVT_CASE_A141A000B0",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "relation": "TRIGGERS",
+      "target": "避让行人",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_6BA2444470",
+      "target_final_id": "MEA_CASE_1130894FD2",
+      "target_final_name": "避让行人",
+      "target_query_event_ids": [],
+      "evidence": "一辆货车紧急避让",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在不确定性。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "城郊公交站牌处，一名行人突然从站牌后冲出横穿马路，一辆货车紧急避让，猛打方向盘撞上公交站牌，站牌完全损毁，货车车头变形，站牌处候车乘客紧急避让。",
+    "consequence_text": "无人员伤亡，货车与站牌损毁，路段双向拥堵，候车乘客受到惊吓，公交运营暂时中断。",
+    "measure_text": "交警到场，勘查现场，认定事故责任，疏导交通；路政部门清理损毁站牌，拖移事故货车；公交公司调配备用站牌，恢复候车点；加强行人横穿马路警示，1.5小时后道路与公交运营恢复正常。"
+  }
+}

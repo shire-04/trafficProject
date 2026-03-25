@@ -1,0 +1,154 @@
+{
+  "case_id": "041_城市动物园周边游览车与私家车碰撞事故_a36aea28",
+  "title": "城市动物园周边游览车与私家车碰撞事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某市野生动物园自驾游览区发生游览车与私家车正面碰撞事故，造成人员伤亡和车辆损毁，道路封闭。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_18E5D99FD5",
+    "expanded_event_ids": []
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_ACTI_6E6078DB21",
+      "name": "正面碰撞",
+      "entity_type": "Action",
+      "evidence": "与游览车发生正面碰撞",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_6BA428A393",
+      "final_entity_name": "正面碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_91E8252EFE",
+      "name": "游览车",
+      "entity_type": "Resource",
+      "evidence": "一辆园区观光游览车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.425,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_B911CBD3B1",
+      "final_entity_name": "游览车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_CC484B213E",
+      "name": "道路封闭",
+      "entity_type": "Event",
+      "evidence": "动物园自驾游览区道路完全封闭",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_18E5D99FD5",
+      "final_entity_name": "道路封闭",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_18E5D99FD5",
+      "primary_event_name": "道路封闭",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_18E5D99FD5"
+      ],
+      "query_event_names": [
+        "道路封闭"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "正面碰撞",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_6E6078DB21",
+      "source_final_id": "MEA_CASE_6BA428A393",
+      "source_final_name": "正面碰撞",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "游览车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_91E8252EFE",
+      "target_final_id": "RES_CASE_B911CBD3B1",
+      "target_final_name": "游览车",
+      "target_query_event_ids": [],
+      "evidence": "与游览车发生正面碰撞",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "道路封闭",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_CC484B213E",
+      "source_final_id": "EVT_CASE_18E5D99FD5",
+      "source_final_name": "道路封闭",
+      "source_query_event_ids": [
+        "EVT_CASE_18E5D99FD5"
+      ],
+      "relation": "TRIGGERS",
+      "target": "正面碰撞",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_6E6078DB21",
+      "target_final_id": "MEA_CASE_6BA428A393",
+      "target_final_name": "正面碰撞",
+      "target_query_event_ids": [],
+      "evidence": "与游览车发生正面碰撞",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《旅游安全管理办法》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "关系抽取基于提供的实体目录，未进行实体扩展。",
+    "证据文本为原文片段，可能需要进一步人工验证。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 4,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市野生动物园自驾游览区专用道路，一辆园区观光游览车在正常行驶时，一辆私家车游客违规中途停车下车拍照，突然变道驶入游览车车道，与游览车发生正面碰撞，私家车车头严重变形，驾驶员被困车内，游览车紧急制动，车内20余名游客受到冲击摔倒。",
+    "consequence_text": "造成私家车驾驶员1人重伤被困、游览车内3名游客轻微擦伤，私家车完全损毁，游览车车身轻微受损，动物园自驾游览区道路完全封闭，后续游览车辆、自驾车辆滞留，园区游览秩序受到影响。",
+    "measure_text": "动物园应急管理部门立即启动应急预案，封锁事故游览区，疏散车内游客至安全区域，拨打119、120、122报警；消防救援队伍赶赴现场，使用破拆工具解救被困驾驶员；医疗部门派遣救护车转运受伤人员至医院；交警部门开展现场勘查和责任认定，对私家车违规变道、中途下车的行为进行从严处罚；园区调配备用车辆接驳滞留游客，恢复游览区通行；依据《旅游安全管理办法》《道路交通安全法》开展处置，2小时后游览区恢复正常运营。"
+  }
+}

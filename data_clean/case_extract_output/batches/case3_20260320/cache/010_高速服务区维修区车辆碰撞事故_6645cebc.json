@@ -1,0 +1,139 @@
+{
+  "case_id": "010_高速服务区维修区车辆碰撞事故_6645cebc",
+  "title": "高速服务区维修区车辆碰撞事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "某高速服务区维修区域，重型货车在维修时因操作不当与另一辆货车碰撞，造成人员伤亡和设备损坏，服务区维修业务中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9BDDC88CCC",
+    "expanded_event_ids": [
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_CONSTRUCTION_SAFETY",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_0BB02280B7",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆重型货车在维修时，因维修人员操作不当，货车与维修车间内的另一辆货车发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9BDDC88CCC",
+      "final_entity_name": "车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9BDDC88CCC",
+      "primary_event_name": "车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路交通运输生产事故",
+        "施工安全事故",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞",
+        "公路交通运输生产事故",
+        "施工安全事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路交通运输生产事故",
+        "施工安全事故",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_038AD99508",
+      "name": "维修人员操作不当",
+      "entity_type": "Action",
+      "evidence": "因维修人员操作不当",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1505,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_7BB41D16D6",
+      "final_entity_name": "维修人员操作不当",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_0BB02280B7",
+      "source_final_id": "EVT_CASE_9BDDC88CCC",
+      "source_final_name": "车辆碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "维修人员操作不当",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_038AD99508",
+      "target_final_id": "MEA_CASE_7BB41D16D6",
+      "target_final_name": "维修人员操作不当",
+      "target_query_event_ids": [],
+      "evidence": "因维修人员操作不当",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《安全生产法》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本中的明确信息，避免了猜测。",
+    "部分关系的置信度较低，因为文本中描述较为简略。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高速服务区维修区域，一辆重型货车在维修时，因维修人员操作不当，货车与维修车间内的另一辆货车发生碰撞，碰撞导致车间内维修设备损坏，车间内有3名维修人员被困。",
+    "consequence_text": "造成3名维修人员1人重伤、2人轻伤，维修车间设备严重损坏，服务区维修业务中断，过往车辆无法在此维修，服务区停车场出现短暂拥堵。",
+    "measure_text": "服务区管理人员立即拨打119、122、122报警，保护事故现场；消防救援队伍赶赴现场，解救被困维修人员；医疗部门转运受伤人员至医院；交警部门到场勘查事故现场，认定维修单位责任；交通部门协调其他服务区派遣维修人员支援；依据《安全生产法》《道路交通安全法》开展处置，2小时后救援结束，服务区逐步恢复维修业务。"
+  }
+}

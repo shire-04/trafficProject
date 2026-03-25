@@ -1,0 +1,186 @@
+{
+  "case_id": "004_案例4_沙漠公路风沙遮眼多车剐蹭事故_8187350c",
+  "title": "案例4：沙漠公路风沙遮眼多车剐蹭事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "西北某沙漠公路路段突发强沙尘暴，导致3辆轿车、1辆皮卡因视线受阻发生剐蹭碰撞，造成车辆滞留和人员轻伤。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_6B0244EB44",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_CF48C31C0C",
+      "name": "多车剐蹭",
+      "entity_type": "Event",
+      "evidence": "3辆小型轿车、1辆皮卡因视线受阻、车速过快，接连发生剐蹭碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_6B0244EB44",
+      "final_entity_name": "多车剐蹭",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_6B0244EB44",
+      "primary_event_name": "多车剐蹭",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_6B0244EB44",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "多车剐蹭",
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_D9E6AC6027",
+      "name": "沙尘暴",
+      "entity_type": "Event",
+      "evidence": "突发强沙尘暴，瞬时风力达8级，风沙完全遮挡视线",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_DUST_STORM",
+      "final_entity_name": "沙尘暴",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_DUST_STORM",
+      "primary_event_name": "沙尘暴",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_DUST_STORM"
+      ],
+      "query_event_names": [
+        "沙尘暴"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_6A77C2B59C",
+      "name": "剐蹭碰撞",
+      "entity_type": "Action",
+      "evidence": "接连发生剐蹭碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B843E25685",
+      "final_entity_name": "剐蹭碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "沙尘暴",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_D9E6AC6027",
+      "source_final_id": "EVT_DUST_STORM",
+      "source_final_name": "沙尘暴",
+      "source_query_event_ids": [
+        "EVT_DUST_STORM"
+      ],
+      "relation": "CAUSES",
+      "target": "多车剐蹭",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_CF48C31C0C",
+      "target_final_id": "EVT_CASE_6B0244EB44",
+      "target_final_name": "多车剐蹭",
+      "target_query_event_ids": [
+        "EVT_CASE_6B0244EB44",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "西北某沙漠公路路段，突发强沙尘暴，瞬时风力达8级，风沙完全遮挡视线，能见度不足10米，3辆小型轿车、1辆皮卡因视线受阻、车速过快，接连发生剐蹭碰撞",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "沙尘暴",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_D9E6AC6027",
+      "source_final_id": "EVT_DUST_STORM",
+      "source_final_name": "沙尘暴",
+      "source_query_event_ids": [
+        "EVT_DUST_STORM"
+      ],
+      "relation": "TRIGGERS",
+      "target": "剐蹭碰撞",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_6A77C2B59C",
+      "target_final_id": "MEA_CASE_B843E25685",
+      "target_final_name": "剐蹭碰撞",
+      "target_query_event_ids": [],
+      "evidence": "3辆小型轿车、1辆皮卡因视线受阻、车速过快，接连发生剐蹭碰撞",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在遗漏或不准确的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "西北某沙漠公路路段，突发强沙尘暴，瞬时风力达8级，风沙完全遮挡视线，能见度不足10米，3辆小型轿车、1辆皮卡因视线受阻、车速过快，接连发生剐蹭碰撞，车辆横停在路面，部分车辆保险杠脱落、玻璃破损。",
+    "consequence_text": "无人员重伤，仅2人轻微擦伤，事故车辆占用双向单车道，沙漠公路无绕行路线，车辆滞留长达12公里，风沙持续侵袭易导致车辆零部件受损，被困人员长时间停留易出现缺水、中暑风险。",
+    "measure_text": "当地交警联合路政部门组建应急车队，冒风沙赶赴现场，设置移动警示标志，引导车辆有序停靠，避免二次事故；消防人员协助转移被困人员至安全区域，提供饮用水和遮阳保障；路政人员快速清理轻微剐蹭车辆，引导可行驶车辆缓慢通行；气象部门实时发布风沙预警，待能见度提升后全面疏导滞留车辆，5小时后道路恢复正常通行。"
+  }
+}

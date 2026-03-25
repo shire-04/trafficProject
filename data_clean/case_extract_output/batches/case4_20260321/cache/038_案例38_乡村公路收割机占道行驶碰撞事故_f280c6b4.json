@@ -1,0 +1,263 @@
+{
+  "case_id": "038_案例38_乡村公路收割机占道行驶碰撞事故_f280c6b4",
+  "title": "案例38：乡村公路收割机占道行驶碰撞事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "秋收季节，乡村公路上一台收割机占道行驶，与一辆轿车发生侧面碰撞，造成人员轻微擦伤和车辆受损，道路拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9BDDC88CCC",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_0E4768C856",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车超车时避让不及，与收割机侧面相撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9BDDC88CCC",
+      "final_entity_name": "车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9BDDC88CCC",
+      "primary_event_name": "车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞",
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_E88F5C3BCE",
+      "name": "收割机",
+      "entity_type": "Resource",
+      "evidence": "一台大型收割机",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_576BB65B46",
+      "final_entity_name": "收割机",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_FE1A627026",
+      "name": "小型轿车",
+      "entity_type": "Resource",
+      "evidence": "一辆小型轿车",
+      "confidence": 0.95,
+      "normalized_id": "RES_CASE_70407E27F9",
+      "normalized_name": "小型轿车",
+      "normalized_score": 1.0,
+      "matched_alias": "小型轿车",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_CASE_70407E27F9",
+      "final_entity_name": "小型轿车",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_2251F2EA55",
+      "name": "占道行驶",
+      "entity_type": "Action",
+      "evidence": "一台大型收割机占道缓慢行驶",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_1EE950A88B",
+      "final_entity_name": "占道行驶",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_51256206A5",
+      "name": "超车",
+      "entity_type": "Action",
+      "evidence": "一辆小型轿车超车时避让不及",
+      "confidence": 0.75,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_0F03A10F01",
+      "final_entity_name": "超车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "占道行驶",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_2251F2EA55",
+      "source_final_id": "MEA_CASE_1EE950A88B",
+      "source_final_name": "占道行驶",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "收割机",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_E88F5C3BCE",
+      "target_final_id": "RES_CASE_576BB65B46",
+      "target_final_name": "收割机",
+      "target_query_event_ids": [],
+      "evidence": "一台大型收割机占道缓慢行驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_0E4768C856",
+      "source_final_id": "EVT_CASE_9BDDC88CCC",
+      "source_final_name": "车辆碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "占道行驶",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_2251F2EA55",
+      "target_final_id": "MEA_CASE_1EE950A88B",
+      "target_final_name": "占道行驶",
+      "target_query_event_ids": [],
+      "evidence": "一台大型收割机占道缓慢行驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "超车",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_51256206A5",
+      "source_final_id": "MEA_CASE_0F03A10F01",
+      "source_final_name": "超车",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "小型轿车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_FE1A627026",
+      "target_final_id": "RES_CASE_70407E27F9",
+      "target_final_name": "小型轿车",
+      "target_query_event_ids": [],
+      "evidence": "一辆小型轿车超车时避让不及",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_0E4768C856",
+      "source_final_id": "EVT_CASE_9BDDC88CCC",
+      "source_final_name": "车辆碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "超车",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_51256206A5",
+      "target_final_id": "MEA_CASE_0F03A10F01",
+      "target_final_name": "超车",
+      "target_query_event_ids": [],
+      "evidence": "一辆小型轿车超车时避让不及",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "秋收季节乡村公路，一台大型收割机占道缓慢行驶，未设置警示标志，一辆小型轿车超车时避让不及，与收割机侧面相撞，轿车车头受损，收割机轻微剐蹭，现场农机车辆较多。",
+    "consequence_text": "轿车驾驶员轻微擦伤，两车受损，乡村公路拥堵，农机与私家车混行混乱，收割机占道易引发后续事故。",
+    "measure_text": "交警到场，调处事故责任，对收割机未设警示、占道行驶进行处罚；医疗人员对伤者进行处置；疏导农机车辆与私家车有序通行，清理现场；后续在秋收季节加强乡村公路农机管控，增设警示标志，1小时后道路恢复通行。"
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "case_id": "044_高速公路服务区汽修区车辆举升机倒塌事故_73fc72b8",
+  "title": "高速公路服务区汽修区车辆举升机倒塌事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某高速公路服务区汽修车间内，举升机因老化、超载倒塌，导致维修工人伤亡，车辆和设施受损。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_14A3EC4A77",
+    "expanded_event_ids": [
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_899B8A525F",
+      "name": "举升机倒塌",
+      "entity_type": "Event",
+      "evidence": "举升机因老化、超载突然倒塌，货车从约2米高的举升机上坠落",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_14A3EC4A77",
+      "final_entity_name": "举升机倒塌事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_14A3EC4A77",
+      "primary_event_name": "举升机倒塌事故",
+      "expanded_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路交通运输生产事故",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_14A3EC4A77",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "举升机倒塌事故",
+        "公路交通运输生产事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路交通运输生产事故",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_62EFC53C38",
+      "name": "举升机",
+      "entity_type": "Resource",
+      "evidence": "举升机因老化、超载突然倒塌",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_B41366FD99",
+      "final_entity_name": "举升机",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_3467ACA035",
+      "name": "报警",
+      "entity_type": "Action",
+      "evidence": "拨打119、120、122报警",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2643,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B396D82FB5",
+      "final_entity_name": "报警",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_E9924F9022",
+      "name": "清理",
+      "entity_type": "Action",
+      "evidence": "清理倒塌的举升机、货车",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2643,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_F2C178773D",
+      "final_entity_name": "清理",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_3A90075D1C",
+      "name": "事故调查",
+      "entity_type": "Action",
+      "evidence": "开展事故调查",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_6933DFD8F9",
+      "final_entity_name": "事故调查",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "举升机倒塌",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_899B8A525F",
+      "source_final_id": "EVT_CASE_14A3EC4A77",
+      "source_final_name": "举升机倒塌事故",
+      "source_query_event_ids": [
+        "EVT_CASE_14A3EC4A77",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "报警",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_3467ACA035",
+      "target_final_id": "MEA_CASE_B396D82FB5",
+      "target_final_name": "报警",
+      "target_query_event_ids": [],
+      "evidence": "拨打119、120、122报警",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "清理",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_E9924F9022",
+      "source_final_id": "MEA_CASE_F2C178773D",
+      "source_final_name": "清理",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "举升机",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_62EFC53C38",
+      "target_final_id": "RES_CASE_B41366FD99",
+      "target_final_name": "举升机",
+      "target_query_event_ids": [],
+      "evidence": "清理倒塌的举升机、货车",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "举升机倒塌",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_899B8A525F",
+      "source_final_id": "EVT_CASE_14A3EC4A77",
+      "source_final_name": "举升机倒塌事故",
+      "source_query_event_ids": [
+        "EVT_CASE_14A3EC4A77",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "清理",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_E9924F9022",
+      "target_final_id": "MEA_CASE_F2C178773D",
+      "target_final_name": "清理",
+      "target_query_event_ids": [],
+      "evidence": "清理倒塌的举升机、货车",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "举升机倒塌",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_899B8A525F",
+      "source_final_id": "EVT_CASE_14A3EC4A77",
+      "source_final_name": "举升机倒塌事故",
+      "source_query_event_ids": [
+        "EVT_CASE_14A3EC4A77",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "事故调查",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_3A90075D1C",
+      "target_final_id": "MEA_CASE_6933DFD8F9",
+      "target_final_name": "事故调查",
+      "target_query_event_ids": [],
+      "evidence": "开展事故调查",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "安全生产法",
+    "特种设备安全法"
+  ],
+  "quality_notes": [
+    "Relationships are based on explicit mentions in the text.",
+    "Confidence scores reflect the clarity of the relationship in the source text.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": 1,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高速公路服务区汽修车间内，一辆重型货车正在举升机上进行维修作业时，举升机因老化、超载突然倒塌，货车从约2米高的举升机上坠落，砸中正在车底维修的2名汽修工人，货车车身严重变形，汽修车间设施损毁，车间内其他作业人员紧急撤离。",
+    "consequence_text": "造成2名汽修工人1人死亡、1人重伤，货车车身受损，举升机完全损毁，汽修车间维修作业完全中断，服务区汽修服务暂停，过往维修车辆无法正常维修，存在车间内其他设备倒塌、车辆起火的次生风险。",
+    "measure_text": "服务区应急管理部门立即启动安全生产事故应急预案，封锁汽修车间，疏散作业人员，拨打119、120、122报警；消防救援队伍赶赴现场，清理倒塌的举升机、货车，解救被困重伤工人；医疗部门派遣救护车转运受伤工人至医院，对遇难人员进行善后处置；应急管理部门派驻工作组开展事故调查，责令汽修车间全面停产停业，排查所有维修设备安全隐患；依据《安全生产法》《特种设备安全法》开展事故调查，2小时后救援工作结束。"
+  }
+}

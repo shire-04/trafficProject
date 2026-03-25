@@ -1,0 +1,296 @@
+{
+  "case_id": "034_城市应急避难场所周边疏散通道违停拥堵事故_5a706da2",
+  "title": "城市应急避难场所周边疏散通道违停拥堵事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某市地震后，应急避难场所周边疏散通道因违停车辆堵塞，导致居民和救援车辆无法通行，存在安全隐患。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_VEHICLE_BACKLOG",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_A31A26DA7E",
+      "name": "道路交通拥堵",
+      "entity_type": "Event",
+      "evidence": "疏散通道被违停车辆完全堵死，居民无法进入避难场所，应急救援车辆、物资运输车辆也无法驶入。",
+      "confidence": 0.9,
+      "normalized_id": "EVT_VEHICLE_BACKLOG",
+      "normalized_name": "车辆积压",
+      "normalized_score": 0.0,
+      "matched_alias": "车辆积压",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_VEHICLE_BACKLOG",
+      "final_entity_name": "车辆积压",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_VEHICLE_BACKLOG",
+      "primary_event_name": "车辆积压",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "车辆积压",
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_C9E967E364",
+      "name": "车辆积压",
+      "entity_type": "Event",
+      "evidence": "大量私家车长期违规占道停放，仅留狭窄通道可供通行，疏散通道被违停车辆完全堵死",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_VEHICLE_BACKLOG",
+      "final_entity_name": "车辆积压",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_VEHICLE_BACKLOG",
+      "primary_event_name": "车辆积压",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_2E43C40821",
+      "name": "地震",
+      "entity_type": "Event",
+      "evidence": "当地突发4.5级地震后",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_B537D79A15",
+      "final_entity_name": "地震",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_B537D79A15",
+      "primary_event_name": "地震",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_B537D79A15"
+      ],
+      "query_event_names": [
+        "地震"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_1A7497393B",
+      "name": "疏散通道",
+      "entity_type": "Resource",
+      "evidence": "唯一疏散通道",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1758,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_AD62C909B2",
+      "final_entity_name": "疏散通道",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_02E7760F45",
+      "name": "交警",
+      "entity_type": "Department",
+      "evidence": "交警、应急管理部门立即赶赴现场",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_DA3B807A38",
+      "final_entity_name": "交警",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_7EF1DE7A50",
+      "name": "应急管理部门",
+      "entity_type": "Department",
+      "evidence": "交警、应急管理部门立即赶赴现场",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.7167,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_D67BC1DFF4",
+      "final_entity_name": "应急管理部门",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_57A16411E1",
+      "name": "强制拖移",
+      "entity_type": "Action",
+      "evidence": "对疏散通道内违停车辆进行强制拖移",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_BD4F60454A",
+      "final_entity_name": "强制拖移",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "强制拖移",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_57A16411E1",
+      "source_final_id": "MEA_CASE_BD4F60454A",
+      "source_final_name": "强制拖移",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "交警",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_02E7760F45",
+      "target_final_id": "ORG_CASE_DA3B807A38",
+      "target_final_name": "交警",
+      "target_query_event_ids": [],
+      "evidence": "交警、应急管理部门立即赶赴现场，对疏散通道内违停车辆进行强制拖移，打通应急疏散通道",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "强制拖移",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_57A16411E1",
+      "source_final_id": "MEA_CASE_BD4F60454A",
+      "source_final_name": "强制拖移",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "应急管理部门",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_7EF1DE7A50",
+      "target_final_id": "ORG_CASE_D67BC1DFF4",
+      "target_final_name": "应急管理部门",
+      "target_query_event_ids": [],
+      "evidence": "交警、应急管理部门立即赶赴现场，对疏散通道内违停车辆进行强制拖移，打通应急疏散通道",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "强制拖移",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_57A16411E1",
+      "source_final_id": "MEA_CASE_BD4F60454A",
+      "source_final_name": "强制拖移",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "疏散通道",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_1A7497393B",
+      "target_final_id": "RES_CASE_AD62C909B2",
+      "target_final_name": "疏散通道",
+      "target_query_event_ids": [],
+      "evidence": "交警、应急管理部门立即赶赴现场，对疏散通道内违停车辆进行强制拖移，打通应急疏散通道",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《突发事件应对法》",
+    "《消防法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市地震应急避难场所周边唯一疏散通道，大量私家车长期违规占道停放，仅留狭窄通道可供通行，当地突发4.5级地震后，大量居民涌向应急避难场所，疏散通道被违停车辆完全堵死，居民无法进入避难场所，应急救援车辆、物资运输车辆也无法驶入。",
+    "consequence_text": "无人员伤亡，应急避难场所疏散通道完全堵塞，数千名居民无法进入避难场所，应急救援、物资运输受阻，地震余震持续，居民面临安全隐患，现场秩序混乱。",
+    "measure_text": "交警、应急管理部门立即赶赴现场，对疏散通道内违停车辆进行强制拖移，打通应急疏散通道；引导居民有序进入应急避难场所，保障应急救援车辆、物资运输车辆优先通行；社区居委会、物业协助安抚居民情绪，发放应急物资；依据《突发事件应对法》《消防法》对违停车辆驾驶员进行从严处罚，后续对避难场所周边疏散通道进行常态化管控，严禁任何车辆占用，1小时后疏散通道完全打通，居民全部安全进入避难场所。"
+  }
+}

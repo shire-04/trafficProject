@@ -1,0 +1,232 @@
+{
+  "case_id": "015_城市有轨电车平交道口货车卡轨事故_a2b74e16",
+  "title": "城市有轨电车平交道口货车卡轨事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某市有轨电车平交路口发生货车卡轨事故，导致有轨电车双向通行中断，运营暂停，存在安全风险。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9965519510",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_62AA7A521F",
+      "name": "轨道交通车辆卡轨",
+      "entity_type": "Event",
+      "evidence": "一辆超宽重型货车违规驶入有轨电车专用轨道区域，车辆车轮卡在有轨电车轨道槽内，无法移动，货车横停在轨道中央，双向有轨电车均无法通行。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9965519510",
+      "final_entity_name": "轨道交通车辆卡轨",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9965519510",
+      "primary_event_name": "轨道交通车辆卡轨",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9965519510",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "轨道交通车辆卡轨",
+        "公路中断",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_3CA3C2633D",
+      "name": "轨道卡轨",
+      "entity_type": "Event",
+      "evidence": "车辆车轮卡在有轨电车轨道槽内，无法移动",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_0133F15C01",
+      "final_entity_name": "轨道卡轨",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_0133F15C01",
+      "primary_event_name": "轨道卡轨",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_0133F15C01"
+      ],
+      "query_event_names": [
+        "轨道卡轨"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_2C1D7753CB",
+      "name": "紧急制动",
+      "entity_type": "Action",
+      "evidence": "对全线有轨电车采取紧急制动措施",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_34B2655045",
+      "final_entity_name": "紧急制动",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_CBFCB0FFA4",
+      "name": "切断轨道供电",
+      "entity_type": "Action",
+      "evidence": "切断轨道供电",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1758,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_96BCF5524F",
+      "final_entity_name": "切断轨道供电",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "轨道交通车辆卡轨",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_62AA7A521F",
+      "source_final_id": "EVT_CASE_9965519510",
+      "source_final_name": "轨道交通车辆卡轨",
+      "source_query_event_ids": [
+        "EVT_CASE_9965519510",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "relation": "CAUSES",
+      "target": "轨道卡轨",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_3CA3C2633D",
+      "target_final_id": "EVT_CASE_0133F15C01",
+      "target_final_name": "轨道卡轨",
+      "target_query_event_ids": [
+        "EVT_CASE_0133F15C01"
+      ],
+      "evidence": "某市有轨电车平交路口，一辆超宽重型货车违规驶入有轨电车专用轨道区域，车辆车轮卡在有轨电车轨道槽内，无法移动",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "轨道交通车辆卡轨",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_62AA7A521F",
+      "source_final_id": "EVT_CASE_9965519510",
+      "source_final_name": "轨道交通车辆卡轨",
+      "source_query_event_ids": [
+        "EVT_CASE_9965519510",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "relation": "TRIGGERS",
+      "target": "紧急制动",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_2C1D7753CB",
+      "target_final_id": "MEA_CASE_34B2655045",
+      "target_final_name": "紧急制动",
+      "target_query_event_ids": [],
+      "evidence": "有轨电车运营公司立即启动应急预案，对全线有轨电车采取紧急制动措施",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "轨道交通车辆卡轨",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_62AA7A521F",
+      "source_final_id": "EVT_CASE_9965519510",
+      "source_final_name": "轨道交通车辆卡轨",
+      "source_query_event_ids": [
+        "EVT_CASE_9965519510",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "relation": "TRIGGERS",
+      "target": "切断轨道供电",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_CBFCB0FFA4",
+      "target_final_id": "MEA_CASE_96BCF5524F",
+      "target_final_name": "切断轨道供电",
+      "target_query_event_ids": [],
+      "evidence": "有轨电车运营公司立即启动应急预案，切断轨道供电",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《城市轨道交通运营管理规定》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市有轨电车平交路口，一辆超宽重型货车违规驶入有轨电车专用轨道区域，车辆车轮卡在有轨电车轨道槽内，无法移动，货车横停在轨道中央，双向有轨电车均无法通行，距离路口约500米处有一列有轨电车正在驶来。",
+    "consequence_text": "无人员伤亡，货车车身轻微受损，有轨电车轨道双向通行完全中断，有轨电车全线运营暂停，沿线乘客滞留，路口双向交通拥堵，驶来的有轨电车无法制动，存在与货车碰撞的重大风险。",
+    "measure_text": "有轨电车运营公司立即启动应急预案，对全线有轨电车采取紧急制动措施，切断轨道供电，通过广播安抚乘客；交警部门立即封锁事故路口，设置警戒区域，疏导过往车辆、行人绕行；路政部门调集大吨位吊车、牵引车，将卡轨货车拖离轨道区域；轨道专业人员对轨道、道岔进行全面安全检测，确认无损坏后恢复供电；依据《城市轨道交通运营管理规定》《道路交通安全法》对货车驾驶员进行从严处罚，2小时后轨道清理完毕，有轨电车全线恢复运营。"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "case_id": "021_山区公路落石砸伤车辆事故_d001ab7c",
+  "title": "山区公路落石砸伤车辆事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "山区公路因暴雨导致落石砸中车辆，造成人员受伤和道路中断的交通事故。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_AF7628B03F",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_DAEA529DD7",
+      "name": "落石砸车",
+      "entity_type": "Event",
+      "evidence": "某山区公路，因突发暴雨，山体掉落一块直径约1米的石块，砸中行驶中的一辆小型轿车，轿车车顶被砸破，驾驶员被砸伤。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_AF7628B03F",
+      "final_entity_name": "落石砸车",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_AF7628B03F",
+      "primary_event_name": "落石砸车",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_AF7628B03F",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "落石砸车",
+        "公路交通突发事件",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件",
+        "公路损毁"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_E46CB83ABE",
+      "name": "暴雨",
+      "entity_type": "Event",
+      "evidence": "因突发暴雨",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_RAINSTORM",
+      "final_entity_name": "暴雨",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_RAINSTORM",
+      "primary_event_name": "暴雨",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "query_event_names": [
+        "暴雨"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "落石砸车",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_DAEA529DD7",
+      "source_final_id": "EVT_CASE_AF7628B03F",
+      "source_final_name": "落石砸车",
+      "source_query_event_ids": [
+        "EVT_CASE_AF7628B03F",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "relation": "CAUSES",
+      "target": "暴雨",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_E46CB83ABE",
+      "target_final_id": "EVT_RAINSTORM",
+      "target_final_name": "暴雨",
+      "target_query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "evidence": "因突发暴雨，山体掉落一块直径约1米的石块，砸中行驶中的一辆小型轿车",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《公路安全保护条例》"
+  ],
+  "quality_notes": [
+    "信息较为完整，事件描述清晰。",
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某山区公路，因突发暴雨，山体掉落一块直径约1米的石块，砸中行驶中的一辆小型轿车，轿车车顶被砸破，驾驶员被砸伤，石块落在路面中间，占用整个车道，当时雨势较大，能见度较低。",
+    "consequence_text": "造成轿车驾驶员1人重伤，轿车严重损坏，事故路段双向交通完全中断，后方车辆滞留约4公里，持续暴雨导致山体有进一步落石的风险，威胁过往车辆和人员安全，救援车辆通行受阻。",
+    "measure_text": "应急管理部门协调消防救援队伍、医疗队伍，携带救援装备、急救药品，冒雨赶赴现场，解救被困驾驶员；交警部门在事故路段两端设置警戒，禁止车辆、人员进入，疏导后方车辆；交通部门组织专业施工队伍，调用挖掘机等设备，清理路面石块；自然资源部门对山体进行监测，实时预警落石风险；医疗部门对受伤驾驶员进行紧急救治后，转运至医院；施工队伍清理石块后，对路面进行修复，依据《公路安全保护条例》开展处置，4小时后道路恢复通行。"
+  }
+}

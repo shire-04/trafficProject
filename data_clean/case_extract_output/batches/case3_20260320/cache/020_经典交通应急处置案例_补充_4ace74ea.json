@@ -1,0 +1,28 @@
+{
+  "case_id": "020_经典交通应急处置案例_补充_4ace74ea",
+  "title": "经典交通应急处置案例（补充）",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "请提供交通事故案例文本，以便进行实体抽取。",
+  "confidence": 0.0,
+  "event_resolution": {
+    "primary_event_id": "",
+    "expanded_event_ids": []
+  },
+  "entities": [],
+  "relations": [],
+  "legal_references": [],
+  "quality_notes": [
+    "实体数量不足，跳过关系抽取"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "",
+    "consequence_text": "",
+    "measure_text": ""
+  }
+}

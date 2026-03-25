@@ -1,0 +1,136 @@
+{
+  "case_id": "036_城市河道清淤工程车坠河事故_e9e0f326",
+  "title": "城市河道清淤工程车坠河事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某市城市河道清淤施工现场，一辆挖掘机因岸边土层松动坍塌坠入河道，驾驶员被困，后被成功救出。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_59EDD4A04E",
+    "expanded_event_ids": [
+      "EVT_CONSTRUCTION_ACCIDENT",
+      "EVT_CONSTRUCTION_SAFETY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_7090E58DE2",
+      "name": "施工机械坠河",
+      "entity_type": "Event",
+      "evidence": "一辆大型履带式挖掘机在河道岸边作业时，因岸边土层松动坍塌，挖掘机连同驾驶员一同坠入约3米深的河道内",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_59EDD4A04E",
+      "final_entity_name": "施工机械坠河",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_59EDD4A04E",
+      "primary_event_name": "施工机械坠河",
+      "expanded_event_ids": [
+        "EVT_CONSTRUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "expanded_event_names": [
+        "公路工程建设事故",
+        "施工安全事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_59EDD4A04E",
+        "EVT_CONSTRUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "query_event_names": [
+        "施工机械坠河",
+        "公路工程建设事故",
+        "施工安全事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_CONSTRUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "alias_patch_target_names": [
+        "公路工程建设事故",
+        "施工安全事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_89CBB7C67F",
+      "name": "岸边土层坍塌",
+      "entity_type": "Event",
+      "evidence": "因岸边土层松动坍塌",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_2AE6F9D00B",
+      "final_entity_name": "岸边土层坍塌",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_2AE6F9D00B",
+      "primary_event_name": "岸边土层坍塌",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_2AE6F9D00B"
+      ],
+      "query_event_names": [
+        "岸边土层坍塌"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "岸边土层坍塌",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_89CBB7C67F",
+      "source_final_id": "EVT_CASE_2AE6F9D00B",
+      "source_final_name": "岸边土层坍塌",
+      "source_query_event_ids": [
+        "EVT_CASE_2AE6F9D00B"
+      ],
+      "relation": "CAUSES",
+      "target": "施工机械坠河",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_7090E58DE2",
+      "target_final_id": "EVT_CASE_59EDD4A04E",
+      "target_final_name": "施工机械坠河",
+      "target_query_event_ids": [
+        "EVT_CASE_59EDD4A04E",
+        "EVT_CONSTRUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "evidence": "因岸边土层松动坍塌，挖掘机连同驾驶员一同坠入约3米深的河道内",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《建设工程安全生产管理条例》",
+    "《河道管理条例》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取主要基于文本中的直接描述，对于隐含关系未进行抽取。"
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 0,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市城市河道清淤施工现场，一辆大型履带式挖掘机在河道岸边作业时，因岸边土层松动坍塌，挖掘机连同驾驶员一同坠入约3米深的河道内，挖掘机驾驶室被河水淹没大半，驾驶员被困车内，河道水流平缓，岸边持续有土体坍塌。",
+    "consequence_text": "造成挖掘机驾驶员1人被困，无人员伤亡，挖掘机完全损毁，河道清淤作业完全中断，岸边土体持续坍塌，存在二次坠河、人员溺水的重大风险。",
+    "measure_text": "应急管理部门立即启动水利工程施工突发事件应急预案，协调消防救援队伍、水利部门赶赴现场；水利部门对河道上游进行临时截流，降低河道水位，对坍塌岸边进行临时加固，防止继续坍塌；消防救援队伍使用挖掘机、破拆工具，救出被困驾驶员；医疗部门对驾驶员进行身体检查与处置；住建部门责令施工单位暂停清淤作业，全面排查施工现场安全隐患；依据《建设工程安全生产管理条例》《河道管理条例》开展事故调查，2小时后驾驶员被成功救出，清淤作业逐步恢复。"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "case_id": "008_冷链运输车制冷剂泄漏致人员中毒事故_684d2876",
+  "title": "冷链运输车制冷剂泄漏致人员中毒事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "冷链运输车制冷剂（氨）泄漏，导致驾乘人员中毒，并对周边环境和交通造成影响。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_LEAK",
+    "expanded_event_ids": [
+      "EVT_HAZMAT_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_7B472C688B",
+      "name": "危险化学品泄漏",
+      "entity_type": "Event",
+      "evidence": "制冷机组管道破裂，制冷剂（氨）发生泄漏，泄漏气体进入驾驶室，导致驾驶员与副驾2人出现头晕、恶心、呼吸困难等中毒症状",
+      "confidence": 0.9,
+      "normalized_id": "EVT_HAZMAT_LEAK",
+      "normalized_name": "危险化学品运输泄漏事件",
+      "normalized_score": 0.0,
+      "matched_alias": "危险化学品运输泄漏事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_LEAK",
+      "final_entity_name": "危险化学品运输泄漏事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_LEAK",
+      "primary_event_name": "危险化学品运输泄漏事件",
+      "expanded_event_ids": [
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "危险货物运输事故"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "query_event_names": [
+        "危险化学品运输泄漏事件",
+        "危险货物运输事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_99C8852482",
+      "name": "制冷剂泄漏",
+      "entity_type": "Event",
+      "evidence": "制冷机组管道破裂，制冷剂（氨）发生泄漏",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_40582771C8",
+      "final_entity_name": "制冷剂泄漏",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_40582771C8",
+      "primary_event_name": "制冷剂泄漏",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_40582771C8"
+      ],
+      "query_event_names": [
+        "制冷剂泄漏"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "制冷剂泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_99C8852482",
+      "source_final_id": "EVT_CASE_40582771C8",
+      "source_final_name": "制冷剂泄漏",
+      "source_query_event_ids": [
+        "EVT_CASE_40582771C8"
+      ],
+      "relation": "CAUSES",
+      "target": "危险化学品泄漏",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_7B472C688B",
+      "target_final_id": "EVT_HAZMAT_LEAK",
+      "target_final_name": "危险化学品运输泄漏事件",
+      "target_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "evidence": "制冷剂（氨）发生泄漏，导致驾驶员与副驾2人出现头晕、恶心、呼吸困难等中毒症状",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《危险化学品安全管理条例》",
+    "《道路运输车辆动态监督管理办法》"
+  ],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores are assigned based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某省道平直路段，一辆长途冷链运输车行驶中，制冷机组管道破裂，制冷剂（氨）发生泄漏，泄漏气体进入驾驶室，导致驾驶员与副驾2人出现头晕、恶心、呼吸困难等中毒症状，车辆紧急停靠在应急车道，驾驶员无法正常操作车辆，周边有农田和村庄。",
+    "consequence_text": "造成2名驾乘人员中度氨中毒，无法自主撤离，泄漏的氨气具有毒性和易燃易爆性，威胁周边农田作业人员、村庄群众安全，事故路段单向交通封闭，车辆滞留约4公里，存在爆炸、人员中毒加重的风险。",
+    "measure_text": "应急管理部门启动《危险化学品突发事件应急预案》，协调消防救援队伍携带防化装备、堵漏器材赶赴现场，对泄漏制冷机组进行封堵、稀释处理，将中毒驾乘人员转移至安全区域；医疗部门派遣救护车对中毒人员进行吸氧、解毒处置后，转运至专业医院救治；交警部门封闭事故路段，疏散周边群众，疏导过往车辆绕行；环保部门对周边空气、土壤进行采样监测，确认无扩散风险；依据《危险化学品安全管理条例》《道路运输车辆动态监督管理办法》开展事故调查，3小时后泄漏得到控制，道路恢复通行。"
+  }
+}

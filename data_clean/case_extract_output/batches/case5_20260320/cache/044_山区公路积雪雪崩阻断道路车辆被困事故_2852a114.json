@@ -1,0 +1,128 @@
+{
+  "case_id": "044_山区公路积雪雪崩阻断道路车辆被困事故_2852a114",
+  "title": "山区公路积雪雪崩阻断道路车辆被困事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "某高海拔山区公路因强降雪引发雪崩，导致道路阻断，4辆轿车和1辆客运班车被困，22人被困，存在二次雪崩风险。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_INTERRUPTION",
+    "expanded_event_ids": [
+      "EVT_ROAD_BLOCKAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_70F7787BEF",
+      "name": "道路积雪",
+      "entity_type": "Event",
+      "evidence": "因持续强降雪引发雪崩，大量积雪倾泻至路面，完全阻断双向通行，积雪厚度达3米，长度约500米",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.0,
+      "matched_alias": "公路中断",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "expanded_event_names": [
+        "公路阻塞"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "query_event_names": [
+        "公路中断",
+        "公路阻塞"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "alias_patch_target_names": [
+        "公路中断"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_B48FB66B78",
+      "name": "雪崩",
+      "entity_type": "Event",
+      "evidence": "因持续强降雪引发雪崩",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_449056D669",
+      "final_entity_name": "雪崩",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_449056D669",
+      "primary_event_name": "雪崩",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_449056D669"
+      ],
+      "query_event_names": [
+        "雪崩"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "雪崩",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_B48FB66B78",
+      "source_final_id": "EVT_CASE_449056D669",
+      "source_final_name": "雪崩",
+      "source_query_event_ids": [
+        "EVT_CASE_449056D669"
+      ],
+      "relation": "CAUSES",
+      "target": "道路积雪",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_70F7787BEF",
+      "target_final_id": "EVT_ROAD_INTERRUPTION",
+      "target_final_name": "公路中断",
+      "target_query_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "evidence": "因持续强降雪引发雪崩，大量积雪倾泻至路面，完全阻断双向通行",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《山区公路雪灾突发事件应急预案》",
+    "《公路雪灾防治技术规范》"
+  ],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高海拔山区公路，因持续强降雪引发雪崩，大量积雪倾泻至路面，完全阻断双向通行，积雪厚度达3米，长度约500米，4辆小型轿车、1辆客运班车被困雪崩路段两端，车内共22人被困，持续降雪导致仍有二次雪崩风险，气温零下15℃。",
+    "consequence_text": "造成22名人员全部被困，无人员伤亡，山区公路双向交通完全中断，周边无村镇，通讯信号较弱，低温暴雪环境下被困人员面临冻伤、失温的重大风险，二次雪崩可能掩埋被困车辆。",
+    "measure_text": "当地应急管理部门启动《山区公路雪灾突发事件应急预案》，协调消防救援队伍、交通部门、气象部门赶赴现场；气象部门实时监测降雪与雪崩风险，确认安全救援窗口期；交警部门在公路两端设置警戒，严禁车辆、人员进入；消防救援队伍使用雪地救援装备、除雪设备开辟救援通道，分批转移被困人员至安全区域，为被困人员提供保暖物资、食品和热水；交通部门调集大型除雪设备，清理路面积雪，对雪崩区域进行监测；依据《公路雪灾防治技术规范》开展处置，6小时后被困人员全部安全转移，12小时后道路恢复临时通行。"
+  }
+}

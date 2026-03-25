@@ -1,0 +1,247 @@
+{
+  "case_id": "001_京港澳高速漯河段多车连环追尾事故_e0fe5421",
+  "title": "京港澳高速漯河段多车连环追尾事故",
+  "source_file": "交通应急处理案例.txt",
+  "summary": "京港澳高速漯河段因团雾导致多车连环追尾事故，造成人员伤亡和交通中断，相关部门已采取救援和处置措施。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_4D219D5D07",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_1B9DE19064",
+      "name": "追尾事故",
+      "entity_type": "Event",
+      "evidence": "京港澳高速漯河段K896公里处，因突发团雾导致能见度不足50米，一辆重型半挂牵引车与前方3辆小型轿车、2辆轻型货车发生连环追尾",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_4D219D5D07",
+      "final_entity_name": "追尾事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_4D219D5D07",
+      "primary_event_name": "追尾事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "追尾事故",
+        "交通事故",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_5411CD489A",
+      "name": "团雾",
+      "entity_type": "Event",
+      "evidence": "因突发团雾导致能见度不足50米",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_B9F7125E79",
+      "final_entity_name": "团雾",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_B9F7125E79",
+      "primary_event_name": "团雾",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_B9F7125E79"
+      ],
+      "query_event_names": [
+        "团雾"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_CD3E5951BE",
+      "name": "交通中断",
+      "entity_type": "Event",
+      "evidence": "事故路段双向交通完全中断",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_436A2F6617",
+      "final_entity_name": "交通中断",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_436A2F6617",
+      "primary_event_name": "交通中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_436A2F6617"
+      ],
+      "query_event_names": [
+        "交通中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_7F1A7FDC3B",
+      "name": "车辆滞留",
+      "entity_type": "Event",
+      "evidence": "后方车辆滞留约8公里",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_3B6CFC25B4",
+      "final_entity_name": "车辆滞留",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_3B6CFC25B4",
+      "primary_event_name": "车辆滞留",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_3B6CFC25B4"
+      ],
+      "query_event_names": [
+        "车辆滞留"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_C874B71CE7",
+      "name": "车辆起火",
+      "entity_type": "Event",
+      "evidence": "部分车辆因碰撞发生轻微起火",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_09C02D083D",
+      "final_entity_name": "车辆起火",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_09C02D083D",
+      "primary_event_name": "车辆起火",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_09C02D083D"
+      ],
+      "query_event_names": [
+        "车辆起火"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "团雾",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_5411CD489A",
+      "source_final_id": "EVT_CASE_B9F7125E79",
+      "source_final_name": "团雾",
+      "source_query_event_ids": [
+        "EVT_CASE_B9F7125E79"
+      ],
+      "relation": "CAUSES",
+      "target": "追尾事故",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_1B9DE19064",
+      "target_final_id": "EVT_CASE_4D219D5D07",
+      "target_final_name": "追尾事故",
+      "target_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "evidence": "因突发团雾导致能见度不足50米，一辆重型半挂牵引车与前方3辆小型轿车、2辆轻型货车发生连环追尾",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_1B9DE19064",
+      "source_final_id": "EVT_CASE_4D219D5D07",
+      "source_final_name": "追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆滞留",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_7F1A7FDC3B",
+      "target_final_id": "EVT_CASE_3B6CFC25B4",
+      "target_final_name": "车辆滞留",
+      "target_query_event_ids": [
+        "EVT_CASE_3B6CFC25B4"
+      ],
+      "evidence": "后方车辆滞留约8公里",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通事故处理程序规定》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "confidence score is estimated."
+  ],
+  "casualties": {
+    "deaths": 2,
+    "injuries": 5,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "京港澳高速漯河段K896公里处，因突发团雾导致能见度不足50米，一辆重型半挂牵引车与前方3辆小型轿车、2辆轻型货车发生连环追尾，事故车辆均不同程度受损，部分车辆停留在行车道与应急车道交界处。",
+    "consequence_text": "造成2人死亡、5人受伤，其中2人重伤，事故路段双向交通完全中断，后方车辆滞留约8公里，部分车辆因碰撞发生轻微起火，存在火势蔓延至周边植被的风险。",
+    "measure_text": "交警部门立即封闭事故路段，设置警戒区域和警示标志；消防救援队伍赶赴现场扑灭车辆明火，使用破拆工具解救被困人员；医疗急救部门派遣救护车将受伤人员转运至就近医院救治，同步开展伤员伤情评估；交通部门调用清障车、吊车对事故车辆进行拖移清理，根据《道路交通事故处理程序规定》开展现场勘查；应急管理部门协调气象部门实时监测雾情，通过高速公路广播、导航APP发布分流提示，引导车辆从就近收费站驶离高速，4小时后事故路段恢复通行。"
+  }
+}

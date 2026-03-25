@@ -1,0 +1,123 @@
+{
+  "case_id": "007_乡村道路拖拉机与行人碰撞事故_7fd0535a",
+  "title": "乡村道路拖拉机与行人碰撞事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "乡村道路上，一辆无牌拖拉机与行人发生碰撞，造成人员伤亡。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_CEA9425D82",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_2D3ED8087A",
+      "name": "车辆碰撞行人",
+      "entity_type": "Event",
+      "evidence": "一辆无牌拖拉机装载农作物，因驾驶员未观察前方路况，行驶中与路边行走的2名老人发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_CEA9425D82",
+      "final_entity_name": "车辆碰撞行人",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_CEA9425D82",
+      "primary_event_name": "车辆碰撞行人",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_CEA9425D82",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "车辆碰撞行人",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_15F46FE2E1",
+      "name": "碰撞",
+      "entity_type": "Action",
+      "evidence": "发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2643,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_6B219E66DE",
+      "final_entity_name": "碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆碰撞行人",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_2D3ED8087A",
+      "source_final_id": "EVT_CASE_CEA9425D82",
+      "source_final_name": "车辆碰撞行人",
+      "source_query_event_ids": [
+        "EVT_CASE_CEA9425D82",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "relation": "TRIGGERS",
+      "target": "碰撞",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_15F46FE2E1",
+      "target_final_id": "MEA_CASE_6B219E66DE",
+      "target_final_name": "碰撞",
+      "target_query_event_ids": [],
+      "evidence": "发生碰撞",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "道路交通安全法"
+  ],
+  "quality_notes": [
+    "事故发生地点描述为‘乡村土路’，信息较为模糊。",
+    "关系抽取基于文本中的明确信息，未进行推断。",
+    "confidence score is based on the clarity of the evidence in the text.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡村土路，一辆无牌拖拉机装载农作物，因驾驶员未观察前方路况，行驶中与路边行走的2名老人发生碰撞，老人被撞倒在地，拖拉机未立即停车，继续行驶一段距离后才停下，路面无照明设施，当时为傍晚。",
+    "consequence_text": "造成2名老人1人重伤、1人轻伤，均无法自行移动，拖拉机轻微受损，事故路段无其他车辆，周边群众发现后及时报警，受伤老人因延误救治，伤情有加重风险，乡村道路通行未受明显影响，但存在安全隐患。",
+    "measure_text": "当地派出所接到报警后，立即赶赴现场，保护事故现场，控制肇事驾驶员；医疗部门派遣救护车从乡镇卫生院赶赴现场，对受伤老人进行紧急救治后，转运至县级医院；交警部门到场开展现场勘查，认定事故责任，对无牌拖拉机进行扣押；村委会协助联系老人家属，告知事故情况，依据《道路交通安全法》开展处置，1小时后受伤老人被转运至医院，现场恢复正常。"
+  }
+}

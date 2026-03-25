@@ -1,0 +1,174 @@
+{
+  "case_id": "059_乡村道路拖拉机载人翻车事故_9fe7f07a",
+  "title": "乡村道路拖拉机载人翻车事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "乡村土路上一辆无牌拖拉机违规载人发生翻车事故，造成人员伤亡和交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_6E479B6FD4",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_5CC4C2E9B7",
+      "name": "拖拉机翻车",
+      "entity_type": "Event",
+      "evidence": "某乡村土路，一辆无牌拖拉机违规载人（载有6名村民），因驾驶员操作不当，在陡坡处发生翻车，拖拉机和所载村民全部摔倒在地，拖拉机严重损坏。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_6E479B6FD4",
+      "final_entity_name": "拖拉机翻车",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_6E479B6FD4",
+      "primary_event_name": "拖拉机翻车",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "公路中断"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_6E479B6FD4",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "拖拉机翻车",
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "alias_patch_target_names": [
+        "公路中断"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_04A35C2715",
+      "name": "违规载人",
+      "entity_type": "Action",
+      "evidence": "一辆无牌拖拉机违规载人（载有6名村民）",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1918,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_C84BF577DD",
+      "final_entity_name": "违规载人",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_1DBE1E03BB",
+      "name": "交通中断",
+      "entity_type": "Event",
+      "evidence": "事故路段双向交通中断",
+      "confidence": 0.7,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.1974,
+      "matched_alias": "交通中断",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "拖拉机翻车",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_5CC4C2E9B7",
+      "source_final_id": "EVT_CASE_6E479B6FD4",
+      "source_final_name": "拖拉机翻车",
+      "source_query_event_ids": [
+        "EVT_CASE_6E479B6FD4",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "relation": "TRIGGERS",
+      "target": "违规载人",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_04A35C2715",
+      "target_final_id": "MEA_CASE_C84BF577DD",
+      "target_final_name": "违规载人",
+      "target_query_event_ids": [],
+      "evidence": "拖拉机违规载人存在极大安全隐患",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "拖拉机翻车",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_5CC4C2E9B7",
+      "source_final_id": "EVT_CASE_6E479B6FD4",
+      "source_final_name": "拖拉机翻车",
+      "source_query_event_ids": [
+        "EVT_CASE_6E479B6FD4",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "relation": "CAUSES",
+      "target": "交通中断",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_1DBE1E03BB",
+      "target_final_id": "EVT_ROAD_INTERRUPTION",
+      "target_final_name": "公路中断",
+      "target_query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "evidence": "事故路段双向交通中断",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "道路交通安全法"
+  ],
+  "quality_notes": [
+    "事故涉及违规载人，需要关注相关法律法规的适用。",
+    "关系抽取基于文本信息，可能存在遗漏或不准确的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 7,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡村土路，一辆无牌拖拉机违规载人（载有6名村民），因驾驶员操作不当，在陡坡处发生翻车，拖拉机和所载村民全部摔倒在地，拖拉机严重损坏，路面无防护设施，当时天气晴朗。",
+    "consequence_text": "造成拖拉机驾驶员1人重伤、6名村民2人重伤、4人轻伤，拖拉机完全损坏，事故路段双向交通中断，周边村民出行受阻，拖拉机违规载人存在极大安全隐患，引发周边村民对交通安全的重视。",
+    "measure_text": "当地乡镇政府组织工作人员、派出所民警赶赴现场，保护事故现场，疏散过往车辆和群众；消防救援队伍到场，对受伤人员进行初步救治，协助清理现场；医疗部门派遣救护车从乡镇卫生院赶赴现场，对受伤人员进行紧急救治后，转运至县级医院；交警部门到场开展现场勘查，认定事故责任，对无牌拖拉机驾驶员进行处罚；村委会协助联系受伤人员家属，开展交通安全宣传，禁止拖拉机违规载人，依据《道路交通安全法》开展处置，4小时后事故现场清理完毕，道路恢复通行。"
+  }
+}

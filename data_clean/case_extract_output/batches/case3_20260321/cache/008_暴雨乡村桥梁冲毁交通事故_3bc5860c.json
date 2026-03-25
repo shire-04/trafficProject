@@ -1,0 +1,135 @@
+{
+  "case_id": "008_暴雨乡村桥梁冲毁交通事故_3bc5860c",
+  "title": "暴雨乡村桥梁冲毁交通事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "某乡村山区桥梁因暴雨冲毁，一辆小型面包车坠入河中，造成人员伤亡和交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_DAMAGE",
+    "expanded_event_ids": [
+      "EVT_FLOOD",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_996EABC20A",
+      "name": "桥梁冲毁",
+      "entity_type": "Event",
+      "evidence": "某乡村山区桥梁，因连续特大暴雨，河水暴涨冲毁桥梁中段",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_DAMAGE",
+      "normalized_name": "公路损毁",
+      "normalized_score": 0.0,
+      "matched_alias": "公路损毁",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_DAMAGE",
+      "final_entity_name": "公路损毁",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_DAMAGE",
+      "primary_event_name": "公路损毁",
+      "expanded_event_ids": [
+        "EVT_FLOOD",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "洪水",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_FLOOD",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "公路损毁",
+        "洪水",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_DAMAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路损毁"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_288469C640",
+      "name": "暴雨",
+      "entity_type": "Event",
+      "evidence": "连续特大暴雨",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_RAINSTORM",
+      "final_entity_name": "暴雨",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_RAINSTORM",
+      "primary_event_name": "暴雨",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "query_event_names": [
+        "暴雨"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "暴雨",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_288469C640",
+      "source_final_id": "EVT_RAINSTORM",
+      "source_final_name": "暴雨",
+      "source_query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "relation": "CAUSES",
+      "target": "桥梁冲毁",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_996EABC20A",
+      "target_final_id": "EVT_ROAD_DAMAGE",
+      "target_final_name": "公路损毁",
+      "target_query_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_FLOOD",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "因连续特大暴雨，河水暴涨冲毁桥梁中段",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《防汛突发事件应急预案》",
+    "《防洪法》"
+  ],
+  "quality_notes": [
+    "人员伤亡信息较为明确，但具体死亡人数未知。",
+    "The confidence scores are based on the clarity of the evidence in the text.",
+    "Some relationships are inferred based on the context of the accident and the actions taken by different departments."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 4,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡村山区桥梁，因连续特大暴雨，河水暴涨冲毁桥梁中段，一辆小型面包车正行驶至桥梁中段，随桥梁一同坠落至河水中，车内4人被困，桥梁两端道路被洪水冲断，通讯信号较弱。",
+    "consequence_text": "造成面包车内4人全部被困，1人重伤、3人轻伤，桥梁完全损毁，乡村与外界交通彻底中断，洪水持续上涨可能导致被困人员溺水，周边农田被淹。",
+    "measure_text": "应急管理部门启动《防汛突发事件应急预案》，协调消防救援队伍、海事部门携带救生艇赶赴现场，开展水面救援；医疗部门派遣救护车在现场待命，救治受伤人员；交警、交通部门封闭桥梁周边道路，疏导村民绕行安全路线；水利部门监测河流水位变化；依据《防洪法》开展处置，5小时后被困人员全部救出，桥梁重建工作同步启动。"
+  }
+}

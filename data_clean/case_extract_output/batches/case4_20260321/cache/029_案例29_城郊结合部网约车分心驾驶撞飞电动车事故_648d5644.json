@@ -1,0 +1,145 @@
+{
+  "case_id": "029_案例29_城郊结合部网约车分心驾驶撞飞电动车事故_648d5644",
+  "title": "案例29：城郊结合部网约车分心驾驶撞飞电动车事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "网约车因分心驾驶撞飞电动自行车，造成人员重伤和车辆报废，路口交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9BDDC88CCC",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ROAD_EMERGENCY",
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_C976BE5362",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "网约车驾驶员低头查看接单信息，分心驾驶，绿灯起步时未观察路况，直接撞飞正常横穿路口的电动自行车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9BDDC88CCC",
+      "final_entity_name": "车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9BDDC88CCC",
+      "primary_event_name": "车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路交通突发事件",
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞",
+        "公路中断",
+        "公路交通突发事件",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路交通突发事件",
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_E595F8DA80",
+      "name": "分心驾驶",
+      "entity_type": "Action",
+      "evidence": "分心驾驶",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3922,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_5FC20D97EE",
+      "final_entity_name": "分心驾驶",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_C976BE5362",
+      "source_final_id": "EVT_CASE_9BDDC88CCC",
+      "source_final_name": "车辆碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "分心驾驶",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_E595F8DA80",
+      "target_final_id": "MEA_CASE_5FC20D97EE",
+      "target_final_name": "分心驾驶",
+      "target_query_event_ids": [],
+      "evidence": "分心驾驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "城郊红绿灯路口，一辆网约车驾驶员低头查看接单信息，分心驾驶，绿灯起步时未观察路况，直接撞飞正常横穿路口的电动自行车，电动车骑行者被撞出数米远，车辆完全报废。",
+    "consequence_text": "电动自行车骑行者重伤，网约车轻微受损，路口双向交通拥堵，周边群众围观，网约车驾驶员涉嫌分心驾驶，责任明确。",
+    "measure_text": "交警快速封锁现场，疏散围观群众，控制网约车驾驶员，开展现场勘查；消防人员协助转移伤者；医疗部门紧急转运重伤员就医；路政部门清理现场，恢复路口交通；依据《道路交通安全法》对分心驾驶行为从严追责，督促网约车平台加强驾驶员安全管理，1.5小时后路口恢复通行。"
+  }
+}

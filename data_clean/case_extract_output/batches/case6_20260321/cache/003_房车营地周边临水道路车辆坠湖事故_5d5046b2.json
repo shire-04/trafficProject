@@ -1,0 +1,122 @@
+{
+  "case_id": "003_房车营地周边临水道路车辆坠湖事故_5d5046b2",
+  "title": "房车营地周边临水道路车辆坠湖事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某环湖房车营地周边临水道路发生一起房车坠湖事故，造成3人被困，1人轻微溺水，房车受损，道路封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_72972C0FC7",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_2927C2F3E6",
+      "name": "车辆坠湖",
+      "entity_type": "Event",
+      "evidence": "一辆自行式房车行驶中，因驾驶员对车身宽度判断失误，会车时冲出无防护栏的临水路面，坠入约4米深的湖水中",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_72972C0FC7",
+      "final_entity_name": "车辆坠湖",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_72972C0FC7",
+      "primary_event_name": "车辆坠湖",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_72972C0FC7",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆坠湖",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_47087927F4",
+      "name": "驾驶员对车身宽度判断失误",
+      "entity_type": "Action",
+      "evidence": "因驾驶员对车身宽度判断失误",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3372,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_F46EBF6CE5",
+      "final_entity_name": "驾驶员对车身宽度判断失误",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆坠湖",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_2927C2F3E6",
+      "source_final_id": "EVT_CASE_72972C0FC7",
+      "source_final_name": "车辆坠湖",
+      "source_query_event_ids": [
+        "EVT_CASE_72972C0FC7",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "驾驶员对车身宽度判断失误",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_47087927F4",
+      "target_final_id": "MEA_CASE_F46EBF6CE5",
+      "target_final_name": "驾驶员对车身宽度判断失误",
+      "target_query_event_ids": [],
+      "evidence": "因驾驶员对车身宽度判断失误",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《旅游安全管理办法》"
+  ],
+  "quality_notes": [
+    "关系抽取主要基于事故描述和处理措施，部分关系推断可能存在不确定性。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某环湖房车营地周边临水专用道路，一辆自行式房车行驶中，因驾驶员对车身宽度判断失误，会车时冲出无防护栏的临水路面，坠入约4米深的湖水中，房车半个车身浸入水中，车内3人被困，湖水持续涌入车内，周边无其他救援人员。",
+    "consequence_text": "造成车内3人被困，1人轻微溺水，房车车身受损，营地临水道路封闭，营地房车进出受阻，车辆持续进水有完全沉没风险，被困人员面临溺水隐患。",
+    "measure_text": "营地应急管理部门接到报警后，立即协调消防救援队伍、海事部门赶赴现场；消防救援队伍携带救生装备、潜水设备，搭建救援通道，救出车内被困人员；医疗部门对溺水人员进行吸氧、急救处置后转运至医院；海事部门对湖面进行警戒，防止房车漏油污染湖水；路政部门拖移坠湖房车，在临水路段加装防护栏和警示标志；依据《道路交通安全法》《旅游安全管理办法》开展处置，2小时后道路恢复通行。"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "case_id": "004_城市马拉松赛事管制路段社会车辆闯入事故_377921af",
+  "title": "城市马拉松赛事管制路段社会车辆闯入事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "城市马拉松赛事管制路段，一辆小型私家车冲破隔离围挡闯入赛道，与参赛选手发生碰撞，造成人员伤亡和赛事中断。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_EMERGENCY",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_A434D2AE2D",
+      "name": "车辆闯入赛道",
+      "entity_type": "Event",
+      "evidence": "一辆小型私家车无视管制禁令、冲破隔离围挡，闯入马拉松赛事赛道",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_EMERGENCY",
+      "normalized_name": "公路交通突发事件",
+      "normalized_score": 0.0,
+      "matched_alias": "公路交通突发事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_EMERGENCY",
+      "final_entity_name": "公路交通突发事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_EMERGENCY",
+      "primary_event_name": "公路交通突发事件",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_4F05A09B64",
+      "name": "马拉松赛事",
+      "entity_type": "Event",
+      "evidence": "某市城市马拉松赛事举办期间",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_F873C3BEE1",
+      "final_entity_name": "马拉松赛事",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F873C3BEE1",
+      "primary_event_name": "马拉松赛事",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_F873C3BEE1"
+      ],
+      "query_event_names": [
+        "马拉松赛事"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆闯入赛道",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_A434D2AE2D",
+      "source_final_id": "EVT_ROAD_EMERGENCY",
+      "source_final_name": "公路交通突发事件",
+      "source_query_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "马拉松赛事",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_4F05A09B64",
+      "target_final_id": "EVT_CASE_F873C3BEE1",
+      "target_final_name": "马拉松赛事",
+      "target_query_event_ids": [
+        "EVT_CASE_F873C3BEE1"
+      ],
+      "evidence": "车辆闯入马拉松赛事赛道，造成多名选手倒地，赛事赛道临时中断。",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《大型群众性活动安全管理条例》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于提供的实体目录，未进行新的实体识别。",
+    "证据来自原始文本，并尽量体现关系的直接性。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 8,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市城市马拉松赛事举办期间，赛事全程路段实施交通管制，一辆小型私家车无视管制禁令、冲破隔离围挡，闯入马拉松赛事赛道，与正在奔跑的参赛选手发生碰撞，造成多名选手倒地，车辆紧急停下，赛事现场秩序混乱。",
+    "consequence_text": "造成3名参赛选手重伤、5名选手轻伤，赛事赛道临时中断，数千名参赛选手滞留，赛事进度严重延误，社会车辆闯入引发选手恐慌，存在踩踏、二次冲撞的重大风险。",
+    "measure_text": "赛事组委会、公安交警部门立即启动赛事突发事件应急预案，封锁事故赛道段，控制肇事驾驶员，疏散滞留选手，设置临时医疗点；医疗部门、赛事急救团队对受伤选手进行紧急救治，重伤员转运至医院；赛事组委会调整赛事路线，引导选手有序通行；交警部门对赛事管制路段进行全面加固，加派警力巡逻；依据《大型群众性活动安全管理条例》《道路交通安全法》对肇事驾驶员进行从严处罚，1小时后赛事恢复正常进行。"
+  }
+}

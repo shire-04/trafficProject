@@ -1,0 +1,120 @@
+{
+  "case_id": "015_案例14_高速服务区充电桩车辆短路起火事故_53d3e03f",
+  "title": "案例14：高速服务区充电桩车辆短路起火事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "高速服务区充电桩区域，纯电动轿车充电时因电池管理系统故障引发短路起火，造成车辆烧毁和充电桩报废，并存在蔓延至加油站的风险。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_60C1CBDDE2",
+    "expanded_event_ids": [
+      "EVT_PRODUCTION_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_F5F398EB5C",
+      "name": "车辆起火",
+      "entity_type": "Event",
+      "evidence": "一辆纯电动轿车充电时，电池管理系统故障引发短路，车辆底部迅速起火",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_60C1CBDDE2",
+      "final_entity_name": "新能源车辆充电起火",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_60C1CBDDE2",
+      "primary_event_name": "新能源车辆充电起火",
+      "expanded_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路交通运输生产事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_60C1CBDDE2",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "query_event_names": [
+        "新能源车辆充电起火",
+        "公路交通运输生产事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路交通运输生产事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_67EE1662C8",
+      "name": "电池管理系统故障",
+      "entity_type": "Action",
+      "evidence": "电池管理系统故障引发短路",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.275,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_25ED435E28",
+      "final_entity_name": "电池管理系统故障",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆起火",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_F5F398EB5C",
+      "source_final_id": "EVT_CASE_60C1CBDDE2",
+      "source_final_name": "新能源车辆充电起火",
+      "source_query_event_ids": [
+        "EVT_CASE_60C1CBDDE2",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "电池管理系统故障",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_67EE1662C8",
+      "target_final_id": "MEA_CASE_25ED435E28",
+      "target_final_name": "电池管理系统故障",
+      "target_query_event_ids": [],
+      "evidence": "电池管理系统故障引发短路",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本中的明确信息，避免了猜测。",
+    "confidence score reflects the clarity of the relationship in the text.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "高速服务区新能源充电桩区域，一辆纯电动轿车充电时，电池管理系统故障引发短路，车辆底部迅速起火，浓烟滚滚，充电桩线路受损，周边停放3辆新能源轿车，距离加油站仅80米。",
+    "consequence_text": "无人员伤亡，起火车辆完全烧毁，充电桩报废，火势易蔓延至周边车辆与加油站，引发重大爆炸事故，服务区充电桩区域封闭，新能源车辆无法充电，服务区局部拥堵。",
+    "measure_text": "服务区工作人员立即切断充电桩总电源，使用干粉灭火器初期灭火，拨打119报警；消防人员到场，采用专用电池灭火装备压制火势，冷却周边车辆与加油站设施；交警封闭服务区入口，疏导车辆分流；电力部门检测电路安全，清理事故现场；后续督促充电桩运营单位加强设备检修，3小时后服务区恢复正常运营。"
+  }
+}

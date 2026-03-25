@@ -1,0 +1,144 @@
+{
+  "case_id": "002_连霍高速洛阳段货车侧翻货物散落事故_b2d03a8f",
+  "title": "连霍高速洛阳段货车侧翻货物散落事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "连霍高速洛阳段一辆装载瓷砖的重型货车因驾驶员操作不当侧翻，导致瓷砖散落，占用两条车道，造成轻微人员擦伤和交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_ROAD_BLOCKAGE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_1246DFBD7C",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "连霍高速洛阳段K682公里处，一辆装载瓷砖的重型货车，因驾驶员操作不当，在高速出口匝道处发生侧翻",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "公路阻塞",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "车辆积压",
+        "公路阻塞",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "公路阻塞",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_1128BAD584",
+      "name": "瓷砖散落",
+      "entity_type": "Event",
+      "evidence": "车载瓷砖全部散落至行车道与应急车道",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_04E49A0DEE",
+      "final_entity_name": "瓷砖散落",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_04E49A0DEE",
+      "primary_event_name": "瓷砖散落",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_04E49A0DEE"
+      ],
+      "query_event_names": [
+        "瓷砖散落"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆侧翻",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_1246DFBD7C",
+      "source_final_id": "EVT_CASE_9CC62EF2EB",
+      "source_final_name": "车辆侧翻",
+      "source_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "瓷砖散落",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_1128BAD584",
+      "target_final_id": "EVT_CASE_04E49A0DEE",
+      "target_final_name": "瓷砖散落",
+      "target_query_event_ids": [
+        "EVT_CASE_04E49A0DEE"
+      ],
+      "evidence": "连霍高速洛阳段K682公里处，一辆装载瓷砖的重型货车，因驾驶员操作不当，在高速出口匝道处发生侧翻，车载瓷砖全部散落至行车道与应急车道",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "信息较为完整，事件和实体抽取准确。",
+    "关系抽取基于文本中的明确信息，没有进行推断。",
+    "confidence score is estimated."
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 1,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "连霍高速洛阳段K682公里处，一辆装载瓷砖的重型货车，因驾驶员操作不当，在高速出口匝道处发生侧翻，车载瓷砖全部散落至行车道与应急车道，占用2条车道，当时天气晴朗，能见度良好，过往车辆纷纷紧急避让。",
+    "consequence_text": "造成货车驾驶员1人轻微擦伤，无其他人员伤亡，事故路段单向交通拥堵，后方车辆滞留约5公里，散落的瓷砖存在扎破过往车辆轮胎、引发二次碰撞的风险，影响高速出口正常通行秩序。",
+    "measure_text": "交警部门立即赶赴现场，设置警戒标志，疏导后方车辆减速慢行，禁止车辆占用应急车道；交通部门调用清障车、吊车，组织工作人员清理散落瓷砖，对破损瓷砖进行分类收集；医疗部门派遣医护人员到场，对驾驶员进行轻微擦伤处理；依据《道路交通安全法》开展现场勘查，清理完毕后对路面进行清扫，2.5小时后事故路段恢复正常通行。"
+  }
+}

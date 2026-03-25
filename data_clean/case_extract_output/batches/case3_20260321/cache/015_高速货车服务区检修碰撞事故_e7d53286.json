@@ -1,0 +1,153 @@
+{
+  "case_id": "015_高速货车服务区检修碰撞事故_e7d53286",
+  "title": "高速货车服务区检修碰撞事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "高速服务区货车检修区发生车辆溜车碰撞事故，导致人员受伤和设备损坏，服务区交通出现拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_PRODUCTION_ACCIDENT",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_F15883C20E",
+      "name": "车辆溜车碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆重型货车在检修刹车时，因车辆未拉手刹发生溜车，与检修区旁的另一辆重型货车发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "EVT_PRODUCTION_ACCIDENT",
+      "normalized_name": "公路交通运输生产事故",
+      "normalized_score": 0.0,
+      "matched_alias": "公路交通运输生产事故",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_PRODUCTION_ACCIDENT",
+      "final_entity_name": "公路交通运输生产事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_PRODUCTION_ACCIDENT",
+      "primary_event_name": "公路交通运输生产事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "公路交通运输生产事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_1FFD65E573",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "与检修区旁的另一辆重型货车发生碰撞",
+      "confidence": 0.95,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.059,
+      "matched_alias": "车辆碰撞行人",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_70B6A9B1E7",
+      "name": "维修设备损坏",
+      "entity_type": "Event",
+      "evidence": "碰撞导致检修区的维修设备损坏",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_CF4FF9ABBC",
+      "final_entity_name": "维修设备损坏",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_CF4FF9ABBC",
+      "primary_event_name": "维修设备损坏",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_CF4FF9ABBC"
+      ],
+      "query_event_names": [
+        "维修设备损坏"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆溜车碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_F15883C20E",
+      "source_final_id": "EVT_PRODUCTION_ACCIDENT",
+      "source_final_name": "公路交通运输生产事故",
+      "source_query_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "维修设备损坏",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_70B6A9B1E7",
+      "target_final_id": "EVT_CASE_CF4FF9ABBC",
+      "target_final_name": "维修设备损坏",
+      "target_query_event_ids": [
+        "EVT_CASE_CF4FF9ABBC"
+      ],
+      "evidence": "碰撞导致检修区的维修设备损坏",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "安全生产法"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "confidence score is estimated."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高速服务区货车检修区，一辆重型货车在检修刹车时，因车辆未拉手刹发生溜车，与检修区旁的另一辆重型货车发生碰撞，碰撞导致检修区的维修设备损坏，检修区有2名维修人员被困。",
+    "consequence_text": "造成2名维修人员1人重伤、1人轻伤，检修区设备严重损坏，货车检修业务中断，服务区货车停放区域出现短暂拥堵。",
+    "measure_text": "服务区管理人员立即报警，保护事故现场；消防救援队伍解救被困维修人员；医疗部门转运受伤人员至医院；交警部门勘查现场，认定检修单位责任；交通部门协调其他服务区派遣维修人员；依据《安全生产法》开展处置，2小时后检修区逐步恢复运营。"
+  }
+}

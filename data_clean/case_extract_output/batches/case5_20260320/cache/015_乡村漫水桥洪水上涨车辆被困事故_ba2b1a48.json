@@ -1,0 +1,188 @@
+{
+  "case_id": "015_乡村漫水桥洪水上涨车辆被困事故_ba2b1a48",
+  "title": "乡村漫水桥洪水上涨车辆被困事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "乡村漫水桥因暴雨导致河水上涨，一辆面包车被困，人员安全转移。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_2E37E82249",
+    "expanded_event_ids": [
+      "EVT_FLOOD",
+      "EVT_ROAD_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_2CBA510230",
+      "name": "漫水桥被困",
+      "entity_type": "Event",
+      "evidence": "某乡村山区漫水桥，因上游突发暴雨，河水暴涨漫过桥面，一辆小型面包车强行通过漫水桥，行驶至桥中央时被洪水冲得熄火，车辆被困在桥面上，河水持续上涨，车内3人被困，无法撤离。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_2E37E82249",
+      "final_entity_name": "漫水桥被困",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_2E37E82249",
+      "primary_event_name": "漫水桥被困",
+      "expanded_event_ids": [
+        "EVT_FLOOD",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "洪水",
+        "公路中断"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_2E37E82249",
+        "EVT_FLOOD",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "漫水桥被困",
+        "洪水",
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_FLOOD",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "alias_patch_target_names": [
+        "洪水",
+        "公路中断"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_53C043CB55",
+      "name": "暴雨",
+      "entity_type": "Event",
+      "evidence": "因上游突发暴雨",
+      "confidence": 0.8,
+      "normalized_id": "EVT_RAINSTORM",
+      "normalized_name": "暴雨",
+      "normalized_score": 0.1741,
+      "matched_alias": "暴雨",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_RAINSTORM",
+      "final_entity_name": "暴雨",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_RAINSTORM",
+      "primary_event_name": "暴雨",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "query_event_names": [
+        "暴雨"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_595C169778",
+      "name": "洪水",
+      "entity_type": "Event",
+      "evidence": "河水暴涨漫过桥面",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_FLOOD",
+      "final_entity_name": "洪水",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_FLOOD",
+      "primary_event_name": "洪水",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_FLOOD"
+      ],
+      "query_event_names": [
+        "洪水"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "暴雨",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_53C043CB55",
+      "source_final_id": "EVT_RAINSTORM",
+      "source_final_name": "暴雨",
+      "source_query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "relation": "CAUSES",
+      "target": "洪水",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_595C169778",
+      "target_final_id": "EVT_FLOOD",
+      "target_final_name": "洪水",
+      "target_query_event_ids": [
+        "EVT_FLOOD"
+      ],
+      "evidence": "因上游突发暴雨，河水暴涨",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "洪水",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_595C169778",
+      "source_final_id": "EVT_FLOOD",
+      "source_final_name": "洪水",
+      "source_query_event_ids": [
+        "EVT_FLOOD"
+      ],
+      "relation": "CAUSES",
+      "target": "漫水桥被困",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_2CBA510230",
+      "target_final_id": "EVT_CASE_2E37E82249",
+      "target_final_name": "漫水桥被困",
+      "target_query_event_ids": [
+        "EVT_CASE_2E37E82249",
+        "EVT_FLOOD",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "evidence": "河水暴涨漫过桥面，一辆小型面包车强行通过漫水桥，行驶至桥中央时被洪水冲得熄火，车辆被困在桥面上",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《农村公路安全保护条例》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡村山区漫水桥，因上游突发暴雨，河水暴涨漫过桥面，水深达30厘米，一辆小型面包车强行通过漫水桥，行驶至桥中央时被洪水冲得熄火，车辆被困在桥面上，河水持续上涨，车内3人被困，无法撤离。",
+    "consequence_text": "造成车内3人被困，无人员伤亡，面包车浸泡受损，漫水桥双向通行完全中断，周边村民出行受阻，河水持续上涨有将车辆冲下桥的重大风险，被困人员面临溺水隐患。",
+    "measure_text": "当地乡镇应急办接到报警后，立即协调消防救援队伍、水利部门赶赴现场；水利部门实时监测上游来水与河水水位变化；消防救援队伍使用绳索、救生梯搭建安全通道，将被困人员安全转移至岸边；交警部门封闭漫水桥两端，设置警戒标志，严禁车辆、人员强行通过；路政部门待洪水退去后，对漫水桥结构进行安全检测，拖移被困车辆；依据《农村公路安全保护条例》开展处置，后续在漫水桥增设水位警示标志与防护设施，2小时后被困人员全部安全转移。"
+  }
+}

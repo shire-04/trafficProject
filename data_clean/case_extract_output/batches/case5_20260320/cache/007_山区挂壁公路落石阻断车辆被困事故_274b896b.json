@@ -1,0 +1,196 @@
+{
+  "case_id": "007_山区挂壁公路落石阻断车辆被困事故_274b896b",
+  "title": "山区挂壁公路落石阻断车辆被困事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "太行山挂壁公路上，因连续降雨导致山体落石，阻断交通，3辆轿车和1辆面包车被困，12人被困，无人员伤亡。当地应急部门启动预案，协调救援，最终安全转移被困人员，道路恢复临时通行。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_7AE62429F5",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_ROAD_BLOCKAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_2578876F3B",
+      "name": "道路塌方",
+      "entity_type": "Event",
+      "evidence": "因连续降雨山体风化落石，多块直径0.5-1米的石块坠落至路面，完全阻断双向通行",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_7AE62429F5",
+      "final_entity_name": "道路塌方",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_7AE62429F5",
+      "primary_event_name": "道路塌方",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "公路阻塞"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_7AE62429F5",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "query_event_names": [
+        "道路塌方",
+        "公路交通突发事件",
+        "公路阻塞"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件",
+        "公路阻塞"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_3F8934AD91",
+      "name": "小型挖掘机",
+      "entity_type": "Resource",
+      "evidence": "交通部门调集小型挖掘机、装载机",
+      "confidence": 0.8,
+      "normalized_id": "RES_EXCAVATOR",
+      "normalized_name": "挖掘机",
+      "normalized_score": 0.96,
+      "matched_alias": "挖掘机",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_EXCAVATOR",
+      "final_entity_name": "挖掘机",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_4C4EA434AD",
+      "name": "装载机",
+      "entity_type": "Resource",
+      "evidence": "交通部门调集小型挖掘机、装载机",
+      "confidence": 0.8,
+      "normalized_id": "RES_LOADER",
+      "normalized_name": "装载机",
+      "normalized_score": 1.0,
+      "matched_alias": "装载机",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_LOADER",
+      "final_entity_name": "装载机",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_7EABED08D7",
+      "name": "道路清理",
+      "entity_type": "Action",
+      "evidence": "交通部门调集小型挖掘机、装载机清理路面落石",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.225,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_81D300AC3F",
+      "final_entity_name": "道路清理",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "道路清理",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_7EABED08D7",
+      "source_final_id": "MEA_CASE_81D300AC3F",
+      "source_final_name": "道路清理",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "小型挖掘机",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_3F8934AD91",
+      "target_final_id": "RES_EXCAVATOR",
+      "target_final_name": "挖掘机",
+      "target_query_event_ids": [],
+      "evidence": "交通部门调集小型挖掘机、装载机清理路面落石",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "道路清理",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_7EABED08D7",
+      "source_final_id": "MEA_CASE_81D300AC3F",
+      "source_final_name": "道路清理",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "装载机",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_4C4EA434AD",
+      "target_final_id": "RES_LOADER",
+      "target_final_name": "装载机",
+      "target_query_event_ids": [],
+      "evidence": "交通部门调集小型挖掘机、装载机清理路面落石",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《山区公路地质灾害应急处置预案》",
+    "《公路安全保护条例》"
+  ],
+  "quality_notes": [
+    "信息较为完整，事件描述清晰。",
+    "The relationships are based on the provided text and entity catalog. Some relationships might be implicit and not explicitly stated.",
+    "Confidence scores are assigned based on the clarity of the evidence in the text."
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 0,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某太行山挂壁公路（临崖一侧为百米悬崖，另一侧为山体），因连续降雨山体风化落石，多块直径0.5-1米的石块坠落至路面，完全阻断双向通行，3辆小型轿车、1辆面包车被困落石路段中间，前后均被落石封堵，周边无其他绕行路线，持续降雨导致仍有零星落石。",
+    "consequence_text": "造成车内12名人员全部被困，无人员伤亡，挂壁公路双向交通完全中断，被困人员面临落石砸伤、坠崖的重大风险，通讯信号较弱，救援难度极大。",
+    "measure_text": "当地应急管理部门启动《山区公路地质灾害应急处置预案》，协调消防救援队伍、交通部门、自然资源部门赶赴现场；自然资源部门对山体进行实时监测，预警落石风险，确认安全窗口期；消防救援队伍使用绳索装备搭建安全通道，分批转移被困人员至安全区域；交通部门调集小型挖掘机、装载机清理路面落石，对松动山体进行临时加固；交警部门在公路两端设置警戒，禁止车辆、人员进入；依据《公路安全保护条例》开展后续处置，5小时后被困人员全部安全转移，8小时后道路恢复临时通行。"
+  }
+}

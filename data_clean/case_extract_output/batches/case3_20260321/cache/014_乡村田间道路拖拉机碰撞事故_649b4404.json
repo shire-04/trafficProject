@@ -1,0 +1,240 @@
+{
+  "case_id": "014_乡村田间道路拖拉机碰撞事故_649b4404",
+  "title": "乡村田间道路拖拉机碰撞事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "乡村田间土路发生拖拉机与电动三轮车碰撞事故，造成人员伤亡和交通中断。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_EMERGENCY",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_B670B2EF8D",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "某乡村田间土路，一辆无牌拖拉机运输农作物，与一辆电动三轮车发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_EMERGENCY",
+      "normalized_name": "公路交通突发事件",
+      "normalized_score": 0.0,
+      "matched_alias": "公路交通突发事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_EMERGENCY",
+      "final_entity_name": "公路交通突发事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_EMERGENCY",
+      "primary_event_name": "公路交通突发事件",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_CCEDED6F70",
+      "name": "拖拉机",
+      "entity_type": "Resource",
+      "evidence": "一辆无牌拖拉机",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_C1E4441EF6",
+      "final_entity_name": "拖拉机",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_C08E5F7096",
+      "name": "电动三轮车",
+      "entity_type": "Resource",
+      "evidence": "一辆电动三轮车",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.6429,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_D7EB68391B",
+      "final_entity_name": "电动三轮车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_67C82DADEC",
+      "name": "碰撞",
+      "entity_type": "Action",
+      "evidence": "发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "MEA_CASE_6B219E66DE",
+      "normalized_name": "碰撞",
+      "normalized_score": 1.0,
+      "matched_alias": "碰撞",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_6B219E66DE",
+      "final_entity_name": "碰撞",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_0AF3A5F4EB",
+      "name": "交通中断",
+      "entity_type": "Event",
+      "evidence": "田间土路交通中断",
+      "confidence": 0.8,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.2037,
+      "matched_alias": "交通中断",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_B670B2EF8D",
+      "source_final_id": "EVT_ROAD_EMERGENCY",
+      "source_final_name": "公路交通突发事件",
+      "source_query_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "交通中断",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_0AF3A5F4EB",
+      "target_final_id": "EVT_ROAD_INTERRUPTION",
+      "target_final_name": "公路中断",
+      "target_query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "evidence": "造成电动三轮车骑行者1人重伤、拖拉机驾驶员1人轻伤，电动三轮车完全损坏，田间土路交通中断，农作物散落路面，村民出行受阻。",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "碰撞",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_67C82DADEC",
+      "source_final_id": "MEA_CASE_6B219E66DE",
+      "source_final_name": "碰撞",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "拖拉机",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_CCEDED6F70",
+      "target_final_id": "RES_CASE_C1E4441EF6",
+      "target_final_name": "拖拉机",
+      "target_query_event_ids": [],
+      "evidence": "某乡村田间土路，一辆无牌拖拉机运输农作物，与一辆电动三轮车发生碰撞",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "碰撞",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_67C82DADEC",
+      "source_final_id": "MEA_CASE_6B219E66DE",
+      "source_final_name": "碰撞",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "电动三轮车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_C08E5F7096",
+      "target_final_id": "RES_CASE_D7EB68391B",
+      "target_final_name": "电动三轮车",
+      "target_query_event_ids": [],
+      "evidence": "某乡村田间土路，一辆无牌拖拉机运输农作物，与一辆电动三轮车发生碰撞",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本信息，可能存在遗漏或不准确的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡村田间土路，一辆无牌拖拉机运输农作物，与一辆电动三轮车发生碰撞，电动三轮车被撞翻，骑行者被压在车下，拖拉机驾驶员未停车，继续行驶一段距离后被村民拦下，田间土路无照明设施。",
+    "consequence_text": "造成电动三轮车骑行者1人重伤、拖拉机驾驶员1人轻伤，电动三轮车完全损坏，田间土路交通中断，农作物散落路面，村民出行受阻。",
+    "measure_text": "当地派出所接到报警后，立即赶赴现场，控制肇事拖拉机驾驶员；消防救援队伍到场，使用液压工具解救被困骑行者；医疗部门转运受伤人员至乡镇卫生院；交警部门开展现场勘查，认定责任；村委会协助清理路面农作物；依据《道路交通安全法》开展处置，1.5小时后现场清理完毕，道路恢复通行。"
+  }
+}

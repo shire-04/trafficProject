@@ -1,0 +1,199 @@
+{
+  "case_id": "013_案例12_山区雾区客车追尾货车乘客被困事故_c8333410",
+  "title": "案例12：山区雾区客车追尾货车乘客被困事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "山区雾区客车追尾货车导致人员伤亡和交通中断的事故。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_4D219D5D07",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_9893DDC0A2",
+      "name": "追尾事故",
+      "entity_type": "Event",
+      "evidence": "一辆中型客运班车未减速行驶，与前方因雾天缓行的重型货车发生追尾",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_4D219D5D07",
+      "final_entity_name": "追尾事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_4D219D5D07",
+      "primary_event_name": "追尾事故",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "追尾事故",
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_E794ECCCDB",
+      "name": "交通中断",
+      "entity_type": "Event",
+      "evidence": "双向交通中断",
+      "confidence": 0.8,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.1961,
+      "matched_alias": "交通中断",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_D2AE647DCF",
+      "name": "车辆滞留",
+      "entity_type": "Event",
+      "evidence": "车辆滞留5公里",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_3B6CFC25B4",
+      "final_entity_name": "车辆滞留",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_3B6CFC25B4",
+      "primary_event_name": "车辆滞留",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_3B6CFC25B4"
+      ],
+      "query_event_names": [
+        "车辆滞留"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_9893DDC0A2",
+      "source_final_id": "EVT_CASE_4D219D5D07",
+      "source_final_name": "追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "交通中断",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_E794ECCCDB",
+      "target_final_id": "EVT_ROAD_INTERRUPTION",
+      "target_final_name": "公路中断",
+      "target_query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "evidence": "造成客车驾驶员1人重伤、8名乘客不同程度受伤，货车尾部轻微受损，双向交通中断",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_9893DDC0A2",
+      "source_final_id": "EVT_CASE_4D219D5D07",
+      "source_final_name": "追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆滞留",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_D2AE647DCF",
+      "target_final_id": "EVT_CASE_3B6CFC25B4",
+      "target_final_name": "车辆滞留",
+      "target_query_event_ids": [
+        "EVT_CASE_3B6CFC25B4"
+      ],
+      "evidence": "造成客车驾驶员1人重伤、8名乘客不同程度受伤，货车尾部轻微受损，双向交通中断，车辆滞留5公里",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事故描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本信息，可能存在遗漏或不准确的情况。",
+    "confidence score is estimated."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 9,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "山区二级公路连续雾区，能见度仅20米，一辆中型客运班车未减速行驶，与前方因雾天缓行的重型货车发生追尾，班车车头严重变形，前挡风玻璃破碎，多名乘客被卡在座位上，无法自主撤离。",
+    "consequence_text": "造成客车驾驶员1人重伤、8名乘客不同程度受伤，货车尾部轻微受损，双向交通中断，车辆滞留5公里，雾天视线差，易引发后续车辆二次追尾，被困乘客伤情有加重风险。",
+    "measure_text": "交警封闭事故路段，开启雾天警示灯，引导车辆停靠等待；消防人员携带破拆工具，拆解变形车头，解救被困乘客；医疗人员现场急救，转运重伤员就医；路政部门清理现场，拖移事故车辆，待雾气消散后逐步疏导滞留车辆；依据《道路交通安全法》对客车未减速行为追责，5小时后道路恢复通行。"
+  }
+}

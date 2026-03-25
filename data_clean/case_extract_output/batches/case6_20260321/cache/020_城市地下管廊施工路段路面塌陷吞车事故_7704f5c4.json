@@ -1,0 +1,257 @@
+{
+  "case_id": "020_城市地下管廊施工路段路面塌陷吞车事故_7704f5c4",
+  "title": "城市地下管廊施工路段路面塌陷吞车事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某市主城区地下管廊施工路段发生路面塌陷事故，导致车辆坠入，人员被困和失联，交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_DAMAGE",
+    "expanded_event_ids": [
+      "EVT_CONSTRUCTION_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_21FD4E42B8",
+      "name": "路面塌陷",
+      "entity_type": "Event",
+      "evidence": "因施工导致地下土层松动，路面突发大面积塌陷，形成长8米、宽6米、深4米的塌陷坑",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_DAMAGE",
+      "normalized_name": "公路损毁",
+      "normalized_score": 0.0,
+      "matched_alias": "公路损毁",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_DAMAGE",
+      "final_entity_name": "公路损毁",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_DAMAGE",
+      "primary_event_name": "公路损毁",
+      "expanded_event_ids": [
+        "EVT_CONSTRUCTION_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路工程建设事故"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_CONSTRUCTION_ACCIDENT"
+      ],
+      "query_event_names": [
+        "公路损毁",
+        "公路工程建设事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_90A4C58CFB",
+      "name": "施工单位",
+      "entity_type": "Department",
+      "evidence": "责令施工单位暂停施工",
+      "confidence": 0.7,
+      "normalized_id": "ORG_CASE_6DEAB2960B",
+      "normalized_name": "工程施工单位",
+      "normalized_score": 1.0,
+      "matched_alias": "工程施工单位",
+      "resolution_type": "existing_match",
+      "final_entity_id": "ORG_CASE_6DEAB2960B",
+      "final_entity_name": "工程施工单位",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_883C54EFF4",
+      "name": "暂停施工",
+      "entity_type": "Action",
+      "evidence": "责令施工单位暂停施工",
+      "confidence": 0.75,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.81,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_543551F273",
+      "final_entity_name": "暂停施工",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_D564D35656",
+      "name": "实时监测",
+      "entity_type": "Action",
+      "evidence": "对周边路面、居民楼地基进行实时监测",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_BC06C34F18",
+      "final_entity_name": "实时监测",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_06234CD107",
+      "name": "疏导",
+      "entity_type": "Action",
+      "evidence": "疏导过往车辆绕行",
+      "confidence": 0.7,
+      "normalized_id": "MEA_CASE_B804A6CFD8",
+      "normalized_name": "疏导",
+      "normalized_score": 1.0,
+      "matched_alias": "疏导",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_B804A6CFD8",
+      "final_entity_name": "疏导",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "暂停施工",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_883C54EFF4",
+      "source_final_id": "MEA_CASE_543551F273",
+      "source_final_name": "暂停施工",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "施工单位",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_90A4C58CFB",
+      "target_final_id": "ORG_CASE_6DEAB2960B",
+      "target_final_name": "工程施工单位",
+      "target_query_event_ids": [],
+      "evidence": "责令施工单位暂停施工",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "路面塌陷",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_21FD4E42B8",
+      "source_final_id": "EVT_ROAD_DAMAGE",
+      "source_final_name": "公路损毁",
+      "source_query_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_CONSTRUCTION_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "暂停施工",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_883C54EFF4",
+      "target_final_id": "MEA_CASE_543551F273",
+      "target_final_name": "暂停施工",
+      "target_query_event_ids": [],
+      "evidence": "责令施工单位暂停施工",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "路面塌陷",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_21FD4E42B8",
+      "source_final_id": "EVT_ROAD_DAMAGE",
+      "source_final_name": "公路损毁",
+      "source_query_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_CONSTRUCTION_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "实时监测",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_D564D35656",
+      "target_final_id": "MEA_CASE_BC06C34F18",
+      "target_final_name": "实时监测",
+      "target_query_event_ids": [],
+      "evidence": "对周边路面、居民楼地基进行实时监测",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "路面塌陷",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_21FD4E42B8",
+      "source_final_id": "EVT_ROAD_DAMAGE",
+      "source_final_name": "公路损毁",
+      "source_query_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_CONSTRUCTION_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "疏导",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_06234CD107",
+      "target_final_id": "MEA_CASE_B804A6CFD8",
+      "target_final_name": "疏导",
+      "target_query_event_ids": [],
+      "evidence": "疏导过往车辆绕行",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《建设工程安全生产管理条例》",
+    "《城市道路管理条例》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息和实体类型，可能存在遗漏或不准确的情况。",
+    "部分关系需要结合常识进行判断，可能存在主观性。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": 1,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市主城区地下综合管廊施工路段，因施工导致地下土层松动，路面突发大面积塌陷，形成长8米、宽6米、深4米的塌陷坑，正在行驶的2辆小型轿车、1辆电动自行车坠入塌陷坑内，轿车车身严重变形，车内3人被困，电动自行车骑行者被埋在塌陷土体内，周边路面持续开裂，有进一步塌陷的风险。",
+    "consequence_text": "造成3人重伤被困、1人失联，3辆车辆完全损毁，施工路段双向交通完全中断，周边主干道拥堵，车辆滞留约7公里，路面持续塌陷易导致更多车辆、人员坠入，周边居民楼地基安全受到威胁。",
+    "measure_text": "应急管理部门立即启动路面塌陷突发事件应急预案，协调消防救援队伍、住建部门、自然资源部门赶赴现场；消防救援队伍使用生命探测仪搜寻失联人员，搭建救援通道，解救被困人员，清理塌陷土体；住建部门责令施工单位暂停施工，对周边路面、居民楼地基进行实时监测，防止进一步塌陷；医疗部门派遣救护车转运受伤人员至医院；交警部门封闭事故路段，疏导过往车辆绕行；自然资源部门对地下土层进行勘察，排查塌陷隐患；依据《建设工程安全生产管理条例》《城市道路管理条例》开展事故调查，6小时后被困人员全部救出，失联人员被找到，道路临时封闭处置。"
+  }
+}

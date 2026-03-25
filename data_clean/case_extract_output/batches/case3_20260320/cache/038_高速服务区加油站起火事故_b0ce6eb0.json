@@ -1,0 +1,131 @@
+{
+  "case_id": "038_高速服务区加油站起火事故_b0ce6eb0",
+  "title": "高速服务区加油站起火事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "高速服务区加油站因驾驶员违规吸烟引发火灾，造成加油机损毁，车辆烧毁，无人员伤亡，并采取了紧急应对措施。",
+  "confidence": 0.95,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_6F7A2A4A6F",
+    "expanded_event_ids": [
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_56E70381F6",
+      "name": "加油站火灾",
+      "entity_type": "Event",
+      "evidence": "某高速服务区加油站，一辆小型轿车在加油时，因驾驶员违规吸烟，引燃加油枪喷出的汽油，引发起火，火势迅速蔓延至加油站加油机",
+      "confidence": 0.98,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_6F7A2A4A6F",
+      "final_entity_name": "加油站火灾",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_6F7A2A4A6F",
+      "primary_event_name": "加油站火灾",
+      "expanded_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路交通运输生产事故",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_6F7A2A4A6F",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "加油站火灾",
+        "公路交通运输生产事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路交通运输生产事故",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_4E4AC6FCB8",
+      "name": "违规吸烟",
+      "entity_type": "Action",
+      "evidence": "因驾驶员违规吸烟",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1405,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_F1317D2147",
+      "final_entity_name": "违规吸烟",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "加油站火灾",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_56E70381F6",
+      "source_final_id": "EVT_CASE_6F7A2A4A6F",
+      "source_final_name": "加油站火灾",
+      "source_query_event_ids": [
+        "EVT_CASE_6F7A2A4A6F",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "违规吸烟",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_4E4AC6FCB8",
+      "target_final_id": "MEA_CASE_F1317D2147",
+      "target_final_name": "违规吸烟",
+      "target_query_event_ids": [],
+      "evidence": "因驾驶员违规吸烟",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《消防法》",
+    "《危险化学品安全管理条例》"
+  ],
+  "quality_notes": [
+    "信息较为完整，事件描述清晰。",
+    "关系抽取主要基于事件的起因和应对措施，信息较为明确。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 0,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高速服务区加油站，一辆小型轿车在加油时，因驾驶员违规吸烟，引燃加油枪喷出的汽油，引发起火，火势迅速蔓延至加油站加油机，加油站内有多名过往车辆和旅客，距离加油站库房不足30米。",
+    "consequence_text": "造成加油机2台损毁，小型轿车部分烧毁，无人员伤亡，火势存在蔓延至加油站库房、周边车辆的重大风险，加油站紧急停止运营，服务区停车场临时封闭，过往旅客无法加油、休息，高速通行受到一定影响。",
+    "measure_text": "加油站工作人员立即启动应急预案，切断加油站电源、油路，使用灭火器进行初期灭火，疏散现场旅客和车辆；消防救援队伍赶赴现场，采用泡沫覆盖法扑灭明火，冷却加油机和库房，防止火势蔓延；交警部门封闭服务区入口，疏导过往车辆，维护现场秩序；应急管理部门协调服务区做好旅客安置工作，调配备用加油站保障过往车辆加油需求；消防队伍扑灭明火后，对现场进行安全检测，清理事故残骸，依据《消防法》《危险化学品安全管理条例》开展事故调查，2小时后加油站恢复运营。"
+  }
+}

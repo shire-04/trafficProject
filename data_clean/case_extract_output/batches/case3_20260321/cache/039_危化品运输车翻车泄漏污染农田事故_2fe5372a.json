@@ -1,0 +1,168 @@
+{
+  "case_id": "039_危化品运输车翻车泄漏污染农田事故_2fe5372a",
+  "title": "危化品运输车翻车泄漏污染农田事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "某县道一辆装载农药的危化品运输车因路面颠簸、驾驶员操作不当发生翻车，导致农药泄漏污染农田约5亩，造成人员轻微擦伤和农田污染。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_LEAK",
+    "expanded_event_ids": [
+      "EVT_HAZMAT_ACCIDENT",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_DCB85AD4E8",
+      "name": "危化品泄漏",
+      "entity_type": "Event",
+      "evidence": "一辆装载农药的罐式危化品运输车，因路面颠簸、驾驶员操作不当，发生翻车，罐体破损导致农药泄漏，泄漏的农药沿路面流淌至周边农田，污染农田约5亩",
+      "confidence": 0.9,
+      "normalized_id": "EVT_HAZMAT_LEAK",
+      "normalized_name": "危险化学品运输泄漏事件",
+      "normalized_score": 0.0,
+      "matched_alias": "危险化学品运输泄漏事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_LEAK",
+      "final_entity_name": "危险化学品运输泄漏事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_LEAK",
+      "primary_event_name": "危险化学品运输泄漏事件",
+      "expanded_event_ids": [
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "危险货物运输事故",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "危险化学品运输泄漏事件",
+        "危险货物运输事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_4F25A952D4",
+      "name": "农药",
+      "entity_type": "Resource",
+      "evidence": "装载农药的罐式危化品运输车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_FE3C845011",
+      "final_entity_name": "农药",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_F2DA2F3B0C",
+      "name": "泄漏",
+      "entity_type": "Action",
+      "evidence": "罐体破损导致农药泄漏",
+      "confidence": 0.9,
+      "normalized_id": "MEA_CASE_B04D39E895",
+      "normalized_name": "泄漏",
+      "normalized_score": 1.0,
+      "matched_alias": "泄漏",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_B04D39E895",
+      "final_entity_name": "泄漏",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "危化品泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_DCB85AD4E8",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "泄漏",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_F2DA2F3B0C",
+      "target_final_id": "MEA_CASE_B04D39E895",
+      "target_final_name": "泄漏",
+      "target_query_event_ids": [],
+      "evidence": "罐体破损导致农药泄漏",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "泄漏",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_F2DA2F3B0C",
+      "source_final_id": "MEA_CASE_B04D39E895",
+      "source_final_name": "泄漏",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "农药",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_4F25A952D4",
+      "target_final_id": "RES_CASE_FE3C845011",
+      "target_final_name": "农药",
+      "target_query_event_ids": [],
+      "evidence": "泄漏的农药",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《危险化学品安全管理条例》",
+    "《土壤污染防治法》"
+  ],
+  "quality_notes": [
+    "Relationships are based on explicit statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某县道，一辆装载农药的罐式危化品运输车，因路面颠簸、驾驶员操作不当，发生翻车，罐体破损导致农药泄漏，泄漏的农药沿路面流淌至周边农田，污染农田约5亩，周边有农户正在田间劳作。",
+    "consequence_text": "造成运输车驾驶员1人轻微擦伤，周边农田被农药污染，农作物面临绝收风险，威胁农户人身安全和农田生态环境，事故路段双向交通封闭，农户紧急撤离至安全区域。",
+    "measure_text": "应急管理部门启动《危险化学品突发事件应急预案》，协调消防救援队伍携带防化装备、堵漏器材赶赴现场，对泄漏点进行堵漏，收集泄漏的农药；环保部门对污染农田、路面进行采样监测，采取中和、吸附等措施控制污染扩散；医疗部门对驾驶员进行轻微擦伤处理，指导现场人员做好防护措施；交警部门封闭事故路段，设置警戒区域，禁止无关车辆、人员进入；农业部门对污染农田进行评估，指导农户采取补救措施，依据《危险化学品安全管理条例》《土壤污染防治法》开展事故调查，5小时后泄漏得到控制，道路恢复通行。"
+  }
+}

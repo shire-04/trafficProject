@@ -1,0 +1,335 @@
+{
+  "case_id": "050_城市垃圾清运车液压尾板故障坠落砸伤路人事故_a3c23fcc",
+  "title": "城市垃圾清运车液压尾板故障坠落砸伤路人事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "城市垃圾清运车液压尾板故障坠落砸伤路人事故，造成人员伤亡和道路通行中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9DEA800219",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_737024EB79",
+      "name": "设备坠落伤人",
+      "entity_type": "Event",
+      "evidence": "车辆液压尾板在升降过程中，因液压油管爆裂，尾板突然坠落，砸中正在路边行走的2名路人",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9DEA800219",
+      "final_entity_name": "设备坠落伤人",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9DEA800219",
+      "primary_event_name": "设备坠落伤人",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "公路中断"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9DEA800219",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "设备坠落伤人",
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "alias_patch_target_names": [
+        "公路中断"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_B9BE9C06C1",
+      "name": "液压尾板",
+      "entity_type": "Resource",
+      "evidence": "车辆液压尾板",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_1CE304F952",
+      "final_entity_name": "液压尾板",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_1162CF2D48",
+      "name": "液压油管爆裂",
+      "entity_type": "Event",
+      "evidence": "因液压油管爆裂",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_C5E3DDA812",
+      "final_entity_name": "液压油管爆裂",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_C5E3DDA812",
+      "primary_event_name": "液压油管爆裂",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_C5E3DDA812"
+      ],
+      "query_event_names": [
+        "液压油管爆裂"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_3C2DBDA242",
+      "name": "交警部门",
+      "entity_type": "Department",
+      "evidence": "交警部门立即封锁事故现场",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.6114,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_C08151231F",
+      "final_entity_name": "交警部门",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_DA6A86DFE7",
+      "name": "解救",
+      "entity_type": "Action",
+      "evidence": "解救被困路人",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_CEEE944B99",
+      "final_entity_name": "解救",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_B3764257E0",
+      "name": "紧急救治",
+      "entity_type": "Action",
+      "evidence": "紧急救治后转运至医院",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_2F25F27432",
+      "final_entity_name": "紧急救治",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_FBCA579B41",
+      "name": "事故调查",
+      "entity_type": "Action",
+      "evidence": "开展事故调查",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_6933DFD8F9",
+      "final_entity_name": "事故调查",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "液压油管爆裂",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_1162CF2D48",
+      "source_final_id": "EVT_CASE_C5E3DDA812",
+      "source_final_name": "液压油管爆裂",
+      "source_query_event_ids": [
+        "EVT_CASE_C5E3DDA812"
+      ],
+      "relation": "CAUSES",
+      "target": "设备坠落伤人",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_737024EB79",
+      "target_final_id": "EVT_CASE_9DEA800219",
+      "target_final_name": "设备坠落伤人",
+      "target_query_event_ids": [
+        "EVT_CASE_9DEA800219",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "evidence": "车辆液压尾板在升降过程中，因液压油管爆裂，尾板突然坠落，砸中正在路边行走的2名路人",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "解救",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_DA6A86DFE7",
+      "source_final_id": "MEA_CASE_CEEE944B99",
+      "source_final_name": "解救",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "液压尾板",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_B9BE9C06C1",
+      "target_final_id": "RES_CASE_1CE304F952",
+      "target_final_name": "液压尾板",
+      "target_query_event_ids": [],
+      "evidence": "消防救援队伍赶赴现场，使用液压千斤顶抬起坠落尾板，解救被困路人",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "设备坠落伤人",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_737024EB79",
+      "source_final_id": "EVT_CASE_9DEA800219",
+      "source_final_name": "设备坠落伤人",
+      "source_query_event_ids": [
+        "EVT_CASE_9DEA800219",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "relation": "TRIGGERS",
+      "target": "解救",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_DA6A86DFE7",
+      "target_final_id": "MEA_CASE_CEEE944B99",
+      "target_final_name": "解救",
+      "target_query_event_ids": [],
+      "evidence": "现场人流密集，尾板仍有坠落风险，消防救援队伍赶赴现场，使用液压千斤顶抬起坠落尾板，解救被困路人",
+      "confidence": 0.75,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "设备坠落伤人",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_737024EB79",
+      "source_final_id": "EVT_CASE_9DEA800219",
+      "source_final_name": "设备坠落伤人",
+      "source_query_event_ids": [
+        "EVT_CASE_9DEA800219",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "relation": "TRIGGERS",
+      "target": "紧急救治",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_B3764257E0",
+      "target_final_id": "MEA_CASE_2F25F27432",
+      "target_final_name": "紧急救治",
+      "target_query_event_ids": [],
+      "evidence": "造成1名路人重伤被困、1名路人轻伤，医疗部门派遣救护车对受伤路人进行紧急救治后转运至医院",
+      "confidence": 0.75,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "事故调查",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_FBCA579B41",
+      "source_final_id": "MEA_CASE_6933DFD8F9",
+      "source_final_name": "事故调查",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "交警部门",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_3C2DBDA242",
+      "target_final_id": "ORG_CASE_C08151231F",
+      "target_final_name": "交警部门",
+      "target_query_event_ids": [],
+      "evidence": "依据《安全生产法》《道路交通安全法》开展事故调查，对垃圾清运公司进行从严处罚与追责",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《安全生产法》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "The confidence scores are estimates based on the clarity of the relationships within the provided text.",
+    "Some relationships could be inferred but were not included due to the constraint of only using entities from the catalog."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市主城区主干道，一辆垃圾清运车停靠在路边进行垃圾清运作业，车辆液压尾板在升降过程中，因液压油管爆裂，尾板突然坠落，砸中正在路边行走的2名路人，其中1名路人被压在尾板下，另1名路人被砸伤倒地，现场人流密集。",
+    "consequence_text": "造成1名路人重伤被困、1名路人轻伤，垃圾清运车液压尾板受损，路段人行道通行中断，周边交通拥堵，围观群众聚集，尾板仍有坠落风险。",
+    "measure_text": "交警部门立即封锁事故现场，疏散围观群众，设置警戒区域；消防救援队伍赶赴现场，使用液压千斤顶抬起坠落尾板，解救被困路人；医疗部门派遣救护车对受伤路人进行紧急救治后转运至医院；城管部门责令清运公司暂停作业，清理现场，对车辆液压系统进行全面检修；依据《安全生产法》《道路交通安全法》开展事故调查，对垃圾清运公司进行从严处罚与追责，1小时后现场清理完毕，道路恢复通行。"
+  }
+}

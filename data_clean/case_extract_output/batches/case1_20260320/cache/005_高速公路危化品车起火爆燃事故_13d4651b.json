@@ -1,0 +1,255 @@
+{
+  "case_id": "005_高速公路危化品车起火爆燃事故_13d4651b",
+  "title": "高速公路危化品车起火爆燃事故",
+  "source_file": "交通应急处理案例.txt",
+  "summary": "连霍高速商丘段一辆装载乙醇的危化品运输车因轮胎爆裂失控撞击护栏，导致乙醇泄漏并起火爆燃，造成人员伤亡和交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_LEAK",
+    "expanded_event_ids": [
+      "EVT_HAZMAT_ACCIDENT",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_6CFCD7FF9B",
+      "name": "危化品运输车辆起火爆燃事故",
+      "entity_type": "Event",
+      "evidence": "一辆装载易燃易爆化学品（乙醇）的罐式危化品运输车，因轮胎爆裂失控撞击护栏后，罐体破裂导致乙醇泄漏，遇明火发生起火爆燃，火焰高度达10米，周边多辆车辆被引燃，现场烟雾弥漫，能见度极低。",
+      "confidence": 0.9,
+      "normalized_id": "EVT_HAZMAT_LEAK",
+      "normalized_name": "危险化学品运输泄漏事件",
+      "normalized_score": 0.0,
+      "matched_alias": "危险化学品运输泄漏事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_LEAK",
+      "final_entity_name": "危险化学品运输泄漏事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_LEAK",
+      "primary_event_name": "危险化学品运输泄漏事件",
+      "expanded_event_ids": [
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "危险货物运输事故",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "危险化学品运输泄漏事件",
+        "危险货物运输事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_BBD9934102",
+      "name": "轮胎爆裂",
+      "entity_type": "Action",
+      "evidence": "因轮胎爆裂失控",
+      "confidence": 0.85,
+      "normalized_id": "MEA_CASE_3FC63D4C10",
+      "normalized_name": "轮胎爆裂",
+      "normalized_score": 1.0,
+      "matched_alias": "轮胎爆裂",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_3FC63D4C10",
+      "final_entity_name": "轮胎爆裂",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_965DB6EA52",
+      "name": "失控撞击护栏",
+      "entity_type": "Action",
+      "evidence": "失控撞击护栏",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_0A481121C2",
+      "normalized_name": "失控撞击护栏",
+      "normalized_score": 1.0,
+      "matched_alias": "失控撞击护栏",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_0A481121C2",
+      "final_entity_name": "失控撞击护栏",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_CFFCF17210",
+      "name": "乙醇泄漏",
+      "entity_type": "Event",
+      "evidence": "罐体破裂导致乙醇泄漏",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_08CBE00F4D",
+      "final_entity_name": "乙醇泄漏",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_08CBE00F4D",
+      "primary_event_name": "乙醇泄漏",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_08CBE00F4D"
+      ],
+      "query_event_names": [
+        "乙醇泄漏"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_B116A1B03E",
+      "name": "起火爆燃",
+      "entity_type": "Event",
+      "evidence": "遇明火发生起火爆燃",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_C003971FA8",
+      "final_entity_name": "起火爆燃",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_C003971FA8",
+      "primary_event_name": "起火爆燃",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_C003971FA8"
+      ],
+      "query_event_names": [
+        "起火爆燃"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "危化品运输车辆起火爆燃事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_6CFCD7FF9B",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "轮胎爆裂",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_BBD9934102",
+      "target_final_id": "MEA_CASE_3FC63D4C10",
+      "target_final_name": "轮胎爆裂",
+      "target_query_event_ids": [],
+      "evidence": "因轮胎爆裂失控",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "危化品运输车辆起火爆燃事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_6CFCD7FF9B",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "失控撞击护栏",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_965DB6EA52",
+      "target_final_id": "MEA_CASE_0A481121C2",
+      "target_final_name": "失控撞击护栏",
+      "target_query_event_ids": [],
+      "evidence": "失控撞击护栏",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "危化品运输车辆起火爆燃事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_6CFCD7FF9B",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "乙醇泄漏",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_CFFCF17210",
+      "target_final_id": "EVT_CASE_08CBE00F4D",
+      "target_final_name": "乙醇泄漏",
+      "target_query_event_ids": [
+        "EVT_CASE_08CBE00F4D"
+      ],
+      "evidence": "造成危化品运输车驾驶员1人死亡，3辆周边车辆被烧毁，5人不同程度烧伤，事故路段双向交通全面封闭，后方车辆滞留约12公里，爆燃产生的有毒有害气体对周边空气质量造成影响，存在二次爆燃和火势蔓延至高速公路两侧绿化带的风险。",
+      "confidence": 0.6,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《危险化学品安全管理条例》"
+  ],
+  "quality_notes": [
+    "Relationships are based on explicit statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": 1,
+    "injuries": 5,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "连霍高速商丘段K378公里处，一辆装载易燃易爆化学品（乙醇）的罐式危化品运输车，因轮胎爆裂失控撞击护栏后，罐体破裂导致乙醇泄漏，遇明火发生起火爆燃，火焰高度达10米，周边多辆车辆被引燃，现场烟雾弥漫，能见度极低。",
+    "consequence_text": "造成危化品运输车驾驶员1人死亡，3辆周边车辆被烧毁，5人不同程度烧伤，事故路段双向交通全面封闭，后方车辆滞留约12公里，爆燃产生的有毒有害气体对周边空气质量造成影响，存在二次爆燃和火势蔓延至高速公路两侧绿化带的风险。",
+    "measure_text": "消防救援队伍调集泡沫消防车、水罐消防车赶赴现场，采用泡沫覆盖法扑灭明火，冷却罐体防止二次爆燃；交警部门封闭事故路段及周边收费站，设置警戒区域，引导车辆分流绕行；医疗部门派遣救护车和医护人员现场救治烧伤人员，转运至专业烧伤医院；应急管理部门协调环保部门对现场空气质量进行实时监测，采取喷淋降尘措施减少有毒气体扩散；危化品专业处置队伍对剩余泄漏乙醇进行收集处理，交通部门调用清障车、吊车清理烧毁车辆和事故残骸，依据《危险化学品安全管理条例》开展事故调查，6小时后事故现场清理完毕，道路逐步恢复通行。"
+  }
+}

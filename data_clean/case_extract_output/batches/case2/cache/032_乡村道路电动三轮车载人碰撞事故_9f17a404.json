@@ -1,0 +1,218 @@
+{
+  "case_id": "032_乡村道路电动三轮车载人碰撞事故_9f17a404",
+  "title": "乡村道路电动三轮车载人碰撞事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "乡村道路上，一辆电动三轮车因超速行驶与小型货车发生碰撞，造成人员伤亡和车辆损坏，并导致道路交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_TRAFFIC_ACCIDENT",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_EEEDBFDEA3",
+      "name": "道路交通事故",
+      "entity_type": "Event",
+      "evidence": "某乡村道路，一辆电动三轮车违规载人（载有4人），因驾驶员超速行驶，在弯道处与一辆小型货车发生碰撞，电动三轮车被撞翻，车上人员全部摔倒在地，小型货车车头轻微受损。",
+      "confidence": 0.9,
+      "normalized_id": "EVT_TRAFFIC_ACCIDENT",
+      "normalized_name": "交通事故",
+      "normalized_score": 0.0,
+      "matched_alias": "交通事故",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_TRAFFIC_ACCIDENT",
+      "final_entity_name": "交通事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_TRAFFIC_ACCIDENT",
+      "primary_event_name": "交通事故",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_D90D4FD3D1",
+      "name": "交通事故",
+      "entity_type": "Event",
+      "evidence": "某乡村道路，一辆电动三轮车违规载人（载有4人），因驾驶员超速行驶，在弯道处与一辆小型货车发生碰撞，电动三轮车被撞翻，车上人员全部摔倒在地，小型货车车头轻微受损。",
+      "confidence": 0.9,
+      "normalized_id": "EVT_TRAFFIC_ACCIDENT",
+      "normalized_name": "交通事故",
+      "normalized_score": 0.0474,
+      "matched_alias": "道路交通事故",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_TRAFFIC_ACCIDENT",
+      "final_entity_name": "交通事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_TRAFFIC_ACCIDENT",
+      "primary_event_name": "交通事故",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_F26A8532FA",
+      "name": "超速行驶",
+      "entity_type": "Action",
+      "evidence": "因驾驶员超速行驶",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1758,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_0B78E0C051",
+      "final_entity_name": "超速行驶",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_4C3C2C5D9A",
+      "name": "碰撞",
+      "entity_type": "Action",
+      "evidence": "发生碰撞",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_6B219E66DE",
+      "final_entity_name": "碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "道路交通事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_EEEDBFDEA3",
+      "source_final_id": "EVT_TRAFFIC_ACCIDENT",
+      "source_final_name": "交通事故",
+      "source_query_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "relation": "TRIGGERS",
+      "target": "超速行驶",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_F26A8532FA",
+      "target_final_id": "MEA_CASE_0B78E0C051",
+      "target_final_name": "超速行驶",
+      "target_query_event_ids": [],
+      "evidence": "因驾驶员超速行驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "道路交通事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_EEEDBFDEA3",
+      "source_final_id": "EVT_TRAFFIC_ACCIDENT",
+      "source_final_name": "交通事故",
+      "source_query_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "relation": "TRIGGERS",
+      "target": "碰撞",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_4C3C2C5D9A",
+      "target_final_id": "MEA_CASE_6B219E66DE",
+      "target_final_name": "碰撞",
+      "target_query_event_ids": [],
+      "evidence": "发生碰撞",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "道路交通事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_EEEDBFDEA3",
+      "source_final_id": "EVT_TRAFFIC_ACCIDENT",
+      "source_final_name": "交通事故",
+      "source_query_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "relation": "CAUSES",
+      "target": "交通事故",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_D90D4FD3D1",
+      "target_final_id": "EVT_TRAFFIC_ACCIDENT",
+      "target_final_name": "交通事故",
+      "target_query_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "造成电动三轮车驾驶员1人重伤、3名乘车人1人重伤、2人轻伤，电动三轮车完全损坏，小型货车轻微受损，事故路段双向交通拥堵，周边村民出行受阻，电动三轮车违规载人存在极大安全隐患。",
+      "confidence": 0.6,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "道路交通安全法"
+  ],
+  "quality_notes": [
+    "信息较为完整，能够较好地进行实体抽取。",
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 4,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡村道路，一辆电动三轮车违规载人（载有4人），因驾驶员超速行驶，在弯道处与一辆小型货车发生碰撞，电动三轮车被撞翻，车上人员全部摔倒在地，小型货车车头轻微受损，路面无照明设施。",
+    "consequence_text": "造成电动三轮车驾驶员1人重伤、3名乘车人1人重伤、2人轻伤，电动三轮车完全损坏，小型货车轻微受损，事故路段双向交通拥堵，周边村民出行受阻，电动三轮车违规载人存在极大安全隐患。",
+    "measure_text": "当地派出所接到报警后，立即赶赴现场，保护事故现场，控制肇事驾驶员，疏散过往车辆和群众；医疗部门派遣救护车从乡镇卫生院赶赴现场，对受伤人员进行紧急救治后，转运至县级医院；交警部门到场开展现场勘查，认定事故责任，对电动三轮车违规载人行为进行处罚；村委会协助联系受伤人员家属，告知事故情况，开展交通安全宣传，依据《道路交通安全法》开展处置，3小时后事故现场清理完毕，道路恢复通行。"
+  }
+}

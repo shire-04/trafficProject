@@ -1,0 +1,199 @@
+{
+  "case_id": "046_城市大型灯光秀活动周边道路多车拥堵追尾事故_ac348b91",
+  "title": "城市大型灯光秀活动周边道路多车拥堵追尾事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某市城市核心区江滩大型灯光秀活动散场后，周边道路因观众和车辆聚集导致严重拥堵，发生追尾事故，并造成交通瘫痪和观众滞留。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_4D219D5D07",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_21CB54A9E0",
+      "name": "追尾事故",
+      "entity_type": "Event",
+      "evidence": "江滩入口处一辆小型轿车与一辆SUV发生追尾",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_4D219D5D07",
+      "final_entity_name": "追尾事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_4D219D5D07",
+      "primary_event_name": "追尾事故",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "追尾事故",
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_95FDED12C4",
+      "name": "车辆滞留",
+      "entity_type": "Event",
+      "evidence": "车辆滞留约15公里，数十万散场观众无法正常离场",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_3B6CFC25B4",
+      "final_entity_name": "车辆滞留",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_3B6CFC25B4",
+      "primary_event_name": "车辆滞留",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_3B6CFC25B4"
+      ],
+      "query_event_names": [
+        "车辆滞留"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_64D17C08B7",
+      "name": "交通拥堵",
+      "entity_type": "Event",
+      "evidence": "周边道路完全拥堵",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_85237B46E2",
+      "final_entity_name": "交通拥堵",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_85237B46E2",
+      "primary_event_name": "交通拥堵",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_85237B46E2"
+      ],
+      "query_event_names": [
+        "交通拥堵"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_21CB54A9E0",
+      "source_final_id": "EVT_CASE_4D219D5D07",
+      "source_final_name": "追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "交通拥堵",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_64D17C08B7",
+      "target_final_id": "EVT_CASE_85237B46E2",
+      "target_final_name": "交通拥堵",
+      "target_query_event_ids": [
+        "EVT_CASE_85237B46E2"
+      ],
+      "evidence": "两车驾驶员发生争执，导致周边道路完全拥堵",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_21CB54A9E0",
+      "source_final_id": "EVT_CASE_4D219D5D07",
+      "source_final_name": "追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆滞留",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_95FDED12C4",
+      "target_final_id": "EVT_CASE_3B6CFC25B4",
+      "target_final_name": "车辆滞留",
+      "target_query_event_ids": [
+        "EVT_CASE_3B6CFC25B4"
+      ],
+      "evidence": "导致周边道路完全拥堵，车辆滞留约15公里",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "信息较为完整，但人员伤亡情况未知。",
+    "关系抽取基于文本中的明确信息，避免了猜测。",
+    "confidence score reflects the strength of evidence in the text."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市城市核心区江滩举办大型灯光秀活动，活动散场时段，周边3条主干道、2座过江大桥聚集了数十万散场观众、车辆，车辆无序加塞、变道，江滩入口处一辆小型轿车与一辆SUV发生追尾，两车驾驶员发生争执，导致周边道路完全拥堵，车辆滞留约15公里，数十万散场观众无法正常离场。",
+    "consequence_text": "无人员伤亡，两车轻微受损，活动周边5条主干道、2座过江大桥交通完全瘫痪，数十万散场观众滞留，周边小区居民出行完全受阻，车辆无序加塞易引发多车连环碰撞事故，现场交通秩序混乱。",
+    "measure_text": "交警部门立即调集全市警力赶赴现场，分路段、分区域疏导拥堵车辆，对追尾事故进行快速处置，拖移事故车辆；通过交通广播、导航APP实时发布拥堵提示，引导车辆、观众绕行周边道路；活动组委会安排工作人员引导观众分批次、分方向离场，协调公交公司加开数十条临时接驳专线，疏散滞留观众；城管部门协助维护现场秩序，清理占道人员、车辆；依据《道路交通安全法》对违规加塞、变道的驾驶员进行处罚，4小时后周边交通逐步恢复正常。"
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "case_id": "014_大雾天气乡村道路交通事故_a8b00b5a",
+  "title": "大雾天气乡村道路交通事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "大雾天气下，乡村道路发生小型货车与电动三轮车碰撞事故，造成人员伤亡和交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HEAVY_FOG",
+    "expanded_event_ids": []
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_4162C4D545",
+      "name": "大雾",
+      "entity_type": "Event",
+      "evidence": "因突发大雾，能见度不足30米",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_HEAVY_FOG",
+      "final_entity_name": "大雾",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_HEAVY_FOG",
+      "primary_event_name": "大雾",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_HEAVY_FOG"
+      ],
+      "query_event_names": [
+        "大雾"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_DA40A79229",
+      "name": "设置警戒标志",
+      "entity_type": "Action",
+      "evidence": "设置警戒标志",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1758,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_CE138D0F05",
+      "final_entity_name": "设置警戒标志",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_AAD7E49076",
+      "name": "解救",
+      "entity_type": "Action",
+      "evidence": "将被压骑行者解救出来",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_CEEE944B99",
+      "final_entity_name": "解救",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_B6E030676D",
+      "name": "疏导交通",
+      "entity_type": "Action",
+      "evidence": "协助疏导交通",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3024,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_2216349A64",
+      "final_entity_name": "疏导交通",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "大雾",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_4162C4D545",
+      "source_final_id": "EVT_HEAVY_FOG",
+      "source_final_name": "大雾",
+      "source_query_event_ids": [
+        "EVT_HEAVY_FOG"
+      ],
+      "relation": "TRIGGERS",
+      "target": "设置警戒标志",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_DA40A79229",
+      "target_final_id": "MEA_CASE_CE138D0F05",
+      "target_final_name": "设置警戒标志",
+      "target_query_event_ids": [],
+      "evidence": "设置警戒标志",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "大雾",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_4162C4D545",
+      "source_final_id": "EVT_HEAVY_FOG",
+      "source_final_name": "大雾",
+      "source_query_event_ids": [
+        "EVT_HEAVY_FOG"
+      ],
+      "relation": "TRIGGERS",
+      "target": "解救",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_AAD7E49076",
+      "target_final_id": "MEA_CASE_CEEE944B99",
+      "target_final_name": "解救",
+      "target_query_event_ids": [],
+      "evidence": "将被压骑行者解救出来",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "大雾",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_4162C4D545",
+      "source_final_id": "EVT_HEAVY_FOG",
+      "source_final_name": "大雾",
+      "source_query_event_ids": [
+        "EVT_HEAVY_FOG"
+      ],
+      "relation": "TRIGGERS",
+      "target": "疏导交通",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_B6E030676D",
+      "target_final_id": "MEA_CASE_2216349A64",
+      "target_final_name": "疏导交通",
+      "target_query_event_ids": [],
+      "evidence": "协助疏导交通",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法实施条例》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本中的明确信息，未进行推断。",
+    "部分关系证据较长，已截取关键部分。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡村道路，因突发大雾，能见度不足30米，一辆小型货车与一辆电动三轮车发生碰撞，电动三轮车被撞翻，骑行者被压在车下，小型货车车头受损，路面无警示标志，周边有农田和村庄。",
+    "consequence_text": "造成电动三轮车骑行者1人重伤，无法自行移动，小型货车驾驶员1人轻微擦伤，事故路段双向交通拥堵，大雾持续导致后续车辆存在碰撞风险，周边村民出行受阻。",
+    "measure_text": "当地乡镇应急管理办公室接到报警后，立即组织工作人员赶赴现场，设置警戒标志，疏散过往车辆和群众；消防救援队伍到场，使用液压扩张器等装备，将被压骑行者解救出来；医疗部门派遣救护车从乡镇卫生院赶赴现场，对受伤人员进行紧急救治后，转运至县级医院；交警部门到场开展现场勘查，认定事故责任；村委会协助疏导交通，告知村民大雾天气注意出行安全，依据《道路交通安全法实施条例》开展处置，2小时后事故现场清理完毕，道路恢复通行。"
+  }
+}

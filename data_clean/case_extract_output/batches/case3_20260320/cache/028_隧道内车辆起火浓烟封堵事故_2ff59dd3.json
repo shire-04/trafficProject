@@ -1,0 +1,88 @@
+{
+  "case_id": "028_隧道内车辆起火浓烟封堵事故_2ff59dd3",
+  "title": "隧道内车辆起火浓烟封堵事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "某山区隧道内，大型货车因刹车失灵起火，导致隧道封堵，人员滞留，一人死亡，多人轻伤。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_09C02D083D",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_LONG_TUNNEL_ACCIDENT",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_5EF81F2F4B",
+      "name": "车辆起火",
+      "entity_type": "Event",
+      "evidence": "一辆大型货车行驶至隧道中段时，因刹车失灵引发车辆起火，火势迅速蔓延，产生大量浓烟，封堵整个隧道",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_09C02D083D",
+      "final_entity_name": "车辆起火",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_09C02D083D",
+      "primary_event_name": "车辆起火",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_LONG_TUNNEL_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "特长隧道安全事故",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_09C02D083D",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_LONG_TUNNEL_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆起火",
+        "车辆积压",
+        "特长隧道安全事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_LONG_TUNNEL_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "特长隧道安全事故",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [
+    "《隧道突发事件应急预案》",
+    "《公路隧道设计规范》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本中的明确信息，避免了猜测。",
+    "confidence score reflects the clarity of the evidence in the text."
+  ],
+  "casualties": {
+    "deaths": 1,
+    "injuries": 5,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某山区隧道（长1800米），一辆大型货车行驶至隧道中段时，因刹车失灵引发车辆起火，火势迅速蔓延，产生大量浓烟，封堵整个隧道，隧道内有5辆车辆滞留，驾驶员和乘客无法撤离，隧道通风系统正常运行但无法快速排出浓烟。",
+    "consequence_text": "造成货车驾驶员1人死亡，隧道内滞留人员5人轻微呛伤，隧道双向交通全面封闭，浓烟导致隧道内能见度不足10米，存在人员窒息、火势蔓延至其他车辆的风险，隧道结构可能因高温受损。",
+    "measure_text": "应急管理部门启动《隧道突发事件应急预案》，协调消防救援队伍携带排烟设备、灭火器材、防毒面具赶赴现场，开展排烟通风、灭火救援，解救滞留人员；交警部门在隧道出入口设置警戒，禁止车辆、人员进入，疏导周边交通；医疗部门派遣救护车在现场待命，对呛伤人员进行吸氧、消毒处理；交通部门组织专业人员对隧道结构进行监测，防止高温导致坍塌；消防队伍扑灭明火后，清理事故残骸和烟雾，依据《公路隧道设计规范》开展后续检测，7小时后隧道恢复通行。"
+  }
+}

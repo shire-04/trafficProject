@@ -1,0 +1,135 @@
+{
+  "case_id": "024_城市路口电动车逆行碰撞行人事故_202885c9",
+  "title": "城市路口电动车逆行碰撞行人事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "某市十字路口发生电动自行车逆行闯红灯与行人碰撞事故，造成行人轻伤，电动自行车骑行者轻微擦伤，路口交通拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9DD0BDA4CE",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_DF2C54C895",
+      "name": "交通碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆电动自行车闯红灯、逆行行驶，与正在绿灯通行的一名行人发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9DD0BDA4CE",
+      "final_entity_name": "交通碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9DD0BDA4CE",
+      "primary_event_name": "交通碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9DD0BDA4CE",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "交通碰撞",
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_DF43D25D30",
+      "name": "交通拥堵",
+      "entity_type": "Event",
+      "evidence": "路口交通出现短暂拥堵",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_85237B46E2",
+      "final_entity_name": "交通拥堵",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_85237B46E2",
+      "primary_event_name": "交通拥堵",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_85237B46E2"
+      ],
+      "query_event_names": [
+        "交通拥堵"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "交通碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_DF2C54C895",
+      "source_final_id": "EVT_CASE_9DD0BDA4CE",
+      "source_final_name": "交通碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9DD0BDA4CE",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "交通拥堵",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_DF43D25D30",
+      "target_final_id": "EVT_CASE_85237B46E2",
+      "target_final_name": "交通拥堵",
+      "target_query_event_ids": [
+        "EVT_CASE_85237B46E2"
+      ],
+      "evidence": "现场有少量群众围观，路口交通出现短暂拥堵；路口交通拥堵约30分钟，影响过往车辆和行人通行",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "道路交通安全法"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "confidence score is estimated."
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 2,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市十字路口，一辆电动自行车闯红灯、逆行行驶，与正在绿灯通行的一名行人发生碰撞，行人被撞倒在地，电动自行车骑行者也摔倒受伤，现场有少量群众围观，路口交通出现短暂拥堵。",
+    "consequence_text": "造成行人1人轻伤、电动自行车骑行者1人轻微擦伤，无其他人员伤亡，电动自行车轻微损坏，路口交通拥堵约30分钟，影响过往车辆和行人通行，周边群众对电动车违规行驶行为反应强烈。",
+    "measure_text": "交警部门接到报警后，立即赶赴现场，疏散围观群众，疏导过往车辆和行人，开展现场勘查和责任认定，对电动自行车骑行者违规行为进行处罚；医疗部门派遣医护人员到场，对受伤人员进行轻微擦伤处理；城管部门协助清理现场，恢复路口交通秩序；交警部门在该路口增设电动车违规行驶抓拍设备，加强交通疏导，依据《道路交通安全法》开展处置，1小时后路口恢复正常通行。"
+  }
+}

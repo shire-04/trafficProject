@@ -1,0 +1,253 @@
+{
+  "case_id": "001_铁路道口危化品运输车与火车碰撞事故_b56d81db",
+  "title": "铁路道口危化品运输车与火车碰撞事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "某县道铁路平交道口，一辆装载液化天然气的罐式危化品运输车与货运火车正面碰撞，造成人员伤亡、危化品泄漏和交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_ACCIDENT",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_HAZMAT_LEAK"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_FC1F4AB40B",
+      "name": "危化品运输车辆与火车碰撞",
+      "entity_type": "Event",
+      "evidence": "某县道铁路平交道口，一辆装载液化天然气的罐式危化品运输车，在道口信号灯变红时未停车避让，与正常行驶的货运火车发生正面碰撞",
+      "confidence": 0.9,
+      "normalized_id": "EVT_HAZMAT_ACCIDENT",
+      "normalized_name": "危险货物运输事故",
+      "normalized_score": 0.0,
+      "matched_alias": "危险货物运输事故",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_ACCIDENT",
+      "final_entity_name": "危险货物运输事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_ACCIDENT",
+      "primary_event_name": "危险货物运输事故",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_HAZMAT_LEAK"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "交通事故",
+        "危险化学品运输泄漏事件"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_HAZMAT_LEAK"
+      ],
+      "query_event_names": [
+        "危险货物运输事故",
+        "公路中断",
+        "交通事故",
+        "危险化学品运输泄漏事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "危险货物运输事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_1A5775219B",
+      "name": "液化天然气",
+      "entity_type": "Resource",
+      "evidence": "装载液化天然气的罐式危化品运输车",
+      "confidence": 0.9,
+      "normalized_id": "RES_CASE_D5B0647912",
+      "normalized_name": "液化天然气",
+      "normalized_score": 1.0,
+      "matched_alias": "液化天然气",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_CASE_D5B0647912",
+      "final_entity_name": "液化天然气",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_70D4B09976",
+      "name": "危化品泄漏",
+      "entity_type": "Event",
+      "evidence": "危化品罐体出现裂缝，天然气少量泄漏",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_FF7FD44A64",
+      "final_entity_name": "危化品泄漏",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_FF7FD44A64",
+      "primary_event_name": "危化品泄漏",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_FF7FD44A64"
+      ],
+      "query_event_names": [
+        "危化品泄漏"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_469834002E",
+      "name": "堵漏",
+      "entity_type": "Action",
+      "evidence": "对泄漏罐体进行堵漏、稀释处理",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_39D13A1B81",
+      "normalized_name": "堵漏",
+      "normalized_score": 1.0,
+      "matched_alias": "堵漏",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_39D13A1B81",
+      "final_entity_name": "堵漏",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_0EE0320807",
+      "name": "稀释",
+      "entity_type": "Action",
+      "evidence": "对泄漏罐体进行堵漏、稀释处理",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_00EC36C353",
+      "normalized_name": "稀释",
+      "normalized_score": 1.0,
+      "matched_alias": "稀释",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_00EC36C353",
+      "final_entity_name": "稀释",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "危化品运输车辆与火车碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_FC1F4AB40B",
+      "source_final_id": "EVT_HAZMAT_ACCIDENT",
+      "source_final_name": "危险货物运输事故",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_HAZMAT_LEAK"
+      ],
+      "relation": "CAUSES",
+      "target": "危化品泄漏",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_70D4B09976",
+      "target_final_id": "EVT_CASE_FF7FD44A64",
+      "target_final_name": "危化品泄漏",
+      "target_query_event_ids": [
+        "EVT_CASE_FF7FD44A64"
+      ],
+      "evidence": "危化品罐体出现裂缝，天然气少量泄漏",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "堵漏",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_469834002E",
+      "source_final_id": "MEA_CASE_39D13A1B81",
+      "source_final_name": "堵漏",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "液化天然气",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_1A5775219B",
+      "target_final_id": "RES_CASE_D5B0647912",
+      "target_final_name": "液化天然气",
+      "target_query_event_ids": [],
+      "evidence": "对泄漏罐体进行堵漏、稀释处理",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "稀释",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_0EE0320807",
+      "source_final_id": "MEA_CASE_00EC36C353",
+      "source_final_name": "稀释",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "液化天然气",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_1A5775219B",
+      "target_final_id": "RES_CASE_D5B0647912",
+      "target_final_name": "液化天然气",
+      "target_query_event_ids": [],
+      "evidence": "对泄漏罐体进行堵漏、稀释处理",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《铁路安全管理条例》",
+    "《危险化学品安全管理条例》"
+  ],
+  "quality_notes": [
+    "Relationships are extracted based on explicit mentions in the text.",
+    "Confidence scores are assigned based on the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某县道铁路平交道口，一辆装载液化天然气的罐式危化品运输车，在道口信号灯变红时未停车避让，与正常行驶的货运火车发生正面碰撞，危化品罐体出现裂缝，天然气少量泄漏，火车车头轻微受损。",
+    "consequence_text": "造成危化品运输车驾驶员1人重伤、火车乘务人员1人轻伤，泄漏的天然气为易燃易爆气体，存在二次爆炸风险，铁路交通中断约1小时，道口周边200米内村民被紧急疏散，公路交通同步封闭。",
+    "measure_text": "应急管理部门启动《铁路与道路平交道口突发事件应急预案》，协调消防救援队伍携带防化装备赶赴现场，对泄漏罐体进行堵漏、稀释处理；铁路部门组织人员检查轨道与火车受损情况，清理碰撞残骸；交警部门封闭道口周边道路，疏导过往车辆绕行；医疗部门派遣救护车转运受伤人员至医院；依据《铁路安全管理条例》《危险化学品安全管理条例》开展事故调查，3小时后铁路恢复通行，道口逐步解封。"
+  }
+}

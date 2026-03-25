@@ -1,0 +1,87 @@
+{
+  "case_id": "011_机场高速机场摆渡车与私家车碰撞事故_df7df7c9",
+  "title": "机场高速机场摆渡车与私家车碰撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "机场高速一辆机场摆渡车与一辆私家车发生侧面碰撞，造成人员伤亡和车辆损毁，高速车道封闭。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9BDDC88CCC",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_81193EB1F3",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆机场旅客摆渡车在专用车道正常行驶，一辆小型私家车违规闯入摆渡车专用车道，强行变道时与摆渡车发生侧面碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9BDDC88CCC",
+      "final_entity_name": "车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9BDDC88CCC",
+      "primary_event_name": "车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "公路中断",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞",
+        "车辆积压",
+        "公路中断",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "公路中断",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《民用机场管理条例》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在遗漏或不准确的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 5,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某机场高速专用路段，一辆机场旅客摆渡车在专用车道正常行驶，一辆小型私家车违规闯入摆渡车专用车道，强行变道时与摆渡车发生侧面碰撞，摆渡车紧急制动，车内20余名机场旅客受到冲击摔倒，私家车车身严重变形。",
+    "consequence_text": "造成私家车驾驶员1人重伤、摆渡车内4名旅客轻微擦伤，私家车完全损毁，摆渡车车身轻微受损，机场高速专用车道封闭，后方车辆滞留约5公里，机场旅客接送、航班值机受到影响，存在二次碰撞风险。",
+    "measure_text": "机场交警部门立即封锁事故路段，设置警戒区域，疏导后方车辆绕行；机场管理公司调配备用摆渡车赶赴现场，接驳滞留旅客前往航站楼，保障旅客航班值机；消防救援队伍使用破拆工具解救被困私家车驾驶员；医疗部门派遣救护车转运受伤人员至医院；路政部门清理事故车辆，修复路面设施；依据《道路交通安全法》《民用机场管理条例》开展事故调查，对违规闯入专用车道的驾驶员进行从严处罚，2.5小时后道路恢复通行。"
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "case_id": "036_乡村道路秸秆焚烧浓烟致多车碰撞事故_8abdd7c8",
+  "title": "乡村道路秸秆焚烧浓烟致多车碰撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "乡村道路因秸秆焚烧产生的浓烟导致多车碰撞事故，造成人员轻伤和车辆损毁，道路交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9463A9FF31",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_44E68C7F94",
+      "name": "浓烟引发多车碰撞",
+      "entity_type": "Event",
+      "evidence": "3辆小型轿车、1辆轻型货车行驶中因视线受阻，接连发生连环碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9463A9FF31",
+      "final_entity_name": "浓烟引发多车碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9463A9FF31",
+      "primary_event_name": "浓烟引发多车碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9463A9FF31",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "浓烟引发多车碰撞",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_6C77D2A537",
+      "name": "秸秆焚烧",
+      "entity_type": "Event",
+      "evidence": "农户违规焚烧秸秆",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_FB762392BF",
+      "final_entity_name": "秸秆焚烧",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_FB762392BF",
+      "primary_event_name": "秸秆焚烧",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_FB762392BF"
+      ],
+      "query_event_names": [
+        "秸秆焚烧"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_0D593D723C",
+      "name": "浓烟",
+      "entity_type": "Resource",
+      "evidence": "产生大量浓烟，蔓延至公路路面",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_57617EC679",
+      "final_entity_name": "浓烟",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_42CD423EA2",
+      "name": "扑灭明火",
+      "entity_type": "Action",
+      "evidence": "组织人员扑灭秸秆明火",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_ED27AE6814",
+      "final_entity_name": "扑灭明火",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_016B57368B",
+      "name": "驱散浓烟",
+      "entity_type": "Action",
+      "evidence": "驱散浓烟",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B7596252BB",
+      "final_entity_name": "驱散浓烟",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "秸秆焚烧",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_6C77D2A537",
+      "source_final_id": "EVT_CASE_FB762392BF",
+      "source_final_name": "秸秆焚烧",
+      "source_query_event_ids": [
+        "EVT_CASE_FB762392BF"
+      ],
+      "relation": "CAUSES",
+      "target": "浓烟引发多车碰撞",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_44E68C7F94",
+      "target_final_id": "EVT_CASE_9463A9FF31",
+      "target_final_name": "浓烟引发多车碰撞",
+      "target_query_event_ids": [
+        "EVT_CASE_9463A9FF31",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "evidence": "某乡村公路两侧农田，农户违规焚烧秸秆，产生大量浓烟，蔓延至公路路面，能见度不足20米，3辆小型轿车、1辆轻型货车行驶中因视线受阻，接连发生连环碰撞",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "扑灭明火",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_42CD423EA2",
+      "source_final_id": "MEA_CASE_ED27AE6814",
+      "source_final_name": "扑灭明火",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "浓烟",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_0D593D723C",
+      "target_final_id": "RES_CASE_57617EC679",
+      "target_final_name": "浓烟",
+      "target_query_event_ids": [],
+      "evidence": "当地乡镇政府、派出所立即赶赴现场，组织人员扑灭秸秆明火，驱散浓烟",
+      "confidence": 0.75,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "驱散浓烟",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_016B57368B",
+      "source_final_id": "MEA_CASE_B7596252BB",
+      "source_final_name": "驱散浓烟",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "浓烟",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_0D593D723C",
+      "target_final_id": "RES_CASE_57617EC679",
+      "target_final_name": "浓烟",
+      "target_query_event_ids": [],
+      "evidence": "当地乡镇政府、派出所立即赶赴现场，组织人员扑灭秸秆明火，驱散浓烟",
+      "confidence": 0.75,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "大气污染防治法",
+    "道路交通安全法"
+  ],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text."
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡村公路两侧农田，农户违规焚烧秸秆，产生大量浓烟，蔓延至公路路面，能见度不足20米，3辆小型轿车、1辆轻型货车行驶中因视线受阻，接连发生连环碰撞，事故车辆均不同程度受损，停留在路面，浓烟持续弥漫。",
+    "consequence_text": "造成2人轻微受伤，4辆事故车辆不同程度损毁，乡村公路双向交通封闭，车辆滞留约5公里，浓烟持续影响视线，存在二次追尾风险，焚烧秸秆易引发周边农田火灾。",
+    "measure_text": "当地乡镇政府、派出所立即赶赴现场，组织人员扑灭秸秆明火，驱散浓烟，设置警戒区域；交警部门封闭事故路段，疏导过往车辆绕行，开展现场勘查和责任认定；消防救援队伍到场排查农田火灾隐患，解救被困人员；医疗部门对受伤人员进行现场处置后转运至医院；对违规焚烧秸秆的农户进行处罚与警示教育，依据《大气污染防治法》《道路交通安全法》开展处置，2小时后浓烟消散，道路恢复通行。"
+  }
+}

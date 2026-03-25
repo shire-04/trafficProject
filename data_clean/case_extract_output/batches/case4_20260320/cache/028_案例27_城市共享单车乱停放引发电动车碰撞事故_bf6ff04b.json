@@ -1,0 +1,119 @@
+{
+  "case_id": "028_案例27_城市共享单车乱停放引发电动车碰撞事故_bf6ff04b",
+  "title": "案例27：城市共享单车乱停放引发电动车碰撞事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "共享单车乱停乱放导致电动自行车相撞事故，造成人员轻微受伤，交通拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_695C0653A5",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_B0DCDB0639",
+      "name": "交通碰撞事故",
+      "entity_type": "Event",
+      "evidence": "一辆电动自行车行驶中躲避共享单车，与对向逆行的电动车相撞，两车倒地，骑行人员摔倒",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_695C0653A5",
+      "final_entity_name": "交通碰撞事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_695C0653A5",
+      "primary_event_name": "交通碰撞事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_695C0653A5",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "交通碰撞事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_5B15D777E7",
+      "name": "逆行",
+      "entity_type": "Action",
+      "evidence": "与对向逆行的电动车相撞",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_FEE3C04977",
+      "final_entity_name": "逆行",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "交通碰撞事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_B0DCDB0639",
+      "source_final_id": "EVT_CASE_695C0653A5",
+      "source_final_name": "交通碰撞事故",
+      "source_query_event_ids": [
+        "EVT_CASE_695C0653A5",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "逆行",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_5B15D777E7",
+      "target_final_id": "MEA_CASE_FEE3C04977",
+      "target_final_name": "逆行",
+      "target_query_event_ids": [],
+      "evidence": "与对向逆行的电动车相撞",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在不确定性。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "市区非机动车道，大量共享单车违规乱停乱放，占用大半车道，一辆电动自行车行驶中躲避共享单车，与对向逆行的电动车相撞，两车倒地，骑行人员摔倒，现场共享单车堆积，影响通行。",
+    "consequence_text": "2名骑行者轻微擦伤，车辆轻微受损，非机动车道拥堵，行人与非机动车混行，乱停单车易持续引发事故，群众通行不便。",
+    "measure_text": "城管与交警到场，清理乱停共享单车，划定规范停车区域；调处两车事故责任，对逆行骑行者进行处罚；医疗人员对伤者进行包扎；督促共享单车运营公司加强车辆调度与管控，1小时后车道恢复通行。"
+  }
+}

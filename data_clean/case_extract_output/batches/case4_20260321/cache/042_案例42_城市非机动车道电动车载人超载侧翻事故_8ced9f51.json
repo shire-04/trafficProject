@@ -1,0 +1,116 @@
+{
+  "case_id": "042_案例42_城市非机动车道电动车载人超载侧翻事故_8ced9f51",
+  "title": "案例42：城市非机动车道电动车载人超载侧翻事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "城市非机动车道电动自行车超载侧翻，造成人员轻伤和车辆受损，非机动车道拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_PRODUCTION_ACCIDENT",
+    "expanded_event_ids": [
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_0131F2C2B4",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "一辆电动自行车违规搭载2名成年人，超载导致车辆重心不稳，行驶中突然侧翻",
+      "confidence": 0.9,
+      "normalized_id": "EVT_PRODUCTION_ACCIDENT",
+      "normalized_name": "公路交通运输生产事故",
+      "normalized_score": 0.0,
+      "matched_alias": "公路交通运输生产事故",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_PRODUCTION_ACCIDENT",
+      "final_entity_name": "公路交通运输生产事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_PRODUCTION_ACCIDENT",
+      "primary_event_name": "公路交通运输生产事故",
+      "expanded_event_ids": [
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "公路交通运输生产事故",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_6F0F6F637F",
+      "name": "超载",
+      "entity_type": "Action",
+      "evidence": "超载导致车辆重心不稳",
+      "confidence": 0.85,
+      "normalized_id": "MEA_CASE_A048795819",
+      "normalized_name": "超载",
+      "normalized_score": 1.0,
+      "matched_alias": "超载",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_A048795819",
+      "final_entity_name": "超载",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆侧翻",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_0131F2C2B4",
+      "source_final_id": "EVT_PRODUCTION_ACCIDENT",
+      "source_final_name": "公路交通运输生产事故",
+      "source_query_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "relation": "TRIGGERS",
+      "target": "超载",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_6F0F6F637F",
+      "target_final_id": "MEA_CASE_A048795819",
+      "target_final_name": "超载",
+      "target_query_event_ids": [],
+      "evidence": "超载导致车辆重心不稳",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本中的明确信息，没有进行推断。",
+    "confidence score is based on the clarity of the evidence in the text.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 4,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "市区非机动车道，一辆电动自行车违规搭载2名成年人，超载导致车辆重心不稳，行驶中突然侧翻，驾乘3人全部摔倒，后方多辆电动车躲避不及，接连剐蹭倒地。",
+    "consequence_text": "4人轻微擦伤，多车轻微受损，非机动车道拥堵，行人与非机动车混行混乱，超载载人违规行为突出。",
+    "measure_text": "交警到场，调处事故责任，对超载载人骑行者从严处罚；医疗人员对伤者进行包扎；清理倒地车辆，恢复车道通行；加强电动车超载载人专项整治，1小时后车道恢复正常。"
+  }
+}

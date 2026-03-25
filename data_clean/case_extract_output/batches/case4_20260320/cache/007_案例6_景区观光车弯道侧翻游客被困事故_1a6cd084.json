@@ -1,0 +1,77 @@
+{
+  "case_id": "007_案例6_景区观光车弯道侧翻游客被困事故_1a6cd084",
+  "title": "案例6：景区观光车弯道侧翻游客被困事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "景区观光车在山区盘山道路急转弯处侧翻，造成人员伤亡和道路封闭。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_PRODUCTION_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_08FC19E233",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "车辆侧翻至路边排水沟，车身倾斜",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路交通运输生产事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "交通事故",
+        "公路交通运输生产事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "公路交通运输生产事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于提供的文本和实体目录，未进行外部知识推理。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 8,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "山区景区盘山观光道路，一辆载有18名游客的观光车，在连续急转弯路段，因驾驶员车速过快、路面有落叶湿滑，车辆侧翻至路边排水沟，车身倾斜，部分游客被卡在座位与车身之间，车门变形无法开启。",
+    "consequence_text": "造成5名游客轻伤、3名游客轻微伤，驾驶员轻微骨折，18名游客全部被困，景区观光道路封闭，后续游客无法通行，侧翻车辆有二次翻滚风险，排水沟狭窄增加救援难度。",
+    "measure_text": "景区应急办立即启动旅游突发事件预案，拨打119、120报警，组织工作人员现场安抚游客，设置警戒区域；消防人员携带液压破拆工具，拆解变形车门，逐一转移被困游客；医疗人员现场对伤者进行包扎固定，转运至景区医务室及就近医院；景区调集拖车扶正观光车，清理路面落叶，对弯道路段增设减速带和警示标志，3小时后道路恢复通行，同步做好游客安抚与理赔工作。"
+  }
+}

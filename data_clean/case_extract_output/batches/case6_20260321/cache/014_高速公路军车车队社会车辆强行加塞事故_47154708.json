@@ -1,0 +1,220 @@
+{
+  "case_id": "014_高速公路军车车队社会车辆强行加塞事故_47154708",
+  "title": "高速公路军车车队社会车辆强行加塞事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "高速公路军车车队发生追尾事故，造成人员轻伤和车辆损毁，交通中断。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_40909F589C",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_95410F10CD",
+      "name": "追尾碰撞",
+      "entity_type": "Event",
+      "evidence": "与车队内一辆军用运输车发生追尾碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_40909F589C",
+      "final_entity_name": "追尾碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_40909F589C",
+      "primary_event_name": "追尾碰撞",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_40909F589C",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "追尾碰撞",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_30E40F538B",
+      "name": "军车车队",
+      "entity_type": "Resource",
+      "evidence": "一支正在执行任务的军车编队车队",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3583,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_C0948512AD",
+      "final_entity_name": "军车车队",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_1B40F5FDEB",
+      "name": "私家车",
+      "entity_type": "Resource",
+      "evidence": "一辆小型私家车",
+      "confidence": 0.8,
+      "normalized_id": "RES_CASE_E88979D653",
+      "normalized_name": "私家车",
+      "normalized_score": 1.0,
+      "matched_alias": "私家车",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_CASE_E88979D653",
+      "final_entity_name": "私家车",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_131C28DEB3",
+      "name": "疏导",
+      "entity_type": "Action",
+      "evidence": "疏导后方车辆绕行",
+      "confidence": 0.6,
+      "normalized_id": "MEA_CASE_B804A6CFD8",
+      "normalized_name": "疏导",
+      "normalized_score": 1.0,
+      "matched_alias": "疏导",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_B804A6CFD8",
+      "final_entity_name": "疏导",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_BDC68C6168",
+      "name": "解救",
+      "entity_type": "Action",
+      "evidence": "解救被困私家车驾驶员",
+      "confidence": 0.6,
+      "normalized_id": "MEA_CASE_CEEE944B99",
+      "normalized_name": "解救",
+      "normalized_score": 1.0,
+      "matched_alias": "解救",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_CEEE944B99",
+      "final_entity_name": "解救",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "疏导",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_131C28DEB3",
+      "source_final_id": "MEA_CASE_B804A6CFD8",
+      "source_final_name": "疏导",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "军车车队",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_30E40F538B",
+      "target_final_id": "RES_CASE_C0948512AD",
+      "target_final_name": "军车车队",
+      "target_query_event_ids": [],
+      "evidence": "高速交警、军队警备部门立即封锁事故路段，设置警戒区域，保护军车车队安全，疏导后方车辆绕行",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "解救",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_BDC68C6168",
+      "source_final_id": "MEA_CASE_CEEE944B99",
+      "source_final_name": "解救",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "私家车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_1B40F5FDEB",
+      "target_final_id": "RES_CASE_E88979D653",
+      "target_final_name": "私家车",
+      "target_query_event_ids": [],
+      "evidence": "消防救援队伍赶赴现场，解救被困私家车驾驶员",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《中华人民共和国国防法》"
+  ],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores reflect the clarity of the relationship in the text."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高速公路路段，一支正在执行任务的军车编队车队，正在最左侧车道有序编队行驶，一辆小型私家车无视车队警示标志，强行变道加塞进入车队，与车队内一辆军用运输车发生追尾碰撞，私家车车尾严重变形，驾驶员被困车内，军车车队被迫停下，执行任务进度受阻。",
+    "consequence_text": "造成私家车驾驶员1人轻伤被困，私家车完全损毁，军用运输车尾部轻微受损，高速公路单向交通封闭，车辆滞留约6公里，军车执行紧急任务进度严重延误，社会车辆加塞易引发车队多车碰撞事故。",
+    "measure_text": "高速交警、军队警备部门立即封锁事故路段，设置警戒区域，保护军车车队安全，疏导后方车辆绕行；消防救援队伍赶赴现场，解救被困私家车驾驶员；医疗部门对受伤驾驶员进行现场处置后转运至医院；交警部门开展现场勘查和责任认定，对私家车强行加塞、干扰军车车队的行为进行从严处罚；军车车队在确认安全后，继续执行任务；依据《道路交通安全法》《中华人民共和国国防法》开展处置，1.5小时后道路恢复通行。"
+  }
+}

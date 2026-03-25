@@ -1,0 +1,158 @@
+{
+  "case_id": "010_农机跨区作业车队国道剐蹭拥堵事故_f0265085",
+  "title": "农机跨区作业车队国道剐蹭拥堵事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "农机车队在国道上与小轿车发生剐蹭，导致小轿车失控撞击护栏，驾驶员被困，国道交通中断。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F4AFE9A596",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_B935410DB4",
+      "name": "车辆剐蹭",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车强行超车时，与车队最前方的联合收割机发生剐蹭",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F4AFE9A596",
+      "final_entity_name": "车辆剐蹭",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F4AFE9A596",
+      "primary_event_name": "车辆剐蹭",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F4AFE9A596",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆剐蹭",
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_32F47E2479",
+      "name": "交警部门",
+      "entity_type": "Department",
+      "evidence": "交警部门立即封锁事故路段",
+      "confidence": 0.8,
+      "normalized_id": "ORG_CASE_C08151231F",
+      "normalized_name": "交警部门",
+      "normalized_score": 1.0,
+      "matched_alias": "交警部门",
+      "resolution_type": "existing_match",
+      "final_entity_id": "ORG_CASE_C08151231F",
+      "final_entity_name": "交警部门",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_CDF7EC5F58",
+      "name": "处置",
+      "entity_type": "Action",
+      "evidence": "医疗部门对受伤驾驶员进行现场处置",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B3F6D4450F",
+      "final_entity_name": "处置",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "处置",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_CDF7EC5F58",
+      "source_final_id": "MEA_CASE_B3F6D4450F",
+      "source_final_name": "处置",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "交警部门",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_32F47E2479",
+      "target_final_id": "ORG_CASE_C08151231F",
+      "target_final_name": "交警部门",
+      "target_query_event_ids": [],
+      "evidence": "交警部门立即封锁事故路段，依据《道路交通安全法》《农业机械安全监督管理条例》开展处置",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《农业机械安全监督管理条例》"
+  ],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores are assigned based on the clarity of the relationship in the text."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某国道小麦主产区路段，一支由20余台联合收割机、转运货车组成的农机跨区作业车队，在国道上低速编队行驶，一辆小型轿车强行超车时，与车队最前方的联合收割机发生剐蹭，轿车失控撞上路边护栏，驾驶员被困车内，车队后续车辆接连停下，导致国道双向交通完全中断。",
+    "consequence_text": "造成轿车驾驶员1人轻伤被困，轿车与联合收割机不同程度受损，国道双向交通封闭，车辆滞留约10公里，农机跨区作业进度受阻，夏收农时受到影响，拥堵路段易引发二次追尾事故。",
+    "measure_text": "交警部门立即封锁事故路段，设置警戒区域，疏导过往车辆绕行；消防救援队伍赶赴现场，解救被困轿车驾驶员；医疗部门对受伤驾驶员进行现场处置后转运至医院；农业农村部门、农机部门协调车队有序停靠路边，让出应急通道，引导车队分批有序通行；路政部门清理事故车辆，修复受损护栏；依据《道路交通安全法》《农业机械安全监督管理条例》开展处置，2小时后道路恢复临时通行，车队分批有序驶离。"
+  }
+}

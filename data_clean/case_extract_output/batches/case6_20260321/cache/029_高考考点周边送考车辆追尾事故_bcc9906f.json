@@ -1,0 +1,135 @@
+{
+  "case_id": "029_高考考点周边送考车辆追尾事故_bcc9906f",
+  "title": "高考考点周边送考车辆追尾事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "高考期间，送考车辆追尾导致交通拥堵，影响考生进入考场。",
+  "confidence": 0.95,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_7E4A45E8A0",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_2802617E39",
+      "name": "车辆追尾",
+      "entity_type": "Event",
+      "evidence": "一辆载有考生的送考私家车，与前方另一辆送考车辆发生追尾碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_7E4A45E8A0",
+      "final_entity_name": "车辆追尾",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_7E4A45E8A0",
+      "primary_event_name": "车辆追尾",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_7E4A45E8A0",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆追尾",
+        "公路中断",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_3B5EA8EB57",
+      "name": "交通拥堵",
+      "entity_type": "Event",
+      "evidence": "考点周边送考车辆密集，交通瞬间拥堵。",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_85237B46E2",
+      "final_entity_name": "交通拥堵",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_85237B46E2",
+      "primary_event_name": "交通拥堵",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_85237B46E2"
+      ],
+      "query_event_names": [
+        "交通拥堵"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆追尾",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_2802617E39",
+      "source_final_id": "EVT_CASE_7E4A45E8A0",
+      "source_final_name": "车辆追尾",
+      "source_query_event_ids": [
+        "EVT_CASE_7E4A45E8A0",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "交通拥堵",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_3B5EA8EB57",
+      "target_final_id": "EVT_CASE_85237B46E2",
+      "target_final_name": "交通拥堵",
+      "target_query_event_ids": [
+        "EVT_CASE_85237B46E2"
+      ],
+      "evidence": "高考考点周边主干道，高考语文科目考试进场时段，一辆载有考生的送考私家车，与前方另一辆送考车辆发生追尾碰撞，两车车身受损，无法移动，车内4名考生被困，无法按时进入考点，考点周边送考车辆密集，交通瞬间拥堵。",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "信息较为完整，事件和实体识别准确。",
+    "关系抽取基于文本信息，可能存在信息缺失或不明确的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市高考考点周边主干道，高考语文科目考试进场时段，一辆载有考生的送考私家车，与前方另一辆送考车辆发生追尾碰撞，两车车身受损，无法移动，车内4名考生被困，无法按时进入考点，考点周边送考车辆密集，交通瞬间拥堵。",
+    "consequence_text": "无人员伤亡，两车轻微受损，考点周边主干道交通拥堵，数千名送考车辆滞留，4名考生无法按时进入考场，面临错过高考的风险，考生及家长情绪激动，现场秩序混乱。",
+    "measure_text": "交警部门护考警力立即赶赴现场，对事故进行快速认定、快速处置，协调警用摩托车护送4名考生优先进入考场，确保考生按时参加考试；拖移事故车辆，疏导拥堵车辆，恢复考点周边交通秩序；考点学校安排专人接应迟到考生，安抚考生情绪；依据《道路交通安全法》对追尾驾驶员进行处罚与安全教育，15分钟后考生全部安全进入考场，30分钟后考点周边交通恢复正常。"
+  }
+}

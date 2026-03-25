@@ -1,0 +1,246 @@
+{
+  "case_id": "019_城市校园周边接送学生车辆违停引发剐蹭拥堵事故_f673cea7",
+  "title": "城市校园周边接送学生车辆违停引发剐蹭拥堵事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "校园周边车辆违停引发剐蹭拥堵事故，导致道路交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_VEHICLE_BACKLOG",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_7826CA3873",
+      "name": "交通拥堵",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车与一辆电动三轮车会车时发生剐蹭，导致整条道路完全拥堵。",
+      "confidence": 0.9,
+      "normalized_id": "EVT_VEHICLE_BACKLOG",
+      "normalized_name": "车辆积压",
+      "normalized_score": 0.0,
+      "matched_alias": "车辆积压",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_VEHICLE_BACKLOG",
+      "final_entity_name": "车辆积压",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_VEHICLE_BACKLOG",
+      "primary_event_name": "车辆积压",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路中断"
+      ],
+      "query_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "车辆积压",
+        "交通事故",
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_567F6C3115",
+      "name": "剐蹭",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车与一辆电动三轮车会车时发生剐蹭",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_DE6262D6FC",
+      "final_entity_name": "剐蹭",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_DE6262D6FC",
+      "primary_event_name": "剐蹭",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_DE6262D6FC"
+      ],
+      "query_event_names": [
+        "剐蹭"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_C2CA0A9558",
+      "name": "违停",
+      "entity_type": "Action",
+      "evidence": "大量接送学生的私家车、电动车违规在学校门口主干道两侧双排违停",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_30604D6C17",
+      "final_entity_name": "违停",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_AAF630767E",
+      "name": "交警",
+      "entity_type": "Department",
+      "evidence": "交警护学岗警力立即到场",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_DA3B807A38",
+      "final_entity_name": "交警",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "department_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_BEFC3311B3",
+      "name": "城管",
+      "entity_type": "Department",
+      "evidence": "城管、交警联合对违停车辆进行贴单处罚、强制拖移",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2643,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_3423B24BB3",
+      "final_entity_name": "城管",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "department_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "剐蹭",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_567F6C3115",
+      "source_final_id": "EVT_CASE_DE6262D6FC",
+      "source_final_name": "剐蹭",
+      "source_query_event_ids": [
+        "EVT_CASE_DE6262D6FC"
+      ],
+      "relation": "CAUSES",
+      "target": "交通拥堵",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_7826CA3873",
+      "target_final_id": "EVT_VEHICLE_BACKLOG",
+      "target_final_name": "车辆积压",
+      "target_query_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "evidence": "两车驾驶员发生争执，导致整条道路完全拥堵",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "违停",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_C2CA0A9558",
+      "source_final_id": "MEA_CASE_30604D6C17",
+      "source_final_name": "违停",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "交警",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_AAF630767E",
+      "target_final_id": "ORG_CASE_DA3B807A38",
+      "target_final_name": "交警",
+      "target_query_event_ids": [],
+      "evidence": "交警护学岗警力立即到场，调解驾驶员争执，对事故进行快速认定处置，疏导拥堵车辆",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "违停",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_C2CA0A9558",
+      "source_final_id": "MEA_CASE_30604D6C17",
+      "source_final_name": "违停",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "城管",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_BEFC3311B3",
+      "target_final_id": "ORG_CASE_3423B24BB3",
+      "target_final_name": "城管",
+      "target_query_event_ids": [],
+      "evidence": "城管、交警联合对违停车辆进行贴单处罚、强制拖移",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市小学门口上下学高峰时段，大量接送学生的私家车、电动车违规在学校门口主干道两侧双排违停，占用2条行车道，仅留1条车道通行，一辆小型轿车与一辆电动三轮车会车时发生剐蹭，两车驾驶员发生争执，导致整条道路完全拥堵。",
+    "consequence_text": "无人员伤亡，两车轻微受损，学校门口主干道双向交通完全中断，车辆滞留约3公里，学生放学无法正常接送，周边小区居民出行受阻，违停车辆遮挡视线，存在学生横穿马路被撞的重大安全隐患。",
+    "measure_text": "交警护学岗警力立即到场，调解驾驶员争执，对事故进行快速认定处置，疏导拥堵车辆；城管、交警联合对违停车辆进行贴单处罚、强制拖移，清理道路两侧违停车辆；学校安排老师组织学生在校园内等待，分批次引导学生安全离校；依据《道路交通安全法》对违停驾驶员进行处罚与警示教育，后续在学校门口增设违停抓拍设备，上下学高峰时段加派警力疏导，1小时后道路恢复正常通行。"
+  }
+}

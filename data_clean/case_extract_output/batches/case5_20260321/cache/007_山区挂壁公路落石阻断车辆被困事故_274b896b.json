@@ -1,0 +1,135 @@
+{
+  "case_id": "007_山区挂壁公路落石阻断车辆被困事故_274b896b",
+  "title": "山区挂壁公路落石阻断车辆被困事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "太行山挂壁公路上，因连续降雨导致山体落石，阻断交通，3辆轿车和1辆面包车被困，12人被困，无人员伤亡。当地应急部门启动预案，协调救援，最终安全转移被困人员，道路恢复临时通行。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_BLOCKAGE",
+    "expanded_event_ids": [
+      "EVT_ROAD_DAMAGE",
+      "EVT_ROAD_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_62BFA59775",
+      "name": "落石阻断交通",
+      "entity_type": "Event",
+      "evidence": "因连续降雨山体风化落石，多块直径0.5-1米的石块坠落至路面，完全阻断双向通行",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_BLOCKAGE",
+      "normalized_name": "公路阻塞",
+      "normalized_score": 0.0,
+      "matched_alias": "公路阻塞",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_BLOCKAGE",
+      "final_entity_name": "公路阻塞",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_BLOCKAGE",
+      "primary_event_name": "公路阻塞",
+      "expanded_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "公路损毁",
+        "公路中断"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "公路阻塞",
+        "公路损毁",
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路阻塞"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_26DC335617",
+      "name": "落石",
+      "entity_type": "Event",
+      "evidence": "因连续降雨山体风化落石",
+      "confidence": 0.95,
+      "normalized_id": "EVT_CONSTRUCTION_ACCIDENT",
+      "normalized_name": "公路工程建设事故",
+      "normalized_score": 0.1714,
+      "matched_alias": "落石",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_CONSTRUCTION_ACCIDENT",
+      "final_entity_name": "公路工程建设事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_CONSTRUCTION_ACCIDENT",
+      "primary_event_name": "公路工程建设事故",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CONSTRUCTION_ACCIDENT"
+      ],
+      "query_event_names": [
+        "公路工程建设事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "落石",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_26DC335617",
+      "source_final_id": "EVT_CONSTRUCTION_ACCIDENT",
+      "source_final_name": "公路工程建设事故",
+      "source_query_event_ids": [
+        "EVT_CONSTRUCTION_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "落石阻断交通",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_62BFA59775",
+      "target_final_id": "EVT_ROAD_BLOCKAGE",
+      "target_final_name": "公路阻塞",
+      "target_query_event_ids": [
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "evidence": "因连续降雨山体风化落石，多块直径0.5-1米的石块坠落至路面，完全阻断双向通行",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《山区公路地质灾害应急处置预案》",
+    "《公路安全保护条例》"
+  ],
+  "quality_notes": [
+    "信息较为完整，事件描述清晰。",
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores reflect the clarity of the relationship in the source text."
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 0,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某太行山挂壁公路（临崖一侧为百米悬崖，另一侧为山体），因连续降雨山体风化落石，多块直径0.5-1米的石块坠落至路面，完全阻断双向通行，3辆小型轿车、1辆面包车被困落石路段中间，前后均被落石封堵，周边无其他绕行路线，持续降雨导致仍有零星落石。",
+    "consequence_text": "造成车内12名人员全部被困，无人员伤亡，挂壁公路双向交通完全中断，被困人员面临落石砸伤、坠崖的重大风险，通讯信号较弱，救援难度极大。",
+    "measure_text": "当地应急管理部门启动《山区公路地质灾害应急处置预案》，协调消防救援队伍、交通部门、自然资源部门赶赴现场；自然资源部门对山体进行实时监测，预警落石风险，确认安全窗口期；消防救援队伍使用绳索装备搭建安全通道，分批转移被困人员至安全区域；交通部门调集小型挖掘机、装载机清理路面落石，对松动山体进行临时加固；交警部门在公路两端设置警戒，禁止车辆、人员进入；依据《公路安全保护条例》开展后续处置，5小时后被困人员全部安全转移，8小时后道路恢复临时通行。"
+  }
+}

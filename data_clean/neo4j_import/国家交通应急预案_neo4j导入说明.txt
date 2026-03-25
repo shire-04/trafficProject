@@ -1,0 +1,36 @@
+文件说明
+1. `国家交通应急预案_neo4j_nodes.csv`
+   - 表头：`id:ID,name,entity_type_cn,:LABEL`
+   - 用途：节点导入文件
+   - 说明：`:LABEL` 采用双标签形式，如 `PlanEntity;Event`
+
+2. `国家交通应急预案_neo4j_relationships.csv`
+   - 表头：`:START_ID,:END_ID,relation_cn,:TYPE`
+   - 用途：关系导入文件
+   - 说明：
+     - `relation_cn` 保留中文关系名
+     - `:TYPE` 为 Neo4j 关系类型
+
+关系类型映射
+- `引发` -> `CAUSES`
+- `定级为` -> `CLASSIFIED_AS`
+- `触发` -> `TRIGGERS`
+- `实施主体` -> `IMPLEMENTED_BY`
+- `调用` -> `REQUIRES`
+
+标签映射
+- `突发事件` -> `Event`
+- `事件级别` -> `EventLevel`
+- `预警` -> `Warning`
+- `响应` -> `Response`
+- `措施` -> `Action`
+- `部门` -> `Department`
+- `应急资源` -> `Resource`
+
+备注
+- 节点文件已按 `id` 去重，仅保留每个 `id` 的首个标准名。
+- 关系文件中的头尾 `id` 来自 `实体.txt` 和 `国家交通应急预案_关系三元组.txt`。
+- 这两份 CSV 位于 `data_clean` 下，可由你自行选择 `neo4j-admin import` 或 `LOAD CSV` 方式导入。
+- 图谱中的实体身份以 `id` 为准，而不是以 `name` 为准。
+- 若两个实体 `name` 不同但 `id` 相同，则它们在图谱中实质上等价，导入时会合并为同一节点。
+- 若两个实体 `name` 相同但 `id` 不同，则它们在图谱中仍然是两个不同节点。

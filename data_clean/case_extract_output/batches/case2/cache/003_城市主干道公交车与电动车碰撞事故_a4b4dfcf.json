@@ -1,0 +1,128 @@
+{
+  "case_id": "003_城市主干道公交车与电动车碰撞事故_a4b4dfcf",
+  "title": "城市主干道公交车与电动车碰撞事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "某市主干道发生公交车与电动自行车碰撞事故，造成一人重伤，路口交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9DD0BDA4CE",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_14E22A3246",
+      "name": "交通碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆公交车在绿灯通行时，与闯红灯的电动自行车发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9DD0BDA4CE",
+      "final_entity_name": "交通碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9DD0BDA4CE",
+      "primary_event_name": "交通碰撞",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9DD0BDA4CE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "交通碰撞",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_9600E056E3",
+      "name": "车辆积压",
+      "entity_type": "Event",
+      "evidence": "路口双向交通拥堵，周边3个路口出现车辆滞留",
+      "confidence": 0.7,
+      "normalized_id": "EVT_VEHICLE_BACKLOG",
+      "normalized_name": "车辆积压",
+      "normalized_score": 0.1972,
+      "matched_alias": "车辆滞留",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_VEHICLE_BACKLOG",
+      "final_entity_name": "车辆积压",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_VEHICLE_BACKLOG",
+      "primary_event_name": "车辆积压",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "交通碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_14E22A3246",
+      "source_final_id": "EVT_CASE_9DD0BDA4CE",
+      "source_final_name": "交通碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9DD0BDA4CE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆积压",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_9600E056E3",
+      "target_final_id": "EVT_VEHICLE_BACKLOG",
+      "target_final_name": "车辆积压",
+      "target_query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "evidence": "造成电动自行车骑行者1人重伤，路口双向交通拥堵，周边3个路口出现车辆滞留",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法实施条例》"
+  ],
+  "quality_notes": [
+    "信息较为完整，可信度较高。",
+    "关系抽取基于文本中的明确信息，未进行推断。",
+    "confidence score is estimated."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市繁华主干道交叉路口，一辆公交车在绿灯通行时，与闯红灯的电动自行车发生碰撞，电动自行车骑行者被撞倒在地，电动车严重损坏，公交车车头轻微受损，现场有大量群众围观，影响路口交通通行。",
+    "consequence_text": "造成电动自行车骑行者1人重伤，头部受伤出血，无法自行移动，路口双向交通拥堵，周边3个路口出现车辆滞留，围观群众聚集易引发二次事故，影响城市主干道通行效率。",
+    "measure_text": "交警部门立即封锁事故现场，疏散围观群众，疏导过往车辆绕行，开展现场勘查和责任认定；医疗部门派遣救护车赶赴现场，对受伤骑行者进行紧急止血、包扎后，转运至医院抢救；公交公司安排工作人员到场，协助处理事故，调配备用车辆保障公交线路正常运行；依据《道路交通安全法实施条例》处置，1小时后事故现场清理完毕，路口恢复通行。"
+  }
+}

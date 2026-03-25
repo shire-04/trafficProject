@@ -1,0 +1,124 @@
+{
+  "case_id": "006_乡村道路货车侧翻伤人事故_739eb5da",
+  "title": "乡村道路货车侧翻伤人事故",
+  "source_file": "交通应急处理案例.txt",
+  "summary": "乡村道路货车侧翻导致人员伤亡和交通中断的交通事故。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_ENVIRONMENT",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_4CC8CA282C",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "一辆装载建筑材料的轻型货车，因驾驶员超速行驶且操作不当，在弯道处发生侧翻",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ENVIRONMENT",
+      "normalized_name": "环境污染事件",
+      "normalized_score": 0.0,
+      "matched_alias": "环境污染事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ENVIRONMENT",
+      "final_entity_name": "环境污染事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ENVIRONMENT",
+      "primary_event_name": "环境污染事件",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_ENVIRONMENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "环境污染事件",
+        "公路中断",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_A2A81701E3",
+      "name": "超速行驶",
+      "entity_type": "Action",
+      "evidence": "因驾驶员超速行驶",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1758,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_0B78E0C051",
+      "final_entity_name": "超速行驶",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆侧翻",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_4CC8CA282C",
+      "source_final_id": "EVT_ENVIRONMENT",
+      "source_final_name": "环境污染事件",
+      "source_query_event_ids": [
+        "EVT_ENVIRONMENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "超速行驶",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_A2A81701E3",
+      "target_final_id": "MEA_CASE_0B78E0C051",
+      "target_final_name": "超速行驶",
+      "target_query_event_ids": [],
+      "evidence": "因驾驶员超速行驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "道路交通安全法"
+  ],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog. Some relationships might be implicit and not explicitly stated.",
+    "Confidence scores are assigned based on the clarity and directness of the evidence in the text.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡村公路（双向两车道，无防护栏），一辆装载建筑材料的轻型货车，因驾驶员超速行驶且操作不当，在弯道处发生侧翻，车辆及所载建筑材料倾倒在道路中间，将路边2名行人砸伤，另有1辆电动自行车被压在货车下方。",
+    "consequence_text": "造成2名行人重伤、1名电动自行车骑行者轻伤，电动自行车严重损坏，货车及建筑材料占用整个道路，导致乡村公路双向交通中断，周边村民出行受阻，倾倒的建筑材料存在滑落伤人的次生风险。",
+    "measure_text": "当地乡镇应急管理办公室接到报警后，立即组织工作人员赶赴现场设置警戒区域，保护事故现场；医疗部门派遣救护车将受伤人员转运至乡镇卫生院救治，同步联系县级医院做好重症救治准备；交警部门到场开展现场勘查，认定事故责任；交通部门调用小型吊车和拖车，对侧翻货车及倾倒的建筑材料进行清理，维修受损路面；村委会协助疏导周边群众，告知村民绕行路线，依据《道路交通安全法》开展应急处置，3小时后道路清理完毕，恢复通行，后续对事故路段增设警示标志和减速带。"
+  }
+}

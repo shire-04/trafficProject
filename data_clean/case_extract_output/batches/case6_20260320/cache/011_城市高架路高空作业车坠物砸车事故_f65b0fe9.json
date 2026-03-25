@@ -1,0 +1,130 @@
+{
+  "case_id": "011_城市高架路高空作业车坠物砸车事故_f65b0fe9",
+  "title": "城市高架路高空作业车坠物砸车事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "城市高架路高空作业车坠物砸车事故，造成人员伤亡和车辆损毁，道路交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_83A7AFDA45",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_51676F2371",
+      "name": "高空坠物",
+      "entity_type": "Event",
+      "evidence": "作业平台上的维修工具、灯具配件因未固定牢固，从约15米高空坠落，砸中下方正常行驶的3辆小型轿车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_83A7AFDA45",
+      "final_entity_name": "高空坠物",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_83A7AFDA45",
+      "primary_event_name": "高空坠物",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_83A7AFDA45",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "高空坠物",
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_C9B6CAFCD8",
+      "name": "封闭路段",
+      "entity_type": "Action",
+      "evidence": "交警部门立即封闭事故路段相关车道",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1758,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B9C3743B4E",
+      "final_entity_name": "封闭路段",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "高空坠物",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_51676F2371",
+      "source_final_id": "EVT_CASE_83A7AFDA45",
+      "source_final_name": "高空坠物",
+      "source_query_event_ids": [
+        "EVT_CASE_83A7AFDA45",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "relation": "TRIGGERS",
+      "target": "封闭路段",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_C9B6CAFCD8",
+      "target_final_id": "MEA_CASE_B9C3743B4E",
+      "target_final_name": "封闭路段",
+      "target_query_event_ids": [],
+      "evidence": "交警部门立即封闭事故路段相关车道",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《建设工程安全生产管理条例》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "Relationships are based on explicit statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市城市高架路，一辆高空作业车正在进行高架路灯维修作业，作业平台上的维修工具、灯具配件因未固定牢固，从约15米高空坠落，砸中下方正常行驶的3辆小型轿车，其中一辆轿车前挡风玻璃被砸穿，驾驶员受伤被困，另外两辆轿车车身受损，高架路车流密集。",
+    "consequence_text": "造成1名驾驶员重伤、2名驾驶员轻伤，3辆轿车不同程度损毁，高架路单向交通封闭，后方车辆滞留约8公里，作业平台仍有未固定的配件，存在持续坠物的重大风险，维修作业被迫中断。",
+    "measure_text": "交警部门立即封闭事故路段相关车道，设置警戒区域，疏导后方车辆从就近匝道下桥；施工单位立即暂停作业，收回高空作业平台，全面清理未固定的工具、配件，排查坠物隐患；消防救援队伍赶赴现场，解救被困驾驶员；医疗部门派遣救护车转运受伤人员至医院；路政部门清理事故车辆，修复路面设施；依据《建设工程安全生产管理条例》《道路交通安全法》对施工单位、作业人员进行从严处罚与追责，3小时后道路恢复通行。"
+  }
+}

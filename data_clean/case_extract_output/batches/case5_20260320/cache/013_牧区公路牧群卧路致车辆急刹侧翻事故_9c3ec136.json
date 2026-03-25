@@ -1,0 +1,143 @@
+{
+  "case_id": "013_牧区公路牧群卧路致车辆急刹侧翻事故_9c3ec136",
+  "title": "牧区公路牧群卧路致车辆急刹侧翻事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "内蒙古牧区草原公路上，因卧路牧群导致小型SUV车辆急刹并侧翻，造成2人轻微受伤，车辆完全损毁，公路交通中断。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_ROAD_EMERGENCY",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_3A4B9D5A3C",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "车辆侧翻至路边草地，四轮朝天",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "车辆积压",
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_4CDB6D15C1",
+      "name": "卧路牧群",
+      "entity_type": "Event",
+      "evidence": "一群牛羊因夜间低温卧在公路路面取暖",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_2B0A8CF519",
+      "final_entity_name": "卧路牧群",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_2B0A8CF519",
+      "primary_event_name": "卧路牧群",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_2B0A8CF519"
+      ],
+      "query_event_names": [
+        "卧路牧群"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "卧路牧群",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_4CDB6D15C1",
+      "source_final_id": "EVT_CASE_2B0A8CF519",
+      "source_final_name": "卧路牧群",
+      "source_query_event_ids": [
+        "EVT_CASE_2B0A8CF519"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧翻",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_3A4B9D5A3C",
+      "target_final_id": "EVT_CASE_9CC62EF2EB",
+      "target_final_name": "车辆侧翻",
+      "target_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "一群牛羊因夜间低温卧在公路路面取暖，一辆小型SUV夜间行驶中，因对向车辆远光炫目未及时发现卧路牧群，临近时猛踩刹车急打方向，车辆侧翻至路边草地",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "内蒙古牧区草原公路，一群牛羊因夜间低温卧在公路路面取暖，一辆小型SUV夜间行驶中，因对向车辆远光炫目未及时发现卧路牧群，临近时猛踩刹车急打方向，车辆侧翻至路边草地，四轮朝天，车内2人被困，牧群受惊四散奔跑。",
+    "consequence_text": "造成车内2人轻微受伤，SUV车辆完全损毁，无牧群伤亡，草原公路双向交通封闭，车辆滞留约4公里，受惊牧群仍有横穿公路引发二次事故的风险，夜间视线差增加救援难度。",
+    "measure_text": "当地交警联合牧区牧民赶赴现场，驱赶受惊牧群至安全区域，设置夜间警戒标志，疏导过往车辆；消防救援队伍到场破拆车身，救出被困人员；医疗部门对受伤人员进行现场处置后转运至就近卫生院；路政部门拖移事故车辆，清理现场；对牧民进行牧群管控安全教育，在牧区公路增设牧群穿行警示标志，依据《道路交通安全法》开展处置，2小时后道路恢复通行。"
+  }
+}

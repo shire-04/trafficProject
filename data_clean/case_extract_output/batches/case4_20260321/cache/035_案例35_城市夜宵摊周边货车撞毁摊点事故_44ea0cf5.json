@@ -1,0 +1,169 @@
+{
+  "case_id": "035_案例35_城市夜宵摊周边货车撞毁摊点事故_44ea0cf5",
+  "title": "案例35：城市夜宵摊周边货车撞毁摊点事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "夜间货车因驾驶员疲劳驾驶失控冲撞夜宵摊点，造成人员轻伤和财产损失，并导致道路拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_PRODUCTION_ACCIDENT",
+    "expanded_event_ids": [
+      "EVT_ROAD_DAMAGE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_7559371D82",
+      "name": "车辆失控冲撞",
+      "entity_type": "Event",
+      "evidence": "一辆货车因驾驶员夜间疲劳驾驶，失控冲上路边人行道，撞毁2个夜宵摊点",
+      "confidence": 0.9,
+      "normalized_id": "EVT_PRODUCTION_ACCIDENT",
+      "normalized_name": "公路交通运输生产事故",
+      "normalized_score": 0.0,
+      "matched_alias": "公路交通运输生产事故",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_PRODUCTION_ACCIDENT",
+      "final_entity_name": "公路交通运输生产事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_PRODUCTION_ACCIDENT",
+      "primary_event_name": "公路交通运输生产事故",
+      "expanded_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路损毁",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "公路交通运输生产事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_2B5B393953",
+      "name": "疲劳驾驶",
+      "entity_type": "Action",
+      "evidence": "一辆货车因驾驶员夜间疲劳驾驶",
+      "confidence": 0.95,
+      "normalized_id": "MEA_CASE_A6CD658948",
+      "normalized_name": "驾驶员疲劳驾驶",
+      "normalized_score": 0.9573,
+      "matched_alias": "驾驶员疲劳驾驶",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_A6CD658948",
+      "final_entity_name": "驾驶员疲劳驾驶",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_E01EB44A20",
+      "name": "货车",
+      "entity_type": "Resource",
+      "evidence": "一辆货车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_7CD39CFBB2",
+      "final_entity_name": "货车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    }
+  ],
+  "relations": [
+    {
+      "source": "疲劳驾驶",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_2B5B393953",
+      "source_final_id": "MEA_CASE_A6CD658948",
+      "source_final_name": "驾驶员疲劳驾驶",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "货车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_E01EB44A20",
+      "target_final_id": "RES_CASE_7CD39CFBB2",
+      "target_final_name": "货车",
+      "target_query_event_ids": [],
+      "evidence": "一辆货车因驾驶员夜间疲劳驾驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆失控冲撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_7559371D82",
+      "source_final_id": "EVT_PRODUCTION_ACCIDENT",
+      "source_final_name": "公路交通运输生产事故",
+      "source_query_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "疲劳驾驶",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_2B5B393953",
+      "target_final_id": "MEA_CASE_A6CD658948",
+      "target_final_name": "驾驶员疲劳驾驶",
+      "target_query_event_ids": [],
+      "evidence": "一辆货车因驾驶员夜间疲劳驾驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "道路交通安全法"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本中的明确信息，没有进行推断。",
+    "部分关系的置信度较低，因为文本描述较为简略。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 5,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "夜间市区夜宵摊集中路段，一辆货车因驾驶员夜间疲劳驾驶，失控冲上路边人行道，撞毁2个夜宵摊点，桌椅、餐具散落一地，摊主与就餐群众纷纷避让，部分人员被碰倒。",
+    "consequence_text": "造成2名摊主、3名就餐群众轻微擦伤，货车与摊点损毁，路段双向拥堵，夜间交通混乱，疲劳驾驶引发事故，社会影响较大。",
+    "measure_text": "交警到场，控制疲劳驾驶驾驶员，疏散人群，划定警戒区域；消防人员清理现场残骸，排查车辆起火隐患；医疗人员转运伤者就医；城管部门取缔违规占道夜宵摊，规范经营区域；依据《道路交通安全法》对疲劳驾驶行为处罚，2小时后道路恢复通行。"
+  }
+}

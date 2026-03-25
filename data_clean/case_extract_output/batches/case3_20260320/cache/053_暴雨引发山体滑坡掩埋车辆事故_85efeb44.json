@@ -1,0 +1,137 @@
+{
+  "case_id": "053_暴雨引发山体滑坡掩埋车辆事故_85efeb44",
+  "title": "暴雨引发山体滑坡掩埋车辆事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "某山区公路因连续暴雨引发山体滑坡，掩埋车辆，造成人员被困和道路中断。",
+  "confidence": 0.95,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_0B82C87221",
+    "expanded_event_ids": [
+      "EVT_RAINSTORM",
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_F342384320",
+      "name": "山体滑坡",
+      "entity_type": "Event",
+      "evidence": "山体发生大型滑坡，大量泥土、石块将行驶中的一辆小型轿车、一辆重型货车掩埋",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_0B82C87221",
+      "final_entity_name": "山体滑坡掩埋车辆",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_0B82C87221",
+      "primary_event_name": "山体滑坡掩埋车辆",
+      "expanded_event_ids": [
+        "EVT_RAINSTORM",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "暴雨",
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_0B82C87221",
+        "EVT_RAINSTORM",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "山体滑坡掩埋车辆",
+        "暴雨",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_RAINSTORM",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "暴雨",
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_C02B26E009",
+      "name": "暴雨",
+      "entity_type": "Event",
+      "evidence": "连续多日暴雨",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_RAINSTORM",
+      "final_entity_name": "暴雨",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_RAINSTORM",
+      "primary_event_name": "暴雨",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "query_event_names": [
+        "暴雨"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "暴雨",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_C02B26E009",
+      "source_final_id": "EVT_RAINSTORM",
+      "source_final_name": "暴雨",
+      "source_query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "relation": "CAUSES",
+      "target": "山体滑坡",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_F342384320",
+      "target_final_id": "EVT_CASE_0B82C87221",
+      "target_final_name": "山体滑坡掩埋车辆",
+      "target_query_event_ids": [
+        "EVT_CASE_0B82C87221",
+        "EVT_RAINSTORM",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "evidence": "因连续多日暴雨，山体发生大型滑坡",
+      "confidence": 0.98,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《地质灾害突发事件应急预案》",
+    "《地质灾害防治条例》"
+  ],
+  "quality_notes": [
+    "人员伤亡情况未知，需进一步确认。",
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores are assigned based on the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某山区公路，因连续多日暴雨，山体发生大型滑坡，大量泥土、石块将行驶中的一辆小型轿车、一辆重型货车掩埋，车内共3人被困，滑坡体占用整个道路，持续暴雨导致山体有进一步滑坡的风险。",
+    "consequence_text": "造成3人被困车内，生死未卜，两辆车被完全掩埋，事故路段双向交通完全中断，周边乡镇与县城的交通联系彻底受阻，滑坡体周边路面开裂，存在进一步坍塌风险，救援难度极大。",
+    "measure_text": "应急管理部门启动《地质灾害突发事件应急预案》，协调消防救援队伍、交通部门、自然资源部门，调集挖掘机、装载机、救援犬等装备，赶赴现场开展救援，清理滑坡体，寻找被困人员；医疗部门派遣多辆救护车、医护人员，在现场待命，做好急救准备；交警部门在滑坡路段两端设置多层警戒区域，禁止车辆、人员进入；自然资源部门对山体进行实时监测，发布滑坡预警；救援队伍持续开展救援工作，依据《地质灾害防治条例》开展处置，12小时后被困人员全部被救出，道路清理工作逐步推进。"
+  }
+}

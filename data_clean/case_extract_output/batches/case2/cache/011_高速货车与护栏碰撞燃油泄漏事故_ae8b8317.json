@@ -1,0 +1,123 @@
+{
+  "case_id": "011_高速货车与护栏碰撞燃油泄漏事故_ae8b8317",
+  "title": "高速货车与护栏碰撞燃油泄漏事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "京港澳高速郑州段一辆重型柴油货车因驾驶员疲劳驾驶失控碰撞护栏，造成柴油泄漏，存在安全隐患，已采取紧急处置措施。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_ACCIDENT",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_9F43534663",
+      "name": "燃油泄漏",
+      "entity_type": "Event",
+      "evidence": "货车油箱破损，柴油持续泄漏，路面被柴油覆盖",
+      "confidence": 0.9,
+      "normalized_id": "EVT_HAZMAT_ACCIDENT",
+      "normalized_name": "危险货物运输事故",
+      "normalized_score": 0.0,
+      "matched_alias": "危险货物运输事故",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_ACCIDENT",
+      "final_entity_name": "危险货物运输事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_ACCIDENT",
+      "primary_event_name": "危险货物运输事故",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "危险货物运输事故",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "危险货物运输事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_9A95130DC3",
+      "name": "驾驶员疲劳驾驶",
+      "entity_type": "Action",
+      "evidence": "因驾驶员疲劳驾驶",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1638,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_A6CD658948",
+      "final_entity_name": "驾驶员疲劳驾驶",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "燃油泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_9F43534663",
+      "source_final_id": "EVT_HAZMAT_ACCIDENT",
+      "source_final_name": "危险货物运输事故",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "relation": "TRIGGERS",
+      "target": "驾驶员疲劳驾驶",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_9A95130DC3",
+      "target_final_id": "MEA_CASE_A6CD658948",
+      "target_final_name": "驾驶员疲劳驾驶",
+      "target_query_event_ids": [],
+      "evidence": "因驾驶员疲劳驾驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《危险废物污染环境防治法》"
+  ],
+  "quality_notes": [
+    "信息较为完整，事件描述清晰。",
+    "The relations are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 1,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "京港澳高速郑州段K756公里处，一辆重型柴油货车，因驾驶员疲劳驾驶，车辆失控碰撞高速公路中央护栏，护栏被撞断，货车油箱破损，柴油持续泄漏，路面被柴油覆盖，当时天气晴朗，能见度良好。",
+    "consequence_text": "造成货车驾驶员1人轻伤，柴油泄漏覆盖路面约200米，存在车辆打滑、起火的重大风险，事故路段单向交通封闭，后方车辆滞留约7公里，泄漏的柴油可能污染周边土壤和水体。",
+    "measure_text": "交警部门立即封闭事故路段，设置警戒区域，安排警力疏导后方车辆；消防救援队伍赶赴现场，使用吸油毡、围油栏收集泄漏柴油，对路面进行稀释处理，排查起火隐患；医疗部门派遣医护人员到场，对驾驶员进行轻微擦伤处理；交通部门调用清障车、吊车，将事故货车拖移至安全区域，修复受损护栏；环保部门对周边土壤、水体进行采样监测，依据《危险废物污染环境防治法》开展处置，3小时后路面清理完毕，道路恢复通行。"
+  }
+}

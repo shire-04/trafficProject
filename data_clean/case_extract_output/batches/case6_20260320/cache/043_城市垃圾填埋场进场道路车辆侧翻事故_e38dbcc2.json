@@ -1,0 +1,188 @@
+{
+  "case_id": "043_城市垃圾填埋场进场道路车辆侧翻事故_e38dbcc2",
+  "title": "城市垃圾填埋场进场道路车辆侧翻事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某城市生活垃圾填埋场进场道路发生车辆侧翻事故，造成人员重伤、道路中断和环境污染。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ENVIRONMENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_3251EC8FC5",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "一辆满载生活垃圾的重型自卸货车，因车辆超载、刹车系统故障，在上坡过程中发生后溜侧翻",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ENVIRONMENT"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路中断",
+        "环境污染事件"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ENVIRONMENT"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "交通事故",
+        "公路中断",
+        "环境污染事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ENVIRONMENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "公路中断",
+        "环境污染事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_ACD55991FE",
+      "name": "车辆超载",
+      "entity_type": "Action",
+      "evidence": "因车辆超载",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_80F2446900",
+      "final_entity_name": "车辆超载",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_CBBAEF50BF",
+      "name": "刹车系统故障",
+      "entity_type": "Action",
+      "evidence": "刹车系统故障",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3157,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_9DFDBB5D63",
+      "final_entity_name": "刹车系统故障",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆侧翻",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_3251EC8FC5",
+      "source_final_id": "EVT_CASE_9CC62EF2EB",
+      "source_final_name": "车辆侧翻",
+      "source_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ENVIRONMENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "车辆超载",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_ACD55991FE",
+      "target_final_id": "MEA_CASE_80F2446900",
+      "target_final_name": "车辆超载",
+      "target_query_event_ids": [],
+      "evidence": "因车辆超载",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆侧翻",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_3251EC8FC5",
+      "source_final_id": "EVT_CASE_9CC62EF2EB",
+      "source_final_name": "车辆侧翻",
+      "source_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ENVIRONMENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "刹车系统故障",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_CBBAEF50BF",
+      "target_final_id": "MEA_CASE_9DFDBB5D63",
+      "target_final_name": "刹车系统故障",
+      "target_query_event_ids": [],
+      "evidence": "刹车系统故障",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《固体废物污染环境防治法》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "Relationships are based on direct mentions in the text and the provided entity catalog.",
+    "Confidence scores are assigned based on the clarity of the relationship in the text.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某城市生活垃圾填埋场进场专用陡坡道路，一辆满载生活垃圾的重型自卸货车，因车辆超载、刹车系统故障，在上坡过程中发生后溜侧翻，车辆连同所载垃圾全部倾倒在路面和边坡下，驾驶室严重变形，驾驶员被困车内，填埋场进场道路完全中断。",
+    "consequence_text": "造成驾驶员1人重伤被困，货车完全损毁，大量生活垃圾散落污染路面、边坡，填埋场进场道路完全封闭，垃圾清运车辆无法进场，城市生活垃圾清运、处置工作被迫中断，周边环境受到污染，存在垃圾渗滤液污染土壤、地下水的风险。",
+    "measure_text": "填埋场应急管理部门立即启动应急预案，封锁事故路段，疏散作业人员，对散落垃圾进行临时围挡，防止渗滤液扩散；消防救援队伍赶赴现场，使用破拆工具解救被困驾驶员；医疗部门派遣救护车转运受伤驾驶员至医院；交警部门开展现场勘查和责任认定；城管部门调集车辆、设备，清理散落的生活垃圾，对渗滤液进行收集处置，修复受损道路；生态环境部门对周边土壤、地下水进行监测，防止污染扩散；依据《固体废物污染环境防治法》《道路交通安全法》开展事故调查，3小时后驾驶员被成功救出，进场道路逐步恢复通行。"
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "case_id": "029_山区公路货车超载翻车事故_3d730728",
+  "title": "山区公路货车超载翻车事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "山区公路货车超载导致车辆翻车，造成人员受伤和道路交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ROAD_BLOCKAGE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_42596947D5",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "一辆重型货车超载运输砂石，因路面狭窄、坡度较大，驾驶员操作不当，车辆发生翻车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路阻塞",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "公路中断",
+        "公路阻塞",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路阻塞",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_0DE4E19515",
+      "name": "超载",
+      "entity_type": "Action",
+      "evidence": "一辆重型货车超载运输砂石",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_A048795819",
+      "final_entity_name": "超载",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_F6D6CFC610",
+      "name": "道路交通安全法",
+      "entity_type": "Event",
+      "evidence": "依据《道路交通安全法》对货车超载行为进行处罚",
+      "confidence": 0.6,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_0A5C5DEE74",
+      "final_entity_name": "道路交通安全法",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_0A5C5DEE74",
+      "primary_event_name": "道路交通安全法",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_0A5C5DEE74"
+      ],
+      "query_event_names": [
+        "道路交通安全法"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆侧翻",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_42596947D5",
+      "source_final_id": "EVT_CASE_9CC62EF2EB",
+      "source_final_name": "车辆侧翻",
+      "source_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "超载",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_0DE4E19515",
+      "target_final_id": "MEA_CASE_A048795819",
+      "target_final_name": "超载",
+      "target_query_event_ids": [],
+      "evidence": "一辆重型货车超载运输砂石",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆侧翻",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_42596947D5",
+      "source_final_id": "EVT_CASE_9CC62EF2EB",
+      "source_final_name": "车辆侧翻",
+      "source_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "道路交通安全法",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_F6D6CFC610",
+      "target_final_id": "EVT_CASE_0A5C5DEE74",
+      "target_final_name": "道路交通安全法",
+      "target_query_event_ids": [
+        "EVT_CASE_0A5C5DEE74"
+      ],
+      "evidence": "造成货车驾驶员1人重伤，被困车内无法自行撤离，砂石散落占用整个道路，事故路段双向交通完全中断，周边乡镇与县城的交通联系受阻，散落的砂石存在滑落伤人的风险，救援难度较大。",
+      "confidence": 0.6,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "道路交通安全法"
+  ],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores reflect the clarity of the relationship within the text.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某山区公路，一辆重型货车超载运输砂石，因路面狭窄、坡度较大，驾驶员操作不当，车辆发生翻车，砂石全部散落至路面，货车车身严重变形，驾驶员被困车内，周边无村庄，通讯信号较弱。",
+    "consequence_text": "造成货车驾驶员1人重伤，被困车内无法自行撤离，砂石散落占用整个道路，事故路段双向交通完全中断，周边乡镇与县城的交通联系受阻，散落的砂石存在滑落伤人的风险，救援难度较大。",
+    "measure_text": "应急管理部门协调消防救援队伍、医疗队伍，携带救援装备、急救药品，赶赴现场开展救援，使用破拆工具解救被困驾驶员；交警部门封闭事故路段，设置警戒区域，禁止无关车辆、人员进入；交通部门组织专业施工队伍，调用挖掘机、装载机等设备，清理散落的砂石和事故车辆；医疗部门对受伤驾驶员进行紧急救治后，转运至医院；依据《道路交通安全法》对货车超载行为进行处罚，后续加强山区公路货车超载检查，5小时后道路恢复通行。"
+  }
+}

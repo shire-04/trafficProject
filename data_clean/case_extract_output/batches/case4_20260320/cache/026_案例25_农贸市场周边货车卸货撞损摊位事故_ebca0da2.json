@@ -1,0 +1,198 @@
+{
+  "case_id": "026_案例25_农贸市场周边货车卸货撞损摊位事故_ebca0da2",
+  "title": "案例25：农贸市场周边货车卸货撞损摊位事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "农贸市场周边，货车违规卸货倒车时撞损果蔬摊位，造成人员轻伤和交通拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9BDDC88CCC",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_ROAD_DAMAGE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_42B033FBE3",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆轻型货车违规在非机动车道卸货，倒车时未观察后方，撞上路边2个果蔬摊位",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9BDDC88CCC",
+      "final_entity_name": "车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9BDDC88CCC",
+      "primary_event_name": "车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "公路损毁",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞",
+        "公路交通突发事件",
+        "公路损毁",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件",
+        "公路损毁",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_BCBD8430BF",
+      "name": "卸货",
+      "entity_type": "Action",
+      "evidence": "一辆轻型货车违规在非机动车道卸货",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_AC1DB23CF7",
+      "final_entity_name": "卸货",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_1BB54836C2",
+      "name": "果蔬",
+      "entity_type": "Resource",
+      "evidence": "果蔬散落一地，果蔬大量损毁",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_D6966FE2EB",
+      "final_entity_name": "果蔬",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_3A56A7A95D",
+      "name": "摊位",
+      "entity_type": "Resource",
+      "evidence": "撞上路边2个果蔬摊位，摊位钢架变形，修复摊位",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_52F9F0A864",
+      "final_entity_name": "摊位",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "卸货",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_BCBD8430BF",
+      "source_final_id": "MEA_CASE_AC1DB23CF7",
+      "source_final_name": "卸货",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "果蔬",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_1BB54836C2",
+      "target_final_id": "RES_CASE_D6966FE2EB",
+      "target_final_name": "果蔬",
+      "target_query_event_ids": [],
+      "evidence": "卸货，果蔬散落一地",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "卸货",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_BCBD8430BF",
+      "source_final_id": "MEA_CASE_AC1DB23CF7",
+      "source_final_name": "卸货",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "摊位",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_3A56A7A95D",
+      "target_final_id": "RES_CASE_52F9F0A864",
+      "target_final_name": "摊位",
+      "target_query_event_ids": [],
+      "evidence": "卸货，撞上路边2个果蔬摊位",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在不确定性。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "农贸市场周边道路，一辆轻型货车违规在非机动车道卸货，倒车时未观察后方，撞上路边2个果蔬摊位，摊位钢架变形，果蔬散落一地，摊位摊主被撞倒，周边购物群众纷纷避让。",
+    "consequence_text": "2名摊主轻微撞伤，货车与摊位受损，果蔬大量损毁，非机动车道封闭，周边交通拥堵，群众购物受阻，易引发纠纷与二次事故。",
+    "measure_text": "交警与城管到场，疏导交通，控制货车驾驶员，调处赔偿事宜；医疗人员对伤者进行简单处置；清理散落果蔬，修复摊位；严禁市场周边违规占道卸货，划定专用卸货区域；1小时后道路恢复通行，市场秩序恢复正常。"
+  }
+}

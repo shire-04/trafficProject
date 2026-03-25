@@ -1,0 +1,130 @@
+{
+  "case_id": "060_城市快速路夜间事故_0fd6ca79",
+  "title": "城市快速路夜间事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "某城市快速路夜间路段发生大型货车与小型轿车追尾碰撞事故，造成人员伤亡和交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_40909F589C",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_D5DBC43A91",
+      "name": "追尾碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆大型货车因驾驶员疲劳驾驶，与前方一辆小型轿车发生追尾碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_40909F589C",
+      "final_entity_name": "追尾碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_40909F589C",
+      "primary_event_name": "追尾碰撞",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_40909F589C",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "追尾碰撞",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_2DA7C906E0",
+      "name": "疲劳驾驶",
+      "entity_type": "Action",
+      "evidence": "一辆大型货车因驾驶员疲劳驾驶",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_A6CD658948",
+      "normalized_name": "驾驶员疲劳驾驶",
+      "normalized_score": 0.9573,
+      "matched_alias": "驾驶员疲劳驾驶",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_A6CD658948",
+      "final_entity_name": "驾驶员疲劳驾驶",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "追尾碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_D5DBC43A91",
+      "source_final_id": "EVT_CASE_40909F589C",
+      "source_final_name": "追尾碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_40909F589C",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "疲劳驾驶",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_2DA7C906E0",
+      "target_final_id": "MEA_CASE_A6CD658948",
+      "target_final_name": "驾驶员疲劳驾驶",
+      "target_query_event_ids": [],
+      "evidence": "某城市快速路夜间路段，一辆大型货车因驾驶员疲劳驾驶，与前方一辆小型轿车发生追尾碰撞",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《道路交通事故处理程序规定》"
+  ],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某城市快速路夜间路段，一辆大型货车因驾驶员疲劳驾驶，与前方一辆小型轿车发生追尾碰撞，小型轿车被撞后失控撞上快速路中央护栏，车身严重变形，小型轿车驾驶员被困车内，当时夜间能见度不足50米，快速路车流量适中，后方车辆发现事故后紧急制动，未引发二次碰撞，但造成局部交通拥堵。",
+    "consequence_text": "造成小型轿车驾驶员1人重伤、大型货车驾驶员1人轻伤，小型轿车完全损毁、大型货车车头严重受损，快速路单向交通拥堵，后方车辆滞留约4公里，夜间视线差、灯光干扰，存在二次追尾的风险，影响夜间快速路通行秩序，且事故现场无照明辅助，给救援工作带来一定难度。",
+    "measure_text": "交警部门接到报警后，立即赶赴现场，设置警戒标志、警示灯和反光锥，封闭事故车道，疏导后方车辆减速绕行，开展现场勘查和责任认定，重点排查驾驶员疲劳驾驶相关证据；消防救援队伍携带破拆工具、救援装备到场，快速破拆变形车身，解救被困的小型轿车驾驶员；医疗部门派遣救护车赶赴现场，对受伤人员进行紧急救治后，转运至医院接受进一步治疗；交通部门调用清障车，将事故车辆拖移至安全区域，清理现场散落的车辆碎片；快速路管理部门开启路段应急照明，协助救援工作开展；依据《道路交通安全法》《道路交通事故处理程序规定》开展处置，2.5小时后事故现场清理完毕，快速路恢复正常通行，后续加强该路段夜间巡逻和疲劳驾驶专项整治。"
+  }
+}

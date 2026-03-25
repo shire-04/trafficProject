@@ -1,0 +1,188 @@
+{
+  "case_id": "038_冰雪路面高速多车连环追尾事故_5979c3c4",
+  "title": "冰雪路面高速多车连环追尾事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "京哈高速沈阳段发生多车连环追尾事故，造成人员伤亡和交通中断，系因路面结冰湿滑导致。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F4726E4011",
+    "expanded_event_ids": [
+      "EVT_ROAD_ICE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_28DFBA081F",
+      "name": "车辆侧滑",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车行驶中发生侧滑",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F4726E4011",
+      "final_entity_name": "车辆侧滑",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F4726E4011",
+      "primary_event_name": "车辆侧滑",
+      "expanded_event_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "道路积冰",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F4726E4011",
+        "EVT_ROAD_ICE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧滑",
+        "道路积冰",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "道路积冰",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_8692B481D5",
+      "name": "连环追尾",
+      "entity_type": "Event",
+      "evidence": "与前方8辆轿车、4辆货车发生连环追尾",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_34BDA1AC61",
+      "final_entity_name": "连环追尾",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_34BDA1AC61",
+      "primary_event_name": "连环追尾",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_34BDA1AC61"
+      ],
+      "query_event_names": [
+        "连环追尾"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_CF885875F8",
+      "name": "路面结冰",
+      "entity_type": "Event",
+      "evidence": "路面结冰湿滑",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_C942A70A78",
+      "final_entity_name": "路面结冰",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_C942A70A78",
+      "primary_event_name": "路面结冰",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_C942A70A78"
+      ],
+      "query_event_names": [
+        "路面结冰"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "路面结冰",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_CF885875F8",
+      "source_final_id": "EVT_CASE_C942A70A78",
+      "source_final_name": "路面结冰",
+      "source_query_event_ids": [
+        "EVT_CASE_C942A70A78"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧滑",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_28DFBA081F",
+      "target_final_id": "EVT_CASE_F4726E4011",
+      "target_final_name": "车辆侧滑",
+      "target_query_event_ids": [
+        "EVT_CASE_F4726E4011",
+        "EVT_ROAD_ICE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "因夜间气温骤降，路面结冰湿滑，一辆小型轿车行驶中发生侧滑",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "车辆侧滑",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_28DFBA081F",
+      "source_final_id": "EVT_CASE_F4726E4011",
+      "source_final_name": "车辆侧滑",
+      "source_query_event_ids": [
+        "EVT_CASE_F4726E4011",
+        "EVT_ROAD_ICE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "连环追尾",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_8692B481D5",
+      "target_final_id": "EVT_CASE_34BDA1AC61",
+      "target_final_name": "连环追尾",
+      "target_query_event_ids": [
+        "EVT_CASE_34BDA1AC61"
+      ],
+      "evidence": "一辆小型轿车行驶中发生侧滑，与前方8辆轿车、4辆货车发生连环追尾",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法实施条例》"
+  ],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog. Confidence levels are estimated based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": 2,
+    "injuries": 10,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "京哈高速沈阳段K586公里处，因夜间气温骤降，路面结冰湿滑，一辆小型轿车行驶中发生侧滑，与前方8辆轿车、4辆货车发生连环追尾，事故车辆均不同程度受损，部分车辆停留在行车道与应急车道，能见度较低。",
+    "consequence_text": "造成2人死亡、10人受伤，其中4人重伤，12辆事故车辆不同程度受损，事故路段双向交通全面封闭，后方车辆滞留约15公里，路面结冰导致后续车辆存在侧滑碰撞的风险，救援车辆通行受阻。",
+    "measure_text": "交警部门立即封闭事故路段，设置警戒标志和减速带，安排警力疏导后方车辆，清理应急车道；消防救援队伍调集多辆消防车，赶赴现场解救被困人员，排查车辆起火隐患；医疗部门派遣多辆救护车、医护人员，对受伤人员进行紧急救治后，转运至医院；交通部门调用除冰车、撒布车，对路面进行除冰、撒布融雪剂；气象部门实时监测气温和路面情况，发布冰雪预警；依据《道路交通安全法实施条例》开展事故调查，9小时后路面冰雪清除完毕，事故车辆清理到位，道路恢复通行。"
+  }
+}

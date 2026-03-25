@@ -1,0 +1,303 @@
+{
+  "case_id": "052_隧道内危化品车泄漏引发中毒事故_0fd25950",
+  "title": "隧道内危化品车泄漏引发中毒事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "某山区隧道内，装载甲醛的危化品运输车罐体破损导致甲醛泄漏，造成3人轻微中毒，隧道交通封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_LEAK",
+    "expanded_event_ids": [
+      "EVT_HAZMAT_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_BB59014968",
+      "name": "危险化学品运输泄漏事件",
+      "entity_type": "Event",
+      "evidence": "一辆装载有毒化学品（甲醛）的罐式危化品运输车，因罐体破损导致甲醛泄漏",
+      "confidence": 0.9,
+      "normalized_id": "EVT_HAZMAT_LEAK",
+      "normalized_name": "危险化学品运输泄漏事件",
+      "normalized_score": 0.0,
+      "matched_alias": "危险化学品运输泄漏事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_LEAK",
+      "final_entity_name": "危险化学品运输泄漏事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_LEAK",
+      "primary_event_name": "危险化学品运输泄漏事件",
+      "expanded_event_ids": [
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "危险货物运输事故"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "query_event_names": [
+        "危险化学品运输泄漏事件",
+        "危险货物运输事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_99FE492D0E",
+      "name": "危化品泄漏",
+      "entity_type": "Event",
+      "evidence": "罐体破损导致甲醛泄漏",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_FF7FD44A64",
+      "final_entity_name": "危化品泄漏",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_FF7FD44A64",
+      "primary_event_name": "危化品泄漏",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_FF7FD44A64"
+      ],
+      "query_event_names": [
+        "危化品泄漏"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_2496A04CBD",
+      "name": "甲醛",
+      "entity_type": "Resource",
+      "evidence": "装载有毒化学品（甲醛）",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_056D880291",
+      "final_entity_name": "甲醛",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_18BF95B0BF",
+      "name": "堵漏处置",
+      "entity_type": "Action",
+      "evidence": "开展排烟通风、堵漏处置",
+      "confidence": 0.75,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_26F6CA0D04",
+      "final_entity_name": "堵漏处置",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_670B96CC23",
+      "name": "排烟通风",
+      "entity_type": "Action",
+      "evidence": "开展排烟通风、堵漏处置",
+      "confidence": 0.75,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1767,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_7B049C8E34",
+      "final_entity_name": "排烟通风",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_5775F18920",
+      "name": "安全转运",
+      "entity_type": "Action",
+      "evidence": "危化品专业处置队伍对剩余有毒化学品进行安全转运",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_1F94E0BD1F",
+      "final_entity_name": "安全转运",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "危险化学品运输泄漏事件",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_BB59014968",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "危化品泄漏",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_99FE492D0E",
+      "target_final_id": "EVT_CASE_FF7FD44A64",
+      "target_final_name": "危化品泄漏",
+      "target_query_event_ids": [
+        "EVT_CASE_FF7FD44A64"
+      ],
+      "evidence": "因罐体破损导致甲醛泄漏",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "危化品泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_99FE492D0E",
+      "source_final_id": "EVT_CASE_FF7FD44A64",
+      "source_final_name": "危化品泄漏",
+      "source_query_event_ids": [
+        "EVT_CASE_FF7FD44A64"
+      ],
+      "relation": "TRIGGERS",
+      "target": "排烟通风",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_670B96CC23",
+      "target_final_id": "MEA_CASE_7B049C8E34",
+      "target_final_name": "排烟通风",
+      "target_query_event_ids": [],
+      "evidence": "泄漏的甲醛产生有毒气体，开展排烟通风",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "危化品泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_99FE492D0E",
+      "source_final_id": "EVT_CASE_FF7FD44A64",
+      "source_final_name": "危化品泄漏",
+      "source_query_event_ids": [
+        "EVT_CASE_FF7FD44A64"
+      ],
+      "relation": "TRIGGERS",
+      "target": "堵漏处置",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_18BF95B0BF",
+      "target_final_id": "MEA_CASE_26F6CA0D04",
+      "target_final_name": "堵漏处置",
+      "target_query_event_ids": [],
+      "evidence": "泄漏的甲醛产生有毒气体，开展堵漏处置",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "堵漏处置",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_18BF95B0BF",
+      "source_final_id": "MEA_CASE_26F6CA0D04",
+      "source_final_name": "堵漏处置",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "甲醛",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_2496A04CBD",
+      "target_final_id": "RES_CASE_056D880291",
+      "target_final_name": "甲醛",
+      "target_query_event_ids": [],
+      "evidence": "堵漏处置",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "安全转运",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_5775F18920",
+      "source_final_id": "MEA_CASE_1F94E0BD1F",
+      "source_final_name": "安全转运",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "甲醛",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_2496A04CBD",
+      "target_final_id": "RES_CASE_056D880291",
+      "target_final_name": "甲醛",
+      "target_query_event_ids": [],
+      "evidence": "危化品专业处置队伍对剩余有毒化学品进行安全转运",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《危险化学品安全管理条例》"
+  ],
+  "quality_notes": [
+    "Relationships are based on explicit mentions in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某山区隧道（长2000米），一辆装载有毒化学品（甲醛）的罐式危化品运输车，因罐体破损导致甲醛泄漏，泄漏的甲醛产生有毒气体，隧道内有3辆车辆滞留，驾驶员和乘客出现头晕、恶心等中毒症状，隧道通风系统无法正常运行。",
+    "consequence_text": "造成3名人员轻微中毒，需紧急救治，隧道内有毒气体浓度持续升高，威胁滞留人员生命安全，隧道双向交通全面封闭，后方车辆滞留约7公里，有毒气体若扩散至隧道外，将污染周边空气，影响周边群众健康。",
+    "measure_text": "应急管理部门启动《危险化学品突发事件应急预案》，协调消防救援队伍携带防化装备、防毒面具、堵漏器材赶赴现场，开展排烟通风、堵漏处置，解救滞留人员；医疗部门派遣救护车、医护人员，对中毒人员进行吸氧、解毒处理后，转运至医院；交警部门在隧道出入口设置警戒，禁止车辆、人员进入，疏导周边交通；环保部门对隧道内及周边空气进行采样监测，评估污染程度；危化品专业处置队伍对剩余有毒化学品进行安全转运，依据《危险化学品安全管理条例》开展事故调查，6小时后隧道内有毒气体清除完毕，道路恢复通行。"
+  }
+}

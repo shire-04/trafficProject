@@ -1,0 +1,294 @@
+{
+  "case_id": "004_暴雨天气城市道路积水交通事故_2e78a65f",
+  "title": "暴雨天气城市道路积水交通事故",
+  "source_file": "交通应急处理案例.txt",
+  "summary": "某市主城区主干道因暴雨导致道路积水，车辆被困和抛锚，交通中断，商铺受损。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_METEO_ROAD",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_RAINSTORM"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_F6C7C8B9D6",
+      "name": "道路积水",
+      "entity_type": "Event",
+      "evidence": "因突发特大暴雨（1小时降雨量达80毫米），导致道路严重积水，最深积水达60厘米",
+      "confidence": 0.9,
+      "normalized_id": "EVT_METEO_ROAD",
+      "normalized_name": "公路气象灾害",
+      "normalized_score": 0.0,
+      "matched_alias": "公路气象灾害",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_METEO_ROAD",
+      "final_entity_name": "公路气象灾害",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_METEO_ROAD",
+      "primary_event_name": "公路气象灾害",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_RAINSTORM"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "暴雨"
+      ],
+      "query_event_ids": [
+        "EVT_METEO_ROAD",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_RAINSTORM"
+      ],
+      "query_event_names": [
+        "公路气象灾害",
+        "公路交通突发事件",
+        "暴雨"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_METEO_ROAD"
+      ],
+      "alias_patch_target_names": [
+        "公路气象灾害"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_DD50C1C54D",
+      "name": "暴雨",
+      "entity_type": "Event",
+      "evidence": "突发特大暴雨（1小时降雨量达80毫米）",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_RAINSTORM",
+      "final_entity_name": "暴雨",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_RAINSTORM",
+      "primary_event_name": "暴雨",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "query_event_names": [
+        "暴雨"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_3CB0497357",
+      "name": "车辆被困",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车不慎驶入积水路段后熄火，车内2人被困",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_76C2F46F5E",
+      "final_entity_name": "车辆被困",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_76C2F46F5E",
+      "primary_event_name": "车辆被困",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_76C2F46F5E"
+      ],
+      "query_event_names": [
+        "车辆被困"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_771977C68D",
+      "name": "车辆抛锚",
+      "entity_type": "Event",
+      "evidence": "另有3辆车辆在积水区域抛锚",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_987220FC67",
+      "final_entity_name": "车辆抛锚",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_987220FC67",
+      "primary_event_name": "车辆抛锚",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_987220FC67"
+      ],
+      "query_event_names": [
+        "车辆抛锚"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_9E7E082A2F",
+      "name": "道路交通中断",
+      "entity_type": "Event",
+      "evidence": "道路通行陷入瘫痪",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_56854778B2",
+      "final_entity_name": "道路交通中断",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_56854778B2",
+      "primary_event_name": "道路交通中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_56854778B2"
+      ],
+      "query_event_names": [
+        "道路交通中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "暴雨",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_DD50C1C54D",
+      "source_final_id": "EVT_RAINSTORM",
+      "source_final_name": "暴雨",
+      "source_query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "relation": "CAUSES",
+      "target": "道路积水",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_F6C7C8B9D6",
+      "target_final_id": "EVT_METEO_ROAD",
+      "target_final_name": "公路气象灾害",
+      "target_query_event_ids": [
+        "EVT_METEO_ROAD",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_RAINSTORM"
+      ],
+      "evidence": "因突发特大暴雨（1小时降雨量达80毫米），导致道路严重积水",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "道路积水",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_F6C7C8B9D6",
+      "source_final_id": "EVT_METEO_ROAD",
+      "source_final_name": "公路气象灾害",
+      "source_query_event_ids": [
+        "EVT_METEO_ROAD",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_RAINSTORM"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆被困",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_3CB0497357",
+      "target_final_id": "EVT_CASE_76C2F46F5E",
+      "target_final_name": "车辆被困",
+      "target_query_event_ids": [
+        "EVT_CASE_76C2F46F5E"
+      ],
+      "evidence": "一辆小型轿车不慎驶入积水路段后熄火，车内2人被困",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "道路积水",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_F6C7C8B9D6",
+      "source_final_id": "EVT_METEO_ROAD",
+      "source_final_name": "公路气象灾害",
+      "source_query_event_ids": [
+        "EVT_METEO_ROAD",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_RAINSTORM"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆抛锚",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_771977C68D",
+      "target_final_id": "EVT_CASE_987220FC67",
+      "target_final_name": "车辆抛锚",
+      "target_query_event_ids": [
+        "EVT_CASE_987220FC67"
+      ],
+      "evidence": "另有3辆车辆在积水区域抛锚",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "道路积水",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_F6C7C8B9D6",
+      "source_final_id": "EVT_METEO_ROAD",
+      "source_final_name": "公路气象灾害",
+      "source_query_event_ids": [
+        "EVT_METEO_ROAD",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_RAINSTORM"
+      ],
+      "relation": "CAUSES",
+      "target": "道路交通中断",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_9E7E082A2F",
+      "target_final_id": "EVT_CASE_56854778B2",
+      "target_final_name": "道路交通中断",
+      "target_query_event_ids": [
+        "EVT_CASE_56854778B2"
+      ],
+      "evidence": "道路通行陷入瘫痪",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《中华人民共和国突发事件应对法》"
+  ],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog. Some relationships might be implicit and not explicitly stated."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市主城区主干道，因突发特大暴雨（1小时降雨量达80毫米），导致道路严重积水，最深积水达60厘米，一辆小型轿车不慎驶入积水路段后熄火，车内2人被困，另有3辆车辆在积水区域抛锚，道路通行陷入瘫痪，部分积水倒灌至周边商铺。",
+    "consequence_text": "造成2人被困车内，无法自行撤离，3辆抛锚车辆不同程度受损，道路双向交通中断，周边3个路段出现交通拥堵，积水倒灌导致5家商铺进水，财产受损，持续暴雨可能导致积水进一步加深，引发车辆被淹、人员溺水等风险。",
+    "measure_text": "应急管理部门启动《城市内涝突发事件应急预案》，协调消防救援队伍使用冲锋舟、救生衣赶赴现场，解救被困车内人员；城管部门调动排水泵对道路积水进行抽排，清理排水口杂物保障排水畅通；交警部门在积水路段设置警戒标志，疏导过往车辆绕行，通过交通广播、新媒体平台发布积水预警和绕行提示；交通部门安排拖车对抛锚车辆进行拖移，清理路面积水和杂物；社区工作人员协助转移周边商铺受困群众和财产，依据《中华人民共和国突发事件应对法》开展应急处置，2小时后积水基本排净，道路恢复通行。"
+  }
+}

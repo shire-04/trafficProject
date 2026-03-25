@@ -1,0 +1,17 @@
+﻿case_id,case_title,object_type,object_name,object_role,risk_level,risk_reason,confidence,evidence,import_action
+002_城市隧道内危化品车追尾泄漏事故_1606f9a2,城市隧道内危化品车追尾泄漏事故,entity,追尾,Action,MEDIUM,action_weak_semantics,0.8500,一辆装载30吨柴油的罐式危化品运输车，与前方一辆私家车发生追尾,kept_with_risk
+002_城市隧道内危化品车追尾泄漏事故_1606f9a2,城市隧道内危化品车追尾泄漏事故,entity,柴油,Resource,MEDIUM,resource_weak_semantics,0.9000,一辆装载30吨柴油的罐式危化品运输车,kept_with_risk
+002_城市隧道内危化品车追尾泄漏事故_1606f9a2,城市隧道内危化品车追尾泄漏事故,relation,追尾-REQUIRES-柴油,Action->Resource,MEDIUM,relation_fallback_inferred,0.6200,一辆装载30吨柴油的罐式危化品运输车，与前方一辆私家车发生追尾,kept_with_risk
+002_城市隧道内危化品车追尾泄漏事故_1606f9a2,城市隧道内危化品车追尾泄漏事故,relation,危化品泄漏-TRIGGERS-追尾,Event->Action,MEDIUM,relation_fallback_inferred,0.6200,一辆装载30吨柴油的罐式危化品运输车，与前方一辆私家车发生追尾,kept_with_risk
+005_高速公路危化品车起火爆燃事故_13d4651b,高速公路危化品车起火爆燃事故,entity,轮胎爆裂,Action,MEDIUM,action_weak_semantics,0.8500,因轮胎爆裂失控,kept_with_risk
+005_高速公路危化品车起火爆燃事故_13d4651b,高速公路危化品车起火爆燃事故,entity,失控撞击护栏,Action,MEDIUM,action_weak_semantics,0.8000,失控撞击护栏,kept_with_risk
+005_高速公路危化品车起火爆燃事故_13d4651b,高速公路危化品车起火爆燃事故,relation,危化品运输车辆起火爆燃事故-TRIGGERS-轮胎爆裂,Event->Action,MEDIUM,relation_fallback_inferred,0.6200,因轮胎爆裂失控,kept_with_risk
+005_高速公路危化品车起火爆燃事故_13d4651b,高速公路危化品车起火爆燃事故,relation,危化品运输车辆起火爆燃事故-TRIGGERS-失控撞击护栏,Event->Action,MEDIUM,relation_fallback_inferred,0.6200,失控撞击护栏,kept_with_risk
+005_高速公路危化品车起火爆燃事故_13d4651b,高速公路危化品车起火爆燃事故,relation,危化品运输车辆起火爆燃事故-CAUSES-乙醇泄漏,Event->Event,MEDIUM,relation_fallback_inferred,0.6000,造成危化品运输车驾驶员1人死亡，3辆周边车辆被烧毁，5人不同程度烧伤，事故路段双向交通全面封闭，后方车辆滞留约12公里，爆燃产生的有毒有害气体对周边空气质量造成影响，存在二次爆燃和火势蔓延至高速公路两侧绿化带的风险。,kept_with_risk
+006_乡村道路货车侧翻伤人事故_739eb5da,乡村道路货车侧翻伤人事故,entity,超速行驶,Action,MEDIUM,action_weak_semantics,0.8000,因驾驶员超速行驶,kept_with_risk
+006_乡村道路货车侧翻伤人事故_739eb5da,乡村道路货车侧翻伤人事故,relation,车辆侧翻-TRIGGERS-超速行驶,Event->Action,MEDIUM,relation_fallback_inferred,0.6200,因驾驶员超速行驶,kept_with_risk
+009_港口道路危化品运输车倾覆泄漏事故_ace2077d,港口道路危化品运输车倾覆泄漏事故,entity,车辆倾覆,Action,MEDIUM,action_weak_semantics,0.9500,一辆装载液态危化品（氢氧化钠溶液）的罐式运输车，在转弯时因车速过快、重心不稳发生倾覆,kept_with_risk
+009_港口道路危化品运输车倾覆泄漏事故_ace2077d,港口道路危化品运输车倾覆泄漏事故,entity,氢氧化钠溶液,Resource,MEDIUM,resource_weak_semantics,0.9500,装载液态危化品（氢氧化钠溶液）,kept_with_risk
+009_港口道路危化品运输车倾覆泄漏事故_ace2077d,港口道路危化品运输车倾覆泄漏事故,relation,车辆倾覆-REQUIRES-氢氧化钠溶液,Action->Resource,MEDIUM,relation_fallback_inferred,0.6200,一辆装载液态危化品（氢氧化钠溶液）的罐式运输车，在转弯时因车速过快、重心不稳发生倾覆,kept_with_risk
+009_港口道路危化品运输车倾覆泄漏事故_ace2077d,港口道路危化品运输车倾覆泄漏事故,relation,危化品泄漏-TRIGGERS-车辆倾覆,Event->Action,MEDIUM,relation_fallback_inferred,0.6200,一辆装载液态危化品（氢氧化钠溶液）的罐式运输车，在转弯时因车速过快、重心不稳发生倾覆,kept_with_risk
+010_施工路段交通事故致人被困事故_508789f5,施工路段交通事故致人被困事故,case,施工路段交通事故致人被困事故,case,HIGH,case_empty_relations,0.8000,某国道施工路段，施工单位已设置警示标志和围挡，但未安排专人现场疏导，一辆小型轿车因未注意施工警示，闯入施工区域，与施工机械（挖掘机）发生碰撞，轿车车头严重变形，驾驶员被困车内，施工机械轻微受损，施工路段堆积的砂石阻碍交通。,needs_reextract

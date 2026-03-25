@@ -1,0 +1,136 @@
+{
+  "case_id": "033_山区公路冬季暗冰致客车侧滑事故_71108cc8",
+  "title": "山区公路冬季暗冰致客车侧滑事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "山区公路冬季暗冰导致客车侧滑事故，造成人员轻伤和车辆受损，道路交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F4726E4011",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_ROAD_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_81228BFC2C",
+      "name": "车辆侧滑",
+      "entity_type": "Event",
+      "evidence": "一辆载有25名乘客的中型客运班车行驶至该路段时，车辆发生侧滑，撞上路边山体后停下",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F4726E4011",
+      "final_entity_name": "车辆侧滑",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F4726E4011",
+      "primary_event_name": "车辆侧滑",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "公路中断"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F4726E4011",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "车辆侧滑",
+        "车辆积压",
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "公路中断"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_8C6DCB929C",
+      "name": "暗冰",
+      "entity_type": "Event",
+      "evidence": "路面形成薄暗冰",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_C562521519",
+      "final_entity_name": "暗冰",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_C562521519",
+      "primary_event_name": "暗冰",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_C562521519"
+      ],
+      "query_event_names": [
+        "暗冰"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆侧滑",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_81228BFC2C",
+      "source_final_id": "EVT_CASE_F4726E4011",
+      "source_final_name": "车辆侧滑",
+      "source_query_event_ids": [
+        "EVT_CASE_F4726E4011",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "relation": "CAUSES",
+      "target": "暗冰",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_8C6DCB929C",
+      "target_final_id": "EVT_CASE_C562521519",
+      "target_final_name": "暗冰",
+      "target_query_event_ids": [
+        "EVT_CASE_C562521519"
+      ],
+      "evidence": "冬季夜间气温骤降，路面形成薄暗冰，肉眼难以识别，一辆载有25名乘客的中型客运班车行驶至该路段时，车辆发生侧滑",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法实施条例》"
+  ],
+  "quality_notes": [
+    "信息较为完整，能够较好地进行实体抽取。",
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are assigned based on the clarity of the relationship in the text."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 4,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某山区背阴路段国道，冬季夜间气温骤降，路面形成薄暗冰，肉眼难以识别，一辆载有25名乘客的中型客运班车行驶至该路段时，车辆发生侧滑，撞上路边山体后停下，车身轻微变形，车内多名乘客受到冲击摔倒，当时为凌晨，能见度较低。",
+    "consequence_text": "造成车内3名乘客轻伤、驾驶员1人轻微擦伤，客车车身受损，山区国道单向交通封闭，车辆滞留约3公里，路面暗冰持续存在，后续车辆仍有侧滑风险，凌晨低温环境下乘客有冻伤风险。",
+    "measure_text": "交警部门立即封闭事故路段，设置夜间警示标志，撒布融雪剂、防滑沙清除路面暗冰，疏导过往车辆减速慢行；消防救援队伍到场排查车辆安全隐患，协助转移乘客至安全区域；医疗部门对受伤乘客进行现场处置后转运至医院；客运公司调配备用车辆赶赴现场，接驳滞留乘客；路政部门对周边背阴路段进行全面排查，清除暗冰隐患，增设暗冰警示标志；依据《道路交通安全法实施条例》开展处置，2.5小时后路面暗冰清除完毕，道路恢复通行。"
+  }
+}

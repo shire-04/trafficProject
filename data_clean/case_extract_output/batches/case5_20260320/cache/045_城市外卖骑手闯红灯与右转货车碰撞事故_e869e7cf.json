@@ -1,0 +1,222 @@
+{
+  "case_id": "045_城市外卖骑手闯红灯与右转货车碰撞事故_e869e7cf",
+  "title": "城市外卖骑手闯红灯与右转货车碰撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "城市外卖骑手闯红灯与右转货车碰撞，造成骑手重伤，交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9DD0BDA4CE",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_7904DFC178",
+      "name": "交通碰撞",
+      "entity_type": "Event",
+      "evidence": "外卖骑手驾驶电动自行车，为赶配送时效闯红灯通过路口，与正常右转的重型厢式货车发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9DD0BDA4CE",
+      "final_entity_name": "交通碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9DD0BDA4CE",
+      "primary_event_name": "交通碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9DD0BDA4CE",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "交通碰撞",
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_D1741ACDA1",
+      "name": "闯红灯",
+      "entity_type": "Action",
+      "evidence": "为赶配送时效闯红灯通过路口",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_CF67B7CA0F",
+      "final_entity_name": "闯红灯",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_3E0F70DE50",
+      "name": "右转",
+      "entity_type": "Action",
+      "evidence": "与正常右转的重型厢式货车发生碰撞",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_D39A7F36A4",
+      "final_entity_name": "右转",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_67F87A5F69",
+      "name": "重型厢式货车",
+      "entity_type": "Resource",
+      "evidence": "与正常右转的重型厢式货车发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2643,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_26F80A5E99",
+      "final_entity_name": "重型厢式货车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    }
+  ],
+  "relations": [
+    {
+      "source": "交通碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_7904DFC178",
+      "source_final_id": "EVT_CASE_9DD0BDA4CE",
+      "source_final_name": "交通碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9DD0BDA4CE",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "闯红灯",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_D1741ACDA1",
+      "target_final_id": "MEA_CASE_CF67B7CA0F",
+      "target_final_name": "闯红灯",
+      "target_query_event_ids": [],
+      "evidence": "为赶配送时效闯红灯通过路口",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "右转",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_3E0F70DE50",
+      "source_final_id": "MEA_CASE_D39A7F36A4",
+      "source_final_name": "右转",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "重型厢式货车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_67F87A5F69",
+      "target_final_id": "RES_CASE_26F80A5E99",
+      "target_final_name": "重型厢式货车",
+      "target_query_event_ids": [],
+      "evidence": "与正常右转的重型厢式货车发生碰撞",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "交通碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_7904DFC178",
+      "source_final_id": "EVT_CASE_9DD0BDA4CE",
+      "source_final_name": "交通碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9DD0BDA4CE",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "右转",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_3E0F70DE50",
+      "target_final_id": "MEA_CASE_D39A7F36A4",
+      "target_final_name": "右转",
+      "target_query_event_ids": [],
+      "evidence": "与正常右转的重型厢式货车发生碰撞",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市主城区晚高峰路口，一名外卖骑手驾驶电动自行车，为赶配送时效闯红灯通过路口，与正常右转的重型厢式货车发生碰撞，电动自行车被卷入货车车底，骑手被压在车轮下，当场失去意识，货车紧急制动停下。",
+    "consequence_text": "造成外卖骑手1人重伤，电动自行车完全损毁，货车轻微受损，路口双向交通拥堵，晚高峰通勤受到严重影响，现场群众围观聚集，易引发二次事故。",
+    "measure_text": "交警部门立即封锁事故现场，疏散围观群众，开展现场勘查和责任认定；消防救援队伍赶赴现场，抬起货车车轮，解救被困骑手；医疗部门派遣救护车对骑手进行紧急抢救后转运至医院；路政部门协助清理现场，恢复路口通行秩序；依据《道路交通安全法》对电动自行车闯红灯行为进行从严处罚，同时对外卖平台进行交通安全警示教育，督促平台加强骑手安全管理，1.5小时后路口恢复正常通行。"
+  }
+}

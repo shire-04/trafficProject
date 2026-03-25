@@ -1,0 +1,126 @@
+{
+  "case_id": "029_高速公路ETC车道前车倒车后车追尾事故_a9d9ee6f",
+  "title": "高速公路ETC车道前车倒车后车追尾事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "高速公路ETC车道发生追尾事故，造成人员轻伤和车辆损坏，车道封闭导致交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_4D219D5D07",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_5F3861DBAA",
+      "name": "追尾事故",
+      "entity_type": "Event",
+      "evidence": "后方跟随的小型轿车避让不及，发生追尾碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_4D219D5D07",
+      "final_entity_name": "追尾事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_4D219D5D07",
+      "primary_event_name": "追尾事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "追尾事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_279C79D2A7",
+      "name": "ETC设备故障",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车因ETC设备故障无法抬杆",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_8E0C915D4D",
+      "final_entity_name": "ETC设备故障",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_8E0C915D4D",
+      "primary_event_name": "ETC设备故障",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_8E0C915D4D"
+      ],
+      "query_event_names": [
+        "ETC设备故障"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "ETC设备故障",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_279C79D2A7",
+      "source_final_id": "EVT_CASE_8E0C915D4D",
+      "source_final_name": "ETC设备故障",
+      "source_query_event_ids": [
+        "EVT_CASE_8E0C915D4D"
+      ],
+      "relation": "CAUSES",
+      "target": "追尾事故",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_5F3861DBAA",
+      "target_final_id": "EVT_CASE_4D219D5D07",
+      "target_final_name": "追尾事故",
+      "target_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "一辆小型轿车因ETC设备故障无法抬杆，在ETC车道内违规倒车，后方跟随的小型轿车避让不及，发生追尾碰撞",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高速公路收费站ETC车道，一辆小型轿车因ETC设备故障无法抬杆，在ETC车道内违规倒车，后方跟随的小型轿车避让不及，发生追尾碰撞，两车车尾、车头严重变形，前车驾驶员被困车内，ETC车道完全封闭，收费站车流拥堵。",
+    "consequence_text": "造成前车驾驶员1人轻伤，两车不同程度损毁，收费站ETC车道全部封闭，人工车道车流激增，车辆滞留约5公里，收费站通行效率大幅下降，存在后续车辆追尾的次生风险。",
+    "measure_text": "交警部门立即封锁事故ETC车道，设置警戒区域，疏导车辆从人工车道有序通行；消防救援队伍到场解救被困驾驶员，排查车辆漏油起火隐患；医疗部门对受伤驾驶员进行现场处置后转运至医院；收费站工作人员引导故障车辆驶离车道，协助处理ETC设备故障；路政部门调用清障车拖移事故车辆，清理现场；依据《道路交通安全法》对ETC车道倒车驾驶员进行从严处罚，1.5小时后车道清理完毕，恢复正常通行。"
+  }
+}

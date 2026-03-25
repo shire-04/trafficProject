@@ -1,0 +1,218 @@
+{
+  "case_id": "033_铁路货场内部道路货车与调车机车碰撞事故_c8866e0b",
+  "title": "铁路货场内部道路货车与调车机车碰撞事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "铁路货场内部道路，货车与调车机车发生碰撞，造成人员重伤和财产损失，铁路作业中断。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9802AC2E18",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_21DBB49B5B",
+      "name": "铁路交通碰撞",
+      "entity_type": "Event",
+      "evidence": "某铁路货运站场内部平交道口，一辆重型集装箱货车无视道口警示信号，强行闯入铁路调车作业区域，与正在进行调车作业的内燃机车发生侧面碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9802AC2E18",
+      "final_entity_name": "铁路交通碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9802AC2E18",
+      "primary_event_name": "铁路交通碰撞",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9802AC2E18",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "铁路交通碰撞",
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_902CB4901F",
+      "name": "重型集装箱货车",
+      "entity_type": "Resource",
+      "evidence": "一辆重型集装箱货车",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2347,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_3C97168640",
+      "final_entity_name": "重型集装箱货车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_AA61874EFA",
+      "name": "调车机车",
+      "entity_type": "Resource",
+      "evidence": "内燃机车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.4778,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_FDDA177208",
+      "final_entity_name": "调车机车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_FAC314BEE1",
+      "name": "碰撞",
+      "entity_type": "Action",
+      "evidence": "发生侧面碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_6B219E66DE",
+      "final_entity_name": "碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "碰撞",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_FAC314BEE1",
+      "source_final_id": "MEA_CASE_6B219E66DE",
+      "source_final_name": "碰撞",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "重型集装箱货车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_902CB4901F",
+      "target_final_id": "RES_CASE_3C97168640",
+      "target_final_name": "重型集装箱货车",
+      "target_query_event_ids": [],
+      "evidence": "一辆重型集装箱货车...发生侧面碰撞",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "碰撞",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_FAC314BEE1",
+      "source_final_id": "MEA_CASE_6B219E66DE",
+      "source_final_name": "碰撞",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "调车机车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_AA61874EFA",
+      "target_final_id": "RES_CASE_FDDA177208",
+      "target_final_name": "调车机车",
+      "target_query_event_ids": [],
+      "evidence": "与正在进行调车作业的内燃机车发生侧面碰撞",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "铁路交通碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_21DBB49B5B",
+      "source_final_id": "EVT_CASE_9802AC2E18",
+      "source_final_name": "铁路交通碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9802AC2E18",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "relation": "TRIGGERS",
+      "target": "碰撞",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_FAC314BEE1",
+      "target_final_id": "MEA_CASE_6B219E66DE",
+      "target_final_name": "碰撞",
+      "target_query_event_ids": [],
+      "evidence": "发生侧面碰撞",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《铁路安全管理条例》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件类型需要进一步细化，例如是否涉及违规操作等。",
+    "The relationships are based on the provided text and entity catalog. Some relationships are inferred based on context."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某铁路货运站场内部平交道口，一辆重型集装箱货车无视道口警示信号，强行闯入铁路调车作业区域，与正在进行调车作业的内燃机车发生侧面碰撞，货车车头被撞毁，驾驶员被困车内，机车紧急制动停下，货场调车作业完全中断。",
+    "consequence_text": "造成货车驾驶员1人重伤被困，货车完全损毁，铁路机车车头轻微受损，货场铁路调车作业、货物装卸作业完全中断，铁路货运线路运营受到影响，存在机车脱轨的重大风险。",
+    "measure_text": "铁路部门立即启动货场安全生产事故应急预案，封锁货场作业区域，停止所有调车作业，对机车、轨道进行安全检测；消防救援队伍赶赴现场，使用破拆工具解救被困驾驶员；医疗部门派遣救护车转运受伤驾驶员至医院；铁路公安部门开展现场勘查和责任认定，对货车驾驶员强行闯入铁路作业区域的行为进行从严处罚；依据《铁路安全管理条例》《道路交通安全法》开展处置，3小时后货场调车作业逐步恢复。"
+  }
+}

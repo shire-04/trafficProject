@@ -13,9 +13,11 @@ as searchable embeddings for context retrieval during LLM generation.
 
 import os
 import hashlib
+import re
 from pathlib import Path
 from typing import List, Dict, Optional, Iterable
 import logging
+from collections import Counter
 
 import chromadb
 
@@ -27,8 +29,19 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+DEFAULT_COLLECTION_NAME = "traffic_documents"
+PRODUCTION_COLLECTION_NAME = "traffic_documents_v2"
+
+
 class TextFileLoader:
     """Load and chunk text files for vector embedding"""
+
+    @staticmethod
+    def extract_metadata(text: str, file_name: str = "") -> Dict[str, str]:
+        """构建最小文档 metadata，仅用于定位来源，不做业务语义推断。"""
+        return {
+            'file_name': file_name or '',
+        }
     
     @staticmethod
     def _find_sentence_boundary(text: str, pos: int, direction: str = 'backward') -> int:
@@ -57,6 +70,70 @@ class TextFileLoader:
                     return i + 1
         
         return pos
+
+    @staticmethod
+    def _is_case_document(file_name: str) -> bool:
+        normalized = str(file_name or "").strip()
+        if not normalized:
+            return False
+        return normalized.startswith("交通应急处理案例") and normalized.endswith(".txt")
+
+    @staticmethod
+    def _is_document_heading(paragraph: str) -> bool:
+        cleaned = str(paragraph or "").strip()
+        if not cleaned:
+            return False
+        if cleaned in {"经典交通应急处置案例", "交通应急处理案例", "经典交通事故案例"}:
+            return True
+        if re.match(r"^经典交通.*案例", cleaned):
+            return True
+        if re.match(r"^交通应急处理案例\s*[（(].*[）)]\s*$", cleaned):
+            return True
+        return False
+
+    @staticmethod
+    def _build_case_chunks(content: str, file_name: str, file_path: str) -> List[Dict]:
+        raw_blocks = [block.strip() for block in re.split(r"\n\s*\n+", str(content or "")) if block.strip()]
+        chunks: List[Dict] = []
+        index = 0
+        chunk_id = 0
+
+        while index < len(raw_blocks):
+            current = raw_blocks[index].strip()
+            if TextFileLoader._is_document_heading(current):
+                index += 1
+                continue
+
+            next_accident = raw_blocks[index + 1].strip() if index + 1 < len(raw_blocks) else ""
+            next_consequence = raw_blocks[index + 2].strip() if index + 2 < len(raw_blocks) else ""
+            next_measure = raw_blocks[index + 3].strip() if index + 3 < len(raw_blocks) else ""
+
+            if next_accident.startswith("特定事故：") and next_consequence.startswith("后果：") and next_measure.startswith("措施："):
+                case_text = "\n\n".join([current, next_accident, next_consequence, next_measure]).strip()
+                if case_text:
+                    chunks.append({
+                        'content': case_text,
+                        'chunk_id': chunk_id,
+                        'file_name': file_name,
+                        'source': file_path,
+                        'metadata': TextFileLoader.extract_metadata(case_text, file_name)
+                    })
+                    chunk_id += 1
+                index += 4
+                continue
+
+            if current:
+                chunks.append({
+                    'content': current,
+                    'chunk_id': chunk_id,
+                    'file_name': file_name,
+                    'source': file_path,
+                    'metadata': TextFileLoader.extract_metadata(current, file_name)
+                })
+                chunk_id += 1
+            index += 1
+
+        return chunks
     
     @staticmethod
     def load_text_file(file_path: str, chunk_size: int = 500, 
@@ -87,6 +164,15 @@ class TextFileLoader:
                 return chunks
             
             file_name = os.path.basename(file_path)
+
+            if TextFileLoader._is_case_document(file_name):
+                case_chunks = TextFileLoader._build_case_chunks(content, file_name, file_path)
+                logger.info(
+                    f"Loaded {len(case_chunks)} case-level chunks from {file_name} "
+                    f"(total: {len(content)} chars, case_chunking=True)"
+                )
+                return case_chunks
+
             chunk_id = 0
             
             if semantic_chunking:
@@ -119,7 +205,8 @@ class TextFileLoader:
                             'content': chunk_text,
                             'chunk_id': chunk_id,
                             'file_name': file_name,
-                            'source': file_path
+                            'source': file_path,
+                            'metadata': TextFileLoader.extract_metadata(chunk_text, file_name)
                         })
                         chunk_id += 1
                     
@@ -133,7 +220,8 @@ class TextFileLoader:
                             'content': chunk_text,
                             'chunk_id': chunk_id,
                             'file_name': file_name,
-                            'source': file_path
+                            'source': file_path,
+                            'metadata': TextFileLoader.extract_metadata(chunk_text, file_name)
                         })
                         chunk_id += 1
             
@@ -182,7 +270,7 @@ class TextFileLoader:
 class ChromaDBVectorStore:
     """ChromaDB vector store for RAG context retrieval"""
     
-    def __init__(self, db_path: str = "./chroma_data", collection_name: str = "traffic_documents"):
+    def __init__(self, db_path: str = "./chroma_data", collection_name: str = DEFAULT_COLLECTION_NAME):
         """
         Initialize ChromaDB vector store for RAG
         
@@ -261,11 +349,12 @@ class ChromaDBVectorStore:
             chunk_id = f"{Path(chunk['file_name']).stem}_{chunk['chunk_id']}"
             ids.append(chunk_id)
             documents.append(chunk['content'])
+            chunk_metadata = chunk.get('metadata') or {}
             metadatas.append({
                 'file_name': chunk['file_name'],
                 'chunk_id': str(chunk['chunk_id']),
                 'source': chunk.get('source', ''),
-                'type': 'document'
+                'type': 'document',
             })
         
         # Add to ChromaDB
@@ -326,17 +415,29 @@ class ChromaDBVectorStore:
             formatted_results = []
             allowed_type_set = set(allowed_types) if allowed_types else {'document'}
 
+            def matches_metadata_filter(metadata: Dict) -> bool:
+                if not metadata_filter:
+                    return True
+                for key, expected_value in metadata_filter.items():
+                    if metadata.get(key) != expected_value:
+                        return False
+                return True
+
             if results['ids'] and len(results['ids']) > 0:
                 for i, doc_id in enumerate(results['ids'][0]):
+                    metadata = results['metadatas'][0][i]
                     result = {
                         'content': results['documents'][0][i],
-                        'file_name': results['metadatas'][0][i].get('file_name'),
-                        'chunk_id': results['metadatas'][0][i].get('chunk_id'),
-                        'distance': results['distances'][0][i]
+                        'file_name': metadata.get('file_name'),
+                        'chunk_id': metadata.get('chunk_id'),
+                        'distance': results['distances'][0][i],
                     }
 
-                    metadata_type = results['metadatas'][0][i].get('type', 'document')
+                    metadata_type = metadata.get('type', 'document')
                     if allowed_type_set and metadata_type not in allowed_type_set:
+                        continue
+
+                    if not matches_metadata_filter(metadata):
                         continue
                     
                     # Apply optional file filter
@@ -369,6 +470,26 @@ class ChromaDBVectorStore:
         except Exception as e:
             logger.error(f"Error getting stats: {e}")
             return {}
+
+    def get_quality_report(self) -> Dict:
+        """返回当前 collection 的质量报告，用于判断是否可作为正式库。"""
+        try:
+            payload = self.collection.get(include=['metadatas'])
+            metadatas = payload.get('metadatas') or []
+            total = len(metadatas)
+
+            file_counter = Counter((metadata or {}).get('file_name', '<missing>') for metadata in metadatas)
+            type_counter = Counter((metadata or {}).get('type', '<missing>') for metadata in metadatas)
+
+            return {
+                'collection_name': self.collection_name,
+                'total_chunks': total,
+                'type_distribution': dict(type_counter),
+                'source_files': dict(file_counter),
+            }
+        except Exception as e:
+            logger.error(f"Error getting quality report: {e}")
+            return {}
     
     def persist(self):
         """Persist ChromaDB to disk"""
@@ -379,6 +500,68 @@ class ChromaDBVectorStore:
             logger.info("ChromaDB persisted to disk")
         except Exception as e:
             logger.warning(f"ChromaDB persistence note: {e}")
+
+    def _build_document_filter(self, metadata_filter: Optional[Dict] = None,
+                               accident_type: Optional[str] = None,
+                               weather: Optional[str] = None,
+                               severity: Optional[str] = None) -> Dict:
+        """构建 document 检索过滤条件。
+
+        `accident_type`、`weather`、`severity` 参数保留仅为兼容旧调用侧，
+        当前版本不再使用这些业务字段做规则化 metadata 过滤。
+        """
+        base_filter: Dict = {'type': 'document'}
+
+        if metadata_filter:
+            base_filter.update({key: value for key, value in metadata_filter.items() if value is not None})
+
+        return base_filter
+
+    def rebuild_collection(self, source_directory: str, chunk_size: int = 500,
+                           file_patterns: Optional[List[str]] = None,
+                           semantic_chunking: bool = True) -> Dict:
+        """重建文档集合，供离线入库使用。"""
+        chunks = TextFileLoader.load_all_text_files(
+            directory=source_directory,
+            chunk_size=chunk_size,
+            file_patterns=file_patterns or ['*.txt'],
+            semantic_chunking=semantic_chunking,
+        )
+        added_count = self.add_text_chunks(chunks, overwrite=True)
+        self.persist()
+        stats = self.get_stats()
+        stats['added_count'] = added_count
+        return stats
+
+    def offline_ingest(self, source_directory: str, chunk_size: int = 500,
+                       file_patterns: Optional[List[str]] = None,
+                       semantic_chunking: bool = True) -> Dict:
+        """离线入库别名，便于重构后的调用侧统一使用。"""
+        return self.rebuild_collection(
+            source_directory=source_directory,
+            chunk_size=chunk_size,
+            file_patterns=file_patterns,
+            semantic_chunking=semantic_chunking,
+        )
+
+    def search_evidence(self, query_text: str, n_results: int = 5,
+                        metadata_filter: Optional[Dict] = None,
+                        accident_type: Optional[str] = None,
+                        weather: Optional[str] = None,
+                        severity: Optional[str] = None) -> List[Dict]:
+        """面向审查与佐证场景的检索封装。"""
+        document_filter = self._build_document_filter(
+            metadata_filter=metadata_filter,
+            accident_type=accident_type,
+            weather=weather,
+            severity=severity,
+        )
+        return self.search(
+            query_text=query_text,
+            n_results=n_results,
+            metadata_filter=document_filter,
+            allowed_types=['document'],
+        )
 
     # --- Semantic routing utilities -------------------------------------------------
 
@@ -476,27 +659,18 @@ def main():
     
     # Load all text files from data_raw/ with semantic-aware chunking
     logger.info("\nLoading text files from data_raw/ with semantic-aware chunking...")
-    all_chunks = text_loader.load_all_text_files(
-        directory=str(data_raw_path),
+    stats = vector_store.offline_ingest(
+        source_directory=str(data_raw_path),
         chunk_size=500,
         file_patterns=['*.txt'],
-        semantic_chunking=True  # Enable sentence-boundary-aware chunking
+        semantic_chunking=True,
     )
-    
-    # Add chunks to ChromaDB (overwrite existing data)
-    logger.info(f"\nAdding {len(all_chunks)} chunks to ChromaDB...")
-    added_count = vector_store.add_text_chunks(all_chunks, overwrite=True)
-    
-    # Persist to disk
-    vector_store.persist()
-    
-    # Display statistics
-    stats = vector_store.get_stats()
     logger.info("\n" + "=" * 60)
     logger.info("ChromaDB Initialization Complete")
     logger.info("=" * 60)
     logger.info(f"Collection: {stats.get('collection_name')}")
     logger.info(f"Total chunks stored: {stats.get('total_chunks')}")
+    logger.info(f"Chunks added this run: {stats.get('added_count')}")
     logger.info(f"Database path: {stats.get('db_path')}")
     
     # Example search queries
@@ -512,10 +686,11 @@ def main():
     
     for query in example_queries:
         logger.info(f"\nQuery: '{query}'")
-        results = vector_store.search(query, n_results=2)
+        results = vector_store.search_evidence(query, n_results=2)
         for idx, result in enumerate(results, 1):
             logger.info(f"  Result {idx}: {result['file_name']} (chunk {result['chunk_id']}, distance: {result['distance']:.3f})")
             logger.info(f"    Content preview: {result['content'][:100]}...")
+
 
 
 if __name__ == "__main__":

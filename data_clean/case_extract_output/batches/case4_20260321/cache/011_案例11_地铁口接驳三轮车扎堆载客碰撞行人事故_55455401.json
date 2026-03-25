@@ -1,0 +1,98 @@
+{
+  "case_id": "011_案例11_地铁口接驳三轮车扎堆载客碰撞行人事故_55455401",
+  "title": "案例11：地铁口接驳三轮车扎堆载客碰撞行人事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "地铁出站口，三轮车为争抢乘客加速行驶，撞上行人及共享单车，造成人员轻伤和车辆受损，引发交通拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ROAD_EMERGENCY",
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_ROAD_DAMAGE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_F5F33DCC99",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "车辆侧翻，车上乘客摔倒在地。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路交通突发事件",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "公路中断",
+        "公路交通突发事件",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路交通突发事件",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "地铁出站口人流密集区域，多辆电动三轮车违规扎堆揽客，一辆三轮车为争抢乘客，突然加速行驶，撞上正在出站的2名行人、1辆共享单车，车辆侧翻，车上乘客摔倒在地。",
+    "consequence_text": "造成2名行人、1名三轮车乘客轻微擦伤，车辆轻微受损，地铁口人流拥堵，周边交通混乱，违规揽客行为引发群众不满，易引发二次碰撞与纠纷。",
+    "measure_text": "交警与城管联合到场，疏散拥堵人流，控制肇事三轮车驾驶员，清理违规揽客车辆；医疗人员对伤者进行简单处置；执法人员现场开展交通整治，取缔地铁口违规载客行为，划定规范停车区域；1小时后地铁口交通恢复正常，后续加强高峰时段巡查管控。"
+  }
+}

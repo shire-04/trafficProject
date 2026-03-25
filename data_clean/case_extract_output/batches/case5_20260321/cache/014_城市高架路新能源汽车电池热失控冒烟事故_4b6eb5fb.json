@@ -1,0 +1,223 @@
+{
+  "case_id": "014_城市高架路新能源汽车电池热失控冒烟事故_4b6eb5fb",
+  "title": "城市高架路新能源汽车电池热失控冒烟事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "城市高架路一辆纯电动SUV行驶中，动力电池突发热失控冒烟，导致应急车道与相邻车道封闭，后方车辆滞留。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_5104EF7457",
+    "expanded_event_ids": [
+      "EVT_LONG_TUNNEL_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_E95D0CCA54",
+      "name": "新能源汽车电池热失控",
+      "entity_type": "Event",
+      "evidence": "动力电池突发热失控，车辆底部冒出大量白色浓烟",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_5104EF7457",
+      "final_entity_name": "新能源汽车电池热失控",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_5104EF7457",
+      "primary_event_name": "新能源汽车电池热失控",
+      "expanded_event_ids": [
+        "EVT_LONG_TUNNEL_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "特长隧道安全事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_5104EF7457",
+        "EVT_LONG_TUNNEL_ACCIDENT"
+      ],
+      "query_event_names": [
+        "新能源汽车电池热失控",
+        "特长隧道安全事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_LONG_TUNNEL_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "特长隧道安全事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_82788BA16B",
+      "name": "车辆滞留",
+      "entity_type": "Event",
+      "evidence": "后方车辆滞留约6公里",
+      "confidence": 0.75,
+      "normalized_id": "EVT_VEHICLE_BACKLOG",
+      "normalized_name": "车辆积压",
+      "normalized_score": 0.1925,
+      "matched_alias": "车辆滞留",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_VEHICLE_BACKLOG",
+      "final_entity_name": "车辆积压",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_VEHICLE_BACKLOG",
+      "primary_event_name": "车辆积压",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_FC04E74EA2",
+      "name": "疏导",
+      "entity_type": "Action",
+      "evidence": "疏导后方车辆从就近匝道下桥",
+      "confidence": 0.7,
+      "normalized_id": "MEA_CASE_B804A6CFD8",
+      "normalized_name": "疏导",
+      "normalized_score": 1.0,
+      "matched_alias": "疏导",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_B804A6CFD8",
+      "final_entity_name": "疏导",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_09046BCAB1",
+      "name": "清理",
+      "entity_type": "Action",
+      "evidence": "清理路面",
+      "confidence": 0.7,
+      "normalized_id": "MEA_CASE_F2C178773D",
+      "normalized_name": "清理",
+      "normalized_score": 1.0,
+      "matched_alias": "清理",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_F2C178773D",
+      "final_entity_name": "清理",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "新能源汽车电池热失控",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_E95D0CCA54",
+      "source_final_id": "EVT_CASE_5104EF7457",
+      "source_final_name": "新能源汽车电池热失控",
+      "source_query_event_ids": [
+        "EVT_CASE_5104EF7457",
+        "EVT_LONG_TUNNEL_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "疏导",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_FC04E74EA2",
+      "target_final_id": "MEA_CASE_B804A6CFD8",
+      "target_final_name": "疏导",
+      "target_query_event_ids": [],
+      "evidence": "疏导后方车辆从就近匝道下桥",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "新能源汽车电池热失控",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_E95D0CCA54",
+      "source_final_id": "EVT_CASE_5104EF7457",
+      "source_final_name": "新能源汽车电池热失控",
+      "source_query_event_ids": [
+        "EVT_CASE_5104EF7457",
+        "EVT_LONG_TUNNEL_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "清理",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_09046BCAB1",
+      "target_final_id": "MEA_CASE_F2C178773D",
+      "target_final_name": "清理",
+      "target_query_event_ids": [],
+      "evidence": "清理路面",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "新能源汽车电池热失控",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_E95D0CCA54",
+      "source_final_id": "EVT_CASE_5104EF7457",
+      "source_final_name": "新能源汽车电池热失控",
+      "source_query_event_ids": [
+        "EVT_CASE_5104EF7457",
+        "EVT_LONG_TUNNEL_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆滞留",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_82788BA16B",
+      "target_final_id": "EVT_VEHICLE_BACKLOG",
+      "target_final_name": "车辆积压",
+      "target_query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "evidence": "无人员伤亡，车辆动力电池受损，高架路应急车道与相邻行车道封闭，后方车辆滞留约6公里，浓烟导致后方车辆视线受阻，存在连环追尾风险，电池热失控有起火、爆炸的重大隐患。",
+      "confidence": 0.6,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "新能源汽车生产企业及产品准入管理规定"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relations are extracted based on the provided context and entity catalog.",
+    "Confidence scores are assigned based on the clarity of the relationship in the text.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市城市高架快速路，一辆纯电动SUV行驶中，动力电池突发热失控，车辆底部冒出大量白色浓烟，驾驶员紧急停靠在应急车道，与车内2名乘客撤离至护栏外，浓烟迅速蔓延至整个车道，影响后方车辆视线，高架路车流量大。",
+    "consequence_text": "无人员伤亡，车辆动力电池受损，高架路应急车道与相邻行车道封闭，后方车辆滞留约6公里，浓烟导致后方车辆视线受阻，存在连环追尾风险，电池热失控有起火、爆炸的重大隐患。",
+    "measure_text": "交警部门立即封闭事故路段相关车道，设置警戒区域，疏导后方车辆从就近匝道下桥，通过高架广播、导航APP发布预警提示；消防救援队伍赶赴现场，使用专用电池灭火装备对车辆电池进行降温、处置，防止起火爆炸，同时排烟通风驱散浓烟；路政部门待险情排除后，拖移事故车辆，清理路面；依据《新能源汽车生产企业及产品准入管理规定》协助开展事故原因调查，2小时后险情完全排除，高架路恢复正常通行。"
+  }
+}

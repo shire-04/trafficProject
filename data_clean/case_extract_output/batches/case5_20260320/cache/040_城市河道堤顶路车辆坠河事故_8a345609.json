@@ -1,0 +1,143 @@
+{
+  "case_id": "040_城市河道堤顶路车辆坠河事故_8a345609",
+  "title": "城市河道堤顶路车辆坠河事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "某市城市河道堤顶路，一辆小型轿车因驾驶员分心驾驶冲破防护栏坠入河道，造成2人被困，无人员伤亡，车辆受损，道路封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_3BD2B0A121",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_A7BF333C3F",
+      "name": "车辆坠河",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车行驶中，因驾驶员分心驾驶，车辆失控冲破堤顶路防护栏，坠入河道内，车辆半个车身浸入水中",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_3BD2B0A121",
+      "final_entity_name": "车辆坠河",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_3BD2B0A121",
+      "primary_event_name": "车辆坠河",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_3BD2B0A121",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆坠河",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_2338EA8503",
+      "name": "交警部门",
+      "entity_type": "Department",
+      "evidence": "交警部门立即封闭堤顶路事故路段",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.6114,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_C08151231F",
+      "final_entity_name": "交警部门",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_E6D049C374",
+      "name": "道路封闭",
+      "entity_type": "Action",
+      "evidence": "河道双向交通封闭",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_72E84ECB20",
+      "final_entity_name": "道路封闭",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "道路封闭",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_E6D049C374",
+      "source_final_id": "MEA_CASE_72E84ECB20",
+      "source_final_name": "道路封闭",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "交警部门",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_2338EA8503",
+      "target_final_id": "ORG_CASE_C08151231F",
+      "target_final_name": "交警部门",
+      "target_query_event_ids": [],
+      "evidence": "交警部门立即封闭堤顶路事故路段",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于给定的文本和实体目录，未进行外部知识推理。"
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 0,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市城市河道堤顶路，一辆小型轿车行驶中，因驾驶员分心驾驶，车辆失控冲破堤顶路防护栏，坠入河道内，车辆半个车身浸入水中，车内2人被困，河道水流平缓，当时为夜间，视线较差。",
+    "consequence_text": "造成车内2人被困，无人员伤亡，轿车车身受损，堤顶路防护栏断裂，河道双向交通封闭，车辆滞留约3公里，车辆持续进水有沉没风险，被困人员面临溺水隐患。",
+    "measure_text": "交警部门立即封闭堤顶路事故路段，设置夜间警戒标志，疏导过往车辆绕行；消防救援队伍携带救生装备、潜水设备赶赴现场，搭建救援通道，救出车内被困人员；水利部门实时监测河道水位变化，协助救援；医疗部门对被困人员进行身体检查与处置；路政部门拖移坠河车辆，修复受损防护栏；依据《道路交通安全法》开展事故调查，2小时后道路恢复通行。"
+  }
+}

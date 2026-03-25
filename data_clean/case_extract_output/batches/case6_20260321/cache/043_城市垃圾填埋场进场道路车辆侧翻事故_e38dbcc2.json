@@ -1,0 +1,196 @@
+{
+  "case_id": "043_城市垃圾填埋场进场道路车辆侧翻事故_e38dbcc2",
+  "title": "城市垃圾填埋场进场道路车辆侧翻事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某城市生活垃圾填埋场进场道路发生车辆侧翻事故，造成一人重伤，道路中断，并引发环境污染。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ROAD_EMERGENCY",
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_ROAD_DAMAGE",
+      "EVT_ENVIRONMENT",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_3251EC8FC5",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "一辆满载生活垃圾的重型自卸货车，因车辆超载、刹车系统故障，在上坡过程中发生后溜侧翻",
+      "confidence": 0.98,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ENVIRONMENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路交通突发事件",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "环境污染事件",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ENVIRONMENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "公路中断",
+        "公路交通突发事件",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "环境污染事件",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ENVIRONMENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路交通突发事件",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "环境污染事件",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_6D598E63CF",
+      "name": "道路中断",
+      "entity_type": "Event",
+      "evidence": "填埋场进场道路完全中断",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_A0BEE2C0CD",
+      "final_entity_name": "道路中断",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_A0BEE2C0CD",
+      "primary_event_name": "道路中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_A0BEE2C0CD"
+      ],
+      "query_event_names": [
+        "道路中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_52CE846A27",
+      "name": "环境污染",
+      "entity_type": "Event",
+      "evidence": "大量生活垃圾散落污染路面、边坡，周边环境受到污染，存在垃圾渗滤液污染土壤、地下水的风险",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_2256F1AD0E",
+      "final_entity_name": "环境污染",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_2256F1AD0E",
+      "primary_event_name": "环境污染",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_2256F1AD0E"
+      ],
+      "query_event_names": [
+        "环境污染"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆侧翻",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_3251EC8FC5",
+      "source_final_id": "EVT_CASE_9CC62EF2EB",
+      "source_final_name": "车辆侧翻",
+      "source_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ENVIRONMENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "道路中断",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_6D598E63CF",
+      "target_final_id": "EVT_CASE_A0BEE2C0CD",
+      "target_final_name": "道路中断",
+      "target_query_event_ids": [
+        "EVT_CASE_A0BEE2C0CD"
+      ],
+      "evidence": "车辆连同所载垃圾全部倾倒在路面和边坡下，填埋场进场道路完全中断。",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《固体废物污染环境防治法》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "The confidence scores are estimates based on the clarity of the evidence in the text."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某城市生活垃圾填埋场进场专用陡坡道路，一辆满载生活垃圾的重型自卸货车，因车辆超载、刹车系统故障，在上坡过程中发生后溜侧翻，车辆连同所载垃圾全部倾倒在路面和边坡下，驾驶室严重变形，驾驶员被困车内，填埋场进场道路完全中断。",
+    "consequence_text": "造成驾驶员1人重伤被困，货车完全损毁，大量生活垃圾散落污染路面、边坡，填埋场进场道路完全封闭，垃圾清运车辆无法进场，城市生活垃圾清运、处置工作被迫中断，周边环境受到污染，存在垃圾渗滤液污染土壤、地下水的风险。",
+    "measure_text": "填埋场应急管理部门立即启动应急预案，封锁事故路段，疏散作业人员，对散落垃圾进行临时围挡，防止渗滤液扩散；消防救援队伍赶赴现场，使用破拆工具解救被困驾驶员；医疗部门派遣救护车转运受伤驾驶员至医院；交警部门开展现场勘查和责任认定；城管部门调集车辆、设备，清理散落的生活垃圾，对渗滤液进行收集处置，修复受损道路；生态环境部门对周边土壤、地下水进行监测，防止污染扩散；依据《固体废物污染环境防治法》《道路交通安全法》开展事故调查，3小时后驾驶员被成功救出，进场道路逐步恢复通行。"
+  }
+}

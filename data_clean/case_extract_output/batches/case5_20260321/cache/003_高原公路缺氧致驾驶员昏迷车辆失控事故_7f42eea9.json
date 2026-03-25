@@ -1,0 +1,233 @@
+{
+  "case_id": "003_高原公路缺氧致驾驶员昏迷车辆失控事故_7f42eea9",
+  "title": "高原公路缺氧致驾驶员昏迷车辆失控事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "青藏高原因缺氧导致驾驶员昏迷，车辆失控撞击防护墩，造成人员受伤和道路封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_CD00FFB7BC",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_9A71B7275E",
+      "name": "驾驶员昏迷车辆失控",
+      "entity_type": "Event",
+      "evidence": "青藏高原海拔4800米国道段，一辆小型SUV行驶中，驾驶员因高原缺氧突发昏迷，车辆失控冲出路面，撞上路边防护墩后停下",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_CD00FFB7BC",
+      "final_entity_name": "高原缺氧致驾驶员昏迷车辆失控",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_CD00FFB7BC",
+      "primary_event_name": "高原缺氧致驾驶员昏迷车辆失控",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路交通运输生产事故",
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_CD00FFB7BC",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "高原缺氧致驾驶员昏迷车辆失控",
+        "公路中断",
+        "公路交通运输生产事故",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路交通运输生产事故",
+        "公路损毁"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_E4818ACF22",
+      "name": "驾驶员昏迷",
+      "entity_type": "Event",
+      "evidence": "驾驶员因高原缺氧突发昏迷",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_3608E528C9",
+      "final_entity_name": "驾驶员昏迷",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_3608E528C9",
+      "primary_event_name": "驾驶员昏迷",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_3608E528C9"
+      ],
+      "query_event_names": [
+        "驾驶员昏迷"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_AF3DA4A55E",
+      "name": "车辆失控",
+      "entity_type": "Event",
+      "evidence": "车辆失控冲出路面",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_42AEE3CEDE",
+      "final_entity_name": "车辆失控",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_42AEE3CEDE",
+      "primary_event_name": "车辆失控",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_42AEE3CEDE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆失控",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_4543EA9448",
+      "name": "高原缺氧",
+      "entity_type": "Event",
+      "evidence": "因高原缺氧",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_9C46869EC1",
+      "final_entity_name": "高原缺氧",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9C46869EC1",
+      "primary_event_name": "高原缺氧",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_9C46869EC1"
+      ],
+      "query_event_names": [
+        "高原缺氧"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "高原缺氧",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_4543EA9448",
+      "source_final_id": "EVT_CASE_9C46869EC1",
+      "source_final_name": "高原缺氧",
+      "source_query_event_ids": [
+        "EVT_CASE_9C46869EC1"
+      ],
+      "relation": "CAUSES",
+      "target": "驾驶员昏迷",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_E4818ACF22",
+      "target_final_id": "EVT_CASE_3608E528C9",
+      "target_final_name": "驾驶员昏迷",
+      "target_query_event_ids": [
+        "EVT_CASE_3608E528C9"
+      ],
+      "evidence": "高原缺氧突发昏迷",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "驾驶员昏迷",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_E4818ACF22",
+      "source_final_id": "EVT_CASE_3608E528C9",
+      "source_final_name": "驾驶员昏迷",
+      "source_query_event_ids": [
+        "EVT_CASE_3608E528C9"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆失控",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_AF3DA4A55E",
+      "target_final_id": "EVT_CASE_42AEE3CEDE",
+      "target_final_name": "车辆失控",
+      "target_query_event_ids": [
+        "EVT_CASE_42AEE3CEDE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "驾驶员因高原缺氧突发昏迷，车辆失控",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《高原公路交通应急处置预案》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "青藏高原海拔4800米国道段，一辆小型SUV行驶中，驾驶员因高原缺氧突发昏迷，车辆失控冲出路面，撞上路边防护墩后停下，车内共3人，除昏迷驾驶员外，其余2名乘客意识清醒但无法移动车辆，当时气温零下2℃，风力5级，周边无村镇、通讯信号较弱。",
+    "consequence_text": "造成驾驶员1人重度缺氧昏迷、2名乘客轻微高原反应，车辆车头受损，高原国道单向交通封闭，车辆滞留约3公里，低温缺氧环境下被困人员有伤情加重、冻伤风险，车辆漏油存在起火隐患。",
+    "measure_text": "当地交通执法部门接到过路车辆报警后，立即协调就近高原应急救援站、医疗站赶赴现场；医疗人员携带氧气瓶、急救药品到场，对昏迷驾驶员进行吸氧、急救处置，同步缓解乘客高原反应；交警部门封闭事故路段，疏导过往车辆有序通行；路政部门拖移事故车辆，修复受损防护墩；救援人员将受伤人员转运至就近医院高压氧舱治疗，依据《高原公路交通应急处置预案》开展后续保障，3小时后道路恢复通行。"
+  }
+}

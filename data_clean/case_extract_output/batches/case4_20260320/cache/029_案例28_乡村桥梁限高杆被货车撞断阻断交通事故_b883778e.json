@@ -1,0 +1,226 @@
+{
+  "case_id": "029_案例28_乡村桥梁限高杆被货车撞断阻断交通事故_b883778e",
+  "title": "案例28：乡村桥梁限高杆被货车撞断阻断交通事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "乡村桥梁因超高货车撞断限高杆导致交通中断，无人员伤亡。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ROAD_BLOCKAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_0C74FEF98A",
+      "name": "桥梁车辆事故",
+      "entity_type": "Event",
+      "evidence": "乡村小型桥梁，一辆超高重型货车无视限高警示，强行通过桥梁，撞断限高杆，限高杆掉落横在桥面，完全阻断双向交通，货车车头受损，无法移动。",
+      "confidence": 0.9,
+      "normalized_id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+      "normalized_name": "特大桥梁安全事故",
+      "normalized_score": 0.0,
+      "matched_alias": "特大桥梁安全事故",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+      "final_entity_name": "特大桥梁安全事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+      "primary_event_name": "特大桥梁安全事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路中断",
+        "公路阻塞"
+      ],
+      "query_event_ids": [
+        "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "query_event_names": [
+        "特大桥梁安全事故",
+        "交通事故",
+        "公路中断",
+        "公路阻塞"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_56FFFE241B",
+      "name": "限高杆",
+      "entity_type": "Resource",
+      "evidence": "撞断限高杆，限高杆掉落横在桥面",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_FE2226A75F",
+      "final_entity_name": "限高杆",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_27777F80BE",
+      "name": "撞断",
+      "entity_type": "Action",
+      "evidence": "撞断限高杆",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_08CD8158BD",
+      "final_entity_name": "撞断",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_A13B576F70",
+      "name": "交通中断",
+      "entity_type": "Event",
+      "evidence": "完全阻断双向交通",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_436A2F6617",
+      "final_entity_name": "交通中断",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_436A2F6617",
+      "primary_event_name": "交通中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_436A2F6617"
+      ],
+      "query_event_names": [
+        "交通中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "撞断",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_27777F80BE",
+      "source_final_id": "MEA_CASE_08CD8158BD",
+      "source_final_name": "撞断",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "限高杆",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_56FFFE241B",
+      "target_final_id": "RES_CASE_FE2226A75F",
+      "target_final_name": "限高杆",
+      "target_query_event_ids": [],
+      "evidence": "撞断限高杆",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "桥梁车辆事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_0C74FEF98A",
+      "source_final_id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+      "source_final_name": "特大桥梁安全事故",
+      "source_query_event_ids": [
+        "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "relation": "TRIGGERS",
+      "target": "撞断",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_27777F80BE",
+      "target_final_id": "MEA_CASE_08CD8158BD",
+      "target_final_name": "撞断",
+      "target_query_event_ids": [],
+      "evidence": "撞断限高杆",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "桥梁车辆事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_0C74FEF98A",
+      "source_final_id": "EVT_MAJOR_BRIDGE_ACCIDENT",
+      "source_final_name": "特大桥梁安全事故",
+      "source_query_event_ids": [
+        "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "relation": "CAUSES",
+      "target": "交通中断",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_A13B576F70",
+      "target_final_id": "EVT_CASE_436A2F6617",
+      "target_final_name": "交通中断",
+      "target_query_event_ids": [
+        "EVT_CASE_436A2F6617"
+      ],
+      "evidence": "无人员伤亡，货车与限高杆受损，桥梁双向封闭，周边乡村与外界交通中断，车辆与行人无法通行，限高杆断裂有砸伤路人风险。",
+      "confidence": 0.6,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在不确定性。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "乡村小型桥梁，一辆超高重型货车无视限高警示，强行通过桥梁，撞断限高杆，限高杆掉落横在桥面，完全阻断双向交通，货车车头受损，无法移动。",
+    "consequence_text": "无人员伤亡，货车与限高杆受损，桥梁双向封闭，周边乡村与外界交通中断，车辆与行人无法通行，限高杆断裂有砸伤路人风险。",
+    "measure_text": "交警到场，划定警戒区域，控制货车驾驶员，认定超高全责；路政部门调集吊车，清理断裂限高杆，拖移事故货车；修复桥梁限高设施，增设多重警示标志；2小时后桥梁恢复通行，对货车驾驶员进行处罚与教育。"
+  }
+}

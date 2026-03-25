@@ -1,0 +1,218 @@
+{
+  "case_id": "049_高速路车辆爆胎侧滑碰撞护栏事故_2f64760b",
+  "title": "高速路车辆爆胎侧滑碰撞护栏事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "大广高速濮阳段一辆小型越野车因爆胎侧滑碰撞护栏，造成2人轻微受伤，护栏受损，道路封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_51C41B32E7",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_C73246DC09",
+      "name": "车辆侧滑碰撞",
+      "entity_type": "Event",
+      "evidence": "车辆失控侧滑，碰撞高速公路右侧护栏",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_51C41B32E7",
+      "final_entity_name": "车辆侧滑碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_51C41B32E7",
+      "primary_event_name": "车辆侧滑碰撞",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_51C41B32E7",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧滑碰撞",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_29C0EC8E9B",
+      "name": "爆胎",
+      "entity_type": "Event",
+      "evidence": "因轮胎老化发生爆胎",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_67994BB4B4",
+      "final_entity_name": "爆胎",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_67994BB4B4",
+      "primary_event_name": "爆胎",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_67994BB4B4"
+      ],
+      "query_event_names": [
+        "爆胎"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_EF695F9C85",
+      "name": "车辆侧滑",
+      "entity_type": "Action",
+      "evidence": "车辆失控侧滑",
+      "confidence": 0.9,
+      "normalized_id": "MEA_CASE_7719C4F54E",
+      "normalized_name": "车辆侧滑",
+      "normalized_score": 1.0,
+      "matched_alias": "车辆侧滑",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_7719C4F54E",
+      "final_entity_name": "车辆侧滑",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_2CCA9C3140",
+      "name": "护栏",
+      "entity_type": "Resource",
+      "evidence": "碰撞高速公路右侧护栏，护栏被撞断",
+      "confidence": 0.9,
+      "normalized_id": "RES_CASE_325A82726F",
+      "normalized_name": "护栏",
+      "normalized_score": 1.0,
+      "matched_alias": "护栏",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_CASE_325A82726F",
+      "final_entity_name": "护栏",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "爆胎",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_29C0EC8E9B",
+      "source_final_id": "EVT_CASE_67994BB4B4",
+      "source_final_name": "爆胎",
+      "source_query_event_ids": [
+        "EVT_CASE_67994BB4B4"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧滑碰撞",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_C73246DC09",
+      "target_final_id": "EVT_CASE_51C41B32E7",
+      "target_final_name": "车辆侧滑碰撞",
+      "target_query_event_ids": [
+        "EVT_CASE_51C41B32E7",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "因轮胎老化发生爆胎，车辆失控侧滑，碰撞高速公路右侧护栏",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "爆胎",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_29C0EC8E9B",
+      "source_final_id": "EVT_CASE_67994BB4B4",
+      "source_final_name": "爆胎",
+      "source_query_event_ids": [
+        "EVT_CASE_67994BB4B4"
+      ],
+      "relation": "TRIGGERS",
+      "target": "车辆侧滑",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_EF695F9C85",
+      "target_final_id": "MEA_CASE_7719C4F54E",
+      "target_final_name": "车辆侧滑",
+      "target_query_event_ids": [],
+      "evidence": "因轮胎老化发生爆胎，车辆失控侧滑",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "车辆侧滑",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_EF695F9C85",
+      "source_final_id": "MEA_CASE_7719C4F54E",
+      "source_final_name": "车辆侧滑",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "护栏",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_2CCA9C3140",
+      "target_final_id": "RES_CASE_325A82726F",
+      "target_final_name": "护栏",
+      "target_query_event_ids": [],
+      "evidence": "车辆失控侧滑，碰撞高速公路右侧护栏",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法实施条例》"
+  ],
+  "quality_notes": [
+    "信息较为完整，事件和实体抽取准确。",
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are assigned based on the clarity of the relationship in the text."
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "大广高速濮阳段K1256公里处，一辆小型越野车在行驶中，因轮胎老化发生爆胎，车辆失控侧滑，碰撞高速公路右侧护栏，护栏被撞断，车辆冲出护栏，停放在高速公路边坡上，当时天气晴朗，能见度良好。",
+    "consequence_text": "造成车内2人轻微受伤，车辆严重受损，护栏被撞断约5米，存在后续车辆冲出护栏的风险，事故路段单向交通封闭，后方车辆滞留约4公里，边坡植被被车辆碾压受损。",
+    "measure_text": "交警部门立即赶赴现场，设置警戒标志，疏导后方车辆，开展现场勘查和责任认定；消防救援队伍到场，对受伤人员进行轻微擦伤处理，检查车辆安全隐患；交通部门调用清障车，将事故车辆拖移至安全区域，修复受损护栏；公路养护部门对边坡植被进行修复；依据《道路交通安全法实施条例》开展处置，2小时后事故车辆被拖移，护栏修复完毕，道路恢复通行。"
+  }
+}

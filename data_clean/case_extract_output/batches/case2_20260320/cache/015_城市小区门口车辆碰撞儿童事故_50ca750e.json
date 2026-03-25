@@ -1,0 +1,80 @@
+{
+  "case_id": "015_城市小区门口车辆碰撞儿童事故_50ca750e",
+  "title": "城市小区门口车辆碰撞儿童事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "某市小区门口，一辆小型轿车在驶出小区时，因驾驶员未观察前方路况，与正在小区门口玩耍的2名儿童发生碰撞，造成2名儿童受伤。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_CEA9425D82",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_2008765681",
+      "name": "车辆碰撞行人",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车在驶出小区时，因驾驶员未观察前方路况，与正在小区门口玩耍的2名儿童发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_CEA9425D82",
+      "final_entity_name": "车辆碰撞行人",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_CEA9425D82",
+      "primary_event_name": "车辆碰撞行人",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_CEA9425D82",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆碰撞行人",
+        "公路中断",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本中的明确信息，未进行推断。",
+    "部分关系的证据可能较为间接，但符合文本描述。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市小区门口，一辆小型轿车在驶出小区时，因驾驶员未观察前方路况，与正在小区门口玩耍的2名儿童发生碰撞，儿童被撞倒在地，轿车未立即停车，后被周边群众拦下，小区门口人流量较大，有多名行人围观。",
+    "consequence_text": "造成2名儿童1人重伤、1人轻伤，均需紧急救治，小型轿车轻微受损，小区门口交通拥堵，围观群众聚集，影响小区居民进出，引发周边群众恐慌。",
+    "measure_text": "小区保安立即拨打120、122报警，保护事故现场，疏散围观群众，防止二次事故；医疗部门派遣救护车赶赴现场，对受伤儿童进行紧急止血、包扎后，转运至医院抢救；交警部门到场开展现场勘查，控制肇事驾驶员，认定事故责任；小区物业在小区门口增设警示标志，安排专人引导车辆进出，提醒驾驶员减速慢行；依据《道路交通安全法》开展处置，1小时后事故现场清理完毕，小区门口恢复正常秩序。"
+  }
+}

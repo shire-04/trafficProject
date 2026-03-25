@@ -1,0 +1,141 @@
+{
+  "case_id": "025_案例24_冰雪山区公路面包车坠沟事故_8474fcb3",
+  "title": "案例24：冰雪山区公路面包车坠沟事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "冬季山区冰雪公路，一辆小型面包车因未安装防滑链在结冰弯道侧滑坠沟，造成人员伤亡和车辆报废，道路封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_ROAD_ICE",
+      "EVT_METEO_ROAD",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_46F138A5C4",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "车身翻转",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_METEO_ROAD",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "道路积冰",
+        "公路气象灾害",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_ROAD_ICE",
+        "EVT_METEO_ROAD",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "道路积冰",
+        "公路气象灾害",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_METEO_ROAD",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "道路积冰",
+        "公路气象灾害",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_0B2B82DD6E",
+      "name": "道路积冰",
+      "entity_type": "Event",
+      "evidence": "结冰弯道",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_ROAD_ICE",
+      "final_entity_name": "道路积冰",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_ROAD_ICE",
+      "primary_event_name": "道路积冰",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_ROAD_ICE"
+      ],
+      "query_event_names": [
+        "道路积冰"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "道路积冰",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_0B2B82DD6E",
+      "source_final_id": "EVT_ROAD_ICE",
+      "source_final_name": "道路积冰",
+      "source_query_event_ids": [
+        "EVT_ROAD_ICE"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧翻",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_46F138A5C4",
+      "target_final_id": "EVT_CASE_9CC62EF2EB",
+      "target_final_name": "车辆侧翻",
+      "target_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_ROAD_ICE",
+        "EVT_METEO_ROAD",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "行驶至结冰弯道时，车辆侧滑冲出路面，坠入3米深排水沟，车身翻转",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本中的明确信息，避免了猜测。",
+    "confidence score reflects the strength of the evidence supporting the relation."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 5,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "冬季山区冰雪公路，一辆小型面包车未安装防滑链，行驶至结冰弯道时，车辆侧滑冲出路面，坠入3米深排水沟，车身翻转，车内5人被困，车门无法开启，气温零下5℃，天气寒冷。",
+    "consequence_text": "造成2人重伤、3人轻伤，车辆完全报废，山区公路封闭，车辆滞留3公里，被困人员受冻，伤情易加重，冰雪路面救援车辆通行缓慢。",
+    "measure_text": "应急管理部门协调消防、医疗、路政人员，携带防滑装备、保暖物资赶赴现场；消防人员破拆车身，救出被困人员，提供保暖措施；医疗人员现场急救，转运重伤员；路政部门撒布融雪剂、除冰，清理事故现场；后续督促车辆冰雪路段安装防滑链，4小时后道路恢复通行。"
+  }
+}

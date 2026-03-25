@@ -1,0 +1,287 @@
+{
+  "case_id": "039_城市地铁口共享电单车扎堆引发公交车剐蹭事故_db1ebe84",
+  "title": "城市地铁口共享电单车扎堆引发公交车剐蹭事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某市地铁口共享电单车违规扎堆停放，导致进站公交车与小型轿车剐蹭，造成交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F4AFE9A596",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_E2327A9BE6",
+      "name": "车辆剐蹭",
+      "entity_type": "Event",
+      "evidence": "一辆进站公交车在避让占道电单车时，与对向行驶的小型轿车发生剐蹭，两车车身受损",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F4AFE9A596",
+      "final_entity_name": "车辆剐蹭",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F4AFE9A596",
+      "primary_event_name": "车辆剐蹭",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "公路中断",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F4AFE9A596",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆剐蹭",
+        "车辆积压",
+        "公路中断",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "公路中断",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_F09F7B4294",
+      "name": "共享电单车",
+      "entity_type": "Resource",
+      "evidence": "数百辆共享电单车违规扎堆停放",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3024,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_82206ABC9F",
+      "final_entity_name": "共享电单车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_5F7F42B0E9",
+      "name": "交通拥堵",
+      "entity_type": "Event",
+      "evidence": "地铁口周边交通瞬间拥堵",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_85237B46E2",
+      "final_entity_name": "交通拥堵",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_85237B46E2",
+      "primary_event_name": "交通拥堵",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_85237B46E2"
+      ],
+      "query_event_names": [
+        "交通拥堵"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_756F48F56D",
+      "name": "疏导",
+      "entity_type": "Action",
+      "evidence": "疏导拥堵车辆、行人",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1758,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B804A6CFD8",
+      "final_entity_name": "疏导",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_B34A59868E",
+      "name": "清理",
+      "entity_type": "Action",
+      "evidence": "组织人员清理占道停放的共享电单车",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2643,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_F2C178773D",
+      "final_entity_name": "清理",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆剐蹭",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_E2327A9BE6",
+      "source_final_id": "EVT_CASE_F4AFE9A596",
+      "source_final_name": "车辆剐蹭",
+      "source_query_event_ids": [
+        "EVT_CASE_F4AFE9A596",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "疏导",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_756F48F56D",
+      "target_final_id": "MEA_CASE_B804A6CFD8",
+      "target_final_name": "疏导",
+      "target_query_event_ids": [],
+      "evidence": "疏导拥堵车辆、行人",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "清理",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_B34A59868E",
+      "source_final_id": "MEA_CASE_F2C178773D",
+      "source_final_name": "清理",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "共享电单车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_F09F7B4294",
+      "target_final_id": "RES_CASE_82206ABC9F",
+      "target_final_name": "共享电单车",
+      "target_query_event_ids": [],
+      "evidence": "组织人员清理占道停放的共享电单车",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆剐蹭",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_E2327A9BE6",
+      "source_final_id": "EVT_CASE_F4AFE9A596",
+      "source_final_name": "车辆剐蹭",
+      "source_query_event_ids": [
+        "EVT_CASE_F4AFE9A596",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "清理",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_B34A59868E",
+      "target_final_id": "MEA_CASE_F2C178773D",
+      "target_final_name": "清理",
+      "target_query_event_ids": [],
+      "evidence": "组织人员清理占道停放的共享电单车",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆剐蹭",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_E2327A9BE6",
+      "source_final_id": "EVT_CASE_F4AFE9A596",
+      "source_final_name": "车辆剐蹭",
+      "source_query_event_ids": [
+        "EVT_CASE_F4AFE9A596",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "交通拥堵",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_5F7F42B0E9",
+      "target_final_id": "EVT_CASE_85237B46E2",
+      "target_final_name": "交通拥堵",
+      "target_query_event_ids": [
+        "EVT_CASE_85237B46E2"
+      ],
+      "evidence": "无人员伤亡，公交车与轿车轻微受损，地铁口周边双向交通完全中断，车辆滞留约5公里，大量出站乘客无法正常通行，占道电单车易引发更多碰撞、摔倒事故。",
+      "confidence": 0.6,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《城市市容和环境卫生管理条例》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市地铁出站口非机动车道，数百辆共享电单车违规扎堆停放，完全占用非机动车道和半条机动车道，一辆进站公交车在避让占道电单车时，与对向行驶的小型轿车发生剐蹭，两车车身受损，无法移动，地铁口周边交通瞬间拥堵，早高峰通勤受到严重影响。",
+    "consequence_text": "无人员伤亡，公交车与轿车轻微受损，地铁口周边双向交通完全中断，车辆滞留约5公里，大量出站乘客无法正常通行，占道电单车易引发更多碰撞、摔倒事故。",
+    "measure_text": "交警、城管部门联合到场，疏导拥堵车辆、行人，对事故进行快速处置，拖移事故车辆；组织人员清理占道停放的共享电单车，打通非机动车道和机动车道；对共享电单车运营公司进行从严处罚，责令其立即整改，规范车辆停放秩序；依据《道路交通安全法》《城市市容和环境卫生管理条例》开展处置，1小时后道路恢复正常通行。"
+  }
+}

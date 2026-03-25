@@ -1,0 +1,174 @@
+{
+  "case_id": "007_城市快速路多车追尾事故_91cf4a2e",
+  "title": "城市快速路多车追尾事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "某市快速路因早高峰车流量大，一辆小型轿车急刹车引发多车追尾事故，造成3人轻微受伤，道路拥堵，部分车辆油路泄漏存在起火风险。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_4D219D5D07",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_2187D042FD",
+      "name": "追尾事故",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车因急刹车，导致后方5辆轿车、2辆SUV发生连环追尾",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_4D219D5D07",
+      "final_entity_name": "追尾事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_4D219D5D07",
+      "primary_event_name": "追尾事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "追尾事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_F8056A6514",
+      "name": "急刹车",
+      "entity_type": "Action",
+      "evidence": "一辆小型轿车因急刹车",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2347,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_72BE7C7A01",
+      "final_entity_name": "急刹车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_4C6B812EC0",
+      "name": "油路泄漏",
+      "entity_type": "Event",
+      "evidence": "部分车辆因碰撞出现油路泄漏",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_5DC52E598D",
+      "final_entity_name": "油路泄漏",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_5DC52E598D",
+      "primary_event_name": "油路泄漏",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_5DC52E598D"
+      ],
+      "query_event_names": [
+        "油路泄漏"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_2187D042FD",
+      "source_final_id": "EVT_CASE_4D219D5D07",
+      "source_final_name": "追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "急刹车",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_F8056A6514",
+      "target_final_id": "MEA_CASE_72BE7C7A01",
+      "target_final_name": "急刹车",
+      "target_query_event_ids": [],
+      "evidence": "一辆小型轿车因急刹车",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_2187D042FD",
+      "source_final_id": "EVT_CASE_4D219D5D07",
+      "source_final_name": "追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "油路泄漏",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_4C6B812EC0",
+      "target_final_id": "EVT_CASE_5DC52E598D",
+      "target_final_name": "油路泄漏",
+      "target_query_event_ids": [
+        "EVT_CASE_5DC52E598D"
+      ],
+      "evidence": "造成3人轻微受伤，快速路单向交通严重拥堵，后方车辆滞留约6公里，早高峰通勤受到严重影响，事故车辆占用应急车道，影响救援车辆通行，部分车辆因碰撞出现油路泄漏，存在起火风险。",
+      "confidence": 0.6,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通事故处理程序规定》"
+  ],
+  "quality_notes": [
+    "关系抽取主要基于文本中的直接描述，对于需要推理的关系未进行抽取。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 3,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市快速路（限速80km/h），因早高峰车流量大，一辆小型轿车因急刹车，导致后方5辆轿车、2辆SUV发生连环追尾，事故车辆均不同程度受损，部分车辆无法正常行驶，占用快速路2条车道。",
+    "consequence_text": "造成3人轻微受伤，快速路单向交通严重拥堵，后方车辆滞留约6公里，早高峰通勤受到严重影响，事故车辆占用应急车道，影响救援车辆通行，部分车辆因碰撞出现油路泄漏，存在起火风险。",
+    "measure_text": "交警部门立即赶赴现场，设置警戒标志，疏导后方车辆，清理应急车道，保障救援通道畅通；消防救援队伍到场排查车辆起火隐患，对油路泄漏车辆进行处理；医疗部门派遣救护车将受伤人员转运至医院进行检查治疗；交通部门调用清障车，对事故车辆进行拖移清理；依据《道路交通事故处理程序规定》开展现场勘查和责任认定，3小时后事故车辆清理完毕，快速路恢复正常通行。"
+  }
+}

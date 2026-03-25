@@ -1,0 +1,182 @@
+{
+  "case_id": "041_城市快速路车辆起火引燃周边车辆事故_0f178a4f",
+  "title": "城市快速路车辆起火引燃周边车辆事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "某市快速路一辆小型轿车因电路短路起火，引燃周边车辆，造成3辆车辆烧毁，无人员伤亡，引发交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_09C02D083D",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_950DE0DF7B",
+      "name": "车辆起火",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车在行驶中因电路短路引发起火，火势迅速蔓延至周边2辆轿车、1辆SUV，造成3辆车辆完全烧毁",
+      "confidence": 0.98,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_09C02D083D",
+      "final_entity_name": "车辆起火",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_09C02D083D",
+      "primary_event_name": "车辆起火",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_09C02D083D",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆起火",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_80FFFCE0DC",
+      "name": "电路短路",
+      "entity_type": "Action",
+      "evidence": "因电路短路引发起火",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1767,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_AD66F64BE8",
+      "final_entity_name": "电路短路",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_BEC43A0536",
+      "name": "车辆积压",
+      "entity_type": "Event",
+      "evidence": "引发交通拥堵，后方车辆滞留约7公里",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_VEHICLE_BACKLOG",
+      "final_entity_name": "车辆积压",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_VEHICLE_BACKLOG",
+      "primary_event_name": "车辆积压",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆起火",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_950DE0DF7B",
+      "source_final_id": "EVT_CASE_09C02D083D",
+      "source_final_name": "车辆起火",
+      "source_query_event_ids": [
+        "EVT_CASE_09C02D083D",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "电路短路",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_80FFFCE0DC",
+      "target_final_id": "MEA_CASE_AD66F64BE8",
+      "target_final_name": "电路短路",
+      "target_query_event_ids": [],
+      "evidence": "因电路短路引发起火",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆起火",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_950DE0DF7B",
+      "source_final_id": "EVT_CASE_09C02D083D",
+      "source_final_name": "车辆起火",
+      "source_query_event_ids": [
+        "EVT_CASE_09C02D083D",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆积压",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_BEC43A0536",
+      "target_final_id": "EVT_VEHICLE_BACKLOG",
+      "target_final_name": "车辆积压",
+      "target_query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "evidence": "造成3辆车辆完全烧毁，无人员伤亡，火势存在蔓延至更多车辆的风险，快速路单向交通严重拥堵，后方车辆滞留约7公里，烟雾影响过往车辆视线，存在二次碰撞风险，影响城市快速路通行效率。",
+      "confidence": 0.6,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores reflect the clarity of the relationship in the source text.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市快速路，一辆小型轿车在行驶中因电路短路引发起火，驾驶员及时撤离，但火势迅速蔓延至周边2辆轿车、1辆SUV，现场烟雾弥漫，快速路车流量大，过往车辆纷纷紧急避让，引发交通拥堵。",
+    "consequence_text": "造成3辆车辆完全烧毁，无人员伤亡，火势存在蔓延至更多车辆的风险，快速路单向交通严重拥堵，后方车辆滞留约7公里，烟雾影响过往车辆视线，存在二次碰撞风险，影响城市快速路通行效率。",
+    "measure_text": "交警部门立即赶赴现场，设置警戒标志，疏导后方车辆，清理应急车道，保障救援通道畅通；消防救援队伍调集多辆消防车"
+  }
+}

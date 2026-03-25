@@ -1,0 +1,214 @@
+{
+  "case_id": "037_高速公路养护车违规变道与轿车碰撞事故_360c3772",
+  "title": "高速公路养护车违规变道与轿车碰撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "高速公路养护车违规变道与轿车碰撞，造成人员重伤和车辆损毁，并导致交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_ROAD_EMERGENCY",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_640EE984FE",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "轿车失控撞上中央护栏，车身严重变形",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "车辆积压",
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_52AE97DD69",
+      "name": "违规变道",
+      "entity_type": "Action",
+      "evidence": "违规从应急车道变道至行车道",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_7273C6481F",
+      "final_entity_name": "违规变道",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_21FA7FCCDF",
+      "name": "道路养护车",
+      "entity_type": "Resource",
+      "evidence": "一辆道路养护车",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3024,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_AA3D1994D1",
+      "final_entity_name": "道路养护车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_76FBB74F89",
+      "name": "车辆滞留",
+      "entity_type": "Event",
+      "evidence": "后方车辆滞留约6公里",
+      "confidence": 0.8,
+      "normalized_id": "EVT_VEHICLE_BACKLOG",
+      "normalized_name": "车辆积压",
+      "normalized_score": 0.1961,
+      "matched_alias": "车辆滞留",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_VEHICLE_BACKLOG",
+      "final_entity_name": "车辆积压",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_VEHICLE_BACKLOG",
+      "primary_event_name": "车辆积压",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "违规变道",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_52AE97DD69",
+      "source_final_id": "MEA_CASE_7273C6481F",
+      "source_final_name": "违规变道",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "道路养护车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_21FA7FCCDF",
+      "target_final_id": "RES_CASE_AA3D1994D1",
+      "target_final_name": "道路养护车",
+      "target_query_event_ids": [],
+      "evidence": "一辆道路养护车在未开启警示灯、未设置变道提示的情况下，违规从应急车道变道",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "车辆滞留",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_76FBB74F89",
+      "source_final_id": "EVT_VEHICLE_BACKLOG",
+      "source_final_name": "车辆积压",
+      "source_query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧翻",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_640EE984FE",
+      "target_final_id": "EVT_CASE_9CC62EF2EB",
+      "target_final_name": "车辆侧翻",
+      "target_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "造成轿车驾驶员1人重伤，轿车完全损毁，养护车轻微受损，高速单向交通封闭，后方车辆滞留约6公里",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《公路养护安全作业规程》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "confidence score is estimated."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高速公路养护作业路段，一辆道路养护车在未开启警示灯、未设置变道提示的情况下，违规从应急车道变道至行车道，与后方正常行驶的小型轿车发生侧面碰撞，轿车失控撞上中央护栏，车身严重变形，驾驶员被困车内，养护车轻微受损。",
+    "consequence_text": "造成轿车驾驶员1人重伤，轿车完全损毁，养护车轻微受损，高速单向交通封闭，后方车辆滞留约6公里，养护作业路段存在二次事故风险。",
+    "measure_text": "交警部门立即封闭事故路段，设置警戒区域，疏导后方车辆减速慢行；消防救援队伍使用破拆工具解救被困驾驶员，排查车辆漏油起火隐患；医疗部门派遣救护车转运受伤驾驶员至医院；路政部门暂停养护作业，清理事故车辆，修复受损护栏；依据《道路交通安全法》《公路养护安全作业规程》对养护车驾驶员、养护作业单位进行从严处罚与追责，2.5小时后道路恢复通行，养护作业逐步恢复。"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "case_id": "014_城市快速路匝道施工事故_6325be8a",
+  "title": "城市快速路匝道施工事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "某城市快速路匝道施工区域，小型轿车闯入施工区域与围挡碰撞，造成人员伤亡和交通中断。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CONSTRUCTION_SAFETY",
+    "expanded_event_ids": [
+      "EVT_CONSTRUCTION_ACCIDENT",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_983B39BFCC",
+      "name": "施工安全事故",
+      "entity_type": "Event",
+      "evidence": "某城市快速路匝道施工区域，施工单位在进行路面维修时，因未设置专人疏导，一辆小型轿车不慎闯入施工区域，与施工围挡发生碰撞，围挡倒塌砸中路边1名施工人员，施工区域内有3名施工人员被困。",
+      "confidence": 0.9,
+      "normalized_id": "EVT_CONSTRUCTION_SAFETY",
+      "normalized_name": "施工安全事故",
+      "normalized_score": 0.0,
+      "matched_alias": "施工安全事故",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_CONSTRUCTION_SAFETY",
+      "final_entity_name": "施工安全事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_CONSTRUCTION_SAFETY",
+      "primary_event_name": "施工安全事故",
+      "expanded_event_ids": [
+        "EVT_CONSTRUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路工程建设事故",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CONSTRUCTION_SAFETY",
+        "EVT_CONSTRUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "施工安全事故",
+        "公路工程建设事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_B047BC013B",
+      "name": "路面维修",
+      "entity_type": "Action",
+      "evidence": "施工单位在进行路面维修时",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_CC6AD1D7DA",
+      "final_entity_name": "路面维修",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_082F722BA6",
+      "name": "施工围挡",
+      "entity_type": "Resource",
+      "evidence": "与施工围挡发生碰撞，围挡倒塌",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1239,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_76A0FC9D87",
+      "final_entity_name": "施工围挡",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "路面维修",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_B047BC013B",
+      "source_final_id": "MEA_CASE_CC6AD1D7DA",
+      "source_final_name": "路面维修",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "施工围挡",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_082F722BA6",
+      "target_final_id": "RES_CASE_76A0FC9D87",
+      "target_final_name": "施工围挡",
+      "target_query_event_ids": [],
+      "evidence": "施工单位在进行路面维修时，一辆小型轿车不慎闯入施工区域，与施工围挡发生碰撞",
+      "confidence": 0.6,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《建设工程安全生产管理条例》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "confidence score is estimated."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某城市快速路匝道施工区域，施工单位在进行路面维修时，因未设置专人疏导，一辆小型轿车不慎闯入施工区域，与施工围挡发生碰撞，围挡倒塌砸中路边1名施工人员，施工区域内有3名施工人员被困。",
+    "consequence_text": "造成1名施工人员重伤、3名施工人员被困，小型轿车轻微受损，快速路匝道施工中断，匝道双向交通封闭，过往车辆出现拥堵，施工材料存在二次伤人的风险。",
+    "measure_text": "施工单位立即停止施工，拨打119、122报警；消防救援队伍赶赴现场，解救被困施工人员；医疗部门转运受伤人员至医院；交警部门封闭匝道，疏导车辆绕行；交通部门责令施工单位整改安全隐患，增设专人疏导；依据《建设工程安全生产管理条例》《道路交通安全法》开展处置，2小时后救援结束，匝道逐步恢复施工。"
+  }
+}

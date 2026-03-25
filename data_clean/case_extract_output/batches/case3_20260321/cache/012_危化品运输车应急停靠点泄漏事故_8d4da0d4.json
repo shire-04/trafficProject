@@ -1,0 +1,138 @@
+{
+  "case_id": "012_危化品运输车应急停靠点泄漏事故_8d4da0d4",
+  "title": "危化品运输车应急停靠点泄漏事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "某省道应急停靠点，一辆装载浓硫酸的罐式危化品运输车因罐体阀门老化发生泄漏，造成人员轻微灼伤，并对周边环境造成威胁。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_LEAK",
+    "expanded_event_ids": [
+      "EVT_HAZMAT_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_0A82727BD6",
+      "name": "危险化学品泄漏",
+      "entity_type": "Event",
+      "evidence": "一辆装载浓硫酸的罐式危化品运输车，因罐体阀门老化发生泄漏，浓硫酸泄漏至地面",
+      "confidence": 0.9,
+      "normalized_id": "EVT_HAZMAT_LEAK",
+      "normalized_name": "危险化学品运输泄漏事件",
+      "normalized_score": 0.0,
+      "matched_alias": "危险化学品运输泄漏事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_LEAK",
+      "final_entity_name": "危险化学品运输泄漏事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_LEAK",
+      "primary_event_name": "危险化学品运输泄漏事件",
+      "expanded_event_ids": [
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "危险货物运输事故"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "query_event_names": [
+        "危险化学品运输泄漏事件",
+        "危险货物运输事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_D9498347E5",
+      "name": "浓硫酸",
+      "entity_type": "Resource",
+      "evidence": "装载浓硫酸的罐式危化品运输车",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_B90EF464D4",
+      "final_entity_name": "浓硫酸",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_CDF87D3056",
+      "name": "泄漏",
+      "entity_type": "Action",
+      "evidence": "因罐体阀门老化发生泄漏",
+      "confidence": 0.85,
+      "normalized_id": "MEA_CASE_B04D39E895",
+      "normalized_name": "泄漏",
+      "normalized_score": 1.0,
+      "matched_alias": "泄漏",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_B04D39E895",
+      "final_entity_name": "泄漏",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "泄漏",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_CDF87D3056",
+      "source_final_id": "MEA_CASE_B04D39E895",
+      "source_final_name": "泄漏",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "浓硫酸",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_D9498347E5",
+      "target_final_id": "RES_CASE_B90EF464D4",
+      "target_final_name": "浓硫酸",
+      "target_query_event_ids": [],
+      "evidence": "一辆装载浓硫酸的罐式危化品运输车，因罐体阀门老化发生泄漏，浓硫酸泄漏至地面",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《危险化学品安全管理条例》"
+  ],
+  "quality_notes": [
+    "关系抽取主要基于文本中的直接描述，对于隐含关系未进行抽取。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某省道应急停靠点，一辆装载浓硫酸的罐式危化品运输车，因罐体阀门老化发生泄漏，浓硫酸泄漏至地面，应急停靠点周边有加油站和居民区，当时天气晴朗，风力较小。",
+    "consequence_text": "造成运输车驾驶员1人轻微灼伤，泄漏的浓硫酸具有强腐蚀性，腐蚀停靠点路面，威胁周边加油站和居民区安全，无人员撤离，但存在气体挥发伤人的风险。",
+    "measure_text": "应急管理部门启动《危险化学品突发事件应急预案》，协调消防救援队伍携带防化服、中和剂赶赴现场，对泄漏罐体进行堵漏，用中和剂处理泄漏浓硫酸；医疗部门对驾驶员进行灼伤处理；交警部门封闭应急停靠点，疏导过往车辆绕行；环保部门对周边空气、土壤进行采样监测；依据《危险化学品安全管理条例》开展事故调查，2小时后泄漏得到控制，停靠点逐步解封。"
+  }
+}

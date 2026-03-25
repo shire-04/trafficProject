@@ -1,0 +1,122 @@
+{
+  "case_id": "021_港口集装箱码头拖头车与堆垛碰撞事故_6456b2ee",
+  "title": "港口集装箱码头拖头车与堆垛碰撞事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某港口码头，集装箱拖头车因驾驶员分心、视线受阻与集装箱堆垛碰撞，导致集装箱坠落砸中驾驶室，驾驶员重伤被困，码头作业中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_CFB06DE8B6",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_BAB2D87E02",
+      "name": "集装箱坠落",
+      "entity_type": "Event",
+      "evidence": "堆垛内3个集装箱坠落，砸中拖头车驾驶室",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_CFB06DE8B6",
+      "final_entity_name": "集装箱坠落",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_CFB06DE8B6",
+      "primary_event_name": "集装箱坠落",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_CFB06DE8B6",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "集装箱坠落",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_29D6336BCB",
+      "name": "碰撞",
+      "entity_type": "Action",
+      "evidence": "与码头集装箱堆垛发生碰撞",
+      "confidence": 0.85,
+      "normalized_id": "MEA_CASE_6B219E66DE",
+      "normalized_name": "碰撞",
+      "normalized_score": 1.0,
+      "matched_alias": "碰撞",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_6B219E66DE",
+      "final_entity_name": "碰撞",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "集装箱坠落",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_BAB2D87E02",
+      "source_final_id": "EVT_CASE_CFB06DE8B6",
+      "source_final_name": "集装箱坠落",
+      "source_query_event_ids": [
+        "EVT_CASE_CFB06DE8B6",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "碰撞",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_29D6336BCB",
+      "target_final_id": "MEA_CASE_6B219E66DE",
+      "target_final_name": "碰撞",
+      "target_query_event_ids": [],
+      "evidence": "堆垛内3个集装箱坠落，砸中拖头车驾驶室",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《港口经营管理规定》",
+    "《安全生产法》"
+  ],
+  "quality_notes": [
+    "Relationships are based on explicit mentions in the text and limited to the provided entity catalog.",
+    "Confidence scores reflect the clarity and directness of the evidence supporting each relationship."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某沿海港口集装箱码头内部作业道路，一辆集装箱拖头车在转运集装箱时，因驾驶员分心驾驶、视线受阻，与码头集装箱堆垛发生碰撞，堆垛内3个集装箱坠落，砸中拖头车驾驶室，驾驶室严重变形，驾驶员被困车内，码头作业道路完全中断。",
+    "consequence_text": "造成拖头车驾驶员1人重伤被困，拖头车完全损毁，3个集装箱箱体破损，内部货物散落，码头集装箱转运作业完全中断，船舶装卸货进度受阻，剩余集装箱堆垛有继续坠落的风险。",
+    "measure_text": "港口应急管理部门立即启动码头生产安全事故应急预案，封锁事故作业区，疏散作业人员，对剩余集装箱堆垛进行临时加固，防止坠落；消防救援队伍赶赴现场，使用起重机、破拆工具解救被困驾驶员；医疗部门派遣救护车转运受伤人员至医院；交警部门开展现场勘查和责任认定；港口作业部门调集设备，清理坠落集装箱、散落货物，恢复作业道路通行；依据《港口经营管理规定》《安全生产法》开展事故调查，3小时后救援工作结束，码头作业逐步恢复。"
+  }
+}

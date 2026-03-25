@@ -1,0 +1,215 @@
+{
+  "case_id": "054_高速货车与客车碰撞重大事故_e7324881",
+  "title": "高速货车与客车碰撞重大事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "京沪高速济南段发生货车与客车正面碰撞事故，造成人员伤亡和车辆损毁，并导致交通中断。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_66841A5765",
+    "expanded_event_ids": [
+      "EVT_MAJOR_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_A5A66FD263",
+      "name": "高速公路碰撞",
+      "entity_type": "Event",
+      "evidence": "京沪高速济南段K438公里处，一辆重型货车因超速行驶，与前方一辆载有45名乘客的大型客车发生正面碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_66841A5765",
+      "final_entity_name": "高速公路碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_66841A5765",
+      "primary_event_name": "高速公路碰撞",
+      "expanded_event_ids": [
+        "EVT_MAJOR_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "重大恶性交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_66841A5765",
+        "EVT_MAJOR_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "高速公路碰撞",
+        "重大恶性交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_MAJOR_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "重大恶性交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_A130EFEBB3",
+      "name": "超速行驶",
+      "entity_type": "Action",
+      "evidence": "一辆重型货车因超速行驶",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1758,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_0B78E0C051",
+      "final_entity_name": "超速行驶",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_892473990A",
+      "name": "重型货车",
+      "entity_type": "Resource",
+      "evidence": "一辆重型货车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_7BEA479A9E",
+      "final_entity_name": "重型货车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_B037D38A74",
+      "name": "事故调查",
+      "entity_type": "Action",
+      "evidence": "依据《道路交通事故处理程序规定》开展事故调查",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_6933DFD8F9",
+      "final_entity_name": "事故调查",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "超速行驶",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_A130EFEBB3",
+      "source_final_id": "MEA_CASE_0B78E0C051",
+      "source_final_name": "超速行驶",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "重型货车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_892473990A",
+      "target_final_id": "RES_CASE_7BEA479A9E",
+      "target_final_name": "重型货车",
+      "target_query_event_ids": [],
+      "evidence": "一辆重型货车因超速行驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "高速公路碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_A5A66FD263",
+      "source_final_id": "EVT_CASE_66841A5765",
+      "source_final_name": "高速公路碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_66841A5765",
+        "EVT_MAJOR_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "超速行驶",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_A130EFEBB3",
+      "target_final_id": "MEA_CASE_0B78E0C051",
+      "target_final_name": "超速行驶",
+      "target_query_event_ids": [],
+      "evidence": "一辆重型货车因超速行驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "高速公路碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_A5A66FD263",
+      "source_final_id": "EVT_CASE_66841A5765",
+      "source_final_name": "高速公路碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_66841A5765",
+        "EVT_MAJOR_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "事故调查",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_B037D38A74",
+      "target_final_id": "MEA_CASE_6933DFD8F9",
+      "target_final_name": "事故调查",
+      "target_query_event_ids": [],
+      "evidence": "依据《道路交通事故处理程序规定》开展事故调查",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《重大道路交通事故应急预案》",
+    "《道路交通事故处理程序规定》"
+  ],
+  "quality_notes": [
+    "人员伤亡数据来自consequence_text。",
+    "Relationships are extracted based on explicit mentions in the text.",
+    "Confidence scores are assigned based on the clarity and directness of the evidence.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": 1,
+    "injuries": 23,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "京沪高速济南段K438公里处，一辆重型货车因超速行驶，与前方一辆载有45名乘客的大型客车发生正面碰撞，客车车身严重变形，货车车头损毁，当时天气晴朗，能见度良好，事故车辆占用高速全部车道。",
+    "consequence_text": "造成货车驾驶员1人死亡、客车驾驶员1人重伤，乘客8人重伤、15人轻伤，两辆车严重损毁，事故路段双向交通全面封闭，后方车辆滞留约18公里，存在车辆起火、二次碰撞的风险，社会影响较大。",
+    "measure_text": "应急管理部门立即启动《重大道路交通事故应急预案》，协调消防救援队伍、医疗队伍、交警部门、交通部门，调集多辆消防车、救护车、清障车，赶赴现场开展救援，解救被困乘客和驾驶员，扑灭可能发生的明火；医疗部门开辟绿色通道，对受伤人员进行紧急救治，转运至多家医院；交警部门封闭事故路段及周边收费站，设置警戒区域，疏导后方车辆分流绕行；交通部门调用吊车、清障车，清理事故残骸；依据《道路交通事故处理程序规定》开展事故调查，10小时后事故现场清理完毕，道路逐步恢复通行。"
+  }
+}

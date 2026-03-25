@@ -1,0 +1,226 @@
+{
+  "case_id": "030_城市老旧小区内部道路消防车被石墩堵路延误救援事故_eec13e0f",
+  "title": "城市老旧小区内部道路消防车被石墩堵路延误救援事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "老旧小区内部道路因物业设置石墩阻碍消防车通行，导致火灾救援延误。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_55EC55B4DA",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_A16FFC4112",
+      "name": "消防通道堵塞",
+      "entity_type": "Event",
+      "evidence": "消防车赶赴现场后，被水泥石墩完全堵死，无法进入火灾楼栋",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_55EC55B4DA",
+      "final_entity_name": "消防通道堵塞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_55EC55B4DA",
+      "primary_event_name": "消防通道堵塞",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_55EC55B4DA",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "消防通道堵塞",
+        "公路中断",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_615CB01AFC",
+      "name": "消防车",
+      "entity_type": "Resource",
+      "evidence": "消防车赶赴现场后，被水泥石墩完全堵死",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.425,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_B6DB55CC3C",
+      "final_entity_name": "消防车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_8F1D10441F",
+      "name": "火灾",
+      "entity_type": "Event",
+      "evidence": "小区内居民楼发生火灾",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_091BB1089D",
+      "final_entity_name": "火灾",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_091BB1089D",
+      "primary_event_name": "火灾",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_091BB1089D"
+      ],
+      "query_event_names": [
+        "火灾"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_C73F165FD5",
+      "name": "消防救援",
+      "entity_type": "Action",
+      "evidence": "消防救援队伍到达现场后，立即使用破拆设备拆除堵路水泥石墩",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_8FF9372275",
+      "final_entity_name": "消防救援",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "火灾",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_8F1D10441F",
+      "source_final_id": "EVT_CASE_091BB1089D",
+      "source_final_name": "火灾",
+      "source_query_event_ids": [
+        "EVT_CASE_091BB1089D"
+      ],
+      "relation": "TRIGGERS",
+      "target": "消防救援",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_C73F165FD5",
+      "target_final_id": "MEA_CASE_8FF9372275",
+      "target_final_name": "消防救援",
+      "target_query_event_ids": [],
+      "evidence": "小区内居民楼发生火灾，消防车赶赴现场后...",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "消防救援",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_C73F165FD5",
+      "source_final_id": "MEA_CASE_8FF9372275",
+      "source_final_name": "消防救援",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "消防车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_615CB01AFC",
+      "target_final_id": "RES_CASE_B6DB55CC3C",
+      "target_final_name": "消防车",
+      "target_query_event_ids": [],
+      "evidence": "消防救援队伍到达现场后...",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "消防通道堵塞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_A16FFC4112",
+      "source_final_id": "EVT_CASE_55EC55B4DA",
+      "source_final_name": "消防通道堵塞",
+      "source_query_event_ids": [
+        "EVT_CASE_55EC55B4DA",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "火灾",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_8F1D10441F",
+      "target_final_id": "EVT_CASE_091BB1089D",
+      "target_final_name": "火灾",
+      "target_query_event_ids": [
+        "EVT_CASE_091BB1089D"
+      ],
+      "evidence": "消防车赶赴现场后，被水泥石墩完全堵死，无法进入火灾楼栋，延误火灾扑救。",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《消防法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市老旧小区内部道路，物业为防止社会车辆进入，在小区主路设置多处固定水泥石墩，仅容小型轿车通行，小区内居民楼发生火灾，消防车赶赴现场后，被水泥石墩完全堵死，无法进入火灾楼栋，消防人员只能携带灭火装备徒步进入火场，延误火灾扑救。",
+    "consequence_text": "无人员伤亡，居民楼火灾过火面积扩大，居民财产受损，小区内部道路通行中断，消防救援受阻，存在火势蔓延、人员伤亡的重大风险，小区居民与物业发生纠纷。",
+    "measure_text": "消防救援队伍到达现场后，立即使用破拆设备拆除堵路水泥石墩，打通消防通道，同时组织人员徒步进入火场扑灭火灾；交警、城管部门到场，责令小区物业立即拆除所有违规设置的石墩，恢复消防通道畅通；依据《消防法》对小区物业占用、堵塞消防通道的行为进行从严处罚与追责；社区居委会督促物业全面排查小区消防通道隐患，严禁设置任何阻碍消防车辆通行的设施，1小时后火灾被完全扑灭，小区消防通道恢复畅通。"
+  }
+}

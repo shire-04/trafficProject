@@ -1,0 +1,138 @@
+{
+  "case_id": "005_高速枢纽互通匝道倒车引发多车追尾事故_81fa381e",
+  "title": "高速枢纽互通匝道倒车引发多车追尾事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "某高速枢纽互通匝道发生多车追尾事故，造成2人轻微受伤，4辆车受损，匝道封闭，主线车辆受阻。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F942FD2EE9",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_DA3451EE94",
+      "name": "高速追尾事故",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车因错过高速出口，在匝道内违规倒车，后方跟随的3辆小型轿车、1辆轻型货车避让不及，接连发生连环追尾",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F942FD2EE9",
+      "final_entity_name": "高速追尾事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F942FD2EE9",
+      "primary_event_name": "高速追尾事故",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F942FD2EE9",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "高速追尾事故",
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_36D480465F",
+      "name": "匝道倒车",
+      "entity_type": "Action",
+      "evidence": "在匝道内违规倒车",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3859,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_E0D63B2EA6",
+      "final_entity_name": "匝道倒车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "高速追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_DA3451EE94",
+      "source_final_id": "EVT_CASE_F942FD2EE9",
+      "source_final_name": "高速追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_F942FD2EE9",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "匝道倒车",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_36D480465F",
+      "target_final_id": "MEA_CASE_E0D63B2EA6",
+      "target_final_name": "匝道倒车",
+      "target_query_event_ids": [],
+      "evidence": "在匝道内违规倒车",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "confidence score is estimated.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高速枢纽互通匝道，一辆小型轿车因错过高速出口，在匝道内违规倒车，后方跟随的3辆小型轿车、1辆轻型货车避让不及，接连发生连环追尾，事故车辆均不同程度受损，部分车辆停留在匝道弯道处，现场无照明设施，当时为夜间。",
+    "consequence_text": "造成2人轻微受伤，4辆事故车辆不同程度损毁，高速枢纽匝道完全封闭，主线车辆分流受阻，后方车辆滞留约8公里，夜间弯道视线差，存在二次追尾的重大风险。",
+    "measure_text": "交警部门立即封闭事故匝道及主线相关车道，设置夜间警示灯、反光锥，疏导主线车辆提前绕行其他出口；消防救援队伍到场排查车辆漏油、起火隐患，解救被困人员；医疗部门对受伤人员进行现场处置后转运至医院；路政部门调用清障车拖移事故车辆，清理路面散落碎片；依据《道路交通安全法》对匝道倒车驾驶员进行从严处罚与追责，2小时后匝道清理完毕，恢复正常通行。"
+  }
+}

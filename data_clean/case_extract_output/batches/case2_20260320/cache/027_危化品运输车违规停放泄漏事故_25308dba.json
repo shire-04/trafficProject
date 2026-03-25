@@ -1,0 +1,207 @@
+{
+  "case_id": "027_危化品运输车违规停放泄漏事故_25308dba",
+  "title": "危化品运输车违规停放泄漏事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "某县城郊区道路，一辆装载油漆的罐式危化品运输车违规停放过夜，因罐体阀门老化导致油漆泄漏，造成空气和路面污染，存在起火风险，幸无人员伤亡。相关部门已采取堵漏、清理、交通管制等措施。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_LEAK",
+    "expanded_event_ids": [
+      "EVT_HAZMAT_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_D9FF5CADB1",
+      "name": "危险化学品泄漏",
+      "entity_type": "Event",
+      "evidence": "一辆装载油漆的罐式危化品运输车，违规停放在路边过夜，因罐体阀门老化，导致油漆泄漏，泄漏的油漆沿路面流淌",
+      "confidence": 0.98,
+      "normalized_id": "EVT_HAZMAT_LEAK",
+      "normalized_name": "危险化学品运输泄漏事件",
+      "normalized_score": 0.0,
+      "matched_alias": "危险化学品运输泄漏事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_LEAK",
+      "final_entity_name": "危险化学品运输泄漏事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_LEAK",
+      "primary_event_name": "危险化学品运输泄漏事件",
+      "expanded_event_ids": [
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "危险货物运输事故"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "query_event_names": [
+        "危险化学品运输泄漏事件",
+        "危险货物运输事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_0A366FABD2",
+      "name": "危化品运输车",
+      "entity_type": "Resource",
+      "evidence": "一辆装载油漆的罐式危化品运输车",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_DBB582ED02",
+      "final_entity_name": "危化品运输车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_C641ED08F5",
+      "name": "油漆",
+      "entity_type": "Resource",
+      "evidence": "装载油漆的罐式危化品运输车，导致油漆泄漏",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_54576A6949",
+      "final_entity_name": "油漆",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_1B29D4B970",
+      "name": "堵漏",
+      "entity_type": "Action",
+      "evidence": "对泄漏点进行堵漏",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_39D13A1B81",
+      "final_entity_name": "堵漏",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_BA3BC363ED",
+      "name": "清理",
+      "entity_type": "Action",
+      "evidence": "采取清理、吸附等措施控制污染",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_F2C178773D",
+      "normalized_name": "清理",
+      "normalized_score": 1.0,
+      "matched_alias": "清理",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_F2C178773D",
+      "final_entity_name": "清理",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "堵漏",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_1B29D4B970",
+      "source_final_id": "MEA_CASE_39D13A1B81",
+      "source_final_name": "堵漏",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "危化品运输车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_0A366FABD2",
+      "target_final_id": "RES_CASE_DBB582ED02",
+      "target_final_name": "危化品运输车",
+      "target_query_event_ids": [],
+      "evidence": "应急管理部门...对泄漏点进行堵漏",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "清理",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_BA3BC363ED",
+      "source_final_id": "MEA_CASE_F2C178773D",
+      "source_final_name": "清理",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "油漆",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_C641ED08F5",
+      "target_final_id": "RES_CASE_54576A6949",
+      "target_final_name": "油漆",
+      "target_query_event_ids": [],
+      "evidence": "环保部门对周边空气、路面进行采样监测，采取清理、吸附等措施控制污染",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《危险化学品安全管理条例》"
+  ],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog. Confidence scores reflect the clarity of the relationship in the text."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某县城郊区道路，一辆装载油漆的罐式危化品运输车，违规停放在路边过夜，因罐体阀门老化，导致油漆泄漏，泄漏的油漆沿路面流淌，周边有居民住宅区和小型加工厂，当时天气晴朗，无明显风力。",
+    "consequence_text": "造成周边空气受到污染，路面被油漆污染，影响道路通行，泄漏的油漆具有易燃性，存在起火风险，威胁周边居民人身安全和财产安全，无人员伤亡，事故路段单向交通封闭。",
+    "measure_text": "应急管理部门接到群众举报后，立即协调消防救援队伍、危化品专业处置队伍，携带防化装备、堵漏器材赶赴现场，对泄漏点进行堵漏，收集泄漏的油漆；环保部门对周边空气、路面进行采样监测，采取清理、吸附等措施控制污染；交警部门封闭事故路段，设置警戒区域，禁止无关车辆、人员进入；交通部门对违规停放的危化品运输车进行扣押，对驾驶员进行处罚；依据《危险化学品安全管理条例》开展事故调查，2小时后泄漏得到控制，路面清理完毕，道路恢复通行。"
+  }
+}

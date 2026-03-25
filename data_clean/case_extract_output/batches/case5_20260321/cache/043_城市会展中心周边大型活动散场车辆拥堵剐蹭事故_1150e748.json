@@ -1,0 +1,144 @@
+{
+  "case_id": "043_城市会展中心周边大型活动散场车辆拥堵剐蹭事故_1150e748",
+  "title": "城市会展中心周边大型活动散场车辆拥堵剐蹭事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "某市国际会展中心散场后，因车辆拥堵导致小型轿车与大巴车剐蹭，引发道路交通瘫痪。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F4AFE9A596",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_78CCDEEEC3",
+      "name": "车辆剐蹭",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车与一辆大巴车发生剐蹭",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F4AFE9A596",
+      "final_entity_name": "车辆剐蹭",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F4AFE9A596",
+      "primary_event_name": "车辆剐蹭",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "公路中断",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F4AFE9A596",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆剐蹭",
+        "车辆积压",
+        "公路中断",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "公路中断",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_58F5C00604",
+      "name": "车辆拥堵",
+      "entity_type": "Event",
+      "evidence": "周边道路完全拥堵，车辆滞留约8公里",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_028CA28AE4",
+      "final_entity_name": "车辆拥堵",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_028CA28AE4",
+      "primary_event_name": "车辆拥堵",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_028CA28AE4"
+      ],
+      "query_event_names": [
+        "车辆拥堵"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆剐蹭",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_78CCDEEEC3",
+      "source_final_id": "EVT_CASE_F4AFE9A596",
+      "source_final_name": "车辆剐蹭",
+      "source_query_event_ids": [
+        "EVT_CASE_F4AFE9A596",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆拥堵",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_58F5C00604",
+      "target_final_id": "EVT_CASE_028CA28AE4",
+      "target_final_name": "车辆拥堵",
+      "target_query_event_ids": [
+        "EVT_CASE_028CA28AE4"
+      ],
+      "evidence": "一辆小型轿车与一辆大巴车发生剐蹭，导致周边道路完全拥堵",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取主要基于事故描述和措施描述，关系置信度较高。",
+    "未抽取车辆剐蹭涉及的具体车辆，因为没有明确的动作或措施与之关联。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市国际会展中心举办大型展会，展会散场时段，周边3条主干道聚集大量接送观众的私家车、网约车、大巴车，车辆无序变道、加塞，一辆小型轿车与一辆大巴车发生剐蹭，两车驾驶员发生争执，导致周边道路完全拥堵，车辆滞留约8公里，散场观众无法正常离场。",
+    "consequence_text": "无人员伤亡，两车轻微受损，会展中心周边3条主干道交通完全瘫痪，上万名散场观众滞留，周边小区居民出行受阻，车辆无序加塞易引发多车碰撞事故，现场交通秩序混乱。",
+    "measure_text": "交警部门立即调集周边警力赶赴现场，调解驾驶员争执，对事故进行快速处置，拖移事故车辆；分批次、分路段疏导拥堵车辆，设置临时管控区域，规范车辆通行秩序；会展中心组委会安排工作人员引导观众分批次离场，协调公交公司加开临时接驳专线，疏散滞留观众；通过导航APP、交通广播发布拥堵提示，引导车辆绕行周边道路；依据《道路交通安全法》对违规加塞、变道的驾驶员进行处罚，3小时后周边交通逐步恢复正常。"
+  }
+}

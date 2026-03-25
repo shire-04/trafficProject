@@ -1,0 +1,198 @@
+{
+  "case_id": "020_城市快速路车辆抛锚引发拥堵事故_1458401e",
+  "title": "城市快速路车辆抛锚引发拥堵事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "某市快速路一辆大型客车因发动机故障抛锚，未设置警示标志，导致交通拥堵，30余名乘客滞留。",
+  "confidence": 0.95,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_987220FC67",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_PASSENGER_STRANDING",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_68C5DA01A1",
+      "name": "车辆抛锚",
+      "entity_type": "Event",
+      "evidence": "一辆大型客车在行驶中因发动机故障抛锚，停放在行车道与应急车道交界处",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_987220FC67",
+      "final_entity_name": "车辆抛锚",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_987220FC67",
+      "primary_event_name": "车辆抛锚",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_PASSENGER_STRANDING",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "旅客滞留",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_987220FC67",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_PASSENGER_STRANDING",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆抛锚",
+        "车辆积压",
+        "旅客滞留",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_PASSENGER_STRANDING",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "旅客滞留",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_8CD7635DB5",
+      "name": "交通拥堵",
+      "entity_type": "Event",
+      "evidence": "引发交通拥堵",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_85237B46E2",
+      "final_entity_name": "交通拥堵",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_85237B46E2",
+      "primary_event_name": "交通拥堵",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_85237B46E2"
+      ],
+      "query_event_names": [
+        "交通拥堵"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_82ADEADFD6",
+      "name": "旅客滞留",
+      "entity_type": "Event",
+      "evidence": "造成大型客车内30余名乘客滞留",
+      "confidence": 0.8,
+      "normalized_id": "EVT_PASSENGER_STRANDING",
+      "normalized_name": "旅客滞留",
+      "normalized_score": 0.1966,
+      "matched_alias": "乘客滞留",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_PASSENGER_STRANDING",
+      "final_entity_name": "旅客滞留",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_PASSENGER_STRANDING",
+      "primary_event_name": "旅客滞留",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_PASSENGER_STRANDING"
+      ],
+      "query_event_names": [
+        "旅客滞留"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆抛锚",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_68C5DA01A1",
+      "source_final_id": "EVT_CASE_987220FC67",
+      "source_final_name": "车辆抛锚",
+      "source_query_event_ids": [
+        "EVT_CASE_987220FC67",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_PASSENGER_STRANDING",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "交通拥堵",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_8CD7635DB5",
+      "target_final_id": "EVT_CASE_85237B46E2",
+      "target_final_name": "交通拥堵",
+      "target_query_event_ids": [
+        "EVT_CASE_85237B46E2"
+      ],
+      "evidence": "车辆抛锚引发交通拥堵",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "车辆抛锚",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_68C5DA01A1",
+      "source_final_id": "EVT_CASE_987220FC67",
+      "source_final_name": "车辆抛锚",
+      "source_query_event_ids": [
+        "EVT_CASE_987220FC67",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_PASSENGER_STRANDING",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "旅客滞留",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_82ADEADFD6",
+      "target_final_id": "EVT_PASSENGER_STRANDING",
+      "target_final_name": "旅客滞留",
+      "target_query_event_ids": [
+        "EVT_PASSENGER_STRANDING"
+      ],
+      "evidence": "造成大型客车内30余名乘客滞留",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本中的明确因果关系。",
+    "未抽取措施相关的关系，因为缺少明确的动作实体。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市快速路，一辆大型客车在行驶中因发动机故障抛锚，停放在行车道与应急车道交界处，驾驶员未设置警示标志，当时为晚高峰，车流量大，过往车辆纷纷紧急避让，引发交通拥堵。",
+    "consequence_text": "造成大型客车内30余名乘客滞留，无法正常换乘，快速路单向交通严重拥堵，后方车辆滞留约8公里，晚高峰通勤受到严重影响，抛锚车辆占用应急车道，影响救援车辆通行，存在二次碰撞风险。",
+    "measure_text": "交警部门接到报警后，立即赶赴现场，设置警示标志，疏导后方车辆，清理应急车道；交通部门调用清障车，对抛锚客车进行拖移至安全区域；公交公司调配备用车辆，赶赴现场转运滞留乘客，保障乘客正常出行；维修人员对抛锚客车进行检修，排查故障原因；依据《道路交通安全法》对驾驶员未设置警示标志的行为进行处罚，2.5小时后抛锚客车被拖移，快速路恢复正常通行。"
+  }
+}

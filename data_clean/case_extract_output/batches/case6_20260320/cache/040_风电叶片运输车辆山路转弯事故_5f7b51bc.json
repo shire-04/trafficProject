@@ -1,0 +1,249 @@
+{
+  "case_id": "040_风电叶片运输车辆山路转弯事故_5f7b51bc",
+  "title": "风电叶片运输车辆山路转弯事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "风电叶片运输车辆在山路急转弯处失控，导致车辆横停在路面，阻断交通，叶片和车辆受损。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_8CA983D3B0",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_484ED91FFF",
+      "name": "车辆失控",
+      "entity_type": "Event",
+      "evidence": "因转弯半径不足，叶片尾部剐蹭山体，导致车辆失控，车身横停在整个路面",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_8CA983D3B0",
+      "final_entity_name": "超长车辆转弯失控",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_8CA983D3B0",
+      "primary_event_name": "超长车辆转弯失控",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_8CA983D3B0",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "超长车辆转弯失控",
+        "公路中断",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路损毁"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_2FF604BFCD",
+      "name": "交通中断",
+      "entity_type": "Event",
+      "evidence": "完全阻断双向交通",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_436A2F6617",
+      "final_entity_name": "交通中断",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_436A2F6617",
+      "primary_event_name": "交通中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_436A2F6617"
+      ],
+      "query_event_names": [
+        "交通中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_1924494AC1",
+      "name": "风电项目应急管理部门",
+      "entity_type": "Department",
+      "evidence": "风电项目应急管理部门立即启动大件运输应急预案",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_6229FEA413",
+      "final_entity_name": "风电项目应急管理部门",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_1D9A371E1A",
+      "name": "交通部门",
+      "entity_type": "Department",
+      "evidence": "交通部门组织道路、大件运输专家到场",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.7167,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_B6CBD41599",
+      "final_entity_name": "交通部门",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_736F374079",
+      "name": "车辆脱困",
+      "entity_type": "Action",
+      "evidence": "将车辆安全移出弯道",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_3948E92260",
+      "final_entity_name": "车辆脱困",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆失控",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_484ED91FFF",
+      "source_final_id": "EVT_CASE_8CA983D3B0",
+      "source_final_name": "超长车辆转弯失控",
+      "source_query_event_ids": [
+        "EVT_CASE_8CA983D3B0",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "relation": "CAUSES",
+      "target": "交通中断",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_2FF604BFCD",
+      "target_final_id": "EVT_CASE_436A2F6617",
+      "target_final_name": "交通中断",
+      "target_query_event_ids": [
+        "EVT_CASE_436A2F6617"
+      ],
+      "evidence": "导致车辆失控，车身横停在整个路面，完全阻断双向交通",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "车辆脱困",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_736F374079",
+      "source_final_id": "MEA_CASE_3948E92260",
+      "source_final_name": "车辆脱困",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "风电项目应急管理部门",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_1924494AC1",
+      "target_final_id": "ORG_CASE_6229FEA413",
+      "target_final_name": "风电项目应急管理部门",
+      "target_query_event_ids": [],
+      "evidence": "风电项目应急管理部门立即启动大件运输应急预案",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "车辆脱困",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_736F374079",
+      "source_final_id": "MEA_CASE_3948E92260",
+      "source_final_name": "车辆脱困",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "交通部门",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_1D9A371E1A",
+      "target_final_id": "ORG_CASE_B6CBD41599",
+      "target_final_name": "交通部门",
+      "target_query_event_ids": [],
+      "evidence": "交通部门组织道路、大件运输专家到场，制定车辆脱困方案",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《大件运输车辆行驶公路管理规定》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某山区风电项目进场道路，一辆运输70米长风电叶片的特种超长运输车，在盘山公路急转弯处，因转弯半径不足，叶片尾部剐蹭山体，导致车辆失控，车身横停在整个路面，完全阻断双向交通，车辆无法移动，叶片轻微受损，周边无其他绕行路线。",
+    "consequence_text": "无人员伤亡，风电叶片轻微受损，特种运输车车身受损，山区进场道路完全中断，风电项目其他设备运输、施工建设完全受阻，超长车辆横停路面，无法会车，救援难度极大。",
+    "measure_text": "风电项目应急管理部门立即启动大件运输应急预案，封锁事故路段，协调交通、交警部门赶赴现场；交通部门组织道路、大件运输专家到场，制定车辆脱困方案；调集多台吊车、牵引车，对超长运输车进行精准调整、转向，将车辆安全移出弯道；对受损叶片、车辆进行全面检测；对事故弯道进行拓宽、加固，保障后续大件运输通行；依据《大件运输车辆行驶公路管理规定》《道路交通安全法》开展处置，8小时后车辆成功脱困，道路恢复通行。"
+  }
+}

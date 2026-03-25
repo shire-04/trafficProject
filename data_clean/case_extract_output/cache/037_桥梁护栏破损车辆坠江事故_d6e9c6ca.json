@@ -1,0 +1,128 @@
+{
+  "case_id": "037_桥梁护栏破损车辆坠江事故_d6e9c6ca",
+  "title": "桥梁护栏破损车辆坠江事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "某跨江大桥因护栏破损，一辆小型轿车冲撞坠江，驾驶员被困，可能造成江水污染。相关部门已启动应急预案进行救援和处理。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_B379DF3AFC",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_157FF8CB4A",
+      "name": "车辆坠江",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车在行驶中，因驾驶员操作不当，车辆失控冲撞破损护栏，从桥梁坠落至江中",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_B379DF3AFC",
+      "final_entity_name": "车辆坠江",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_B379DF3AFC",
+      "primary_event_name": "车辆坠江",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_B379DF3AFC",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆坠江",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_0C9AB506D1",
+      "name": "桥梁护栏破损",
+      "entity_type": "Event",
+      "evidence": "因桥梁护栏年久失修、破损严重",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_427F0A2151",
+      "final_entity_name": "桥梁护栏破损",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_427F0A2151",
+      "primary_event_name": "桥梁护栏破损",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_427F0A2151"
+      ],
+      "query_event_names": [
+        "桥梁护栏破损"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "桥梁护栏破损",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_0C9AB506D1",
+      "source_final_id": "EVT_CASE_427F0A2151",
+      "source_final_name": "桥梁护栏破损",
+      "source_query_event_ids": [
+        "EVT_CASE_427F0A2151"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆坠江",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_157FF8CB4A",
+      "target_final_id": "EVT_CASE_B379DF3AFC",
+      "target_final_name": "车辆坠江",
+      "target_query_event_ids": [
+        "EVT_CASE_B379DF3AFC",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "因桥梁护栏年久失修、破损严重，一辆小型轿车在行驶中，因驾驶员操作不当，车辆失控冲撞破损护栏，从桥梁坠落至江中",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《公路安全保护条例》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "Relationships are based on explicit mentions in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某跨江大桥，因桥梁护栏年久失修、破损严重，一辆小型轿车在行驶中，因驾驶员操作不当，车辆失控冲撞破损护栏，从桥梁坠落至江中，驾驶员被困车内，桥梁护栏破损进一步扩大，当时江面有风浪。",
+    "consequence_text": "造成驾驶员1人被困，车辆坠入江中后有沉没风险，桥梁护栏破损严重，存在后续车辆坠落的风险，桥梁部分车道封闭，过往车辆需绕行，江面风浪导致救援难度加大，可能造成江水污染。",
+    "measure_text": "应急管理部门启动《桥梁突发事件应急预案》，协调消防救援队伍、海事部门、医疗部门，携带救援装备、救生艇、潜水装备，赶赴现场开展江面救援，解救被困驾驶员；交通部门封闭桥梁破损路段，设置警戒标志，组织专业人员对桥梁护栏进行临时加固；环保部门对江面进行监测，防止车辆漏油污染江水；医疗部门派遣救护车在现场待命，驾驶员被解救后立即转运至医院救治；后续交通部门对桥梁护栏进行全面维修，依据《公路安全保护条例》开展事故调查，8小时后救援工作结束，桥梁临时通行恢复。"
+  }
+}

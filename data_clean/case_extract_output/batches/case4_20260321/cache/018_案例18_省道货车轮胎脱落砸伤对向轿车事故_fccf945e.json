@@ -1,0 +1,166 @@
+{
+  "case_id": "018_案例18_省道货车轮胎脱落砸伤对向轿车事故_fccf945e",
+  "title": "案例18：省道货车轮胎脱落砸伤对向轿车事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "省道上，一辆货车轮胎脱落砸伤了对向行驶的轿车，造成轿车受损，驾驶员轻微划伤，道路短暂拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F6D0C0A2F8",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_00CE1E21A5",
+      "name": "轮胎脱落",
+      "entity_type": "Event",
+      "evidence": "一辆重型半挂货车行驶中左前轮因螺丝松动突然脱落",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F6D0C0A2F8",
+      "final_entity_name": "轮胎脱落砸车",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F6D0C0A2F8",
+      "primary_event_name": "轮胎脱落砸车",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F6D0C0A2F8",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "轮胎脱落砸车",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_49A5633234",
+      "name": "车辆拖移",
+      "entity_type": "Action",
+      "evidence": "拖移事故车辆",
+      "confidence": 0.6,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_ECF0F3566B",
+      "final_entity_name": "车辆拖移",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_3FA9251C3F",
+      "name": "现场清理",
+      "entity_type": "Action",
+      "evidence": "清理现场",
+      "confidence": 0.6,
+      "normalized_id": "MEA_CASE_B96269C236",
+      "normalized_name": "现场清理",
+      "normalized_score": 1.0,
+      "matched_alias": "现场清理",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_B96269C236",
+      "final_entity_name": "现场清理",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "轮胎脱落",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_00CE1E21A5",
+      "source_final_id": "EVT_CASE_F6D0C0A2F8",
+      "source_final_name": "轮胎脱落砸车",
+      "source_query_event_ids": [
+        "EVT_CASE_F6D0C0A2F8",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "车辆拖移",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_49A5633234",
+      "target_final_id": "MEA_CASE_ECF0F3566B",
+      "target_final_name": "车辆拖移",
+      "target_query_event_ids": [],
+      "evidence": "拖移事故车辆",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "轮胎脱落",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_00CE1E21A5",
+      "source_final_id": "EVT_CASE_F6D0C0A2F8",
+      "source_final_name": "轮胎脱落砸车",
+      "source_query_event_ids": [
+        "EVT_CASE_F6D0C0A2F8",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "现场清理",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_3FA9251C3F",
+      "target_final_id": "MEA_CASE_B96269C236",
+      "target_final_name": "现场清理",
+      "target_query_event_ids": [],
+      "evidence": "清理现场",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 1,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "省级公路平直路段，一辆重型半挂货车行驶中左前轮因螺丝松动突然脱落，滚向对向车道，直接砸中正常行驶的小型轿车车头，轿车前引擎盖变形、玻璃破碎，驾驶员紧急刹车避让。",
+    "consequence_text": "轿车驾驶员轻微划伤，无重伤死亡，轿车车头严重受损，货车轮胎报废，双向车道短暂拥堵，车辆滞留2公里，脱落轮胎易再次滚动引发连环事故。",
+    "measure_text": "交警快速到场，划定警戒区域，拖移事故车辆，找回脱落轮胎；对货车驾驶员进行车辆安全检查追责，认定全责；路政人员清理现场，恢复交通；医疗人员对伤者进行简单处置；1小时后道路恢复正常通行，督促货车司机加强车辆日常检修。"
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "case_id": "040_案例39_高速跨线桥施工杂物掉落砸车事故_8f0be2e5",
+  "title": "案例39：高速跨线桥施工杂物掉落砸车事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "高速跨线桥施工杂物掉落砸车事故，造成车辆受损，高速应急车道拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_E8ED14B026",
+    "expanded_event_ids": [
+      "EVT_CONSTRUCTION_SAFETY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_716E686F46",
+      "name": "施工坠物事故",
+      "entity_type": "Event",
+      "evidence": "高速跨线桥施工，施工杂物、水泥块不慎从桥面掉落，砸中下方高速行驶的2辆小型轿车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_E8ED14B026",
+      "final_entity_name": "施工坠物事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_E8ED14B026",
+      "primary_event_name": "施工坠物事故",
+      "expanded_event_ids": [
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "expanded_event_names": [
+        "施工安全事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_E8ED14B026",
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "query_event_names": [
+        "施工坠物事故",
+        "施工安全事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "alias_patch_target_names": [
+        "施工安全事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_07429496EB",
+      "name": "施工单位",
+      "entity_type": "Department",
+      "evidence": "施工单位暂停作业",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_45537A4E38",
+      "final_entity_name": "施工单位",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_574B8C1632",
+      "name": "清理杂物",
+      "entity_type": "Action",
+      "evidence": "全面清理桥面杂物",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_EAEC72BD5F",
+      "final_entity_name": "清理杂物",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_3244E9C3DB",
+      "name": "安全整改",
+      "entity_type": "Action",
+      "evidence": "对施工单位进行安全整改",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_A0148F49D9",
+      "final_entity_name": "安全整改",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_0D3726613B",
+      "name": "追责",
+      "entity_type": "Action",
+      "evidence": "追责相关人员",
+      "confidence": 0.75,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_71DCBFE52F",
+      "final_entity_name": "追责",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "清理杂物",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_574B8C1632",
+      "source_final_id": "MEA_CASE_EAEC72BD5F",
+      "source_final_name": "清理杂物",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "施工单位",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_07429496EB",
+      "target_final_id": "ORG_CASE_45537A4E38",
+      "target_final_name": "施工单位",
+      "target_query_event_ids": [],
+      "evidence": "施工单位暂停作业，全面清理桥面杂物",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "安全整改",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_3244E9C3DB",
+      "source_final_id": "MEA_CASE_A0148F49D9",
+      "source_final_name": "安全整改",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "施工单位",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_07429496EB",
+      "target_final_id": "ORG_CASE_45537A4E38",
+      "target_final_name": "施工单位",
+      "target_query_event_ids": [],
+      "evidence": "对施工单位进行安全整改",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "追责",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_0D3726613B",
+      "source_final_id": "MEA_CASE_71DCBFE52F",
+      "source_final_name": "追责",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "施工单位",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_07429496EB",
+      "target_final_id": "ORG_CASE_45537A4E38",
+      "target_final_name": "施工单位",
+      "target_query_event_ids": [],
+      "evidence": "追责相关人员",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "高速跨线桥施工，施工杂物、水泥块不慎从桥面掉落，砸中下方高速行驶的2辆小型轿车，车辆车顶、玻璃受损，车辆紧急停靠应急车道，无人员被困。",
+    "consequence_text": "无人员伤亡，两车受损，高速应急车道拥堵，车辆滞留4公里，施工杂物持续掉落有重大安全隐患，施工中断。",
+    "measure_text": "交警封闭下方高速车道，疏导车辆分流；施工单位暂停作业，全面清理桥面杂物，排查坠物隐患；路政部门拖移事故车辆，修复路面；对施工单位进行安全整改，追责相关人员，3小时后道路恢复通行，施工逐步重启。"
+  }
+}

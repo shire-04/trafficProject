@@ -1,0 +1,231 @@
+{
+  "case_id": "037_案例36_草原公路牲畜横穿引发车辆侧翻事故_a8c19839",
+  "title": "案例36：草原公路牲畜横穿引发车辆侧翻事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "草原公路上，牲畜横穿马路导致一辆小型轿车侧翻，造成2人轻微受伤，车辆报废，道路封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_0485BB013D",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车躲避不及，猛打方向盘侧翻至路边草地，车辆四轮朝天",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_BE1E360E6A",
+      "name": "牲畜横穿",
+      "entity_type": "Event",
+      "evidence": "一群牛羊横穿公路",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_82B38E516C",
+      "final_entity_name": "牲畜横穿",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_82B38E516C",
+      "primary_event_name": "牲畜横穿",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_82B38E516C"
+      ],
+      "query_event_names": [
+        "牲畜横穿"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_FE32C329F5",
+      "name": "草原公路",
+      "entity_type": "Resource",
+      "evidence": "草原公路路段",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_72D19A108A",
+      "final_entity_name": "草原公路",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_ABBF92E7B5",
+      "name": "拖移事故车辆",
+      "entity_type": "Action",
+      "evidence": "路政部门拖移事故车辆",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3024,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_D9A7C36974",
+      "final_entity_name": "拖移事故车辆",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_6D0A3FEE7A",
+      "name": "车辆滞留",
+      "entity_type": "Event",
+      "evidence": "车辆滞留5公里",
+      "confidence": 0.7,
+      "normalized_id": "EVT_VEHICLE_BACKLOG",
+      "normalized_name": "车辆积压",
+      "normalized_score": 0.2082,
+      "matched_alias": "车辆滞留",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_VEHICLE_BACKLOG",
+      "final_entity_name": "车辆积压",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_VEHICLE_BACKLOG",
+      "primary_event_name": "车辆积压",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "牲畜横穿",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_BE1E360E6A",
+      "source_final_id": "EVT_CASE_82B38E516C",
+      "source_final_name": "牲畜横穿",
+      "source_query_event_ids": [
+        "EVT_CASE_82B38E516C"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧翻",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_0485BB013D",
+      "target_final_id": "EVT_CASE_9CC62EF2EB",
+      "target_final_name": "车辆侧翻",
+      "target_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "草原公路路段，一群牛羊横穿公路，一辆小型轿车躲避不及，猛打方向盘侧翻至路边草地",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "拖移事故车辆",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_ABBF92E7B5",
+      "source_final_id": "MEA_CASE_D9A7C36974",
+      "source_final_name": "拖移事故车辆",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "草原公路",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_FE32C329F5",
+      "target_final_id": "RES_CASE_72D19A108A",
+      "target_final_name": "草原公路",
+      "target_query_event_ids": [],
+      "evidence": "路政部门拖移事故车辆，恢复交通",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are assigned based on the clarity of the relationship in the text."
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "草原公路路段，一群牛羊横穿公路，一辆小型轿车躲避不及，猛打方向盘侧翻至路边草地，车辆四轮朝天，车内2人被困，草原视野开阔，但牲畜管控松散。",
+    "consequence_text": "2人轻微受伤，轿车报废，无牲畜伤亡，草原公路封闭，车辆滞留5公里，侧翻车辆有漏油起火风险，救援车辆需长途赶赴。",
+    "measure_text": "交警联合当地牧民，驱赶牲畜至安全区域，设置警戒区域；消防人员救出被困人员，排查车辆隐患；医疗人员对伤者进行处置；路政部门拖移事故车辆，恢复交通；劝导牧民加强牲畜管控，增设牲畜横穿警示标志，3小时后道路恢复通行。"
+  }
+}

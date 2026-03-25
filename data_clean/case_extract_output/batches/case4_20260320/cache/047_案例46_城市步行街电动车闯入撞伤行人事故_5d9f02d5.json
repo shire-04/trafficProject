@@ -1,0 +1,70 @@
+{
+  "case_id": "047_案例46_城市步行街电动车闯入撞伤行人事故_5d9f02d5",
+  "title": "案例46：城市步行街电动车闯入撞伤行人事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "电动自行车闯入步行街撞伤行人，造成人员轻伤和秩序混乱。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_501AA93C95",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_BA45E815DD",
+      "name": "车辆撞人事故",
+      "entity_type": "Event",
+      "evidence": "一辆电动自行车强行闯入步行街，高速行驶，撞上步行的3名行人，行人摔倒受伤。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_501AA93C95",
+      "final_entity_name": "车辆撞人事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_501AA93C95",
+      "primary_event_name": "车辆撞人事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_501AA93C95",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆撞人事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "城市商业步行街，严禁非机动车进入，一辆电动自行车强行闯入步行街，高速行驶，撞上步行的3名行人，行人摔倒受伤，步行街人流密集，现场混乱。",
+    "consequence_text": "3名行人轻微撞伤，骑行者轻微擦伤，步行街秩序混乱，购物群众受阻，易引发踩踏事故。",
+    "measure_text": "城管与交警到场，控制肇事骑行者，疏散人流，调处事故；医疗人员对伤者进行包扎；清理步行街，加装非机动车隔离设施，严禁闯入；1小时后步行街恢复正常秩序。"
+  }
+}

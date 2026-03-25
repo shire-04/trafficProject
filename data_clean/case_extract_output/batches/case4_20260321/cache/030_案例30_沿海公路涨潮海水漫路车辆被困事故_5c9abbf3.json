@@ -1,0 +1,186 @@
+{
+  "case_id": "030_案例30_沿海公路涨潮海水漫路车辆被困事故_5c9abbf3",
+  "title": "案例30：沿海公路涨潮海水漫路车辆被困事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "沿海临海公路因天文大潮导致海水漫路，2辆轿车和1辆SUV被困，4人被困车内，无人员伤亡，车辆受损，公路封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_363C4CEB8B",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_B86BDAC790",
+      "name": "道路漫水",
+      "entity_type": "Event",
+      "evidence": "沿海临海公路，恰逢天文大潮，海水漫过路面，水深达40厘米",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_363C4CEB8B",
+      "final_entity_name": "道路漫水",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_363C4CEB8B",
+      "primary_event_name": "道路漫水",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_363C4CEB8B",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "道路漫水",
+        "车辆积压",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "公路损毁"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_A0B83D83E3",
+      "name": "天文大潮",
+      "entity_type": "Event",
+      "evidence": "恰逢天文大潮",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_806E5440A3",
+      "final_entity_name": "天文大潮",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_806E5440A3",
+      "primary_event_name": "天文大潮",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_806E5440A3"
+      ],
+      "query_event_names": [
+        "天文大潮"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_110956589C",
+      "name": "海水漫路",
+      "entity_type": "Event",
+      "evidence": "海水漫过路面，水深达40厘米",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_F674C61725",
+      "final_entity_name": "海水漫路",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F674C61725",
+      "primary_event_name": "海水漫路",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_F674C61725"
+      ],
+      "query_event_names": [
+        "海水漫路"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "天文大潮",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_A0B83D83E3",
+      "source_final_id": "EVT_CASE_806E5440A3",
+      "source_final_name": "天文大潮",
+      "source_query_event_ids": [
+        "EVT_CASE_806E5440A3"
+      ],
+      "relation": "CAUSES",
+      "target": "道路漫水",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_B86BDAC790",
+      "target_final_id": "EVT_CASE_363C4CEB8B",
+      "target_final_name": "道路漫水",
+      "target_query_event_ids": [
+        "EVT_CASE_363C4CEB8B",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "evidence": "恰逢天文大潮，海水漫过路面",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "海水漫路",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_110956589C",
+      "source_final_id": "EVT_CASE_F674C61725",
+      "source_final_name": "海水漫路",
+      "source_query_event_ids": [
+        "EVT_CASE_F674C61725"
+      ],
+      "relation": "CAUSES",
+      "target": "道路漫水",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_B86BDAC790",
+      "target_final_id": "EVT_CASE_363C4CEB8B",
+      "target_final_name": "道路漫水",
+      "target_query_event_ids": [
+        "EVT_CASE_363C4CEB8B",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "evidence": "海水漫过路面",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 0,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "沿海临海公路，恰逢天文大潮，海水漫过路面，水深达40厘米，2辆小型轿车、1辆SUV驶入漫水路段后熄火，车内共4人被困，潮水持续上涨，车辆有被冲走风险。",
+    "consequence_text": "4人被困车内，无人员伤亡，车辆浸泡受损，沿海公路封闭，车辆滞留4公里，海水腐蚀路面与车辆零部件，潮水上涨加剧救援难度。",
+    "measure_text": "交警联合海事部门，封闭漫水路段，发布潮汐预警；消防人员携带救生装备，救出被困人员；路政部门待潮水退去后，抽排路面积水，清洗腐蚀路面；拖移被困车辆，检测路面安全；3小时后路面恢复通行，后续加强沿海公路潮汐预警。"
+  }
+}

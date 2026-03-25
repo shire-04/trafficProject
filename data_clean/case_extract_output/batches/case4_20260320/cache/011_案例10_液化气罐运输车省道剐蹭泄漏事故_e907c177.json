@@ -1,0 +1,124 @@
+{
+  "case_id": "011_案例10_液化气罐运输车省道剐蹭泄漏事故_e907c177",
+  "title": "案例10：液化气罐运输车省道剐蹭泄漏事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "液化气罐运输车在省道上与小型轿车剐蹭，导致液化气罐泄漏，周边群众疏散，道路封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_LEAK",
+    "expanded_event_ids": [
+      "EVT_HAZMAT_ACCIDENT",
+      "EVT_PRODUCTION_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_8E179C63B4",
+      "name": "液化气泄漏",
+      "entity_type": "Event",
+      "evidence": "货车车厢护栏破损，3瓶液化气罐掉落路面，其中1瓶阀门受损，少量液化气泄漏，现场弥漫刺鼻气味",
+      "confidence": 0.9,
+      "normalized_id": "EVT_HAZMAT_LEAK",
+      "normalized_name": "危险化学品运输泄漏事件",
+      "normalized_score": 0.0,
+      "matched_alias": "危险化学品运输泄漏事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_LEAK",
+      "final_entity_name": "危险化学品运输泄漏事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_LEAK",
+      "primary_event_name": "危险化学品运输泄漏事件",
+      "expanded_event_ids": [
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "危险货物运输事故",
+        "公路交通运输生产事故"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "query_event_names": [
+        "危险化学品运输泄漏事件",
+        "危险货物运输事故",
+        "公路交通运输生产事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_HAZMAT_LEAK"
+      ],
+      "alias_patch_target_names": [
+        "危险化学品运输泄漏事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_328F32BF27",
+      "name": "疏散",
+      "entity_type": "Action",
+      "evidence": "周边群众紧急疏散",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_1BCFC5476A",
+      "final_entity_name": "疏散",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "液化气泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_8E179C63B4",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "疏散",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_328F32BF27",
+      "target_final_id": "MEA_CASE_1BCFC5476A",
+      "target_final_name": "疏散",
+      "target_query_event_ids": [],
+      "evidence": "周边群众紧急疏散。",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在遗漏或不准确的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "省级公路路段，一辆运输家用液化气罐的轻型货车，与对向占道行驶的小型轿车发生剐蹭，货车车厢护栏破损，3瓶液化气罐掉落路面，其中1瓶阀门受损，少量液化气泄漏，现场弥漫刺鼻气味，周边有沿街商铺和居民区。",
+    "consequence_text": "无人员伤亡，液化气泄漏形成易燃易爆气体云团，遇明火易引发爆炸燃烧，威胁周边商铺、居民安全，事故路段双向封闭，车辆绕行乡村小路，周边群众紧急疏散。",
+    "measure_text": "应急管理部门立即启动危化品应急预案，消防人员佩戴防护装备到场，稀释泄漏气体，严禁现场明火与电器开关操作，对受损气罐进行堵漏、转移；交警封闭路段，疏散周边群众与车辆；路政人员清理完好气罐，拖移事故车辆；环保部门检测周边空气质量，确认安全后解除警戒，3小时后路段恢复通行，对运输公司开展安全整改。"
+  }
+}

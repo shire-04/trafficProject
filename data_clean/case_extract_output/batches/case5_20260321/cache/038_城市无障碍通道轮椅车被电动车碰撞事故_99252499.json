@@ -1,0 +1,166 @@
+{
+  "case_id": "038_城市无障碍通道轮椅车被电动车碰撞事故_99252499",
+  "title": "城市无障碍通道轮椅车被电动车碰撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "电动自行车闯红灯与轮椅车碰撞，造成人员伤亡和交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9BDDC88CCC",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_4094F7FC39",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆电动自行车闯红灯快速通过路口，撞上轮椅车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9BDDC88CCC",
+      "final_entity_name": "车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9BDDC88CCC",
+      "primary_event_name": "车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞",
+        "公路中断",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_FB0861719A",
+      "name": "轮椅车侧翻",
+      "entity_type": "Event",
+      "evidence": "轮椅车侧翻",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_F78D7DF899",
+      "final_entity_name": "轮椅车侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F78D7DF899",
+      "primary_event_name": "轮椅车侧翻",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_F78D7DF899"
+      ],
+      "query_event_names": [
+        "轮椅车侧翻"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_4511E821E9",
+      "name": "公路中断",
+      "entity_type": "Event",
+      "evidence": "路口人行横道通行中断",
+      "confidence": 0.7,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.1979,
+      "matched_alias": "通行中断",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_4094F7FC39",
+      "source_final_id": "EVT_CASE_9BDDC88CCC",
+      "source_final_name": "车辆碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "轮椅车侧翻",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_FB0861719A",
+      "target_final_id": "EVT_CASE_F78D7DF899",
+      "target_final_name": "轮椅车侧翻",
+      "target_query_event_ids": [
+        "EVT_CASE_F78D7DF899"
+      ],
+      "evidence": "撞上轮椅车，轮椅车侧翻",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《无障碍环境建设条例》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "confidence score is estimated."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市主城区人行横道无障碍通道，一名老人乘坐轮椅在绿灯时通过人行横道，一辆电动自行车闯红灯快速通过路口，撞上轮椅车，轮椅车侧翻，老人摔倒在地，电动自行车骑行者也摔倒受伤，路口人流密集。",
+    "consequence_text": "造成老人1人重伤、电动自行车骑行者1人轻伤，轮椅车完全损毁，电动自行车轻微受损，路口人行横道通行中断，周边交通拥堵，围观群众聚集易引发二次事故。",
+    "measure_text": "交警部门立即封锁事故现场，疏散围观群众，开展现场勘查和责任认定；医疗部门派遣救护车赶赴现场，对受伤老人与骑行者进行紧急救治后转运至医院；城管部门协助清理现场，恢复路口通行秩序；依据《道路交通安全法》《无障碍环境建设条例》对电动自行车闯红灯行为进行从严处罚，后续在路口增设无障碍通道警示标志与闯红灯抓拍设备，1小时后路口恢复正常通行。"
+  }
+}

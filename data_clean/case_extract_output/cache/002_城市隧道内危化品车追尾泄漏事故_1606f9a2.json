@@ -1,0 +1,183 @@
+{
+  "case_id": "002_城市隧道内危化品车追尾泄漏事故_1606f9a2",
+  "title": "城市隧道内危化品车追尾泄漏事故",
+  "source_file": "交通应急处理案例.txt",
+  "summary": "某市环城隧道内，一辆装载柴油的危化品运输车与私家车发生追尾，导致危化品泄漏，隧道通风系统受损，造成人员轻伤和车辆滞留，并存在环境污染风险。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_LEAK",
+    "expanded_event_ids": [
+      "EVT_HAZMAT_ACCIDENT",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_03AE7FF47D",
+      "name": "危化品泄漏",
+      "entity_type": "Event",
+      "evidence": "导致危化品运输车罐体破损，柴油持续泄漏，隧道内弥漫大量可燃蒸汽",
+      "confidence": 0.9,
+      "normalized_id": "EVT_HAZMAT_LEAK",
+      "normalized_name": "危险化学品运输泄漏事件",
+      "normalized_score": 0.0,
+      "matched_alias": "危险化学品运输泄漏事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_LEAK",
+      "final_entity_name": "危险化学品运输泄漏事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_LEAK",
+      "primary_event_name": "危险化学品运输泄漏事件",
+      "expanded_event_ids": [
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "危险货物运输事故",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "危险化学品运输泄漏事件",
+        "危险货物运输事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_HAZMAT_LEAK"
+      ],
+      "alias_patch_target_names": [
+        "危险化学品运输泄漏事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_D8AE301AF1",
+      "name": "追尾事故",
+      "entity_type": "Event",
+      "evidence": "一辆装载30吨柴油的罐式危化品运输车，与前方一辆私家车发生追尾",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_4D219D5D07",
+      "final_entity_name": "追尾事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_4D219D5D07",
+      "primary_event_name": "追尾事故",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_4D219D5D07"
+      ],
+      "query_event_names": [
+        "追尾事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_8B9AF47555",
+      "name": "隧道通风系统受损",
+      "entity_type": "Event",
+      "evidence": "隧道通风系统因碰撞受损无法正常运行",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_27A1F93878",
+      "final_entity_name": "隧道通风系统受损",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_27A1F93878",
+      "primary_event_name": "隧道通风系统受损",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_27A1F93878"
+      ],
+      "query_event_names": [
+        "隧道通风系统受损"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_D8AE301AF1",
+      "source_final_id": "EVT_CASE_4D219D5D07",
+      "source_final_name": "追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_4D219D5D07"
+      ],
+      "relation": "CAUSES",
+      "target": "危化品泄漏",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_03AE7FF47D",
+      "target_final_id": "EVT_HAZMAT_LEAK",
+      "target_final_name": "危险化学品运输泄漏事件",
+      "target_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "与前方一辆私家车发生追尾，导致危化品运输车罐体破损，柴油持续泄漏",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_D8AE301AF1",
+      "source_final_id": "EVT_CASE_4D219D5D07",
+      "source_final_name": "追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_4D219D5D07"
+      ],
+      "relation": "CAUSES",
+      "target": "隧道通风系统受损",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_8B9AF47555",
+      "target_final_id": "EVT_CASE_27A1F93878",
+      "target_final_name": "隧道通风系统受损",
+      "target_query_event_ids": [
+        "EVT_CASE_27A1F93878"
+      ],
+      "evidence": "隧道内弥漫大量可燃蒸汽，且隧道通风系统因碰撞受损无法正常运行。",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市环城隧道（长1200米）内，一辆装载30吨柴油的罐式危化品运输车，与前方一辆私家车发生追尾，导致危化品运输车罐体破损，柴油持续泄漏，隧道内弥漫大量可燃蒸汽，能见度降低，且隧道通风系统因碰撞受损无法正常运行。",
+    "consequence_text": "造成私家车驾驶员1人轻伤、被困，危化品泄漏形成可燃蒸汽云，存在爆炸、起火风险，隧道双向交通全面封闭，隧道内滞留车辆12辆，泄漏柴油顺着隧道排水系统蔓延至隧道出口周边，可能造成土壤和水体污染。",
+    "measure_text": "应急管理部门启动《危险化学品道路运输突发事件应急预案》，协调消防救援队伍携带防化装备、堵漏器材赶赴现场，对泄漏点进行围堵堵漏，开启备用通风设备排出可燃蒸汽；交警部门在隧道出入口设置警戒，禁止车辆、人员进入，同步疏导周边交通；环保部门对泄漏区域及周边土壤、水体进行采样监测，采取吸附、收集等措施控制污染扩散；医疗部门对轻伤人员进行现场处置后转运至医院；危化品专业处置队伍到场后，对剩余柴油进行安全转运，交通部门对隧道进行全面清理和安全检测，8小时后隧道恢复通行。"
+  }
+}

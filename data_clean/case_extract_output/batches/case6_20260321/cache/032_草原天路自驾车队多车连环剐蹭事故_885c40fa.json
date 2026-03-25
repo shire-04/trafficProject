@@ -1,0 +1,144 @@
+{
+  "case_id": "032_草原天路自驾车队多车连环剐蹭事故_885c40fa",
+  "title": "草原天路自驾车队多车连环剐蹭事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "草原天路观景台路段发生多车剐蹭、追尾事故，导致道路交通中断，车辆和人员滞留。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_6B0244EB44",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_81A46A684F",
+      "name": "多车剐蹭",
+      "entity_type": "Event",
+      "evidence": "后方一支由8辆私家车组成的自驾车队，在避让路边停车时，接连发生多车剐蹭、追尾",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_6B0244EB44",
+      "final_entity_name": "多车剐蹭",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_6B0244EB44",
+      "primary_event_name": "多车剐蹭",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_6B0244EB44",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "多车剐蹭",
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_514DFAB022",
+      "name": "追尾",
+      "entity_type": "Event",
+      "evidence": "接连发生多车剐蹭、追尾",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_9E8EF23981",
+      "final_entity_name": "追尾",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9E8EF23981",
+      "primary_event_name": "追尾",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_9E8EF23981"
+      ],
+      "query_event_names": [
+        "追尾"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "多车剐蹭",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_81A46A684F",
+      "source_final_id": "EVT_CASE_6B0244EB44",
+      "source_final_name": "多车剐蹭",
+      "source_query_event_ids": [
+        "EVT_CASE_6B0244EB44",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "追尾",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_514DFAB022",
+      "target_final_id": "EVT_CASE_9E8EF23981",
+      "target_final_name": "追尾",
+      "target_query_event_ids": [
+        "EVT_CASE_9E8EF23981"
+      ],
+      "evidence": "接连发生多车剐蹭、追尾",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores are assigned based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某草原天路网红观景台路段，因自驾游客停车拍照，占用大半行车道，后方一支由8辆私家车组成的自驾车队，在避让路边停车时，接连发生多车剐蹭、追尾，4辆车辆不同程度受损，停在路面无法移动，观景台路段双向交通完全中断，数百辆自驾车滞留。",
+    "consequence_text": "无人员伤亡，4辆车辆不同程度受损，草原天路双向交通封闭，车辆滞留约10公里，网红观景台游客聚集，易引发踩踏、二次事故，草原旅游旺季通行受到严重影响。",
+    "measure_text": "当地交警、文旅部门立即赶赴现场，对事故车辆进行快速定损、快速处置，引导可移动车辆有序停靠路边，让出通行车道；疏导滞留车辆分批有序通行，清理路边违规停车的车辆，设置临时停车区域，引导游客规范停车拍照；依据《道路交通安全法》对违规停车、事故驾驶员进行处罚与安全教育，2小时后道路恢复正常通行。"
+  }
+}

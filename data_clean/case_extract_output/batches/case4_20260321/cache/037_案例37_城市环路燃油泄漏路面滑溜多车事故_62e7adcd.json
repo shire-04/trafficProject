@@ -1,0 +1,311 @@
+{
+  "case_id": "037_案例37_城市环路燃油泄漏路面滑溜多车事故_62e7adcd",
+  "title": "案例37：城市环路燃油泄漏路面滑溜多车事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "城市环路因货车燃油泄漏导致路面湿滑，引发多车侧滑剐蹭事故，造成道路拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_LEAK",
+    "expanded_event_ids": [
+      "EVT_ROAD_ICE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_E929D0695C",
+      "name": "燃油泄漏",
+      "entity_type": "Event",
+      "evidence": "一辆货车油箱破损，大量燃油泄漏路面",
+      "confidence": 0.9,
+      "normalized_id": "EVT_HAZMAT_LEAK",
+      "normalized_name": "危险化学品运输泄漏事件",
+      "normalized_score": 0.0,
+      "matched_alias": "危险化学品运输泄漏事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_LEAK",
+      "final_entity_name": "危险化学品运输泄漏事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_LEAK",
+      "primary_event_name": "危险化学品运输泄漏事件",
+      "expanded_event_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "道路积冰",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_ROAD_ICE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "危险化学品运输泄漏事件",
+        "道路积冰",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_HAZMAT_LEAK"
+      ],
+      "alias_patch_target_names": [
+        "危险化学品运输泄漏事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_C4D509088D",
+      "name": "路面湿滑",
+      "entity_type": "Event",
+      "evidence": "路面湿滑油腻",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_8A08402BEF",
+      "final_entity_name": "路面湿滑",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_8A08402BEF",
+      "primary_event_name": "路面湿滑",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_8A08402BEF"
+      ],
+      "query_event_names": [
+        "路面湿滑"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_D5C968FBA1",
+      "name": "车辆侧滑",
+      "entity_type": "Action",
+      "evidence": "4辆小型轿车行驶中相继侧滑",
+      "confidence": 0.85,
+      "normalized_id": "MEA_CASE_7719C4F54E",
+      "normalized_name": "车辆侧滑",
+      "normalized_score": 1.0,
+      "matched_alias": "车辆侧滑",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_7719C4F54E",
+      "final_entity_name": "车辆侧滑",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_4BA15F0BC9",
+      "name": "车辆剐蹭",
+      "entity_type": "Action",
+      "evidence": "相继侧滑、剐蹭",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B1ACF5666D",
+      "final_entity_name": "车辆剐蹭",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_4619F13715",
+      "name": "吸油毡",
+      "entity_type": "Resource",
+      "evidence": "使用吸油毡、沙土吸附燃油",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.6114,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_AE8D95582F",
+      "final_entity_name": "吸油毡",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_1F8CA75C49",
+      "name": "沙土",
+      "entity_type": "Resource",
+      "evidence": "使用吸油毡、沙土吸附燃油",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_695B3DCAFD",
+      "final_entity_name": "沙土",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "燃油泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_E929D0695C",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_ROAD_ICE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "路面湿滑",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_C4D509088D",
+      "target_final_id": "EVT_CASE_8A08402BEF",
+      "target_final_name": "路面湿滑",
+      "target_query_event_ids": [
+        "EVT_CASE_8A08402BEF"
+      ],
+      "evidence": "大量燃油泄漏路面，路面湿滑油腻",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "路面湿滑",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_C4D509088D",
+      "source_final_id": "EVT_CASE_8A08402BEF",
+      "source_final_name": "路面湿滑",
+      "source_query_event_ids": [
+        "EVT_CASE_8A08402BEF"
+      ],
+      "relation": "TRIGGERS",
+      "target": "车辆侧滑",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_D5C968FBA1",
+      "target_final_id": "MEA_CASE_7719C4F54E",
+      "target_final_name": "车辆侧滑",
+      "target_query_event_ids": [],
+      "evidence": "路面湿滑油腻，后续4辆小型轿车行驶中相继侧滑",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "路面湿滑",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_C4D509088D",
+      "source_final_id": "EVT_CASE_8A08402BEF",
+      "source_final_name": "路面湿滑",
+      "source_query_event_ids": [
+        "EVT_CASE_8A08402BEF"
+      ],
+      "relation": "TRIGGERS",
+      "target": "车辆剐蹭",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_4BA15F0BC9",
+      "target_final_id": "MEA_CASE_B1ACF5666D",
+      "target_final_name": "车辆剐蹭",
+      "target_query_event_ids": [],
+      "evidence": "路面湿滑油腻，后续4辆小型轿车行驶中相继剐蹭",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "车辆侧滑",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_D5C968FBA1",
+      "source_final_id": "MEA_CASE_7719C4F54E",
+      "source_final_name": "车辆侧滑",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "吸油毡",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_4619F13715",
+      "target_final_id": "RES_CASE_AE8D95582F",
+      "target_final_name": "吸油毡",
+      "target_query_event_ids": [],
+      "evidence": "消防人员使用吸油毡、沙土吸附燃油，稀释路面",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "车辆侧滑",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_D5C968FBA1",
+      "source_final_id": "MEA_CASE_7719C4F54E",
+      "source_final_name": "车辆侧滑",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "沙土",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_1F8CA75C49",
+      "target_final_id": "RES_CASE_695B3DCAFD",
+      "target_final_name": "沙土",
+      "target_query_event_ids": [],
+      "evidence": "消防人员使用吸油毡、沙土吸附燃油，稀释路面",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在不确定性。",
+    "部分关系的证据较弱，置信度较低。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "城市环路路段，一辆货车油箱破损，大量燃油泄漏路面，路面湿滑油腻，后续4辆小型轿车行驶中相继侧滑、剐蹭，车辆横停路面，无人员被困。",
+    "consequence_text": "无人员伤亡，多车剐蹭受损，燃油泄漏易引发起火爆炸，环路单向拥堵8公里，油腻路面持续影响后续车辆通行。",
+    "measure_text": "交警封闭事故路段，严禁明火与吸烟，疏导车辆分流；消防人员使用吸油毡、沙土吸附燃油，稀释路面；路政部门拖移事故车辆，全面清洗油腻路面，检测安全后恢复交通；对货车油箱破损追责，3小时后道路恢复正常。"
+  }
+}

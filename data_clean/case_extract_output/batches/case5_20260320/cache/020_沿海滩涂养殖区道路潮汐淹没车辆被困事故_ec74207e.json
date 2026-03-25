@@ -1,0 +1,135 @@
+{
+  "case_id": "020_沿海滩涂养殖区道路潮汐淹没车辆被困事故_ec74207e",
+  "title": "沿海滩涂养殖区道路潮汐淹没车辆被困事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "某沿海滩涂养殖区道路因潮汐上涨淹没，导致车辆被困，人员被困车顶，后经救援人员安全转移。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_E04B444992",
+    "expanded_event_ids": [
+      "EVT_ROAD_DAMAGE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_21418BC407",
+      "name": "道路积水",
+      "entity_type": "Event",
+      "evidence": "某沿海滩涂养殖区专用道路，恰逢天文大潮涨潮，海水快速淹没路面，水深达50厘米",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_E04B444992",
+      "final_entity_name": "道路潮汐淹没",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_E04B444992",
+      "primary_event_name": "道路潮汐淹没",
+      "expanded_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路损毁",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_E04B444992",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "道路潮汐淹没",
+        "公路损毁",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路损毁",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_C581D4995F",
+      "name": "潮汐",
+      "entity_type": "Event",
+      "evidence": "天文大潮涨潮",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_3DADFD6D44",
+      "final_entity_name": "潮汐",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_3DADFD6D44",
+      "primary_event_name": "潮汐",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_3DADFD6D44"
+      ],
+      "query_event_names": [
+        "潮汐"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "潮汐",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_C581D4995F",
+      "source_final_id": "EVT_CASE_3DADFD6D44",
+      "source_final_name": "潮汐",
+      "source_query_event_ids": [
+        "EVT_CASE_3DADFD6D44"
+      ],
+      "relation": "CAUSES",
+      "target": "道路积水",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_21418BC407",
+      "target_final_id": "EVT_CASE_E04B444992",
+      "target_final_name": "道路潮汐淹没",
+      "target_query_event_ids": [
+        "EVT_CASE_E04B444992",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "恰逢天文大潮涨潮，海水快速淹没路面",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《沿海滩涂安全管理办法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on the provided text and entity catalog. Some relationships might have lower confidence due to implicit connections."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某沿海滩涂养殖区专用道路，恰逢天文大潮涨潮，海水快速淹没路面，水深达50厘米，2辆小型轿车、1辆SUV驶入淹没路段后相继熄火，车内共5人被困车顶，潮水持续上涨，车辆有被冲走、淹没的风险，周边无高处避险区域。",
+    "consequence_text": "造成5人被困车顶，无人员伤亡，车辆浸泡受损，养殖区专用道路完全封闭，养殖区作业车辆无法通行，潮水上涨导致被困人员面临溺水风险，救援难度大。",
+    "measure_text": "当地海事部门、应急管理部门接到报警后，立即协调消防救援队伍、海洋渔业部门携带冲锋舟、救生衣赶赴现场；海洋渔业部门实时监测潮汐变化，预判涨潮峰值；消防救援队伍使用冲锋舟将被困人员全部安全转移至岸边；交警部门封闭养殖区道路，设置潮汐警示标志，严禁车辆、人员在涨潮时段进入；路政部门待潮水退去后，拖移被困车辆，对道路进行安全检测；依据《沿海滩涂安全管理办法》开展处置，后续在道路入口增设潮汐预警牌与防护设施，2小时后被困人员全部安全转移。"
+  }
+}

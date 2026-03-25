@@ -1,0 +1,232 @@
+{
+  "case_id": "028_乡村庙会路段人流密集货车失控事故_f1a255c1",
+  "title": "乡村庙会路段人流密集货车失控事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "乡村庙会路段，货车失控冲撞人流和摊位，造成人员受伤和财产损失，庙会活动暂停。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_42AEE3CEDE",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_D133BBBD47",
+      "name": "车辆失控",
+      "entity_type": "Event",
+      "evidence": "一辆轻型货车行驶至庙会路段时，因驾驶员操作不当，车辆失控低速冲撞人流",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_42AEE3CEDE",
+      "final_entity_name": "车辆失控",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_42AEE3CEDE",
+      "primary_event_name": "车辆失控",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_42AEE3CEDE",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆失控",
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_43576E2116",
+      "name": "冲撞",
+      "entity_type": "Action",
+      "evidence": "车辆失控低速冲撞人流",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_E3CAFF2C92",
+      "final_entity_name": "冲撞",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_54EC42B823",
+      "name": "剐蹭",
+      "entity_type": "Action",
+      "evidence": "连续剐蹭多个摊位",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_0FB4540844",
+      "final_entity_name": "剐蹭",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_A11AC1269A",
+      "name": "货物",
+      "entity_type": "Resource",
+      "evidence": "摊位货物散落一地",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_199059C4DE",
+      "final_entity_name": "货物",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆失控",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_D133BBBD47",
+      "source_final_id": "EVT_CASE_42AEE3CEDE",
+      "source_final_name": "车辆失控",
+      "source_query_event_ids": [
+        "EVT_CASE_42AEE3CEDE",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "冲撞",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_43576E2116",
+      "target_final_id": "MEA_CASE_E3CAFF2C92",
+      "target_final_name": "冲撞",
+      "target_query_event_ids": [],
+      "evidence": "车辆失控低速冲撞人流",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "车辆失控",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_D133BBBD47",
+      "source_final_id": "EVT_CASE_42AEE3CEDE",
+      "source_final_name": "车辆失控",
+      "source_query_event_ids": [
+        "EVT_CASE_42AEE3CEDE",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "剐蹭",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_54EC42B823",
+      "target_final_id": "MEA_CASE_0FB4540844",
+      "target_final_name": "剐蹭",
+      "target_query_event_ids": [],
+      "evidence": "连续剐蹭多个摊位",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "冲撞",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_43576E2116",
+      "source_final_id": "MEA_CASE_E3CAFF2C92",
+      "source_final_name": "冲撞",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "货物",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_A11AC1269A",
+      "target_final_id": "RES_CASE_199059C4DE",
+      "target_final_name": "货物",
+      "target_query_event_ids": [],
+      "evidence": "摊位货物散落一地",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《大型群众性活动安全管理条例》"
+  ],
+  "quality_notes": [
+    "人员伤亡数据来自consequence_text，已提取。",
+    "Relationships are based on direct textual evidence.",
+    "Confidence scores reflect the strength of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 9,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡村传统庙会举办路段，庙会人流密集，沿乡村公路两侧设置大量摊位，一辆轻型货车行驶至庙会路段时，因驾驶员操作不当，车辆失控低速冲撞人流，连续剐蹭多个摊位后停下，多名赶庙会群众被碰倒，摊位货物散落一地，现场人流混乱。",
+    "consequence_text": "造成6名群众轻微擦伤、3名摊主软组织挫伤，摊位与货物损毁，庙会路段交通完全中断，人流拥堵混乱，存在踩踏、二次冲撞的重大风险，庙会活动被迫暂停。",
+    "measure_text": "当地乡镇政府、派出所、庙会组委会立即赶赴现场，疏散拥堵人流，控制货车驾驶员，划定警戒区域；医疗部门派遣乡镇卫生院救护车对受伤人员进行现场处置，重伤员转运至县级医院；交警部门对车辆进行安全检测，开展事故责任认定；村委会、庙会组委会协助清理现场，规范摊位设置，严禁占用公路摆摊，分批次引导人流有序通行；依据《道路交通安全法》《大型群众性活动安全管理条例》开展处置，2小时后庙会路段恢复通行，庙会活动逐步恢复。"
+  }
+}

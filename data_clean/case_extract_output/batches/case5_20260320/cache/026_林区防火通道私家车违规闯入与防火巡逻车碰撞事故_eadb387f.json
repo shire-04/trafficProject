@@ -1,0 +1,223 @@
+{
+  "case_id": "026_林区防火通道私家车违规闯入与防火巡逻车碰撞事故_eadb387f",
+  "title": "林区防火通道私家车违规闯入与防火巡逻车碰撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "某国家级林区防火专用通道，一辆私家车违规闯入，与防火巡逻车发生正面碰撞，造成人员伤亡和车辆损毁，并阻碍了林区防火通道。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9BDDC88CCC",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_A39BDE4B1A",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆小型私家车为抄近路游玩，违规闯入防火通道，在弯道处与正常执行防火巡逻任务的巡逻车发生正面碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9BDDC88CCC",
+      "final_entity_name": "车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9BDDC88CCC",
+      "primary_event_name": "车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "车辆碰撞",
+        "交通事故",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "公路损毁"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_7F95EA8D2D",
+      "name": "消防救援队伍",
+      "entity_type": "Department",
+      "evidence": "消防救援队伍",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_CECFFFD120",
+      "final_entity_name": "消防救援队伍",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_2F7DDACEE6",
+      "name": "报警",
+      "entity_type": "Action",
+      "evidence": "接到报警",
+      "confidence": 0.6,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2643,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B396D82FB5",
+      "final_entity_name": "报警",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_D7321FBECB",
+      "name": "救援",
+      "entity_type": "Action",
+      "evidence": "消防救援队伍使用破拆工具解救被困人员",
+      "confidence": 0.6,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_4DEF057716",
+      "final_entity_name": "救援",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_A39BDE4B1A",
+      "source_final_id": "EVT_CASE_9BDDC88CCC",
+      "source_final_name": "车辆碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "relation": "TRIGGERS",
+      "target": "报警",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_2F7DDACEE6",
+      "target_final_id": "MEA_CASE_B396D82FB5",
+      "target_final_name": "报警",
+      "target_query_event_ids": [],
+      "evidence": "接到报警",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "救援",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_D7321FBECB",
+      "source_final_id": "MEA_CASE_4DEF057716",
+      "source_final_name": "救援",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "消防救援队伍",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_7F95EA8D2D",
+      "target_final_id": "ORG_CASE_CECFFFD120",
+      "target_final_name": "消防救援队伍",
+      "target_query_event_ids": [],
+      "evidence": "消防救援队伍使用破拆工具解救被困人员",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_A39BDE4B1A",
+      "source_final_id": "EVT_CASE_9BDDC88CCC",
+      "source_final_name": "车辆碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "relation": "TRIGGERS",
+      "target": "救援",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_D7321FBECB",
+      "target_final_id": "MEA_CASE_4DEF057716",
+      "target_final_name": "救援",
+      "target_query_event_ids": [],
+      "evidence": "消防救援队伍使用破拆工具解救被困人员",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《森林防火条例》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某国家级林区防火专用通道，严禁社会车辆进入，一辆小型私家车为抄近路游玩，违规闯入防火通道，在弯道处与正常执行防火巡逻任务的巡逻车发生正面碰撞，两车车头严重变形，私家车驾驶员与巡逻车内2名护林员被困。",
+    "consequence_text": "造成私家车驾驶员1人重伤、2名护林员轻伤，两车完全损毁，林区防火通道完全封闭，林区防火巡逻、应急处置通道受阻，正值森林防火高风险期，存在火情无法及时处置的重大风险。",
+    "measure_text": "林区防火办、应急管理部门接到报警后，立即协调消防救援队伍、医疗部门赶赴现场；消防救援队伍使用破拆工具解救被困人员，排查车辆漏油起火隐患；医疗部门对受伤人员进行紧急救治后转运至医院；交警部门开展现场勘查和责任认定，对私家车违规闯入防火通道行为进行从严处罚；林区管理部门对防火通道入口进行全面封堵，增设监控与警示标志；依据《森林防火条例》《道路交通安全法》开展处置，3小时后通道恢复通行。"
+  }
+}

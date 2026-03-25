@@ -1,4 +1,3 @@
-import difflib
 from neo4j import GraphDatabase
 from typing import Dict, List, Tuple
 from vectorDB import ChromaDBVectorStore 
@@ -19,7 +18,7 @@ class TrafficReasoningEngine:
         self.driver.close()
 
     def _load_event_names(self) -> List[str]:
-        """加载 Neo4j 中所有 Event 节点的名字用于模糊匹配"""
+        """加载 Neo4j 中所有 Event 节点名，供语义路由索引同步使用。"""
         if not self._event_name_cache:
             with self.driver.session() as session:
                 result = session.run("MATCH (e:Event) RETURN e.name as name")
@@ -30,7 +29,7 @@ class TrafficReasoningEngine:
         return self._event_name_cache
 
     def _normalize_search_terms(self, keyword: str) -> Tuple[List[str], List[Dict]]:
-        """语义路由 + 模糊匹配，扩展搜索词"""
+        """基于语义路由扩展搜索词，不再做代码侧包含/模糊匹配。"""
         if not keyword:
             return [], []
 
@@ -59,21 +58,11 @@ class TrafficReasoningEngine:
             for route in semantic_routes:
                 add_term(route.get('event_name', ''))
 
-            # 2. 字符串包含匹配
-            contains_matches = [name for name in event_names if keyword in name or name in keyword]
-            for name in contains_matches:
-                add_term(name)
-
-            # 3. 模糊匹配 (Fuzzy Match)
-            fuzzy_matches = difflib.get_close_matches(keyword, event_names, n=5, cutoff=0.4)
-            for name in fuzzy_matches:
-                add_term(name)
-
         return ordered_terms, semantic_routes
 
     def query_graph(self, event_keyword: str) -> Dict:
         """
-        V3.0 终极版算法：适配 CLASSIFIED_AS, CONSISTS_OF, MITIGATES 新架构
+        V3.0 查询算法：聚焦事件触发、推理链条与资源需求
         """
         search_terms, semantic_routes = self._normalize_search_terms(event_keyword)
         if not search_terms and event_keyword:
@@ -84,7 +73,6 @@ class TrafficReasoningEngine:
             "Query_Terms": search_terms,
             "Matched_Events": [],
             "Semantic_Routes": semantic_routes,
-            "Severity_Standards": [], # 【新增】对应 CLASSIFIED_AS
             "Direct_Actions": [],     # 对应 TRIGGERS
             "Consequences": [],       # 对应 LEADS_TO
             "Indirect_Actions": [],   # 对应 CONSISTS_OF / MITIGATES / NEXT_STEP
@@ -94,19 +82,7 @@ class TrafficReasoningEngine:
         with self.driver.session() as session:
             matched_events = set()
 
-            # --- 路径 1：事故定级 (Event -> CLASSIFIED_AS -> Standard) 【新增功能】 ---
-            # 这对应原来的 FALLS_UNDER
-            result_severity = session.run("""
-                MATCH (e:Event)-[:CLASSIFIED_AS]->(s:Event)
-                WHERE any(term IN $terms WHERE e.name CONTAINS term OR term CONTAINS e.name)
-                RETURN e.name as event, s.name as standard
-            """, terms=search_terms)
-            
-            for record in result_severity:
-                matched_events.add(record["event"])
-                context_data["Severity_Standards"].append(record["standard"])
-
-            # --- 路径 2：直接快速响应 (Event -> TRIGGERS -> Action) ---
+            # --- 路径 1：直接快速响应 (Event -> TRIGGERS -> Action) ---
             result_direct = session.run("""
                 MATCH (e:Event)-[:TRIGGERS]->(a:Action)
                 WHERE any(term IN $terms WHERE e.name CONTAINS term OR term CONTAINS e.name)
@@ -117,7 +93,7 @@ class TrafficReasoningEngine:
                 matched_events.add(record["event"])
                 context_data["Direct_Actions"].append(record["action"])
 
-            # --- 路径 3：深度推理链条 ---
+            # --- 路径 2：深度推理链条 ---
             # 逻辑：Event -> LEADS_TO -> Consequence
             #      然后 Consequence -[:CONSISTS_OF]-> Action (原 REALIZED_AS)
             #      或者 Action -[:MITIGATES]-> Consequence (反向缓解)
@@ -148,26 +124,12 @@ class TrafficReasoningEngine:
                     if record[key]:
                         context_data["Indirect_Actions"].append(record[key])
 
-            # --- 兜底逻辑：如果前面的复杂关系没查到，尝试根据后果关键词硬搜 ---
             all_actions = list(set(context_data["Direct_Actions"] + context_data["Indirect_Actions"]))
-            
-            if not all_actions and context_data["Consequences"]:
-                print("⚠ 路径断裂，启动模糊匹配兜底...")
-                for cons in context_data["Consequences"]:
-                    if "伤" in cons or "亡" in cons or "火" in cons:
-                        fallback_query = """
-                            MATCH (a:Action) 
-                            WHERE a.name CONTAINS "救治" OR a.name CONTAINS "消防" OR a.name CONTAINS "现场"
-                            RETURN a.name as action LIMIT 3
-                        """
-                        fallback_res = session.run(fallback_query)
-                        for r in fallback_res:
-                            context_data["Indirect_Actions"].append(r["action"])
-            
+
             # 更新 all_actions
             all_actions = list(set(context_data["Direct_Actions"] + context_data["Indirect_Actions"]))
 
-            # --- 路径 4：资源查找 (Action -> REQUIRES -> Resource) ---
+            # --- 路径 3：资源查找 (Action -> REQUIRES -> Resource) ---
             if all_actions:
                 result_res = session.run("""
                     MATCH (a:Action)-[:REQUIRES]->(r:Resource)
@@ -177,7 +139,6 @@ class TrafficReasoningEngine:
                 context_data["Resources"] = [r["resource"] for r in result_res]
 
             # 数据清洗去重
-            context_data["Severity_Standards"] = list(set(context_data["Severity_Standards"]))
             context_data["Consequences"] = list(set(context_data["Consequences"]))
             context_data["Direct_Actions"] = list(set(context_data["Direct_Actions"]))
             context_data["Resources"] = list(set(context_data["Resources"]))
@@ -220,17 +181,8 @@ class TrafficReasoningEngine:
 """
         
         user_desc = data.get('User_Input', data['Trigger_Event'])
-        
-        # 2. 格式化“候选标准”
-        # 我们把图谱查出来的所有标准列出来，让 LLM 自己选
-        standards_text = "（系统检索到以下候选定级标准，请根据死伤人数逻辑判断适用哪一条）：\n"
-        if data['Severity_Standards']:
-            for i, std in enumerate(data['Severity_Standards'], 1):
-                standards_text += f"   - 候选标准 {i}: {std}\n"
-        else:
-            standards_text = "   - 暂无明确分级标准参考"
 
-        # 3. 构建 Prompt
+        # 2. 构建 Prompt
         prompt = f"""
 ### 角色设定
 你是指挥城市交通应急指挥中心（TCC）的**首席调度官**。你具备极强的逻辑判断能力和法规意识。
@@ -239,11 +191,9 @@ class TrafficReasoningEngine:
 **用户报警描述**："{user_desc}" 
 
 ### 📊 知识图谱研判数据
-1. **事故定级参考** (法务关注)：
-{standards_text}
-2. **潜在后果链**：{', '.join(data['Consequences'])}
-3. **推荐处置方案** (含战术动作)：{'; '.join(list(set(data['Direct_Actions'] + data['Indirect_Actions'])))}
-4. **关键资源需求**：{', '.join(data['Resources'])}
+    1. **潜在后果链**：{', '.join(data['Consequences'])}
+    2. **推荐处置方案** (含战术动作)：{'; '.join(list(set(data['Direct_Actions'] + data['Indirect_Actions'])))}
+    3. **关键资源需求**：{', '.join(data['Resources'])}
 
 ### ⚖️ 法规与预案原文依据 (RAG检索)
 {vector_context}
@@ -252,9 +202,9 @@ class TrafficReasoningEngine:
 请综合上述信息，生成最终管控方案。
 
 **🔥 核心任务一：定性分析（必须执行）**
-请阅读“用户报警描述”中的伤亡/损失情况，与“事故定级参考”中的候选标准进行比对。
-* **排除错误标准**：指明哪些标准不符合当前数值（例如：当前6死，不符合“30人以上死亡”的标准）。
-* **确定最终等级**：明确指出当前事故属于哪一级（如：重大、较大、一般）。
+    请仅依据“用户报警描述”中的伤亡、损失、影响范围等事实自行完成事件定级。
+    * **说明判断依据**：明确引用触发定级判断的关键事实。
+    * **确定最终等级**：明确指出当前事故属于哪一级（如：重大、较大、一般）。
 
 **核心任务二：管控策略生成**
 基于定级结论，制定详细策略：

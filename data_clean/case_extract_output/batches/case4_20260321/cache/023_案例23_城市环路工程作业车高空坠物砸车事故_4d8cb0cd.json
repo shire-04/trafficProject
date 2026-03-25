@@ -1,0 +1,115 @@
+{
+  "case_id": "023_案例23_城市环路工程作业车高空坠物砸车事故_4d8cb0cd",
+  "title": "案例23：城市环路工程作业车高空坠物砸车事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "城市环路高架工程作业车高空坠物砸车，造成车辆受损、驾驶员受伤，并导致道路封闭拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CONSTRUCTION_ACCIDENT",
+    "expanded_event_ids": [
+      "EVT_CONSTRUCTION_SAFETY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_0EF3EF652B",
+      "name": "高空坠物",
+      "entity_type": "Event",
+      "evidence": "工具包不慎从高空坠落，砸中下方正常行驶的小型轿车车顶",
+      "confidence": 0.9,
+      "normalized_id": "EVT_CONSTRUCTION_ACCIDENT",
+      "normalized_name": "公路工程建设事故",
+      "normalized_score": 0.0,
+      "matched_alias": "公路工程建设事故",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_CONSTRUCTION_ACCIDENT",
+      "final_entity_name": "公路工程建设事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_CONSTRUCTION_ACCIDENT",
+      "primary_event_name": "公路工程建设事故",
+      "expanded_event_ids": [
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "expanded_event_names": [
+        "施工安全事故"
+      ],
+      "query_event_ids": [
+        "EVT_CONSTRUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "query_event_names": [
+        "公路工程建设事故",
+        "施工安全事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_EE3A907784",
+      "name": "安全整改",
+      "entity_type": "Action",
+      "evidence": "对施工单位进行安全整改",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_A0148F49D9",
+      "final_entity_name": "安全整改",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "高空坠物",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_0EF3EF652B",
+      "source_final_id": "EVT_CONSTRUCTION_ACCIDENT",
+      "source_final_name": "公路工程建设事故",
+      "source_query_event_ids": [
+        "EVT_CONSTRUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "relation": "TRIGGERS",
+      "target": "安全整改",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_EE3A907784",
+      "target_final_id": "MEA_CASE_A0148F49D9",
+      "target_final_name": "安全整改",
+      "target_query_event_ids": [],
+      "evidence": "高空坠物易再次砸中过往车辆，存在重大安全隐患。",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are assigned based on the clarity of the relationship in the text."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "城市环路高架工程作业，一辆高空作业车在检修高架路灯时，工具包不慎从高空坠落，砸中下方正常行驶的小型轿车车顶，车顶凹陷，玻璃破碎，车辆失控撞上护栏，驾驶员被困车内。",
+    "consequence_text": "驾驶员轻微受伤，轿车严重受损，高空坠物易再次砸中过往车辆，环路单向车道封闭，车辆拥堵5公里，工程作业中断，存在重大安全隐患。",
+    "measure_text": "交警快速到场，封锁事故区域，救出被困驾驶员；工程施工单位暂停作业，清理高空工具，排查坠物隐患；路政人员拖移事故车辆，修复护栏；医疗人员转运伤者就医；对施工单位进行安全整改，追责相关操作人员，2小时后道路恢复通行，作业逐步重启。"
+  }
+}

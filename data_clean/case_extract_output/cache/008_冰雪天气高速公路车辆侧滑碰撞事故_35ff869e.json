@@ -1,0 +1,172 @@
+{
+  "case_id": "008_冰雪天气高速公路车辆侧滑碰撞事故_35ff869e",
+  "title": "冰雪天气高速公路车辆侧滑碰撞事故",
+  "source_file": "交通应急处理案例.txt",
+  "summary": "冰雪天气导致高速公路车辆侧滑碰撞，造成人员伤亡和交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_51C41B32E7",
+    "expanded_event_ids": [
+      "EVT_ROAD_ICE",
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_D6C193A5A3",
+      "name": "车辆侧滑碰撞",
+      "entity_type": "Event",
+      "evidence": "大广高速衡水段K1023公里处，因夜间气温骤降（零下5℃），路面结冰湿滑，一辆大型客车（载有32名乘客）行驶中发生侧滑，与对向车道一辆重型货车发生正面碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_51C41B32E7",
+      "final_entity_name": "车辆侧滑碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_51C41B32E7",
+      "primary_event_name": "车辆侧滑碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "道路积冰",
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_51C41B32E7",
+        "EVT_ROAD_ICE",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧滑碰撞",
+        "道路积冰",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "道路积冰",
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_66E071D7AC",
+      "name": "路面结冰",
+      "entity_type": "Event",
+      "evidence": "路面结冰湿滑",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_C942A70A78",
+      "final_entity_name": "路面结冰",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_C942A70A78",
+      "primary_event_name": "路面结冰",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_C942A70A78"
+      ],
+      "query_event_names": [
+        "路面结冰"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_9B3B8BE618",
+      "name": "交通中断",
+      "entity_type": "Event",
+      "evidence": "事故路段双向交通中断",
+      "confidence": 0.8,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.1917,
+      "matched_alias": "交通中断",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "路面结冰",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_66E071D7AC",
+      "source_final_id": "EVT_CASE_C942A70A78",
+      "source_final_name": "路面结冰",
+      "source_query_event_ids": [
+        "EVT_CASE_C942A70A78"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧滑碰撞",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_D6C193A5A3",
+      "target_final_id": "EVT_CASE_51C41B32E7",
+      "target_final_name": "车辆侧滑碰撞",
+      "target_query_event_ids": [
+        "EVT_CASE_51C41B32E7",
+        "EVT_ROAD_ICE",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "因夜间气温骤降（零下5℃），路面结冰湿滑，一辆大型客车（载有32名乘客）行驶中发生侧滑，与对向车道一辆重型货车发生正面碰撞",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法实施条例》"
+  ],
+  "quality_notes": [
+    "Relationships are based on explicit statements in the text.",
+    "Confidence scores reflect the clarity of the relationship in the source text."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 6,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "大广高速衡水段K1023公里处，因夜间气温骤降（零下5℃），路面结冰湿滑，一辆大型客车（载有32名乘客）行驶中发生侧滑，与对向车道一辆重型货车发生正面碰撞，客车车身严重变形，货车车头受损，路面有大量散落物。",
+    "consequence_text": "造成客车内5人受伤、货车驾驶员1人重伤，32名乘客全部被困，事故路段双向交通中断，后方车辆滞留约10公里，路面结冰导致后续车辆存在侧滑碰撞的次生风险，散落物影响现场处置安全。",
+    "measure_text": "交警部门封闭事故路段，设置警示标志和减速带，安排警力在后方疏导交通；消防救援队伍使用破拆工具解救被困乘客和驾驶员，对变形车辆进行切割处置；医疗部门派遣多辆救护车将受伤人员转运至就近医院，同步开展伤员分类救治；交通部门调用除冰车对路面进行除冰作业，撒布融雪剂，清理路面散落物；气象部门实时监测气温和路面情况，及时发布冰雪预警；应急管理部门协调客运公司调配车辆，对被困乘客进行转运安置，依据《道路交通安全法实施条例》开展事故调查，7小时后路面冰雪清除完毕，事故车辆清理到位，道路恢复通行。"
+  }
+}

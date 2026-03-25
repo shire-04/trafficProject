@@ -1,0 +1,261 @@
+{
+  "case_id": "019_危化品运输车运输途中罐体受损事故_a4433109",
+  "title": "危化品运输车运输途中罐体受损事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "某国道路段，装载盐酸的罐式危化品运输车因路面颠簸罐体受损，盐酸少量泄漏，造成人员轻微灼伤、农田土壤腐蚀、威胁饮用水安全，并导致道路封闭和村民撤离。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_LEAK",
+    "expanded_event_ids": [
+      "EVT_HAZMAT_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_84BD30527E",
+      "name": "危险化学品泄漏",
+      "entity_type": "Event",
+      "evidence": "罐体受损，盐酸少量泄漏，泄漏的盐酸产生刺激性白雾",
+      "confidence": 0.9,
+      "normalized_id": "EVT_HAZMAT_LEAK",
+      "normalized_name": "危险化学品运输泄漏事件",
+      "normalized_score": 0.0,
+      "matched_alias": "危险化学品运输泄漏事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_LEAK",
+      "final_entity_name": "危险化学品运输泄漏事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_LEAK",
+      "primary_event_name": "危险化学品运输泄漏事件",
+      "expanded_event_ids": [
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "危险货物运输事故"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "query_event_names": [
+        "危险化学品运输泄漏事件",
+        "危险货物运输事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_381CE13046",
+      "name": "堵漏",
+      "entity_type": "Action",
+      "evidence": "对泄漏罐体进行堵漏",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_39D13A1B81",
+      "final_entity_name": "堵漏",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_F456F45A20",
+      "name": "采样监测",
+      "entity_type": "Action",
+      "evidence": "对周边土壤、水源进行采样监测",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2223,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_87C818ACA4",
+      "final_entity_name": "采样监测",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_4E7F85707E",
+      "name": "疏导",
+      "entity_type": "Action",
+      "evidence": "疏导过往车辆绕行",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1758,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B804A6CFD8",
+      "final_entity_name": "疏导",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_2211688AD0",
+      "name": "事故调查",
+      "entity_type": "Action",
+      "evidence": "依据《危险化学品安全管理条例》开展事故调查",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_6933DFD8F9",
+      "final_entity_name": "事故调查",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "危险化学品泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_84BD30527E",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "堵漏",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_381CE13046",
+      "target_final_id": "MEA_CASE_39D13A1B81",
+      "target_final_name": "堵漏",
+      "target_query_event_ids": [],
+      "evidence": "对泄漏罐体进行堵漏",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "危险化学品泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_84BD30527E",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "采样监测",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_F456F45A20",
+      "target_final_id": "MEA_CASE_87C818ACA4",
+      "target_final_name": "采样监测",
+      "target_query_event_ids": [],
+      "evidence": "对周边土壤、水源进行采样监测",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "危险化学品泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_84BD30527E",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "疏导",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_4E7F85707E",
+      "target_final_id": "MEA_CASE_B804A6CFD8",
+      "target_final_name": "疏导",
+      "target_query_event_ids": [],
+      "evidence": "疏导过往车辆绕行",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "危险化学品泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_84BD30527E",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "事故调查",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_2211688AD0",
+      "target_final_id": "MEA_CASE_6933DFD8F9",
+      "target_final_name": "事故调查",
+      "target_query_event_ids": [],
+      "evidence": "依据《危险化学品安全管理条例》开展事故调查",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《危险化学品突发事件应急预案》",
+    "《危险化学品安全管理条例》"
+  ],
+  "quality_notes": [
+    "信息较为完整，实体抽取准确。",
+    "关系抽取基于文本中的明确信息，避免了猜测。",
+    "关系置信度根据证据的明确程度进行评估。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某国道路段，一辆装载盐酸的罐式危化品运输车，在行驶中因路面颠簸导致罐体受损，盐酸少量泄漏，泄漏的盐酸产生刺激性白雾，周边有农田和村庄，当时天气晴朗。",
+    "consequence_text": "造成运输车驾驶员1人轻微灼伤，泄漏的盐酸腐蚀周边农田土壤，威胁村民饮用水安全，事故路段交通封闭，村民紧急撤离至安全区域。",
+    "measure_text": "应急管理部门启动《危险化学品突发事件应急预案》，协调消防救援队伍携带防化装备赶赴现场，对泄漏罐体进行堵漏，用石灰中和泄漏盐酸；医疗部门对驾驶员进行灼伤处理；环保部门对周边土壤、水源进行采样监测；交警部门封闭路段，疏导过往车辆绕行；依据《危险化学品安全管理条例》开展事故调查，2小时后泄漏得到控制，村民逐步返回。"
+  }
+}

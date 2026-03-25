@@ -1,0 +1,229 @@
+{
+  "case_id": "043_案例43_山区公路泥石流半幅阻断交通事故_c242c4ba",
+  "title": "案例43：山区公路泥石流半幅阻断交通事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "山区公路因泥石流半幅阻断，一辆轿车撞上泥石堆受损，驾驶员轻微受伤。交警、应急、路政、自然资源、医疗部门参与处置，道路恢复通行。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_297CCEBE80",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_ROAD_BLOCKAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_C5B31810A6",
+      "name": "泥石流阻断交通",
+      "entity_type": "Event",
+      "evidence": "山区公路，因连夜降雨引发小型泥石流，泥土、石块半幅阻断路面，一辆小型轿车躲避不及，撞上泥石堆",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_297CCEBE80",
+      "final_entity_name": "泥石流阻断交通",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_297CCEBE80",
+      "primary_event_name": "泥石流阻断交通",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "公路阻塞"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_297CCEBE80",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "query_event_names": [
+        "泥石流阻断交通",
+        "公路交通突发事件",
+        "公路阻塞"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件",
+        "公路阻塞"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_6A47C49741",
+      "name": "泥石流",
+      "entity_type": "Event",
+      "evidence": "连夜降雨引发小型泥石流",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_6176E03535",
+      "final_entity_name": "泥石流",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_6176E03535",
+      "primary_event_name": "泥石流",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_6176E03535"
+      ],
+      "query_event_names": [
+        "泥石流"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_6485F94D0D",
+      "name": "设置警戒区域",
+      "entity_type": "Action",
+      "evidence": "设置警戒区域",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.7167,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_1D820D42D2",
+      "final_entity_name": "设置警戒区域",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_8613630B87",
+      "name": "引导车辆",
+      "entity_type": "Action",
+      "evidence": "引导车辆半幅通行",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_1045C7C149",
+      "final_entity_name": "引导车辆",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "泥石流",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_6A47C49741",
+      "source_final_id": "EVT_CASE_6176E03535",
+      "source_final_name": "泥石流",
+      "source_query_event_ids": [
+        "EVT_CASE_6176E03535"
+      ],
+      "relation": "CAUSES",
+      "target": "泥石流阻断交通",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_C5B31810A6",
+      "target_final_id": "EVT_CASE_297CCEBE80",
+      "target_final_name": "泥石流阻断交通",
+      "target_query_event_ids": [
+        "EVT_CASE_297CCEBE80",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "evidence": "因连夜降雨引发小型泥石流，泥土、石块半幅阻断路面",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "泥石流阻断交通",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_C5B31810A6",
+      "source_final_id": "EVT_CASE_297CCEBE80",
+      "source_final_name": "泥石流阻断交通",
+      "source_query_event_ids": [
+        "EVT_CASE_297CCEBE80",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "relation": "TRIGGERS",
+      "target": "设置警戒区域",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_6485F94D0D",
+      "target_final_id": "MEA_CASE_1D820D42D2",
+      "target_final_name": "设置警戒区域",
+      "target_query_event_ids": [],
+      "evidence": "交警到场，设置警戒区域，引导车辆半幅通行",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "泥石流阻断交通",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_C5B31810A6",
+      "source_final_id": "EVT_CASE_297CCEBE80",
+      "source_final_name": "泥石流阻断交通",
+      "source_query_event_ids": [
+        "EVT_CASE_297CCEBE80",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "relation": "TRIGGERS",
+      "target": "引导车辆",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_8613630B87",
+      "target_final_id": "MEA_CASE_1045C7C149",
+      "target_final_name": "引导车辆",
+      "target_query_event_ids": [],
+      "evidence": "交警到场，设置警戒区域，引导车辆半幅通行",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "The relationships are based on direct textual evidence.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "山区公路，因连夜降雨引发小型泥石流，泥土、石块半幅阻断路面，一辆小型轿车躲避不及，撞上泥石堆，车辆前轮受损，无法移动，泥石流仍有少量流淌。",
+    "consequence_text": "驾驶员轻微受伤，轿车受损，公路半幅封闭，车辆单向缓行，滞留3公里，泥石流有扩大阻断全路风险。",
+    "measure_text": "交警到场，设置警戒区域，引导车辆半幅通行；应急、路政部门调集设备，清理泥石堆，加固山体；自然资源部门监测泥石流隐患；医疗人员对伤者进行处置；3小时后路面清理完毕，道路恢复全幅通行。"
+  }
+}

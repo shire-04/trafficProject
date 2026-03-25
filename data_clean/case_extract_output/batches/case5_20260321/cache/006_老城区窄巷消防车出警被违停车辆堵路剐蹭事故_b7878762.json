@@ -1,0 +1,253 @@
+{
+  "case_id": "006_老城区窄巷消防车出警被违停车辆堵路剐蹭事故_b7878762",
+  "title": "老城区窄巷消防车出警被违停车辆堵路剐蹭事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "消防车出警时因违停车辆堵路导致剐蹭，延误火灾救援。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F4AFE9A596",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_AE7749EB8F",
+      "name": "车辆剐蹭",
+      "entity_type": "Event",
+      "evidence": "消防车紧急避让时与违停车辆发生剐蹭",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F4AFE9A596",
+      "final_entity_name": "车辆剐蹭",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F4AFE9A596",
+      "primary_event_name": "车辆剐蹭",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F4AFE9A596",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆剐蹭",
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_D43CD0FA9F",
+      "name": "消防车",
+      "entity_type": "Resource",
+      "evidence": "消防车紧急出警行驶至巷道中段",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.425,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_B6DB55CC3C",
+      "final_entity_name": "消防车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_6C4AAFFB47",
+      "name": "私家车",
+      "entity_type": "Resource",
+      "evidence": "被两侧违规停放的私家车完全堵死",
+      "confidence": 0.9,
+      "normalized_id": "RES_CASE_E88979D653",
+      "normalized_name": "私家车",
+      "normalized_score": 1.0,
+      "matched_alias": "私家车",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_CASE_E88979D653",
+      "final_entity_name": "私家车",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_2A2C2F996F",
+      "name": "火灾",
+      "entity_type": "Event",
+      "evidence": "接到火灾报警后",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_091BB1089D",
+      "final_entity_name": "火灾",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_091BB1089D",
+      "primary_event_name": "火灾",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_091BB1089D"
+      ],
+      "query_event_names": [
+        "火灾"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_CD2A281DF8",
+      "name": "剐蹭",
+      "entity_type": "Action",
+      "evidence": "发生剐蹭",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_0FB4540844",
+      "normalized_name": "剐蹭",
+      "normalized_score": 1.0,
+      "matched_alias": "剐蹭",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_0FB4540844",
+      "final_entity_name": "剐蹭",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "火灾",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_2A2C2F996F",
+      "source_final_id": "EVT_CASE_091BB1089D",
+      "source_final_name": "火灾",
+      "source_query_event_ids": [
+        "EVT_CASE_091BB1089D"
+      ],
+      "relation": "TRIGGERS",
+      "target": "剐蹭",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_CD2A281DF8",
+      "target_final_id": "MEA_CASE_0FB4540844",
+      "target_final_name": "剐蹭",
+      "target_query_event_ids": [],
+      "evidence": "消防车紧急避让时与违停车辆发生剐蹭",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "剐蹭",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_CD2A281DF8",
+      "source_final_id": "MEA_CASE_0FB4540844",
+      "source_final_name": "剐蹭",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "消防车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_D43CD0FA9F",
+      "target_final_id": "RES_CASE_B6DB55CC3C",
+      "target_final_name": "消防车",
+      "target_query_event_ids": [],
+      "evidence": "消防车紧急避让时与违停车辆发生剐蹭",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "剐蹭",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_CD2A281DF8",
+      "source_final_id": "MEA_CASE_0FB4540844",
+      "source_final_name": "剐蹭",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "私家车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_6C4AAFFB47",
+      "target_final_id": "RES_CASE_E88979D653",
+      "target_final_name": "私家车",
+      "target_query_event_ids": [],
+      "evidence": "消防车紧急避让时与违停车辆发生剐蹭",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《消防法》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市老城区狭窄巷道，消防救援站接到火灾报警后，消防车紧急出警行驶至巷道中段，被两侧违规停放的私家车完全堵死，无法通行，消防车紧急避让时与违停车辆发生剐蹭，巷道宽度仅3.5米，无其他绕行路线。",
+    "consequence_text": "造成消防车与违停车辆轻微剐蹭，无人员伤亡，消防车无法通行延误火灾救援，巷道内交通完全中断，周边居民楼火灾扑救进度受阻，存在火势蔓延、人员伤亡的重大风险。",
+    "measure_text": "交警部门立即赶赴现场，联系违停车辆车主到场挪车，对拒不配合的车主采取强制拖移措施，对违停行为进行从严处罚；消防救援队伍同步组织人员携带灭火装备徒步赶赴火灾现场开展扑救；城管部门对老城区巷道违停车辆进行全面清理，划定消防通道禁停区域；依据《消防法》《道路交通安全法》对占用消防通道的车主进行处罚与警示教育，1小时后巷道恢复通行，火灾被成功扑灭。"
+  }
+}

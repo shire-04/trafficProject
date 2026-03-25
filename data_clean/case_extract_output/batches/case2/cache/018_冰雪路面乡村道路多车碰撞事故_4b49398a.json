@@ -1,0 +1,196 @@
+{
+  "case_id": "018_冰雪路面乡村道路多车碰撞事故_4b49398a",
+  "title": "冰雪路面乡村道路多车碰撞事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "冰雪路面导致乡村道路多车碰撞事故，造成人员伤亡和交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_51C41B32E7",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_F582A7BDB9",
+      "name": "车辆侧滑碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车行驶中发生侧滑，与对面行驶的一辆拖拉机、一辆电动自行车发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_51C41B32E7",
+      "final_entity_name": "车辆侧滑碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_51C41B32E7",
+      "primary_event_name": "车辆侧滑碰撞",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_51C41B32E7",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧滑碰撞",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_2DF16F5CD0",
+      "name": "道路积冰",
+      "entity_type": "Event",
+      "evidence": "路面结冰",
+      "confidence": 0.8,
+      "normalized_id": "EVT_ROAD_ICE",
+      "normalized_name": "道路积冰",
+      "normalized_score": 0.1947,
+      "matched_alias": "路面结冰",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_ROAD_ICE",
+      "final_entity_name": "道路积冰",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_ICE",
+      "primary_event_name": "道路积冰",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_ROAD_ICE"
+      ],
+      "query_event_names": [
+        "道路积冰"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_B065FF0E86",
+      "name": "车辆侧滑",
+      "entity_type": "Action",
+      "evidence": "发生侧滑",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_7719C4F54E",
+      "final_entity_name": "车辆侧滑",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_E1D26275DE",
+      "name": "小型轿车",
+      "entity_type": "Resource",
+      "evidence": "一辆小型轿车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_70407E27F9",
+      "final_entity_name": "小型轿车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    }
+  ],
+  "relations": [
+    {
+      "source": "道路积冰",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_2DF16F5CD0",
+      "source_final_id": "EVT_ROAD_ICE",
+      "source_final_name": "道路积冰",
+      "source_query_event_ids": [
+        "EVT_ROAD_ICE"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧滑碰撞",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_F582A7BDB9",
+      "target_final_id": "EVT_CASE_51C41B32E7",
+      "target_final_name": "车辆侧滑碰撞",
+      "target_query_event_ids": [
+        "EVT_CASE_51C41B32E7",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "因夜间气温骤降，路面结冰，一辆小型轿车行驶中发生侧滑，与对面行驶的一辆拖拉机、一辆电动自行车发生碰撞",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "车辆侧滑",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_B065FF0E86",
+      "source_final_id": "MEA_CASE_7719C4F54E",
+      "source_final_name": "车辆侧滑",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "小型轿车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_E1D26275DE",
+      "target_final_id": "RES_CASE_70407E27F9",
+      "target_final_name": "小型轿车",
+      "target_query_event_ids": [],
+      "evidence": "一辆小型轿车行驶中发生侧滑",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法实施条例》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on the provided text and entity catalog. Some relationships could be inferred but are not explicitly stated."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡村道路，因夜间气温骤降，路面结冰，一辆小型轿车行驶中发生侧滑，与对面行驶的一辆拖拉机、一辆电动自行车发生碰撞，三辆车均不同程度受损，拖拉机装载的农作物散落路面，当时能见度较低。",
+    "consequence_text": "造成电动自行车骑行者1人重伤、轿车驾驶员和拖拉机驾驶员各1人轻伤，农作物散落路面，影响交通通行，事故路段双向交通拥堵，路面结冰导致后续车辆存在侧滑碰撞的风险，周边村民出行受阻。",
+    "measure_text": "当地乡镇政府组织工作人员赶赴现场，设置警戒标志，疏散过往车辆和群众；消防救援队伍到场，对受伤人员进行初步救治，协助清理散落的农作物；医疗部门派遣救护车将受伤人员转运至乡镇卫生院救治；交通部门调用除冰设备，对路面进行除冰作业，撒布融雪剂；交警部门到场开展现场勘查，认定事故责任；村委会协助疏导交通，告知村民冰雪天气尽量减少出行，依据《道路交通安全法实施条例》开展处置，3小时后路面除冰完毕，事故车辆清理到位，道路恢复通行。"
+  }
+}

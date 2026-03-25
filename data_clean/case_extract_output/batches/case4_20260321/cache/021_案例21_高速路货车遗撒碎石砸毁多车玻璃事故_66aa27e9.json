@@ -1,0 +1,151 @@
+{
+  "case_id": "021_案例21_高速路货车遗撒碎石砸毁多车玻璃事故_66aa27e9",
+  "title": "案例21：高速路货车遗撒碎石砸毁多车玻璃事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "高速公路货车遗撒碎石导致多车玻璃破损和车辆剐蹭，造成交通拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_B16ABCB8B1",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_CE4E1E13F5",
+      "name": "道路抛洒物事故",
+      "entity_type": "Event",
+      "evidence": "高速公路行车道，一辆未加盖篷布的碎石运输货车，行驶中大量碎石遗撒路面，后续5辆小型轿车躲避不及，碎石砸中车辆挡风玻璃、车窗，多车玻璃破碎",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_B16ABCB8B1",
+      "final_entity_name": "道路抛洒物事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_B16ABCB8B1",
+      "primary_event_name": "道路抛洒物事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_B16ABCB8B1",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "道路抛洒物事故",
+        "交通事故",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "公路损毁"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_36DC6DB745",
+      "name": "清扫车",
+      "entity_type": "Resource",
+      "evidence": "路政部门调集清扫车",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.7167,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_334F483C4E",
+      "final_entity_name": "清扫车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_ACD3EAE3C9",
+      "name": "道路清理",
+      "entity_type": "Action",
+      "evidence": "路面清理完毕",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_81D300AC3F",
+      "final_entity_name": "道路清理",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "道路清理",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_ACD3EAE3C9",
+      "source_final_id": "MEA_CASE_81D300AC3F",
+      "source_final_name": "道路清理",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "清扫车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_36DC6DB745",
+      "target_final_id": "RES_CASE_334F483C4E",
+      "target_final_name": "清扫车",
+      "target_query_event_ids": [],
+      "evidence": "路政部门调集清扫车，全面清理路面碎石",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本中的明确信息，避免了猜测。",
+    "confidence score is based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "高速公路行车道，一辆未加盖篷布的碎石运输货车，行驶中大量碎石遗撒路面，后续5辆小型轿车躲避不及，碎石砸中车辆挡风玻璃、车窗，多车玻璃破碎，部分车辆紧急避让发生剐蹭。",
+    "consequence_text": "无人员伤亡，5辆轿车玻璃破损、车身剐蹭，货车遗撒碎石占用车道，高速单向拥堵6公里，碎石易扎破车辆轮胎，引发爆胎事故。",
+    "measure_text": "交警封闭事故路段，控制肇事货车驾驶员，责令停止行驶；路政部门调集清扫车，全面清理路面碎石；对受损车辆进行快速定损，引导撤离；依据《道路交通安全法》对货车未加盖篷布、遗撒货物行为从严处罚，3小时后路面清理完毕，恢复通行。"
+  }
+}

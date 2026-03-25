@@ -1,0 +1,130 @@
+{
+  "case_id": "043_乡村道路校车与货车碰撞事故_056bd8b5",
+  "title": "乡村道路校车与货车碰撞事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "乡村道路上，校车与重型货车发生碰撞，造成人员伤亡和交通中断。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_DE8891D1DD",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_B2DAF4C800",
+      "name": "校车与货车碰撞",
+      "entity_type": "Event",
+      "evidence": "某乡村道路，一辆载有12名学生的校车，在行驶中与一辆逆行的重型货车发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_DE8891D1DD",
+      "final_entity_name": "校车与货车碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_DE8891D1DD",
+      "primary_event_name": "校车与货车碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_DE8891D1DD",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "校车与货车碰撞",
+        "公路中断",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_A4037DA47A",
+      "name": "碰撞",
+      "entity_type": "Action",
+      "evidence": "发生碰撞",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_6B219E66DE",
+      "normalized_name": "碰撞",
+      "normalized_score": 1.0,
+      "matched_alias": "碰撞",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_6B219E66DE",
+      "final_entity_name": "碰撞",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "校车与货车碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_B2DAF4C800",
+      "source_final_id": "EVT_CASE_DE8891D1DD",
+      "source_final_name": "校车与货车碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_DE8891D1DD",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "碰撞",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_A4037DA47A",
+      "target_final_id": "MEA_CASE_6B219E66DE",
+      "target_final_name": "碰撞",
+      "target_query_event_ids": [],
+      "evidence": "某乡村道路，一辆载有12名学生的校车，在行驶中与一辆逆行的重型货车发生碰撞",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "校车安全突发事件应急预案",
+    "校车安全管理条例"
+  ],
+  "quality_notes": [
+    "信息较为完整，可进一步补充事故发生地点和时间等信息。",
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡村道路，一辆载有12名学生的校车，在行驶中与一辆逆行的重型货车发生碰撞，校车车身严重变形，货车车头受损，当时为上学高峰期，周边有多名送学生的家长围观。",
+    "consequence_text": "造成校车驾驶员1人重伤、2名学生轻微受伤，12名学生全部被困车内，货车驾驶员1人轻伤，事故路段双向交通中断，周边家长情绪激动，存在二次事故风险，影响学生正常上学。",
+    "measure_text": "应急管理部门立即启动《校车安全突发事件应急预案》，协调消防救援队伍携带破拆工具、救援装备赶赴现场，解救被困学生和驾驶员；医疗部门派遣多辆救护车，对受伤人员进行紧急救治后，转运至医院；交警部门封闭事故路段，设置警戒区域，控制肇事货车驾驶员，开展现场勘查和责任认定；教育部门安排工作人员到场，联系学生家长，安抚家长情绪，调配备用车辆转运其他学生；交通部门对事故路段进行安全检测，后续增设警示标志和减速带，依据《校车安全管理条例》开展事故调查，3小时后被困人员全部解救，道路恢复通行。"
+  }
+}

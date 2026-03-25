@@ -1,0 +1,175 @@
+{
+  "case_id": "002_城市有轨电车与私家车路口碰撞事故_0b6ebf40",
+  "title": "城市有轨电车与私家车路口碰撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "某市主城区有轨电车专用车道平交路口发生有轨电车与私家车正面碰撞事故，造成人员伤亡和交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_A307AFAAF9",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_HUB_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_971B317B97",
+      "name": "轨道交通车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆小型私家车无视有轨电车优先通行信号、违规闯入专用车道，与正常行驶的有轨电车发生正面碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_A307AFAAF9",
+      "final_entity_name": "轨道交通车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_A307AFAAF9",
+      "primary_event_name": "轨道交通车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_HUB_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "重要客运枢纽运行中断"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_A307AFAAF9",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_HUB_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "轨道交通车辆碰撞",
+        "公路交通突发事件",
+        "重要客运枢纽运行中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_HUB_INTERRUPTION"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件",
+        "重要客运枢纽运行中断"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_D7D0721209",
+      "name": "有轨电车",
+      "entity_type": "Resource",
+      "evidence": "有轨电车专用车道平交路口，一辆有轨电车",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_5BCE950EDA",
+      "final_entity_name": "有轨电车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_70E292ADF5",
+      "name": "正面碰撞",
+      "entity_type": "Action",
+      "evidence": "与正常行驶的有轨电车发生正面碰撞",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_6BA428A393",
+      "final_entity_name": "正面碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "正面碰撞",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_70E292ADF5",
+      "source_final_id": "MEA_CASE_6BA428A393",
+      "source_final_name": "正面碰撞",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "有轨电车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_D7D0721209",
+      "target_final_id": "RES_CASE_5BCE950EDA",
+      "target_final_name": "有轨电车",
+      "target_query_event_ids": [],
+      "evidence": "与正常行驶的有轨电车发生正面碰撞",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "轨道交通车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_971B317B97",
+      "source_final_id": "EVT_CASE_A307AFAAF9",
+      "source_final_name": "轨道交通车辆碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_A307AFAAF9",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_HUB_INTERRUPTION"
+      ],
+      "relation": "TRIGGERS",
+      "target": "正面碰撞",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_70E292ADF5",
+      "target_final_id": "MEA_CASE_6BA428A393",
+      "target_final_name": "正面碰撞",
+      "target_query_event_ids": [],
+      "evidence": "与正常行驶的有轨电车发生正面碰撞",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《城市轨道交通运营管理规定》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "confidence score is estimated.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 4,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市主城区有轨电车专用车道平交路口，一辆小型私家车无视有轨电车优先通行信号、违规闯入专用车道，与正常行驶的有轨电车发生正面碰撞，私家车车头严重变形，有轨电车紧急制动，车内多名乘客受到冲击摔倒。",
+    "consequence_text": "造成私家车驾驶员1人重伤、有轨电车内3名乘客轻微擦伤，私家车完全损毁，有轨电车车头轻微受损，有轨电车全线运营中断，路口双向交通拥堵，周边3条公交线路被迫绕行，存在有轨电车脱轨的次生风险。",
+    "measure_text": "交警部门立即封锁事故路口，划定警戒区域，疏散围观群众，开展现场勘查和责任认定；有轨电车运营公司启动应急预案，调配备用车辆接驳滞留乘客，对全线运营车辆进行临时调度；消防救援队伍使用破拆工具解救被困私家车驾驶员；医疗部门派遣救护车转运受伤人员至医院；交通部门对有轨电车轨道、车体进行安全检测，确认无脱轨风险后逐步恢复运营，依据《道路交通安全法》《城市轨道交通运营管理规定》开展处置，2.5小时后路口恢复通行，有轨电车全线恢复运营。"
+  }
+}

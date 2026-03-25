@@ -1,0 +1,205 @@
+{
+  "case_id": "037_高速公路无人机掉落引发多车急刹追尾事故_9ff3d797",
+  "title": "高速公路无人机掉落引发多车急刹追尾事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "高速公路因无人机坠落引发多车追尾事故，造成人员伤亡和交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_4D219D5D07",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_7B14CB9238",
+      "name": "追尾事故",
+      "entity_type": "Event",
+      "evidence": "前方3辆小型轿车紧急刹车避让，后方跟随的2辆货车、3辆轿车避让不及，接连发生连环追尾，多车挤压变形",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_4D219D5D07",
+      "final_entity_name": "追尾事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_4D219D5D07",
+      "primary_event_name": "追尾事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "追尾事故",
+        "交通事故",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_3DDE55D2D5",
+      "name": "高速公路",
+      "entity_type": "Resource",
+      "evidence": "某高速公路",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_C4E5EFE8FC",
+      "final_entity_name": "高速公路",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_F8C1F78B7E",
+      "name": "信号中断",
+      "entity_type": "Event",
+      "evidence": "因信号中断失控",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_086F8287D3",
+      "final_entity_name": "信号中断",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_086F8287D3",
+      "primary_event_name": "信号中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_086F8287D3"
+      ],
+      "query_event_names": [
+        "信号中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_3DC97EAA38",
+      "name": "紧急刹车",
+      "entity_type": "Action",
+      "evidence": "前方3辆小型轿车紧急刹车避让",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_0F40324895",
+      "final_entity_name": "紧急刹车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "信号中断",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_F8C1F78B7E",
+      "source_final_id": "EVT_CASE_086F8287D3",
+      "source_final_name": "信号中断",
+      "source_query_event_ids": [
+        "EVT_CASE_086F8287D3"
+      ],
+      "relation": "CAUSES",
+      "target": "追尾事故",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_7B14CB9238",
+      "target_final_id": "EVT_CASE_4D219D5D07",
+      "target_final_name": "追尾事故",
+      "target_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "evidence": "某高速公路平直路段，一架民用航拍无人机在高速上空飞行时，因信号中断失控，坠落至高速公路行车道中央，前方3辆小型轿车紧急刹车避让，后方跟随的2辆货车、3辆轿车避让不及，接连发生连环追尾",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "紧急刹车",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_3DC97EAA38",
+      "source_final_id": "MEA_CASE_0F40324895",
+      "source_final_name": "紧急刹车",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "高速公路",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_3DDE55D2D5",
+      "target_final_id": "RES_CASE_C4E5EFE8FC",
+      "target_final_name": "高速公路",
+      "target_query_event_ids": [],
+      "evidence": "前方3辆小型轿车紧急刹车避让",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《民用无人驾驶航空器飞行管理暂行条例》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text. Some relationships are inferred but supported by the context.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 6,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高速公路平直路段，一架民用航拍无人机在高速上空飞行时，因信号中断失控，坠落至高速公路行车道中央，前方3辆小型轿车紧急刹车避让，后方跟随的2辆货车、3辆轿车避让不及，接连发生连环追尾，多车挤压变形，部分人员被困，高速车流密集。",
+    "consequence_text": "造成2人重伤、4人轻伤，多辆事故车辆不同程度损毁，高速公路单向交通完全封闭，后方车辆滞留约12公里，失控无人机残骸仍在路面，存在二次碾压、爆胎风险。",
+    "measure_text": "交警部门立即封锁事故路段，设置警戒区域，清理路面无人机残骸，疏导后方车辆分流绕行；消防救援队伍赶赴现场，使用破拆工具解救被困人员，排查车辆起火隐患；医疗部门派遣多辆救护车，转运受伤人员至医院；路政部门调用清障车，清理事故车辆，恢复路面通行；公安部门追查无人机操作人员，依据《民用无人驾驶航空器飞行管理暂行条例》《道路交通安全法》对操作人员进行从严处罚，4小时后道路恢复通行。"
+  }
+}

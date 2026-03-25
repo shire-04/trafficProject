@@ -1,0 +1,193 @@
+{
+  "case_id": "010_暴雨引发道路塌陷交通事故_f50e7896",
+  "title": "暴雨引发道路塌陷交通事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "某市郊区主干道因暴雨引发道路塌陷，一辆小型轿车驶入塌陷坑，造成2人轻微受伤，道路交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_60EF6773FA",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_NATURAL_DISASTER"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_01DFCC389B",
+      "name": "道路塌陷",
+      "entity_type": "Event",
+      "evidence": "路面出现长度5米、宽度3米、深度1.5米的塌陷坑，一辆小型轿车不慎驶入塌陷坑",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_60EF6773FA",
+      "final_entity_name": "道路塌陷",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_60EF6773FA",
+      "primary_event_name": "道路塌陷",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_NATURAL_DISASTER"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路中断",
+        "自然灾害"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_60EF6773FA",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_NATURAL_DISASTER"
+      ],
+      "query_event_names": [
+        "道路塌陷",
+        "交通事故",
+        "公路中断",
+        "自然灾害"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_NATURAL_DISASTER"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "公路中断",
+        "自然灾害"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_6A84385AFF",
+      "name": "暴雨",
+      "entity_type": "Event",
+      "evidence": "突发暴雨",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_RAINSTORM",
+      "final_entity_name": "暴雨",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_RAINSTORM",
+      "primary_event_name": "暴雨",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "query_event_names": [
+        "暴雨"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_34F0289BA5",
+      "name": "启动应急预案",
+      "entity_type": "Action",
+      "evidence": "启动《城市道路塌陷突发事件应急预案》",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.7167,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_29AB47FA07",
+      "final_entity_name": "启动应急预案",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "暴雨",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_6A84385AFF",
+      "source_final_id": "EVT_RAINSTORM",
+      "source_final_name": "暴雨",
+      "source_query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "relation": "CAUSES",
+      "target": "道路塌陷",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_01DFCC389B",
+      "target_final_id": "EVT_CASE_60EF6773FA",
+      "target_final_name": "道路塌陷",
+      "target_query_event_ids": [
+        "EVT_CASE_60EF6773FA",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_NATURAL_DISASTER"
+      ],
+      "evidence": "因突发暴雨，路面出现长度5米、宽度3米、深度1.5米的塌陷坑",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "道路塌陷",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_01DFCC389B",
+      "source_final_id": "EVT_CASE_60EF6773FA",
+      "source_final_name": "道路塌陷",
+      "source_query_event_ids": [
+        "EVT_CASE_60EF6773FA",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_NATURAL_DISASTER"
+      ],
+      "relation": "TRIGGERS",
+      "target": "启动应急预案",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_34F0289BA5",
+      "target_final_id": "MEA_CASE_29AB47FA07",
+      "target_final_name": "启动应急预案",
+      "target_query_event_ids": [],
+      "evidence": "应急管理部门立即启动《城市道路塌陷突发事件应急预案》",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《城市道路管理条例》"
+  ],
+  "quality_notes": [
+    "信息较为完整，事件描述清晰。",
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 2,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市郊区主干道，因突发暴雨，路面出现长度5米、宽度3米、深度1.5米的塌陷坑，一辆小型轿车不慎驶入塌陷坑，车辆陷入坑中，车内2人被困，周边路面有开裂迹象，持续暴雨导致塌陷坑有扩大风险。",
+    "consequence_text": "造成车内2人轻微受伤，无法自行撤离，事故路段双向交通中断，周边车辆出现拥堵，塌陷坑周边路面开裂，存在进一步塌陷风险，可能导致更多车辆坠入，影响周边居民出行。",
+    "measure_text": "应急管理部门立即启动《城市道路塌陷突发事件应急预案》，协调消防救援队伍使用救援装备，将被困人员从车内解救出来；交通部门组织专业施工队伍，对塌陷坑进行围挡，设置警示标志，监测路面开裂情况；城管部门调动排水泵，排出路面积水，防止塌陷扩大；医疗部门对受伤人员进行现场处置后，转运至医院；施工队伍对塌陷坑进行回填、修复，依据《城市道路管理条例》开展处置，5小时后路面修复完毕，道路恢复通行。"
+  }
+}

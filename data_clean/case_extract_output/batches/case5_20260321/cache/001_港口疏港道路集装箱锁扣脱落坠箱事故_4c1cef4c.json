@@ -1,0 +1,131 @@
+{
+  "case_id": "001_港口疏港道路集装箱锁扣脱落坠箱事故_4c1cef4c",
+  "title": "港口疏港道路集装箱锁扣脱落坠箱事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "港口疏港道路发生集装箱脱落坠落事故，导致小轿车避让撞击护栏，造成人员轻伤和交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_5C52357F8D",
+    "expanded_event_ids": [
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_916608F8C4",
+      "name": "集装箱脱落",
+      "entity_type": "Event",
+      "evidence": "2个20英尺标准集装箱从车体脱落，坠落至对向车道",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_5C52357F8D",
+      "final_entity_name": "集装箱脱落",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_5C52357F8D",
+      "primary_event_name": "集装箱脱落",
+      "expanded_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "公路交通运输生产事故",
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_5C52357F8D",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "集装箱脱落",
+        "公路交通运输生产事故",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "公路交通运输生产事故",
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_13639F0DAF",
+      "name": "安全转运",
+      "entity_type": "Action",
+      "evidence": "对坠落集装箱进行安全转运",
+      "confidence": 0.7,
+      "normalized_id": "MEA_CASE_1F94E0BD1F",
+      "normalized_name": "安全转运",
+      "normalized_score": 1.0,
+      "matched_alias": "安全转运",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_1F94E0BD1F",
+      "final_entity_name": "安全转运",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "集装箱脱落",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_916608F8C4",
+      "source_final_id": "EVT_CASE_5C52357F8D",
+      "source_final_name": "集装箱脱落",
+      "source_query_event_ids": [
+        "EVT_CASE_5C52357F8D",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "relation": "TRIGGERS",
+      "target": "安全转运",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_13639F0DAF",
+      "target_final_id": "MEA_CASE_1F94E0BD1F",
+      "target_final_name": "安全转运",
+      "target_query_event_ids": [],
+      "evidence": "集装箱脱落后需要进行安全转运",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《集装箱运输车辆管理规定》"
+  ],
+  "quality_notes": [
+    "信息较为完整，实体抽取准确。",
+    "The relationships are based on explicit mentions in the text.",
+    "Confidence scores reflect the clarity of the relationship in the source text."
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 1,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某港口疏港专用双向四车道，一辆重型集装箱半挂车行驶中，因集装箱锁扣未锁紧、车辆颠簸，2个20英尺标准集装箱从车体脱落，坠落至对向车道，对向行驶的小型轿车紧急避让撞上路边护栏，现场疏港车流密集，天气晴朗能见度良好。",
+    "consequence_text": "造成轿车驾驶员1人轻伤，集装箱箱体轻微破损，轿车车头严重受损，疏港道路双向交通完全中断，后方车辆滞留约10公里，港口货物装卸作业受阻，坠落集装箱有二次滑落、箱体破损泄漏的风险。",
+    "measure_text": "交警部门立即封闭疏港道路双向车道，设置警戒区域，疏导后方车辆从港口备用通道分流绕行；交通部门调集大吨位吊车、集装箱转运车，对坠落集装箱进行吊装、安全转运；医疗部门派遣救护车对受伤驾驶员进行现场处置后转运至医院；路政部门清理路面散落杂物、修复受损护栏，依据《道路交通安全法》《集装箱运输车辆管理规定》开展事故调查，对运输企业未落实出车前安全检查责任进行追责，4小时后道路恢复正常通行。"
+  }
+}

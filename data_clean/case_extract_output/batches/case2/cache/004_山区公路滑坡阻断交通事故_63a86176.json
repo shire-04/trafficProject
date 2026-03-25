@@ -1,0 +1,89 @@
+{
+  "case_id": "004_山区公路滑坡阻断交通事故_63a86176",
+  "title": "山区公路滑坡阻断交通事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "山区公路因滑坡导致道路阻断，一辆面包车被困，驾驶员获救。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_7ABA9AF1E4",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ROAD_DAMAGE",
+      "EVT_ROAD_BLOCKAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_D5553AB3ED",
+      "name": "道路滑坡",
+      "entity_type": "Event",
+      "evidence": "因连续多日降雨，山体发生小型滑坡，大量泥土、石块滚落至路面，将整个道路完全阻断",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_7ABA9AF1E4",
+      "final_entity_name": "道路滑坡",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_7ABA9AF1E4",
+      "primary_event_name": "道路滑坡",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路损毁",
+        "公路阻塞"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_7ABA9AF1E4",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "query_event_names": [
+        "道路滑坡",
+        "公路中断",
+        "公路损毁",
+        "公路阻塞"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路损毁",
+        "公路阻塞"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [
+    "《地质灾害突发事件应急预案》",
+    "《公路安全保护条例》"
+  ],
+  "quality_notes": [
+    "信息较为完整，事件描述清晰。",
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某山区三级公路，因连续多日降雨，山体发生小型滑坡，大量泥土、石块滚落至路面，将整个道路完全阻断，一辆小型面包车被困滑坡路段前方，驾驶员无法撤离，周边无村庄，通讯信号较弱。",
+    "consequence_text": "造成小型面包车驾驶员1人被困，无人员伤亡，山区公路双向交通完全中断，周边乡镇与县城的交通联系受阻，持续降雨导致山体有进一步滑坡的风险，被困驾驶员面临断水、断粮的困境。",
+    "measure_text": "应急管理部门启动《地质灾害突发事件应急预案》，协调消防救援队伍携带救援装备、食品和饮用水，赶赴现场解救被困驾驶员；交通部门组织专业施工队伍，调用挖掘机、装载机等设备，清理路面滑坡体；自然资源部门对山体进行监测，实时预警滑坡风险；交警部门在滑坡路段两端设置警戒，禁止车辆、人员进入；救援人员成功解救被困驾驶员后，同步加快滑坡体清理，依据《公路安全保护条例》开展后续处置，6小时后道路恢复通行。"
+  }
+}

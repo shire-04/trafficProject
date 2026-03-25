@@ -1,0 +1,244 @@
+{
+  "case_id": "002_城市高架匝道货车侧翻货物散落事故_dc8ba489",
+  "title": "城市高架匝道货车侧翻货物散落事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "城市高架快速路匝道发生货车侧翻事故，导致匝道交通中断，后方车辆滞留。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_E298168B17",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "一辆重型货车超载运输建材，在匝道转弯处因车速过快、重心偏移发生侧翻",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "公路中断",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "车辆积压",
+        "公路中断",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "公路中断",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_3E5061FBE2",
+      "name": "超载",
+      "entity_type": "Action",
+      "evidence": "一辆重型货车超载运输建材",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_A048795819",
+      "normalized_name": "超载",
+      "normalized_score": 1.0,
+      "matched_alias": "超载",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_A048795819",
+      "final_entity_name": "超载",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_62B5CFB50C",
+      "name": "车辆滞留",
+      "entity_type": "Event",
+      "evidence": "后方车辆滞留约4公里",
+      "confidence": 0.8,
+      "normalized_id": "EVT_VEHICLE_BACKLOG",
+      "normalized_name": "车辆积压",
+      "normalized_score": 0.1941,
+      "matched_alias": "车辆滞留",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_VEHICLE_BACKLOG",
+      "final_entity_name": "车辆积压",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_VEHICLE_BACKLOG",
+      "primary_event_name": "车辆积压",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_D9BE32377D",
+      "name": "匝道交通中断",
+      "entity_type": "Event",
+      "evidence": "匝道双向交通完全中断",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_BE91B84AF9",
+      "final_entity_name": "匝道交通中断",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_BE91B84AF9",
+      "primary_event_name": "匝道交通中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_BE91B84AF9"
+      ],
+      "query_event_names": [
+        "匝道交通中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆侧翻",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_E298168B17",
+      "source_final_id": "EVT_CASE_9CC62EF2EB",
+      "source_final_name": "车辆侧翻",
+      "source_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "超载",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_3E5061FBE2",
+      "target_final_id": "MEA_CASE_A048795819",
+      "target_final_name": "超载",
+      "target_query_event_ids": [],
+      "evidence": "一辆重型货车超载运输建材，在匝道转弯处因车速过快、重心偏移发生侧翻",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "车辆侧翻",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_E298168B17",
+      "source_final_id": "EVT_CASE_9CC62EF2EB",
+      "source_final_name": "车辆侧翻",
+      "source_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "匝道交通中断",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_D9BE32377D",
+      "target_final_id": "EVT_CASE_BE91B84AF9",
+      "target_final_name": "匝道交通中断",
+      "target_query_event_ids": [
+        "EVT_CASE_BE91B84AF9"
+      ],
+      "evidence": "造成货车驾驶员1人轻微擦伤，无其他人员伤亡，匝道双向交通完全中断",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "匝道交通中断",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_D9BE32377D",
+      "source_final_id": "EVT_CASE_BE91B84AF9",
+      "source_final_name": "匝道交通中断",
+      "source_query_event_ids": [
+        "EVT_CASE_BE91B84AF9"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆滞留",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_62B5CFB50C",
+      "target_final_id": "EVT_VEHICLE_BACKLOG",
+      "target_final_name": "车辆积压",
+      "target_query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "evidence": "后方车辆滞留约4公里",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores reflect the strength of the evidence supporting each relationship."
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 1,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某城市高架快速路匝道（限速60km/h），一辆重型货车超载运输建材，在匝道转弯处因车速过快、重心偏移发生侧翻，车载水泥袋散落至匝道行车道与应急车道，覆盖整个匝道通行区域，当时为晚高峰，车流量大。",
+    "consequence_text": "造成货车驾驶员1人轻微擦伤，无其他人员伤亡，匝道双向交通完全中断，后方车辆滞留约4公里，晚高峰通勤受到严重影响，散落的水泥袋存在碾压、扎破车辆轮胎的次生风险。",
+    "measure_text": "交警部门立即封闭高架匝道，设置警戒区域，疏导后方车辆从 alternate 匝道绕行；交通部门调用清障车、吊车，组织工作人员清理散落水泥袋，对破损路面进行清扫；医疗部门到场对驾驶员进行简单处理；依据《道路交通安全法》开展现场勘查，对超载行为进行处罚，2小时后匝道车辆清理完毕，恢复正常通行。"
+  }
+}

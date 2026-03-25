@@ -1,0 +1,121 @@
+{
+  "case_id": "013_案例13_城市主干道洒水车路面结冰致多车侧滑事故_450e1453",
+  "title": "案例13：城市主干道洒水车路面结冰致多车侧滑事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "冬季清晨，洒水车在低温下违规洒水导致路面结冰，多辆车发生侧滑事故，造成轻微人员受伤和交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_ICE",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_C2EEB3CA0E",
+      "name": "道路积冰",
+      "entity_type": "Event",
+      "evidence": "冬季清晨气温零下3℃，市区主干道洒水车违规低温洒水，路面迅速结冰",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_ICE",
+      "normalized_name": "道路积冰",
+      "normalized_score": 0.0,
+      "matched_alias": "道路积冰",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_ICE",
+      "final_entity_name": "道路积冰",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_ICE",
+      "primary_event_name": "道路积冰",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "道路积冰",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_B81101F0C4",
+      "name": "车辆侧滑",
+      "entity_type": "Event",
+      "evidence": "5辆小型轿车、2辆电动车行驶中相继侧滑",
+      "confidence": 0.8,
+      "normalized_id": "EVT_ROAD_ICE",
+      "normalized_name": "道路积冰",
+      "normalized_score": 0.1994,
+      "matched_alias": "结冰路面",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_ROAD_ICE",
+      "final_entity_name": "道路积冰",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_ICE",
+      "primary_event_name": "道路积冰",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_ROAD_ICE"
+      ],
+      "query_event_names": [
+        "道路积冰"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "道路积冰",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_C2EEB3CA0E",
+      "source_final_id": "EVT_ROAD_ICE",
+      "source_final_name": "道路积冰",
+      "source_query_event_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧滑",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_B81101F0C4",
+      "target_final_id": "EVT_ROAD_ICE",
+      "target_final_name": "道路积冰",
+      "target_query_event_ids": [
+        "EVT_ROAD_ICE"
+      ],
+      "evidence": "路面迅速结冰，5辆小型轿车、2辆电动车行驶中相继侧滑",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores are assigned based on the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "冬季清晨气温零下3℃，市区主干道洒水车违规低温洒水，路面迅速结冰，5辆小型轿车、2辆电动车行驶中相继侧滑，有的撞上护栏，有的相互剐蹭，车辆横七竖八停在路面，现场无人员被困。",
+    "consequence_text": "仅1名电动车骑行者轻微擦伤，多车不同程度受损，主干道双向拥堵，早高峰通行严重受阻，结冰路面持续存在，后续车辆仍有侧滑风险。",
+    "measure_text": "交警快速到场疏导交通，划定警戒区域；市政部门紧急调集融雪剂、除冰设备，对结冰路面进行撒布除冰；路政人员协助拖移事故车辆，清理现场；对洒水车作业单位进行追责，严禁低温时段洒水作业；2小时后路面结冰清除，道路恢复正常通行。"
+  }
+}

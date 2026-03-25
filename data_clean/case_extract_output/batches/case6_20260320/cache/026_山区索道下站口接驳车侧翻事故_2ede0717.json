@@ -1,0 +1,131 @@
+{
+  "case_id": "026_山区索道下站口接驳车侧翻事故_2ede0717",
+  "title": "山区索道下站口接驳车侧翻事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某景区观光接驳车因刹车系统故障侧翻，造成人员伤亡和交通中断。",
+  "confidence": 0.95,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_D788498257",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "一辆景区观光接驳车满载下山游客，行驶中因刹车系统故障，车辆失控撞上路边山体后发生侧翻",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "公路交通突发事件",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件",
+        "公路损毁"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_931F6675DF",
+      "name": "刹车系统故障",
+      "entity_type": "Action",
+      "evidence": "因刹车系统故障",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3157,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_9DFDBB5D63",
+      "final_entity_name": "刹车系统故障",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆侧翻",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_D788498257",
+      "source_final_id": "EVT_CASE_9CC62EF2EB",
+      "source_final_name": "车辆侧翻",
+      "source_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "relation": "TRIGGERS",
+      "target": "刹车系统故障",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_931F6675DF",
+      "target_final_id": "MEA_CASE_9DFDBB5D63",
+      "target_final_name": "刹车系统故障",
+      "target_query_event_ids": [],
+      "evidence": "因刹车系统故障",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《旅游安全管理办法》",
+    "《安全生产法》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": 2,
+    "injuries": 16,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某5A级景区高山索道下站口盘山公路，一辆景区观光接驳车满载下山游客，行驶中因刹车系统故障，车辆失控撞上路边山体后发生侧翻，车身严重变形，车内18名游客被困，索道下站口人流密集，现场秩序混乱。",
+    "consequence_text": "造成2名游客死亡、5名游客重伤、11名游客轻伤，接驳车完全损毁，景区盘山公路双向交通封闭，索道上下山游客无法接驳，索道运营被迫暂停，景区旅游秩序受到严重影响，社会影响恶劣。",
+    "measure_text": "景区应急管理部门立即启动旅游突发事件应急预案，协调消防救援队伍、医疗部门、公安部门赶赴现场；消防救援队伍使用破拆工具解救被困游客，排查车辆起火隐患；医疗部门派遣多辆救护车，对受伤游客进行紧急救治，开辟绿色通道转运至医院；公安部门封锁事故现场，疏散围观游客，开展事故调查；景区暂停索道、接驳车运营，调配备用车辆接驳滞留游客，安抚游客情绪；依据《旅游安全管理办法》《安全生产法》《道路交通安全法》开展事故调查，6小时后救援工作结束，景区逐步恢复运营。"
+  }
+}

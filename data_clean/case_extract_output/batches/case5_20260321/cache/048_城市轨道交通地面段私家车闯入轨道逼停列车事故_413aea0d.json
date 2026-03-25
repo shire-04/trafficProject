@@ -1,0 +1,123 @@
+{
+  "case_id": "048_城市轨道交通地面段私家车闯入轨道逼停列车事故_413aea0d",
+  "title": "城市轨道交通地面段私家车闯入轨道逼停列车事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "某市城市轨道交通1号线地面段，一辆小型轿车冲破防护栏闯入轨道，导致列车紧急制动，数百名乘客被困，轨道交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_0803F70AB8",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_C59FC718D3",
+      "name": "轨道交通入侵",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车冲破轨道两侧防护栏，闯入轨道交通专用轨道，正在行驶的轨道交通列车紧急制动",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_0803F70AB8",
+      "final_entity_name": "轨道交通入侵",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_0803F70AB8",
+      "primary_event_name": "轨道交通入侵",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_0803F70AB8",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "轨道交通入侵",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_6D398FB26C",
+      "name": "紧急制动",
+      "entity_type": "Action",
+      "evidence": "列车紧急制动",
+      "confidence": 0.85,
+      "normalized_id": "MEA_CASE_34B2655045",
+      "normalized_name": "紧急制动",
+      "normalized_score": 1.0,
+      "matched_alias": "紧急制动",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_34B2655045",
+      "final_entity_name": "紧急制动",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "轨道交通入侵",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_C59FC718D3",
+      "source_final_id": "EVT_CASE_0803F70AB8",
+      "source_final_name": "轨道交通入侵",
+      "source_query_event_ids": [
+        "EVT_CASE_0803F70AB8",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "紧急制动",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_6D398FB26C",
+      "target_final_id": "MEA_CASE_34B2655045",
+      "target_final_name": "紧急制动",
+      "target_query_event_ids": [],
+      "evidence": "正在行驶的轨道交通列车紧急制动，在距离轿车约50米处停下",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《城市轨道交通运营管理规定》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "Confidence scores are estimates based on the clarity of the evidence in the text.",
+    "Some relationships are inferred and may require further validation."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市城市轨道交通1号线地面段，一辆小型轿车因驾驶员操作不当，冲破轨道两侧防护栏，闯入轨道交通专用轨道，停留在轨道中央，驾驶员弃车逃离，正在行驶的轨道交通列车紧急制动，在距离轿车约50米处停下，列车内数百名乘客被困。",
+    "consequence_text": "无人员伤亡，轿车与轨道防护栏受损，轨道交通1号线全线运营中断，列车内乘客滞留，沿线多个车站乘客无法正常乘车，城市通勤受到严重影响，存在列车与轿车碰撞的重大风险。",
+    "measure_text": "轨道交通运营公司立即启动应急预案，切断轨道供电，通过列车广播安抚滞留乘客，调配备用列车接驳沿线乘客；交警部门立即封锁事故现场，追查肇事驾驶员，开展现场勘查和责任认定；消防救援队伍到场协助转移列车内乘客，拖移轨道内的轿车；轨道专业人员对轨道、列车进行全面安全检测，确认无安全隐患后恢复供电；依据《城市轨道交通运营管理规定》《道路交通安全法》对肇事驾驶员进行从严处罚，2小时后轨道清理完毕，轨道交通全线恢复运营。"
+  }
+}

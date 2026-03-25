@@ -1,0 +1,158 @@
+{
+  "case_id": "016_桥梁施工坠落事故_fac4dd46",
+  "title": "桥梁施工坠落事故",
+  "source_file": "交通应急处理案例2.txt",
+  "summary": "某跨江大桥施工路段，施工工程车因操作不当坠入江面，造成驾驶员被困，桥梁施工暂停，可能造成江水污染。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_8820B3E0F9",
+    "expanded_event_ids": [
+      "EVT_CONSTRUCTION_SAFETY",
+      "EVT_MAJOR_BRIDGE_ACCIDENT",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_914FD824A5",
+      "name": "桥梁车辆坠落",
+      "entity_type": "Event",
+      "evidence": "一辆施工工程车在桥面行驶时，因操作不当，从桥梁一侧坠落至江面",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_8820B3E0F9",
+      "final_entity_name": "桥梁车辆坠落",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_8820B3E0F9",
+      "primary_event_name": "桥梁车辆坠落",
+      "expanded_event_ids": [
+        "EVT_CONSTRUCTION_SAFETY",
+        "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "施工安全事故",
+        "特大桥梁安全事故",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_8820B3E0F9",
+        "EVT_CONSTRUCTION_SAFETY",
+        "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "桥梁车辆坠落",
+        "施工安全事故",
+        "特大桥梁安全事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_CONSTRUCTION_SAFETY",
+        "EVT_MAJOR_BRIDGE_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "施工安全事故",
+        "特大桥梁安全事故",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_EBA0BCA669",
+      "name": "桥梁护栏维修作业",
+      "entity_type": "Action",
+      "evidence": "施工单位正在进行桥梁护栏维修作业",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3024,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_F35658E3CB",
+      "final_entity_name": "桥梁护栏维修作业",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_19C7294702",
+      "name": "施工工程车",
+      "entity_type": "Resource",
+      "evidence": "一辆施工工程车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3057,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_FCEAE9A269",
+      "final_entity_name": "施工工程车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "桥梁护栏维修作业",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_EBA0BCA669",
+      "source_final_id": "MEA_CASE_F35658E3CB",
+      "source_final_name": "桥梁护栏维修作业",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "施工工程车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_19C7294702",
+      "target_final_id": "RES_CASE_FCEAE9A269",
+      "target_final_name": "施工工程车",
+      "target_query_event_ids": [],
+      "evidence": "施工单位正在进行桥梁护栏维修作业，一辆施工工程车在桥面行驶",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《建设工程安全生产管理条例》"
+  ],
+  "quality_notes": [
+    "事件类型需要进一步细化，例如是否涉及人员伤亡。",
+    "Relationships are based on explicit mentions in the text and the provided entity catalog.",
+    "Confidence scores reflect the clarity and directness of the evidence supporting each relationship."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某跨江大桥施工路段，施工单位正在进行桥梁护栏维修作业，一辆施工工程车在桥面行驶时，因操作不当，从桥梁一侧坠落至江面，工程车驾驶员被困车内，桥梁施工暂停，桥面有少量施工材料散落。",
+    "consequence_text": "造成工程车驾驶员1人被困，工程车完全损毁，坠入江面后有漏油现象，可能污染江水，桥梁施工进度受阻，桥面交通部分封闭，过往车辆需绕行，存在施工材料坠落伤人的风险。",
+    "measure_text": "应急管理部门启动《桥梁施工突发事件应急预案》，协调消防救援队伍、海事部门，携带救援装备、救生艇赶赴现场，开展江面救援，解救被困驾驶员；环保部门对江面漏油区域进行监测，采取围油栏、吸油毡等措施控制污染；交通部门封闭桥梁施工路段，疏导过往车辆绕行；施工单位暂停施工，清理桥面散落的施工材料，排查施工安全隐患；医疗部门派遣救护车在现场待命，驾驶员被解救后立即转运至医院救治，依据《建设工程安全生产管理条例》开展事故调查，6小时后救援工作结束，桥梁施工逐步恢复。"
+  }
+}

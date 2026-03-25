@@ -1,0 +1,249 @@
+{
+  "case_id": "038_农村红白事宴席占道引发货车冲撞事故_34e8aa66",
+  "title": "农村红白事宴席占道引发货车冲撞事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某乡村公路因婚宴占道，轻型货车冲撞宴席人群，造成人员伤亡和道路中断。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_3862706509",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_ROAD_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_789BFED63C",
+      "name": "车辆冲撞行人",
+      "entity_type": "Event",
+      "evidence": "一辆轻型货车行驶至宴席路段时，因避让行人操作不当，冲入宴席人群，接连撞毁多桌宴席，造成多名就餐村民受伤",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_3862706509",
+      "final_entity_name": "车辆冲撞行人",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_3862706509",
+      "primary_event_name": "车辆冲撞行人",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "公路中断"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_3862706509",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "车辆冲撞行人",
+        "公路交通突发事件",
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件",
+        "公路中断"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_996B809A4E",
+      "name": "婚宴",
+      "entity_type": "Event",
+      "evidence": "村民举办婚宴",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_553BC7A8F7",
+      "final_entity_name": "婚宴",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_553BC7A8F7",
+      "primary_event_name": "婚宴",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_553BC7A8F7"
+      ],
+      "query_event_names": [
+        "婚宴"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_B8A3E86A83",
+      "name": "公路",
+      "entity_type": "Resource",
+      "evidence": "某乡村公路",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_FE352D7310",
+      "final_entity_name": "公路",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_81EE13FAC6",
+      "name": "清理",
+      "entity_type": "Action",
+      "evidence": "清理现场残骸",
+      "confidence": 0.7,
+      "normalized_id": "MEA_CASE_F2C178773D",
+      "normalized_name": "清理",
+      "normalized_score": 1.0,
+      "matched_alias": "清理",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_F2C178773D",
+      "final_entity_name": "清理",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_E54FB271BF",
+      "name": "排查",
+      "entity_type": "Action",
+      "evidence": "排查安全隐患",
+      "confidence": 0.7,
+      "normalized_id": "MEA_CASE_8130295826",
+      "normalized_name": "排查",
+      "normalized_score": 1.0,
+      "matched_alias": "排查",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_8130295826",
+      "final_entity_name": "排查",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "婚宴",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_996B809A4E",
+      "source_final_id": "EVT_CASE_553BC7A8F7",
+      "source_final_name": "婚宴",
+      "source_query_event_ids": [
+        "EVT_CASE_553BC7A8F7"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆冲撞行人",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_789BFED63C",
+      "target_final_id": "EVT_CASE_3862706509",
+      "target_final_name": "车辆冲撞行人",
+      "target_query_event_ids": [
+        "EVT_CASE_3862706509",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "evidence": "某乡村公路，村民举办婚宴，在公路两侧搭设帐篷、摆放宴席桌凳，占用整个公路路面，仅留狭窄通道供行人通行，一辆轻型货车行驶至宴席路段时，因避让行人操作不当，冲入宴席人群",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "清理",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_81EE13FAC6",
+      "source_final_id": "MEA_CASE_F2C178773D",
+      "source_final_name": "清理",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "公路",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_B8A3E86A83",
+      "target_final_id": "RES_CASE_FE352D7310",
+      "target_final_name": "公路",
+      "target_query_event_ids": [],
+      "evidence": "消防救援队伍清理现场残骸",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "排查",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_E54FB271BF",
+      "source_final_id": "MEA_CASE_8130295826",
+      "source_final_name": "排查",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "公路",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_B8A3E86A83",
+      "target_final_id": "RES_CASE_FE352D7310",
+      "target_final_name": "公路",
+      "target_query_event_ids": [],
+      "evidence": "消防救援队伍清理现场残骸，排查安全隐患",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《大型群众性活动安全管理条例》"
+  ],
+  "quality_notes": [
+    "信息较为完整，实体抽取准确。",
+    "The relationships are based on the provided text and entity catalog. Some relationships might be implicit and require further context for higher confidence."
+  ],
+  "casualties": {
+    "deaths": 1,
+    "injuries": 6,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某乡村公路，村民举办婚宴，在公路两侧搭设帐篷、摆放宴席桌凳，占用整个公路路面，仅留狭窄通道供行人通行，一辆轻型货车行驶至宴席路段时，因避让行人操作不当，冲入宴席人群，接连撞毁多桌宴席，造成多名就餐村民受伤，货车紧急停下，现场秩序混乱。",
+    "consequence_text": "造成1名村民死亡、6名村民不同程度受伤，宴席设施完全损毁，乡村公路双向交通完全中断，婚宴被迫终止，现场村民情绪激动，易引发纠纷与二次事故。",
+    "measure_text": "当地派出所、乡镇政府、交警部门立即赶赴现场，封锁事故路段，疏散村民，控制货车驾驶员，安抚伤亡人员家属；医疗部门派遣多辆救护车，对受伤村民进行紧急救治，转运至医院；消防救援队伍清理现场残骸，排查安全隐患；对违规占道举办宴席的事主进行批评教育与处罚；依据《道路交通安全法》《大型群众性活动安全管理条例》开展事故调查，3小时后道路恢复通行。"
+  }
+}

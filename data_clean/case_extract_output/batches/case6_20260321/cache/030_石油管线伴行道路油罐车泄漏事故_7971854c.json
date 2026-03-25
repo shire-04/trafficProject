@@ -1,0 +1,140 @@
+{
+  "case_id": "030_石油管线伴行道路油罐车泄漏事故_7971854c",
+  "title": "石油管线伴行道路油罐车泄漏事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某长输石油管线伴行道路，一辆满载汽油的油罐车因罐体被路面石块剐蹭破损，导致汽油泄漏，形成易燃易爆气体云团，威胁周边石油管线和生产设施安全。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_LEAK",
+    "expanded_event_ids": [
+      "EVT_PRODUCTION_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_F59E04CD5F",
+      "name": "油罐车泄漏",
+      "entity_type": "Event",
+      "evidence": "一辆满载汽油的油罐车行驶中，因罐体被路面凸起石块剐蹭破损，汽油持续泄漏",
+      "confidence": 0.9,
+      "normalized_id": "EVT_HAZMAT_LEAK",
+      "normalized_name": "危险化学品运输泄漏事件",
+      "normalized_score": 0.0,
+      "matched_alias": "危险化学品运输泄漏事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_LEAK",
+      "final_entity_name": "危险化学品运输泄漏事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_LEAK",
+      "primary_event_name": "危险化学品运输泄漏事件",
+      "expanded_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路交通运输生产事故"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "query_event_names": [
+        "危险化学品运输泄漏事件",
+        "公路交通运输生产事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_EBF0E90CF9",
+      "name": "汽油",
+      "entity_type": "Resource",
+      "evidence": "满载汽油",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_ED2B7670D7",
+      "final_entity_name": "汽油",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_19149425C5",
+      "name": "泄漏",
+      "entity_type": "Action",
+      "evidence": "汽油持续泄漏",
+      "confidence": 0.9,
+      "normalized_id": "MEA_CASE_B04D39E895",
+      "normalized_name": "泄漏",
+      "normalized_score": 1.0,
+      "matched_alias": "泄漏",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_B04D39E895",
+      "final_entity_name": "泄漏",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "泄漏",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_19149425C5",
+      "source_final_id": "MEA_CASE_B04D39E895",
+      "source_final_name": "泄漏",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "汽油",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_EBF0E90CF9",
+      "target_final_id": "RES_CASE_ED2B7670D7",
+      "target_final_name": "汽油",
+      "target_query_event_ids": [],
+      "evidence": "汽油持续泄漏",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《危险化学品安全管理条例》",
+    "《石油天然气管道保护法》"
+  ],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某长输石油管线伴行专用道路，一辆满载汽油的油罐车行驶中，因罐体被路面凸起石块剐蹭破损，汽油持续泄漏，泄漏的汽油沿路面流淌至周边石油管线阀室区域，现场弥漫浓烈汽油味，周边有石油管线生产设施，当时天气晴朗，风力较小。",
+    "consequence_text": "造成油罐车驾驶员1人轻微灼伤，汽油泄漏形成易燃易爆气体云团，遇明火易引发爆炸、燃烧，威胁周边石油管线、生产设施安全，存在重大安全生产事故风险，伴行道路双向封闭，管线巡检车辆无法通行。",
+    "measure_text": "应急管理部门立即启动危险化学品突发事件应急预案，协调消防救援队伍、石油管道企业赶赴现场；消防救援队伍佩戴防化装备到场，对泄漏汽油进行稀释、覆盖，严禁现场明火、电器开关操作，对罐体破损处进行临时封堵；石油管道企业关闭周边管线阀门，对阀室、管线进行气体浓度监测，疏散周边作业人员；交警部门封闭伴行道路，设置警戒区域，严禁无关车辆、人员进入；环保部门对周边土壤、水体进行监测，防止污染扩散；依据《危险化学品安全管理条例》《石油天然气管道保护法》开展事故调查，4小时后泄漏得到完全控制，道路恢复通行。"
+  }
+}

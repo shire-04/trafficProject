@@ -1,0 +1,194 @@
+{
+  "case_id": "024_城市共享电单车换电柜周边车辆起火事故_83b40c74",
+  "title": "城市共享电单车换电柜周边车辆起火事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某市共享电单车换电柜周边发生锂电池热失控起火事件，导致换电柜及周边车辆损毁，交通受阻。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_PRODUCTION_ACCIDENT",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_7F544DDAC3",
+      "name": "锂电池热失控起火",
+      "entity_type": "Event",
+      "evidence": "共享电单车换电柜正在进行电池更换作业时，一块锂电池突发热失控起火，火势迅速蔓延至换电柜内其他电池、周边停放的20余辆共享电单车",
+      "confidence": 0.9,
+      "normalized_id": "EVT_PRODUCTION_ACCIDENT",
+      "normalized_name": "公路交通运输生产事故",
+      "normalized_score": 0.0,
+      "matched_alias": "公路交通运输生产事故",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_PRODUCTION_ACCIDENT",
+      "final_entity_name": "公路交通运输生产事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_PRODUCTION_ACCIDENT",
+      "primary_event_name": "公路交通运输生产事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "公路交通运输生产事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_4847092EC1",
+      "name": "锂电池",
+      "entity_type": "Resource",
+      "evidence": "一块锂电池突发热失控起火",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_5EDA26CDE1",
+      "final_entity_name": "锂电池",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_2E6F80216F",
+      "name": "起火",
+      "entity_type": "Action",
+      "evidence": "一块锂电池突发热失控起火",
+      "confidence": 0.85,
+      "normalized_id": "MEA_CASE_0542A5288E",
+      "normalized_name": "起火",
+      "normalized_score": 1.0,
+      "matched_alias": "起火",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_0542A5288E",
+      "final_entity_name": "起火",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_5EB1503FBC",
+      "name": "交通拥堵",
+      "entity_type": "Event",
+      "evidence": "周边交通拥堵",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_85237B46E2",
+      "final_entity_name": "交通拥堵",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_85237B46E2",
+      "primary_event_name": "交通拥堵",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_85237B46E2"
+      ],
+      "query_event_names": [
+        "交通拥堵"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "锂电池热失控起火",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_7F544DDAC3",
+      "source_final_id": "EVT_PRODUCTION_ACCIDENT",
+      "source_final_name": "公路交通运输生产事故",
+      "source_query_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "交通拥堵",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_5EB1503FBC",
+      "target_final_id": "EVT_CASE_85237B46E2",
+      "target_final_name": "交通拥堵",
+      "target_query_event_ids": [
+        "EVT_CASE_85237B46E2"
+      ],
+      "evidence": "事故导致非机动车道封闭，周边交通拥堵",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "起火",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_2E6F80216F",
+      "source_final_id": "MEA_CASE_0542A5288E",
+      "source_final_name": "起火",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "锂电池",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_4847092EC1",
+      "target_final_id": "RES_CASE_5EDA26CDE1",
+      "target_final_name": "锂电池",
+      "target_query_event_ids": [],
+      "evidence": "一块锂电池突发热失控起火",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《消防法》",
+    "《锂电池生产使用安全管理规范》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市主城区非机动车道旁，共享电单车换电柜正在进行电池更换作业时，一块锂电池突发热失控起火，火势迅速蔓延至换电柜内其他电池、周边停放的20余辆共享电单车，现场浓烟滚滚，换电柜紧邻居民楼一楼商铺，火势有蔓延至商铺的风险。",
+    "consequence_text": "无人员伤亡，换电柜完全烧毁，20余辆共享电单车损毁，非机动车道封闭，周边交通拥堵，起火产生的有毒浓烟影响周边居民楼、商铺，锂电池持续热失控有爆炸、火势蔓延的重大风险。",
+    "measure_text": "消防救援队伍赶赴现场，使用专用锂电池灭火装备扑灭明火，对换电柜、电池持续降温，防止复燃、爆炸，同时对周边商铺、居民楼进行防护；交警部门封闭事故路段，疏导过往车辆、行人绕行；应急管理部门组织锂电池专业人员到场，处置未起火的电池，排查安全隐患；共享电单车运营公司全面清理现场，对所有换电柜、电池进行安全检测；依据《消防法》《锂电池生产使用安全管理规范》开展事故调查，2小时后火情完全扑灭，道路恢复通行。"
+  }
+}

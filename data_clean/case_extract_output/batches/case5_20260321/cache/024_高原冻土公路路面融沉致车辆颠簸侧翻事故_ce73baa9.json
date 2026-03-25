@@ -1,0 +1,131 @@
+{
+  "case_id": "024_高原冻土公路路面融沉致车辆颠簸侧翻事故_ce73baa9",
+  "title": "高原冻土公路路面融沉致车辆颠簸侧翻事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "青藏高原冻土公路路面融沉导致小型SUV车辆颠簸侧翻，造成人员伤亡和交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_INTERRUPTION",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_0ED3867157",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "一辆小型SUV行驶中，因路面塌陷颠簸失控，发生侧翻，车辆四轮朝天停在路面",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.0,
+      "matched_alias": "公路中断",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "公路中断",
+        "交通事故",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_9D0233B1AD",
+      "name": "路面融沉",
+      "entity_type": "Event",
+      "evidence": "夏季气温升高导致冻土融化，路面出现不均匀融沉、塌陷",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_204F98C6FB",
+      "final_entity_name": "路面融沉",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_204F98C6FB",
+      "primary_event_name": "路面融沉",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_204F98C6FB"
+      ],
+      "query_event_names": [
+        "路面融沉"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "路面融沉",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_9D0233B1AD",
+      "source_final_id": "EVT_CASE_204F98C6FB",
+      "source_final_name": "路面融沉",
+      "source_query_event_ids": [
+        "EVT_CASE_204F98C6FB"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧翻",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_0ED3867157",
+      "target_final_id": "EVT_ROAD_INTERRUPTION",
+      "target_final_name": "公路中断",
+      "target_query_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "evidence": "夏季气温升高导致冻土融化，路面出现不均匀融沉、塌陷，一辆小型SUV行驶中，因路面塌陷颠簸失控，发生侧翻",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《高原冻土公路养护技术规范》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on the actions taken in response to the accident and the cause of the accident.",
+    "Confidence scores are assigned based on the clarity of the evidence in the text."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 4,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "青藏高原多年冻土区国道段，夏季气温升高导致冻土融化，路面出现不均匀融沉、塌陷，一辆小型SUV行驶中，因路面塌陷颠簸失控，发生侧翻，车辆四轮朝天停在路面，车内4人被困，当时天气晴朗，周边无村镇。",
+    "consequence_text": "造成车内2人重伤、2人轻伤，SUV车辆完全损毁，高原国道单向交通封闭，车辆滞留约5公里，冻土持续融化导致路面有进一步塌陷的风险，高原缺氧环境下受伤人员伤情易加重。",
+    "measure_text": "当地交通执法部门、应急管理部门接到报警后，立即协调就近高原应急救援站、医疗部门赶赴现场；医疗人员携带急救药品、氧气瓶到场，对受伤人员进行紧急救治、吸氧处置；消防救援队伍破拆车身，救出被困人员；交警部门封闭事故路段，疏导过往车辆有序通行；交通部门组织专业队伍对融沉塌陷路面进行临时回填修复，对周边冻土路段进行全面排查；依据《高原冻土公路养护技术规范》《道路交通安全法》开展处置，4小时后道路恢复临时通行，受伤人员全部转运至医院。"
+  }
+}

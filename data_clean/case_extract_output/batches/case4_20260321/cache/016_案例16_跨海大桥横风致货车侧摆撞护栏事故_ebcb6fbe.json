@@ -1,0 +1,247 @@
+{
+  "case_id": "016_案例16_跨海大桥横风致货车侧摆撞护栏事故_ebcb6fbe",
+  "title": "案例16：跨海大桥横风致货车侧摆撞护栏事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "跨海大桥因强横风导致货车侧摆撞护栏事故，造成车辆受损、货物散落、道路封闭，人员轻微擦伤。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_56E34BD127",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "一辆轻型厢式货车行驶中被横风刮得侧摆，失控撞上大桥右侧护栏",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "车辆积压",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "公路损毁"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_7A089C58E8",
+      "name": "横风",
+      "entity_type": "Event",
+      "evidence": "突发强横风，风力达9级",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_A6BC66FD76",
+      "final_entity_name": "横风",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_A6BC66FD76",
+      "primary_event_name": "横风",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_A6BC66FD76"
+      ],
+      "query_event_names": [
+        "横风"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_01EB6A7185",
+      "name": "护栏",
+      "entity_type": "Resource",
+      "evidence": "撞上大桥右侧护栏，护栏变形",
+      "confidence": 0.85,
+      "normalized_id": "RES_CASE_325A82726F",
+      "normalized_name": "护栏",
+      "normalized_score": 1.0,
+      "matched_alias": "护栏",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_CASE_325A82726F",
+      "final_entity_name": "护栏",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_B2FF7CD0ED",
+      "name": "护栏修复",
+      "entity_type": "Action",
+      "evidence": "修复临时护栏",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_FFCFDC93C4",
+      "final_entity_name": "护栏修复",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_51F670C42C",
+      "name": "交通疏导",
+      "entity_type": "Action",
+      "evidence": "全面疏导交通",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_AF64FD25F0",
+      "final_entity_name": "交通疏导",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "横风",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_7A089C58E8",
+      "source_final_id": "EVT_CASE_A6BC66FD76",
+      "source_final_name": "横风",
+      "source_query_event_ids": [
+        "EVT_CASE_A6BC66FD76"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧翻",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_56E34BD127",
+      "target_final_id": "EVT_CASE_9CC62EF2EB",
+      "target_final_name": "车辆侧翻",
+      "target_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "evidence": "突发强横风，风力达9级，一辆轻型厢式货车行驶中被横风刮得侧摆，失控撞上大桥右侧护栏",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "护栏修复",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_B2FF7CD0ED",
+      "source_final_id": "MEA_CASE_FFCFDC93C4",
+      "source_final_name": "护栏修复",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "护栏",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_01EB6A7185",
+      "target_final_id": "RES_CASE_325A82726F",
+      "target_final_name": "护栏",
+      "target_query_event_ids": [],
+      "evidence": "路政人员清理散落货物，拖移事故车辆，修复临时护栏",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "横风",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_7A089C58E8",
+      "source_final_id": "EVT_CASE_A6BC66FD76",
+      "source_final_name": "横风",
+      "source_query_event_ids": [
+        "EVT_CASE_A6BC66FD76"
+      ],
+      "relation": "TRIGGERS",
+      "target": "交通疏导",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_51F670C42C",
+      "target_final_id": "MEA_CASE_AF64FD25F0",
+      "target_final_name": "交通疏导",
+      "target_query_event_ids": [],
+      "evidence": "气象部门实时监测风力，待横风减弱后全面疏导交通",
+      "confidence": 0.75,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取主要基于文本中的直接描述，对于隐含关系未进行抽取。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "沿海跨海大桥路段，突发强横风，风力达9级，一辆轻型厢式货车行驶中被横风刮得侧摆，失控撞上大桥右侧护栏，护栏变形，货车车厢破损，货物散落桥面，车辆横停占用车道。",
+    "consequence_text": "驾驶员轻微擦伤，无其他伤亡，货车与护栏受损，散落货物影响通行，大桥单向车道封闭，车辆滞留4公里，横风持续存在，后续大型车辆易受影响再次失控。",
+    "measure_text": "交警联合大桥管理处，封闭事故车道，发布横风预警，引导大型车辆就近停靠避风；路政人员清理散落货物，拖移事故车辆，修复临时护栏；气象部门实时监测风力，待横风减弱后全面疏导交通；3小时后道路恢复通行，后续加强大桥横风实时提示。"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "case_id": "017_城市BRT专用道社会车辆闯入与公交碰撞事故_6a5371cb",
+  "title": "城市BRT专用道社会车辆闯入与公交碰撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "某市BRT专用道发生私家车逆向闯入与BRT公交正面碰撞事故，造成人员伤亡和交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9BDDC88CCC",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_9B024E06C6",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆小型私家车为躲避路口拥堵，违规闯入全封闭BRT专用车道逆向行驶，与正常行驶的BRT快速公交发生正面碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9BDDC88CCC",
+      "final_entity_name": "车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9BDDC88CCC",
+      "primary_event_name": "车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞",
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_2D2D86F6C4",
+      "name": "逆向行驶",
+      "entity_type": "Action",
+      "evidence": "违规闯入全封闭BRT专用车道逆向行驶",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.7167,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_BCC6275A71",
+      "final_entity_name": "逆向行驶",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_9B024E06C6",
+      "source_final_id": "EVT_CASE_9BDDC88CCC",
+      "source_final_name": "车辆碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "逆向行驶",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_2D2D86F6C4",
+      "target_final_id": "MEA_CASE_BCC6275A71",
+      "target_final_name": "逆向行驶",
+      "target_query_event_ids": [],
+      "evidence": "违规闯入全封闭BRT专用车道逆向行驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "关系抽取主要基于文本中的直接描述，对于隐含关系未进行抽取。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 6,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市BRT快速公交专用道，一辆小型私家车为躲避路口拥堵，违规闯入全封闭BRT专用车道逆向行驶，与正常行驶的BRT快速公交发生正面碰撞，私家车车头严重变形，BRT公交紧急制动，车内30余名乘客受到冲击摔倒。",
+    "consequence_text": "造成私家车驾驶员1人重伤、BRT公交内5名乘客轻微擦伤，私家车完全损毁，BRT公交车身轻微受损，BRT专用道全线运营中断，多条公交线路晚点，路口双向交通拥堵，周边通勤受到严重影响。",
+    "measure_text": "交警部门立即封锁事故现场，划定警戒区域，疏散围观群众，开展现场勘查和责任认定；BRT运营公司启动应急预案，调配备用车辆接驳滞留乘客，调整全线公交运营调度；消防救援队伍使用破拆工具解救被困私家车驾驶员；医疗部门派遣救护车转运受伤人员至医院；路政部门清理事故车辆，修复专用道隔离设施；依据《道路交通安全法》对违规闯入专用道的驾驶员进行从严处罚，2小时后专用道恢复通行，BRT公交全线恢复运营。"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "case_id": "018_大学校园内部通勤车与学生碰撞事故_dabddc72",
+  "title": "大学校园内部通勤车与学生碰撞事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "大学校园内通勤车与学生发生碰撞，造成人员伤亡和交通拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_695C0653A5",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_9B6F5A1827",
+      "name": "交通碰撞事故",
+      "entity_type": "Event",
+      "evidence": "一辆校园通勤摆渡车在校园内行驶时，因驾驶员未观察前方路况，与正在横穿马路的2名学生发生碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_695C0653A5",
+      "final_entity_name": "交通碰撞事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_695C0653A5",
+      "primary_event_name": "交通碰撞事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_695C0653A5",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "交通碰撞事故",
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_C0CB2D7E26",
+      "name": "报警",
+      "entity_type": "Action",
+      "evidence": "拨打120、122报警",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2643,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B396D82FB5",
+      "final_entity_name": "报警",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "交通碰撞事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_9B6F5A1827",
+      "source_final_id": "EVT_CASE_695C0653A5",
+      "source_final_name": "交通碰撞事故",
+      "source_query_event_ids": [
+        "EVT_CASE_695C0653A5",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "relation": "TRIGGERS",
+      "target": "报警",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_C0CB2D7E26",
+      "target_final_id": "MEA_CASE_B396D82FB5",
+      "target_final_name": "报警",
+      "target_query_event_ids": [],
+      "evidence": "拨打120、122报警",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《校园安全管理办法》"
+  ],
+  "quality_notes": [
+    "关系抽取主要基于文本中的因果关系和行动执行者，部分关系存在模糊性，因此置信度有所降低。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某大学校园内部主干道上下课高峰时段，一辆校园通勤摆渡车在校园内行驶时，因驾驶员未观察前方路况，与正在横穿马路的2名学生发生碰撞，学生被撞倒在地，摆渡车紧急停下，现场有大量上下课学生，人流密集。",
+    "consequence_text": "造成2名学生1人重伤、1人轻伤，摆渡车轻微受损，校园主干道交通拥堵，学生上下课通行受阻，事故引发在校学生恐慌，校园教学秩序受到影响。",
+    "measure_text": "学校保卫处、校医院立即赶赴现场，对受伤学生进行紧急救治，封锁事故现场，疏散围观学生，拨打120、122报警；医疗部门派遣救护车将重伤学生转运至医院；交警部门到场开展现场勘查和责任认定；学校暂停校园通勤车运营，对所有驾驶员进行安全培训，在校园主干道增设减速带、人行横道、警示标志；依据《道路交通安全法》《校园安全管理办法》开展处置，1小时后校园主干道恢复通行。"
+  }
+}

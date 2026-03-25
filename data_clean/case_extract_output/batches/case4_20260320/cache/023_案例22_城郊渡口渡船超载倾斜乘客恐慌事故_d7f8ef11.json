@@ -1,0 +1,217 @@
+{
+  "case_id": "023_案例22_城郊渡口渡船超载倾斜乘客恐慌事故_d7f8ef11",
+  "title": "案例22：城郊渡口渡船超载倾斜乘客恐慌事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "乡村江河渡口，渡船超载导致船体倾斜，乘客恐慌，幸无人员伤亡，渡口运营中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_954A2AAAEA",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_1EBAAB8AB4",
+      "name": "渡船倾斜",
+      "entity_type": "Event",
+      "evidence": "渡船违规超载搭载...船体严重倾斜",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_954A2AAAEA",
+      "final_entity_name": "渡船倾斜",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_954A2AAAEA",
+      "primary_event_name": "渡船倾斜",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "公路中断"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_954A2AAAEA",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "渡船倾斜",
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "alias_patch_target_names": [
+        "公路中断"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_56B80EE38B",
+      "name": "渡船",
+      "entity_type": "Resource",
+      "evidence": "渡船违规超载搭载",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_C54C46856D",
+      "final_entity_name": "渡船",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_8B710C6302",
+      "name": "超载",
+      "entity_type": "Action",
+      "evidence": "渡船违规超载搭载",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_A048795819",
+      "final_entity_name": "超载",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_4EAC67C3A5",
+      "name": "渡口运营中断",
+      "entity_type": "Event",
+      "evidence": "渡口运营中断",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_F394EBD2AA",
+      "final_entity_name": "渡口运营中断",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F394EBD2AA",
+      "primary_event_name": "渡口运营中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_F394EBD2AA"
+      ],
+      "query_event_names": [
+        "渡口运营中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "超载",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_8B710C6302",
+      "source_final_id": "MEA_CASE_A048795819",
+      "source_final_name": "超载",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "渡船",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_56B80EE38B",
+      "target_final_id": "RES_CASE_C54C46856D",
+      "target_final_name": "渡船",
+      "target_query_event_ids": [],
+      "evidence": "渡船违规超载搭载",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "渡船倾斜",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_1EBAAB8AB4",
+      "source_final_id": "EVT_CASE_954A2AAAEA",
+      "source_final_name": "渡船倾斜",
+      "source_query_event_ids": [
+        "EVT_CASE_954A2AAAEA",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "relation": "TRIGGERS",
+      "target": "超载",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_8B710C6302",
+      "target_final_id": "MEA_CASE_A048795819",
+      "target_final_name": "超载",
+      "target_query_event_ids": [],
+      "evidence": "渡船违规超载搭载",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "渡船倾斜",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_1EBAAB8AB4",
+      "source_final_id": "EVT_CASE_954A2AAAEA",
+      "source_final_name": "渡船倾斜",
+      "source_query_event_ids": [
+        "EVT_CASE_954A2AAAEA",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "relation": "CAUSES",
+      "target": "渡口运营中断",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_4EAC67C3A5",
+      "target_final_id": "EVT_CASE_F394EBD2AA",
+      "target_final_name": "渡口运营中断",
+      "target_query_event_ids": [
+        "EVT_CASE_F394EBD2AA"
+      ],
+      "evidence": "无人员落水伤亡，部分乘客轻微擦伤、恐慌不适，渡船船体轻微渗水，渡口运营中断，周边群众过渡受阻，船体有倾覆风险，救援船只需紧急出动。",
+      "confidence": 0.6,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本中的明确信息，避免了猜测。",
+    "confidence score reflects the clarity of the evidence in the text.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": null,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "乡村江河渡口，渡船违规超载搭载12辆电动车、30余名乘客，行驶至河中央时，因乘客集中一侧站立，船体严重倾斜，河水渗入船舱，乘客惊慌失措，纷纷拥挤至另一侧，加剧船体倾斜风险。",
+    "consequence_text": "无人员落水伤亡，部分乘客轻微擦伤、恐慌不适，渡船船体轻微渗水，渡口运营中断，周边群众过渡受阻，船体有倾覆风险，救援船只需紧急出动。",
+    "measure_text": "渡口管理员立即发出救援信号，指挥乘客均匀分散站立，稳定船体；海事部门派遣救援渡船赶赴现场，分流超载乘客与电动车；消防人员协助转移乘客，排查船体渗水隐患；对渡船驾驶员进行追责，严禁超载运营；2小时后船体修复，渡口恢复正常运营，加强超载管控。"
+  }
+}

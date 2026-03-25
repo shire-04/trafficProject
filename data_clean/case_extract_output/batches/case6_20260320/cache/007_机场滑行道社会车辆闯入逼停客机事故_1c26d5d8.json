@@ -1,0 +1,175 @@
+{
+  "case_id": "007_机场滑行道社会车辆闯入逼停客机事故_1c26d5d8",
+  "title": "机场滑行道社会车辆闯入逼停客机事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "机场滑行道发生社会车辆闯入事件，导致客机紧急制动，航班中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_3AEB5FD10E",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_HUB_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_A679E74BF8",
+      "name": "滑行道闯入事件",
+      "entity_type": "Event",
+      "evidence": "一辆机场地勤保障车辆驾驶员操作失误，驾车冲破隔离围栏，闯入机场滑行道，停在滑行道中央，正在滑行准备起飞的民航客机紧急制动。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_3AEB5FD10E",
+      "final_entity_name": "滑行道闯入事件",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_3AEB5FD10E",
+      "primary_event_name": "滑行道闯入事件",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_HUB_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "重要客运枢纽运行中断"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_3AEB5FD10E",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_HUB_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "滑行道闯入事件",
+        "交通事故",
+        "重要客运枢纽运行中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_HUB_INTERRUPTION"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "重要客运枢纽运行中断"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_8170AD370B",
+      "name": "民航客机",
+      "entity_type": "Resource",
+      "evidence": "民航客机",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3024,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_7C467D3150",
+      "final_entity_name": "民航客机",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_99936629AA",
+      "name": "紧急制动",
+      "entity_type": "Action",
+      "evidence": "紧急制动",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_34B2655045",
+      "final_entity_name": "紧急制动",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "滑行道闯入事件",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_A679E74BF8",
+      "source_final_id": "EVT_CASE_3AEB5FD10E",
+      "source_final_name": "滑行道闯入事件",
+      "source_query_event_ids": [
+        "EVT_CASE_3AEB5FD10E",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_HUB_INTERRUPTION"
+      ],
+      "relation": "TRIGGERS",
+      "target": "紧急制动",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_99936629AA",
+      "target_final_id": "MEA_CASE_34B2655045",
+      "target_final_name": "紧急制动",
+      "target_query_event_ids": [],
+      "evidence": "正在滑行准备起飞的民航客机紧急制动",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "紧急制动",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_99936629AA",
+      "source_final_id": "MEA_CASE_34B2655045",
+      "source_final_name": "紧急制动",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "民航客机",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_8170AD370B",
+      "target_final_id": "RES_CASE_7C467D3150",
+      "target_final_name": "民航客机",
+      "target_query_event_ids": [],
+      "evidence": "正在滑行准备起飞的民航客机紧急制动",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《民用机场管理条例》",
+    "《中华人民共和国民用航空法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取主要基于文本中的直接描述，对于需要推理的关系未进行抽取。",
+    "confidence score is estimated."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某民用机场飞行区滑行道，一辆机场地勤保障车辆驾驶员操作失误，驾车冲破隔离围栏，闯入机场滑行道，停在滑行道中央，正在滑行准备起飞的民航客机紧急制动，在距离保障车辆约100米处停下，客机内百余名乘客被困，机场航班起降全面中断。",
+    "consequence_text": "无人员伤亡，地勤车辆与隔离围栏受损，机场航班起降全面中断，数十架航班延误、备降，民航客机紧急制动导致乘客受到惊吓，存在客机与车辆碰撞的重大安全风险，社会影响恶劣。",
+    "measure_text": "机场管理部门立即启动机场突发事件应急预案，封锁飞行区滑行道，控制肇事驾驶员，引导紧急制动的客机滑入停机坪，疏散客机内乘客；空管部门调整航班计划，引导待起降航班备降周边机场；机场公安部门开展现场勘查和责任认定；机场地勤部门对滑行道、隔离围栏进行全面安全检测，修复受损设施；依据《民用机场管理条例》《中华人民共和国民用航空法》对肇事驾驶员、所属单位进行从严处罚，2小时后机场恢复航班正常起降。"
+  }
+}

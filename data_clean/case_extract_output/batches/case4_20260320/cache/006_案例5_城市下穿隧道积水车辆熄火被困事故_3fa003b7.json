@@ -1,0 +1,185 @@
+{
+  "case_id": "006_案例5_城市下穿隧道积水车辆熄火被困事故_3fa003b7",
+  "title": "案例5：城市下穿隧道积水车辆熄火被困事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "城市下穿隧道因暴雨导致积水，两辆轿车和一辆SUV先后熄火，5人被困，后被消防人员救出，隧道交通受阻。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_EMERGENCY",
+    "expanded_event_ids": [
+      "EVT_RAINSTORM",
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_B3F3F9131C",
+      "name": "道路积水",
+      "entity_type": "Event",
+      "evidence": "市区下穿隧道，因突降大暴雨，排水系统超负荷运行，路面积水迅速上涨至60厘米",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_EMERGENCY",
+      "normalized_name": "公路交通突发事件",
+      "normalized_score": 0.0,
+      "matched_alias": "公路交通突发事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_EMERGENCY",
+      "final_entity_name": "公路交通突发事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_EMERGENCY",
+      "primary_event_name": "公路交通突发事件",
+      "expanded_event_ids": [
+        "EVT_RAINSTORM",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "暴雨",
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_RAINSTORM",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "公路交通突发事件",
+        "暴雨",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_AEF88942D6",
+      "name": "暴雨",
+      "entity_type": "Event",
+      "evidence": "突降大暴雨",
+      "confidence": 0.9,
+      "normalized_id": "EVT_RAINSTORM",
+      "normalized_name": "暴雨",
+      "normalized_score": 0.172,
+      "matched_alias": "暴雨",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_RAINSTORM",
+      "final_entity_name": "暴雨",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_RAINSTORM",
+      "primary_event_name": "暴雨",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "query_event_names": [
+        "暴雨"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_B691CA425C",
+      "name": "积水",
+      "entity_type": "Event",
+      "evidence": "路面积水迅速上涨至60厘米",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_5CECC4C9FA",
+      "final_entity_name": "积水",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_5CECC4C9FA",
+      "primary_event_name": "积水",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_5CECC4C9FA"
+      ],
+      "query_event_names": [
+        "积水"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "暴雨",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_AEF88942D6",
+      "source_final_id": "EVT_RAINSTORM",
+      "source_final_name": "暴雨",
+      "source_query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "relation": "CAUSES",
+      "target": "道路积水",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_B3F3F9131C",
+      "target_final_id": "EVT_ROAD_EMERGENCY",
+      "target_final_name": "公路交通突发事件",
+      "target_query_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_RAINSTORM",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "evidence": "因突降大暴雨，排水系统超负荷运行，路面积水迅速上涨",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "道路积水",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_B3F3F9131C",
+      "source_final_id": "EVT_ROAD_EMERGENCY",
+      "source_final_name": "公路交通突发事件",
+      "source_query_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_RAINSTORM",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "relation": "CAUSES",
+      "target": "积水",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_B691CA425C",
+      "target_final_id": "EVT_CASE_5CECC4C9FA",
+      "target_final_name": "积水",
+      "target_query_event_ids": [
+        "EVT_CASE_5CECC4C9FA"
+      ],
+      "evidence": "路面积水迅速上涨至60厘米，2辆小型轿车、1辆SUV驶入积水区后依次熄火",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "The relationships are based on the explicit information provided in the text.",
+    "Confidence scores are assigned based on the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "市区下穿隧道，因突降大暴雨，排水系统超负荷运行，路面积水迅速上涨至60厘米，2辆小型轿车、1辆SUV驶入积水区后依次熄火，车内共5人被困，水位持续上涨，车门无法正常开启，隧道内光线昏暗，通风不畅。",
+    "consequence_text": "5人被困车内，情绪恐慌，无人员伤亡，隧道双向封闭，周边主干道交通拥堵，积水浸泡车辆易引发电路短路、漏电伤人，隧道底部管线存在破损风险，延误通勤高峰通行。",
+    "measure_text": "消防人员携带救生衣、破拆工具、排水泵赶赴现场，采用破拆车窗、搭建救生通道方式救出被困人员；市政部门调集大功率排水车，全力抽排隧道积水，清理排水口杂物；交警封闭隧道入口，引导车辆绕行周边道路；物业及路政人员协助拖移熄火车辆，检测隧道电路与管线安全，2.5小时后积水排净，隧道恢复通行。"
+  }
+}

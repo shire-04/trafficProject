@@ -1,0 +1,196 @@
+{
+  "case_id": "041_案例41_冬季桥面结冰货车侧滑撞毁护栏事故_55cc1c3d",
+  "title": "案例41：冬季桥面结冰货车侧滑撞毁护栏事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "冬季桥面结冰导致货车侧滑撞毁护栏，造成驾驶员轻微受伤，大桥封闭拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_ICE",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_3C1C86B0BA",
+      "name": "车辆侧滑",
+      "entity_type": "Event",
+      "evidence": "冬季气温低，桥面结冰湿滑，一辆重型货车行驶中侧滑",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_ICE",
+      "normalized_name": "道路积冰",
+      "normalized_score": 0.0,
+      "matched_alias": "道路积冰",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_ICE",
+      "final_entity_name": "道路积冰",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_ICE",
+      "primary_event_name": "道路积冰",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "道路积冰",
+        "交通事故",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_2546854196",
+      "name": "桥面结冰",
+      "entity_type": "Event",
+      "evidence": "桥面结冰湿滑",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_590A5F607D",
+      "final_entity_name": "桥面结冰",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_590A5F607D",
+      "primary_event_name": "桥面结冰",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_590A5F607D"
+      ],
+      "query_event_names": [
+        "桥面结冰"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_2FD5C56F07",
+      "name": "车辆侧滑",
+      "entity_type": "Action",
+      "evidence": "一辆重型货车行驶中侧滑",
+      "confidence": 0.9,
+      "normalized_id": "MEA_CASE_7719C4F54E",
+      "normalized_name": "车辆侧滑",
+      "normalized_score": 1.0,
+      "matched_alias": "车辆侧滑",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_7719C4F54E",
+      "final_entity_name": "车辆侧滑",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_1CBBC4B2F9",
+      "name": "融雪剂",
+      "entity_type": "Resource",
+      "evidence": "撒布融雪剂",
+      "confidence": 0.7,
+      "normalized_id": "RES_SNOW_AGENT",
+      "normalized_name": "融雪剂",
+      "normalized_score": 1.0,
+      "matched_alias": "融雪剂",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_SNOW_AGENT",
+      "final_entity_name": "融雪剂",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "桥面结冰",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_2546854196",
+      "source_final_id": "EVT_CASE_590A5F607D",
+      "source_final_name": "桥面结冰",
+      "source_query_event_ids": [
+        "EVT_CASE_590A5F607D"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧滑",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_3C1C86B0BA",
+      "target_final_id": "EVT_ROAD_ICE",
+      "target_final_name": "道路积冰",
+      "target_query_event_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "evidence": "冬季气温低，桥面结冰湿滑，一辆重型货车行驶中侧滑",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "车辆侧滑",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_2FD5C56F07",
+      "source_final_id": "MEA_CASE_7719C4F54E",
+      "source_final_name": "车辆侧滑",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "融雪剂",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_1CBBC4B2F9",
+      "target_final_id": "RES_SNOW_AGENT",
+      "target_final_name": "融雪剂",
+      "target_query_event_ids": [],
+      "evidence": "市政部门撒布融雪剂，清除桥面结冰",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "市区跨河大桥，冬季气温低，桥面结冰湿滑，一辆重型货车行驶中侧滑，失控撞上大桥护栏，护栏断裂数米，货车车头悬在桥面边缘，险些坠河，驾驶员被困车内。",
+    "consequence_text": "驾驶员轻微受伤，货车与护栏受损，货车悬边有坠河风险，大桥双向封闭，车辆拥堵6公里，结冰桥面易引发多车事故。",
+    "measure_text": "交警快速到场，设置多层警戒，救出被困驾驶员；消防人员固定货车，防止坠河；市政部门撒布融雪剂，清除桥面结冰；路政部门吊车扶正货车，修复护栏；4小时后大桥恢复通行，加强桥面结冰预警。"
+  }
+}

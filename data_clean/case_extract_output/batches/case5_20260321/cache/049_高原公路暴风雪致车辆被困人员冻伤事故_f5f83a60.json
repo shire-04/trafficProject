@@ -1,0 +1,271 @@
+{
+  "case_id": "049_高原公路暴风雪致车辆被困人员冻伤事故_f5f83a60",
+  "title": "高原公路暴风雪致车辆被困人员冻伤事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "青藏高原国道段突发暴风雪，导致8辆轿车、2辆客运班车被困，46人被困，多人冻伤，道路中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_6B68F24652",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_79115FA7A7",
+      "name": "暴风雪天气导致的道路交通中断",
+      "entity_type": "Event",
+      "evidence": "青藏高原国道段，突发强暴风雪，8辆小型轿车、2辆客运班车被困暴风雪中，车辆无法行驶，高原国道双向交通完全中断。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_6B68F24652",
+      "final_entity_name": "暴风雪天气导致的道路交通中断",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_6B68F24652",
+      "primary_event_name": "暴风雪天气导致的道路交通中断",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_6B68F24652",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "暴风雪天气导致的道路交通中断",
+        "公路中断",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_945D476E13",
+      "name": "暴风雪",
+      "entity_type": "Event",
+      "evidence": "突发强暴风雪",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_F4732BEE88",
+      "final_entity_name": "暴风雪",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F4732BEE88",
+      "primary_event_name": "暴风雪",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_F4732BEE88"
+      ],
+      "query_event_names": [
+        "暴风雪"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_D7EFB0F44F",
+      "name": "小型轿车",
+      "entity_type": "Resource",
+      "evidence": "8辆小型轿车",
+      "confidence": 0.8,
+      "normalized_id": "RES_CASE_70407E27F9",
+      "normalized_name": "小型轿车",
+      "normalized_score": 1.0,
+      "matched_alias": "小型轿车",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_CASE_70407E27F9",
+      "final_entity_name": "小型轿车",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_26F073ECEA",
+      "name": "客运班车",
+      "entity_type": "Resource",
+      "evidence": "2辆客运班车",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.7167,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_DFCBA2A648",
+      "final_entity_name": "客运班车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_6E3BDBB2CA",
+      "name": "救援",
+      "entity_type": "Action",
+      "evidence": "救援队伍克服暴风雪影响，逐车找到被困人员",
+      "confidence": 0.75,
+      "normalized_id": "MEA_CASE_4DEF057716",
+      "normalized_name": "救援",
+      "normalized_score": 1.0,
+      "matched_alias": "救援",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_4DEF057716",
+      "final_entity_name": "救援",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "暴风雪",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_945D476E13",
+      "source_final_id": "EVT_CASE_F4732BEE88",
+      "source_final_name": "暴风雪",
+      "source_query_event_ids": [
+        "EVT_CASE_F4732BEE88"
+      ],
+      "relation": "CAUSES",
+      "target": "暴风雪天气导致的道路交通中断",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_79115FA7A7",
+      "target_final_id": "EVT_CASE_6B68F24652",
+      "target_final_name": "暴风雪天气导致的道路交通中断",
+      "target_query_event_ids": [
+        "EVT_CASE_6B68F24652",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "evidence": "突发强暴风雪，车辆无法行驶，高原国道双向交通完全中断",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "暴风雪",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_945D476E13",
+      "source_final_id": "EVT_CASE_F4732BEE88",
+      "source_final_name": "暴风雪",
+      "source_query_event_ids": [
+        "EVT_CASE_F4732BEE88"
+      ],
+      "relation": "TRIGGERS",
+      "target": "救援",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_6E3BDBB2CA",
+      "target_final_id": "MEA_CASE_4DEF057716",
+      "target_final_name": "救援",
+      "target_query_event_ids": [],
+      "evidence": "暴风雪持续导致被困人员面临失温、死亡的重大风险，救援队伍克服暴风雪影响，逐车找到被困人员",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "救援",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_6E3BDBB2CA",
+      "source_final_id": "MEA_CASE_4DEF057716",
+      "source_final_name": "救援",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "小型轿车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_D7EFB0F44F",
+      "target_final_id": "RES_CASE_70407E27F9",
+      "target_final_name": "小型轿车",
+      "target_query_event_ids": [],
+      "evidence": "救援队伍克服暴风雪影响，逐车找到被困人员",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "救援",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_6E3BDBB2CA",
+      "source_final_id": "MEA_CASE_4DEF057716",
+      "source_final_name": "救援",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "客运班车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_26F073ECEA",
+      "target_final_id": "RES_CASE_DFCBA2A648",
+      "target_final_name": "客运班车",
+      "target_query_event_ids": [],
+      "evidence": "救援队伍克服暴风雪影响，逐车找到被困人员",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《高原暴风雪突发事件应急预案》",
+    "《高原公路交通应急处置预案》"
+  ],
+  "quality_notes": [
+    "人员伤亡数据来自consequence_text，可能存在不完整性。",
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 13,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "青藏高原国道段，突发强暴风雪，能见度不足5米，气温零下20℃，8辆小型轿车、2辆客运班车被困暴风雪中，车辆无法行驶，车内共46人被困，部分人员已出现冻伤、失温症状，周边无村镇，通讯信号中断。",
+    "consequence_text": "造成3人重度冻伤、10余人轻微冻伤，无人员死亡，10辆车被困无法移动，高原国道双向交通完全中断，暴风雪持续导致被困人员面临失温、死亡的重大风险，救援车辆无法正常通行。",
+    "measure_text": "当地应急管理部门启动《高原暴风雪突发事件应急预案》，协调消防救援队伍、交通部门、医疗部门组建应急救援车队，携带雪地救援装备、保暖物资、急救药品、油料赶赴现场；气象部门实时监测暴风雪变化，预判天气窗口期；救援队伍克服暴风雪影响，逐车找到被困人员，为被困人员提供保暖物资、热水和食品，对冻伤人员进行紧急救治；分批将被困人员转移至就近安置点，同时对被困车辆进行救援；交警部门封闭事故路段，严禁车辆进入；依据《高原公路交通应急处置预案》开展后续保障，8小时后所有被困人员全部安全转移，待暴风雪停止后清理路面，恢复道路通行。"
+  }
+}

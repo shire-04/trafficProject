@@ -1,0 +1,360 @@
+{
+  "case_id": "009_港口道路危化品运输车倾覆泄漏事故_ace2077d",
+  "title": "港口道路危化品运输车倾覆泄漏事故",
+  "source_file": "交通应急处理案例.txt",
+  "summary": "港口道路发生危化品运输车倾覆泄漏事故，造成人员轻伤、路面腐蚀和环境污染。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_HAZMAT_LEAK",
+    "expanded_event_ids": [
+      "EVT_HAZMAT_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_27470069E0",
+      "name": "危化品泄漏",
+      "entity_type": "Event",
+      "evidence": "一辆装载液态危化品（氢氧化钠溶液）的罐式运输车，在转弯时因车速过快、重心不稳发生倾覆，罐体破损导致氢氧化钠溶液泄漏",
+      "confidence": 0.9,
+      "normalized_id": "EVT_HAZMAT_LEAK",
+      "normalized_name": "危险化学品运输泄漏事件",
+      "normalized_score": 0.0,
+      "matched_alias": "危险化学品运输泄漏事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_HAZMAT_LEAK",
+      "final_entity_name": "危险化学品运输泄漏事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_HAZMAT_LEAK",
+      "primary_event_name": "危险化学品运输泄漏事件",
+      "expanded_event_ids": [
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "危险货物运输事故"
+      ],
+      "query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "query_event_names": [
+        "危险化学品运输泄漏事件",
+        "危险货物运输事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_HAZMAT_LEAK"
+      ],
+      "alias_patch_target_names": [
+        "危险化学品运输泄漏事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_D8858F2883",
+      "name": "危化品运输车倾覆",
+      "entity_type": "Event",
+      "evidence": "一辆装载液态危化品（氢氧化钠溶液）的罐式运输车，在转弯时因车速过快、重心不稳发生倾覆",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_AA7B56938D",
+      "final_entity_name": "危化品运输车倾覆",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_AA7B56938D",
+      "primary_event_name": "危化品运输车倾覆",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_AA7B56938D"
+      ],
+      "query_event_names": [
+        "危化品运输车倾覆"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_20AE6DBF5B",
+      "name": "氢氧化钠溶液",
+      "entity_type": "Resource",
+      "evidence": "装载液态危化品（氢氧化钠溶液）",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_F1D0288F3D",
+      "final_entity_name": "氢氧化钠溶液",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_6AB0E9C240",
+      "name": "堵漏",
+      "entity_type": "Action",
+      "evidence": "对泄漏点进行堵漏",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_39D13A1B81",
+      "final_entity_name": "堵漏",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_1C1BC00338",
+      "name": "采样监测",
+      "entity_type": "Action",
+      "evidence": "对泄漏区域土壤、水体进行采样监测",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2223,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_87C818ACA4",
+      "final_entity_name": "采样监测",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_22449E8D4A",
+      "name": "警戒",
+      "entity_type": "Action",
+      "evidence": "设置警戒区域",
+      "confidence": 0.6,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2643,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_A985295656",
+      "final_entity_name": "警戒",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_A856EDA92D",
+      "name": "清理和腐蚀修复",
+      "entity_type": "Action",
+      "evidence": "交通部门对路面进行清理和腐蚀修复",
+      "confidence": 0.6,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1622,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_4ED673EE27",
+      "final_entity_name": "清理和腐蚀修复",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "危化品运输车倾覆",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_D8858F2883",
+      "source_final_id": "EVT_CASE_AA7B56938D",
+      "source_final_name": "危化品运输车倾覆",
+      "source_query_event_ids": [
+        "EVT_CASE_AA7B56938D"
+      ],
+      "relation": "CAUSES",
+      "target": "危化品泄漏",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_27470069E0",
+      "target_final_id": "EVT_HAZMAT_LEAK",
+      "target_final_name": "危险化学品运输泄漏事件",
+      "target_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "evidence": "在转弯时因车速过快、重心不稳发生倾覆，罐体破损导致氢氧化钠溶液泄漏",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "堵漏",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_6AB0E9C240",
+      "source_final_id": "MEA_CASE_39D13A1B81",
+      "source_final_name": "堵漏",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "氢氧化钠溶液",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_20AE6DBF5B",
+      "target_final_id": "RES_CASE_F1D0288F3D",
+      "target_final_name": "氢氧化钠溶液",
+      "target_query_event_ids": [],
+      "evidence": "对泄漏点进行堵漏",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "危化品泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_27470069E0",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "堵漏",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_6AB0E9C240",
+      "target_final_id": "MEA_CASE_39D13A1B81",
+      "target_final_name": "堵漏",
+      "target_query_event_ids": [],
+      "evidence": "对泄漏点进行堵漏",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "危化品泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_27470069E0",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "采样监测",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_1C1BC00338",
+      "target_final_id": "MEA_CASE_87C818ACA4",
+      "target_final_name": "采样监测",
+      "target_query_event_ids": [],
+      "evidence": "环保部门对泄漏区域土壤、水体进行采样监测",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "危化品泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_27470069E0",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "警戒",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_22449E8D4A",
+      "target_final_id": "MEA_CASE_A985295656",
+      "target_final_name": "警戒",
+      "target_query_event_ids": [],
+      "evidence": "交警部门封闭事故路段，设置警戒区域",
+      "confidence": 0.75,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "危化品泄漏",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_27470069E0",
+      "source_final_id": "EVT_HAZMAT_LEAK",
+      "source_final_name": "危险化学品运输泄漏事件",
+      "source_query_event_ids": [
+        "EVT_HAZMAT_LEAK",
+        "EVT_HAZMAT_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "清理和腐蚀修复",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_A856EDA92D",
+      "target_final_id": "MEA_CASE_4ED673EE27",
+      "target_final_name": "清理和腐蚀修复",
+      "target_query_event_ids": [],
+      "evidence": "交通部门对路面进行清理和腐蚀修复",
+      "confidence": 0.75,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《港口法》",
+    "《危险化学品安全管理条例》"
+  ],
+  "quality_notes": [
+    "Relationships are based on explicit mentions in the text.",
+    "Confidence scores reflect the clarity of the relationship in the source text."
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 1,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某港口集装箱运输专用道路，一辆装载液态危化品（氢氧化钠溶液）的罐式运输车，在转弯时因车速过快、重心不稳发生倾覆，罐体破损导致氢氧化钠溶液泄漏，泄漏液体沿道路流淌，周边有多家集装箱堆场和货运站，道路上有少量过往车辆和工作人员。",
+    "consequence_text": "造成运输车驾驶员1人轻伤，泄漏的氢氧化钠溶液具有强腐蚀性，导致路面腐蚀受损，周边土壤受到污染，威胁周边工作人员人身安全，事故路段交通封闭，港口集装箱运输受到影响，泄漏液体若流入附近海域可能造成海洋污染。",
+    "measure_text": "应急管理部门启动《港口危险化学品突发事件应急预案》，协调消防救援队伍携带防化服、中和剂、堵漏器材赶赴现场，对泄漏点进行堵漏，使用中和剂对泄漏液体进行中和处理；环保部门对泄漏区域土壤、水体进行采样监测，设置围油栏防止泄漏液体流入海域；医疗部门对轻伤驾驶员进行现场处置，指导现场人员做好防护措施；交警部门封闭事故路段，疏导过往车辆和人员，设置警戒区域；危化品专业处置队伍对剩余危化品进行安全转运，交通部门对路面进行清理和腐蚀修复，港口管理部门暂停周边集装箱运输作业，依据《港口法》《危险化学品安全管理条例》开展事故调查，5小时后泄漏得到控制，道路恢复通行。"
+  }
+}

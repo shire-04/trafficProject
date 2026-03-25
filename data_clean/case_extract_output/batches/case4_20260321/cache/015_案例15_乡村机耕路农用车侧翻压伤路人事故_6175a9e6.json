@@ -1,0 +1,201 @@
+{
+  "case_id": "015_案例15_乡村机耕路农用车侧翻压伤路人事故_6175a9e6",
+  "title": "案例15：乡村机耕路农用车侧翻压伤路人事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "乡村机耕土路上，农用车侧翻导致驾驶员受伤，路人受伤，车辆报废，道路中断。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_D185192C70",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_DE952BE507",
+      "name": "农用车侧翻",
+      "entity_type": "Event",
+      "evidence": "一辆农用三轮车满载农作物秸秆，行驶至陡坡路段时，因车速过快、车辆重心偏移侧翻",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_D185192C70",
+      "final_entity_name": "农用车侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_D185192C70",
+      "primary_event_name": "农用车侧翻",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_D185192C70",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "农用车侧翻",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_B1F9D76B98",
+      "name": "驾驶员",
+      "entity_type": "Department",
+      "evidence": "三轮车车身压住驾驶员腿部",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_DFE92BD53C",
+      "final_entity_name": "驾驶员",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "department_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_946FBD73A7",
+      "name": "侧翻",
+      "entity_type": "Action",
+      "evidence": "车辆重心偏移侧翻",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_0BF2A9DC72",
+      "final_entity_name": "侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_DBDF9AE9E8",
+      "name": "道路中断",
+      "entity_type": "Event",
+      "evidence": "机耕路中断",
+      "confidence": 0.7,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.0628,
+      "matched_alias": "多车追尾引发火灾",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "农用车侧翻",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_DE952BE507",
+      "source_final_id": "EVT_CASE_D185192C70",
+      "source_final_name": "农用车侧翻",
+      "source_query_event_ids": [
+        "EVT_CASE_D185192C70",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "道路中断",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_DBDF9AE9E8",
+      "target_final_id": "EVT_ROAD_INTERRUPTION",
+      "target_final_name": "公路中断",
+      "target_query_event_ids": [
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "evidence": "农用车侧翻压伤路人事故，机耕路中断",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "侧翻",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_946FBD73A7",
+      "source_final_id": "MEA_CASE_0BF2A9DC72",
+      "source_final_name": "侧翻",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "驾驶员",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_B1F9D76B98",
+      "target_final_id": "ORG_CASE_DFE92BD53C",
+      "target_final_name": "驾驶员",
+      "target_query_event_ids": [],
+      "evidence": "三轮车车身压住驾驶员腿部。",
+      "confidence": 0.6,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于给定的实体目录，没有进行新的实体识别。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "乡村机耕土路，一辆农用三轮车满载农作物秸秆，违规搭载2名村民，行驶至陡坡路段时，因车速过快、车辆重心偏移侧翻，秸秆散落压住路边行走的1名村民，三轮车车身压住驾驶员腿部。",
+    "consequence_text": "造成驾驶员腿部骨折、路边村民被压轻伤、搭载村民轻微擦伤，农用车报废，机耕路中断，周边农户出行受阻，散落秸秆易引发火灾风险。",
+    "measure_text": "当地村民第一时间协助移开秸秆，拨打救援电话；消防人员到场，抬升车辆救出驾驶员，清理散落秸秆；医疗人员转运伤者就医；交警到场勘查，认定农用车违规载人、超载责任；村委会协助清理现场，劝导农户严禁农用车载人，1.5小时后道路恢复通行。"
+  }
+}

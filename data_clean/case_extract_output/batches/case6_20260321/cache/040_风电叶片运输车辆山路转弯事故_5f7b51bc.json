@@ -1,0 +1,81 @@
+{
+  "case_id": "040_风电叶片运输车辆山路转弯事故_5f7b51bc",
+  "title": "风电叶片运输车辆山路转弯事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "风电叶片运输车辆在山路急转弯处失控，导致车辆横停在路面，完全阻断双向交通，叶片轻微受损。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_42AEE3CEDE",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_484ED91FFF",
+      "name": "车辆失控",
+      "entity_type": "Event",
+      "evidence": "因转弯半径不足，叶片尾部剐蹭山体，导致车辆失控，车身横停在整个路面",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_42AEE3CEDE",
+      "final_entity_name": "车辆失控",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_42AEE3CEDE",
+      "primary_event_name": "车辆失控",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_42AEE3CEDE",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆失控",
+        "公路中断",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [
+    "《大件运输车辆行驶公路管理规定》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本中的明确信息，未进行推断。",
+    "部分事件关系较为隐晦，confidence score 较低。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某山区风电项目进场道路，一辆运输70米长风电叶片的特种超长运输车，在盘山公路急转弯处，因转弯半径不足，叶片尾部剐蹭山体，导致车辆失控，车身横停在整个路面，完全阻断双向交通，车辆无法移动，叶片轻微受损，周边无其他绕行路线。",
+    "consequence_text": "无人员伤亡，风电叶片轻微受损，特种运输车车身受损，山区进场道路完全中断，风电项目其他设备运输、施工建设完全受阻，超长车辆横停路面，无法会车，救援难度极大。",
+    "measure_text": "风电项目应急管理部门立即启动大件运输应急预案，封锁事故路段，协调交通、交警部门赶赴现场；交通部门组织道路、大件运输专家到场，制定车辆脱困方案；调集多台吊车、牵引车，对超长运输车进行精准调整、转向，将车辆安全移出弯道；对受损叶片、车辆进行全面检测；对事故弯道进行拓宽、加固，保障后续大件运输通行；依据《大件运输车辆行驶公路管理规定》《道路交通安全法》开展处置，8小时后车辆成功脱困，道路恢复通行。"
+  }
+}

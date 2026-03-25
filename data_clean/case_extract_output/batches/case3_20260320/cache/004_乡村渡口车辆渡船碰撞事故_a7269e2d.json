@@ -1,0 +1,175 @@
+{
+  "case_id": "004_乡村渡口车辆渡船碰撞事故_a7269e2d",
+  "title": "乡村渡口车辆渡船碰撞事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "乡村河流渡口发生车辆渡船碰撞事故，造成人员轻伤，车辆落水，可能造成水体污染，渡口运营中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_98C4D3810F",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_HUB_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_5D39D7A8DF",
+      "name": "渡船碰撞事故",
+      "entity_type": "Event",
+      "evidence": "某乡村河流渡口，一辆小型货车搭载3名乘客乘坐渡船过渡，渡船行驶至河中央时，因驾驶员操作不当，渡船与停靠在渡口的另一艘渡船发生碰撞，渡船船体破损，小型货车不慎落水，车内人员被困渡船甲板。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_98C4D3810F",
+      "final_entity_name": "渡船碰撞事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_98C4D3810F",
+      "primary_event_name": "渡船碰撞事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_HUB_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "重要客运枢纽运行中断"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_98C4D3810F",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_HUB_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "渡船碰撞事故",
+        "交通事故",
+        "重要客运枢纽运行中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_HUB_INTERRUPTION"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "重要客运枢纽运行中断"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_F52B760C4D",
+      "name": "渡船",
+      "entity_type": "Resource",
+      "evidence": "某乡村河流渡口，一辆小型货车搭载3名乘客乘坐渡船过渡",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_C54C46856D",
+      "final_entity_name": "渡船",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_BD640F6CA1",
+      "name": "驾驶员操作不当",
+      "entity_type": "Action",
+      "evidence": "因驾驶员操作不当，渡船与停靠在渡口的另一艘渡船发生碰撞",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.1622,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_99E1D246E3",
+      "final_entity_name": "驾驶员操作不当",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "驾驶员操作不当",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_BD640F6CA1",
+      "source_final_id": "MEA_CASE_99E1D246E3",
+      "source_final_name": "驾驶员操作不当",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "渡船",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_F52B760C4D",
+      "target_final_id": "RES_CASE_C54C46856D",
+      "target_final_name": "渡船",
+      "target_query_event_ids": [],
+      "evidence": "因驾驶员操作不当，渡船与停靠在渡口的另一艘渡船发生碰撞",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "渡船碰撞事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_5D39D7A8DF",
+      "source_final_id": "EVT_CASE_98C4D3810F",
+      "source_final_name": "渡船碰撞事故",
+      "source_query_event_ids": [
+        "EVT_CASE_98C4D3810F",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_HUB_INTERRUPTION"
+      ],
+      "relation": "TRIGGERS",
+      "target": "驾驶员操作不当",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_BD640F6CA1",
+      "target_final_id": "MEA_CASE_99E1D246E3",
+      "target_final_name": "驾驶员操作不当",
+      "target_query_event_ids": [],
+      "evidence": "因驾驶员操作不当，渡船与停靠在渡口的另一艘渡船发生碰撞",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [
+    "《内河交通安全管理条例》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "关系抽取基于文本中的明确信息，避免了猜测。",
+    "部分关系的置信度较低，因为文本描述较为简略。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某乡村河流渡口，一辆小型货车搭载3名乘客乘坐渡船过渡，渡船行驶至河中央时，因驾驶员操作不当，渡船与停靠在渡口的另一艘渡船发生碰撞，渡船船体破损，小型货车不慎落水，车内人员被困渡船甲板。",
+    "consequence_text": "造成渡船上3名乘客1人轻伤、2人轻微呛水，小型货车完全落水，可能沉入河底造成水体污染，渡口渡船运营中断，周边村民过渡受阻，河流水流较急增加救援难度。",
+    "measure_text": "当地乡镇应急管理办公室接到报警后，协调海事部门、消防救援队伍赶赴现场，使用救生艇解救被困人员；海事部门对破损渡船进行临时封堵，防止船体进水沉没；交警部门封闭渡口，疏导过往村民绕行其他过渡点；医疗部门派遣救护车对受伤人员进行救治；依据《内河交通安全管理条例》开展事故调查，2小时后渡口恢复运营，落水车辆打捞工作同步进行。"
+  }
+}

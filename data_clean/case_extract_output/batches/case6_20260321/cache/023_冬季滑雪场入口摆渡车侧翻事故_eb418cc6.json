@@ -1,0 +1,137 @@
+{
+  "case_id": "023_冬季滑雪场入口摆渡车侧翻事故_eb418cc6",
+  "title": "冬季滑雪场入口摆渡车侧翻事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某冬季滑雪场入口盘山公路，一辆满载滑雪游客的景区摆渡车因路面结冰湿滑、驾驶员车速过快在弯道处侧翻，造成人员伤亡和车辆损毁，滑雪场入口公路封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9CC62EF2EB",
+    "expanded_event_ids": [
+      "EVT_ROAD_ICE",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_C0D70A0C4E",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "一辆满载滑雪游客的景区摆渡车，因路面结冰湿滑、驾驶员车速过快，在弯道处发生侧翻，车身冲出路面撞在路边防护墩上",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9CC62EF2EB",
+      "final_entity_name": "车辆侧翻",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9CC62EF2EB",
+      "primary_event_name": "车辆侧翻",
+      "expanded_event_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "道路积冰",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_ROAD_ICE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆侧翻",
+        "道路积冰",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "道路积冰",
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_41D4A53D71",
+      "name": "道路积冰",
+      "entity_type": "Event",
+      "evidence": "路面结冰湿滑",
+      "confidence": 0.8,
+      "normalized_id": "EVT_ROAD_ICE",
+      "normalized_name": "道路积冰",
+      "normalized_score": 0.1939,
+      "matched_alias": "路面结冰",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_ROAD_ICE",
+      "final_entity_name": "道路积冰",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_ICE",
+      "primary_event_name": "道路积冰",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_ROAD_ICE"
+      ],
+      "query_event_names": [
+        "道路积冰"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "道路积冰",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_41D4A53D71",
+      "source_final_id": "EVT_ROAD_ICE",
+      "source_final_name": "道路积冰",
+      "source_query_event_ids": [
+        "EVT_ROAD_ICE"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧翻",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_C0D70A0C4E",
+      "target_final_id": "EVT_CASE_9CC62EF2EB",
+      "target_final_name": "车辆侧翻",
+      "target_query_event_ids": [
+        "EVT_CASE_9CC62EF2EB",
+        "EVT_ROAD_ICE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "evidence": "因路面结冰湿滑、驾驶员车速过快，在弯道处发生侧翻",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《旅游安全管理办法》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "人员伤亡数量根据原文推断得出。",
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 11,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某冬季滑雪场入口盘山公路，一辆满载滑雪游客的景区摆渡车，因路面结冰湿滑、驾驶员车速过快，在弯道处发生侧翻，车身冲出路面撞在路边防护墩上，车身严重变形，车内22名游客被困，当时气温零下18℃，风力6级。",
+    "consequence_text": "造成3名游客重伤、8名游客轻伤，摆渡车完全损毁，滑雪场入口公路双向交通封闭，后续游客无法进入滑雪场，景区运营受到影响，低温严寒环境下被困游客有冻伤、失温的风险。",
+    "measure_text": "滑雪场应急管理部门立即启动旅游突发事件应急预案，协调消防救援队伍、医疗部门赶赴现场；消防救援队伍使用破拆工具拆解变形车身，解救被困游客，为游客提供保暖物资；医疗部门现场对受伤游客进行包扎、保暖处置，重伤员转运至医院；交警部门封闭事故路段，撒布融雪剂、防滑沙清除路面结冰，疏导过往车辆；景区调配备用摆渡车，接驳滞留游客；依据《旅游安全管理办法》《道路交通安全法》开展事故调查，3小时后道路恢复通行，景区运营恢复正常。"
+  }
+}

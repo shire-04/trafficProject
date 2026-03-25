@@ -1,0 +1,231 @@
+{
+  "case_id": "006_矿山专用道路矿车刹车失灵冲撞事故_ebcf86b0",
+  "title": "矿山专用道路矿车刹车失灵冲撞事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "某金属矿山内部专用运输道路，一辆满载矿石的重型矿用卡车因刹车失灵冲撞矿山选矿厂厂区，造成人员伤亡和设备损毁，并存在漏油风险。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_8B7F0B5FB2",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_ROAD_DAMAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_413939E443",
+      "name": "车辆失控冲撞",
+      "entity_type": "Event",
+      "evidence": "一辆满载矿石的重型矿用卡车，因长下坡刹车系统故障失灵，车辆失控高速冲向矿山选矿厂厂区，接连撞毁厂区围墙、2间临时板房，最终撞上选矿设备停下",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_8B7F0B5FB2",
+      "final_entity_name": "车辆失控冲撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_8B7F0B5FB2",
+      "primary_event_name": "车辆失控冲撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路交通运输生产事故",
+        "公路损毁"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_8B7F0B5FB2",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "query_event_names": [
+        "车辆失控冲撞",
+        "公路中断",
+        "公路交通运输生产事故",
+        "公路损毁"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路交通运输生产事故",
+        "公路损毁"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_4710926E4C",
+      "name": "车辆失控",
+      "entity_type": "Event",
+      "evidence": "车辆失控高速冲向矿山选矿厂厂区",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_42AEE3CEDE",
+      "final_entity_name": "车辆失控",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_42AEE3CEDE",
+      "primary_event_name": "车辆失控",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_42AEE3CEDE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆失控",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_B58443BAD2",
+      "name": "刹车失灵",
+      "entity_type": "Action",
+      "evidence": "因长下坡刹车系统故障失灵",
+      "confidence": 0.9,
+      "normalized_id": "MEA_CASE_80354268E0",
+      "normalized_name": "刹车失灵",
+      "normalized_score": 1.0,
+      "matched_alias": "刹车失灵",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_80354268E0",
+      "final_entity_name": "刹车失灵",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_63D5D88AE6",
+      "name": "油箱破损漏油",
+      "entity_type": "Event",
+      "evidence": "卡车油箱破损漏油，存在起火、爆炸的重大风险",
+      "confidence": 0.75,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_2FEC1FEE85",
+      "final_entity_name": "油箱破损漏油",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_2FEC1FEE85",
+      "primary_event_name": "油箱破损漏油",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_2FEC1FEE85"
+      ],
+      "query_event_names": [
+        "油箱破损漏油"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆失控",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_4710926E4C",
+      "source_final_id": "EVT_CASE_42AEE3CEDE",
+      "source_final_name": "车辆失控",
+      "source_query_event_ids": [
+        "EVT_CASE_42AEE3CEDE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆失控冲撞",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_413939E443",
+      "target_final_id": "EVT_CASE_8B7F0B5FB2",
+      "target_final_name": "车辆失控冲撞",
+      "target_query_event_ids": [
+        "EVT_CASE_8B7F0B5FB2",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE"
+      ],
+      "evidence": "车辆失控高速冲向矿山选矿厂厂区",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "油箱破损漏油",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_63D5D88AE6",
+      "source_final_id": "EVT_CASE_2FEC1FEE85",
+      "source_final_name": "油箱破损漏油",
+      "source_query_event_ids": [
+        "EVT_CASE_2FEC1FEE85"
+      ],
+      "relation": "TRIGGERS",
+      "target": "刹车失灵",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_B58443BAD2",
+      "target_final_id": "MEA_CASE_80354268E0",
+      "target_final_name": "刹车失灵",
+      "target_query_event_ids": [],
+      "evidence": "卡车油箱破损漏油，存在起火、爆炸的重大风险",
+      "confidence": 0.6,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《安全生产法》",
+    "《矿山安全法》"
+  ],
+  "quality_notes": [
+    "信息较为完整，实体抽取准确。",
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某金属矿山内部专用运输道路，一辆满载矿石的重型矿用卡车，因长下坡刹车系统故障失灵，车辆失控高速冲向矿山选矿厂厂区，接连撞毁厂区围墙、2间临时板房，最终撞上选矿设备停下，卡车驾驶室严重变形，驾驶员被困车内，厂区内有多名作业人员。",
+    "consequence_text": "造成卡车驾驶员1人重伤被困，厂区2名作业人员轻伤，选矿厂围墙、板房、生产设备严重损毁，矿山矿石运输道路完全中断，矿山生产作业暂停，卡车油箱破损漏油，存在起火、爆炸的重大风险。",
+    "measure_text": "矿山应急救援队伍立即启动矿山生产安全事故应急预案，封锁事故现场，疏散厂区作业人员，使用灭火器处置漏油隐患，防止起火；消防救援队伍赶赴现场，使用破拆工具解救被困驾驶员；医疗部门派遣救护车转运受伤人员至医院；应急管理部门派驻工作组开展事故调查，责令矿山全面停产排查安全隐患；矿山维修队伍清理事故现场，修复受损设施；依据《安全生产法》《矿山安全法》开展事故调查，3小时后救援工作结束，矿山逐步恢复生产。"
+  }
+}

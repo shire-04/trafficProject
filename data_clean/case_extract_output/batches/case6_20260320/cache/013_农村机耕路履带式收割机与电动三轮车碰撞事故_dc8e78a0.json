@@ -1,0 +1,158 @@
+{
+  "case_id": "013_农村机耕路履带式收割机与电动三轮车碰撞事故_dc8e78a0",
+  "title": "农村机耕路履带式收割机与电动三轮车碰撞事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "秋收季节，履带式收割机与电动三轮车在狭窄机耕路上正面碰撞，造成人员伤亡和车辆损毁，机耕路中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9BDDC88CCC",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ROAD_DAMAGE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_BBD3E4A1EE",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆大型履带式联合收割机正在田间作业后转场，行驶在狭窄机耕路上，与对向行驶的载人电动三轮车会车时，因机耕路狭窄、视线受阻，发生正面碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9BDDC88CCC",
+      "final_entity_name": "车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9BDDC88CCC",
+      "primary_event_name": "车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路损毁",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞",
+        "公路中断",
+        "公路损毁",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路损毁",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_9BFC3F4CBA",
+      "name": "电动三轮车",
+      "entity_type": "Resource",
+      "evidence": "载人电动三轮车",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3024,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_D7EB68391B",
+      "final_entity_name": "电动三轮车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_AF5E1C8455",
+      "name": "正面碰撞",
+      "entity_type": "Action",
+      "evidence": "发生正面碰撞",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_6BA428A393",
+      "final_entity_name": "正面碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "正面碰撞",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_AF5E1C8455",
+      "source_final_id": "MEA_CASE_6BA428A393",
+      "source_final_name": "正面碰撞",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "电动三轮车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_9BFC3F4CBA",
+      "target_final_id": "RES_CASE_D7EB68391B",
+      "target_final_name": "电动三轮车",
+      "target_query_event_ids": [],
+      "evidence": "与对向行驶的载人电动三轮车会车时，发生正面碰撞",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《道路交通安全法》",
+    "《农业机械安全监督管理条例》"
+  ],
+  "quality_notes": [
+    "Relationships are based on explicit mentions in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": 2,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某秋收季节农村机耕土路，一辆大型履带式联合收割机正在田间作业后转场，行驶在狭窄机耕路上，与对向行驶的载人电动三轮车会车时，因机耕路狭窄、视线受阻，发生正面碰撞，电动三轮车被收割机履带碾压，车身完全变形，车内3人被困，收割机紧急停下。",
+    "consequence_text": "造成电动三轮车内2人死亡、1人重伤，三轮车完全损毁，收割机轻微受损，机耕路完全中断，周边农田作业受阻，事故现场引发周边村民聚集，易引发纠纷。",
+    "measure_text": "当地派出所、交警部门立即赶赴现场，控制收割机驾驶员，疏散围观村民，保护事故现场；消防救援队伍赶赴现场，清理变形三轮车，解救被困重伤人员；医疗部门派遣救护车转运重伤人员至医院，对遇难人员进行善后处置；农业农村部门、农机部门对收割机进行安全检测，开展事故责任认定；依据《道路交通安全法》《农业机械安全监督管理条例》开展事故调查，2小时后机耕路恢复通行。"
+  }
+}

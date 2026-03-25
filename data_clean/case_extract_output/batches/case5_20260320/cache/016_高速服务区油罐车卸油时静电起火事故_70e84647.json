@@ -1,0 +1,128 @@
+{
+  "case_id": "016_高速服务区油罐车卸油时静电起火事故_70e84647",
+  "title": "高速服务区油罐车卸油时静电起火事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "高速服务区加油站油罐车卸油时，因静电未接地引发汽油泄漏并起火，造成加油站作业中断，服务区人员恐慌，无人员伤亡。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F8328EF576",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_DA5365B92C",
+      "name": "油罐车静电火灾",
+      "entity_type": "Event",
+      "evidence": "某高速服务区加油站，一辆油罐车正在向加油站储油罐卸油，因卸油过程中未规范接好静电接地装置，产生静电火花引燃泄漏的汽油，火势迅速蔓延至卸油口",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F8328EF576",
+      "final_entity_name": "油罐车静电火灾",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F8328EF576",
+      "primary_event_name": "油罐车静电火灾",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F8328EF576",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "油罐车静电火灾",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_AC28F8FF24",
+      "name": "静电火花",
+      "entity_type": "Event",
+      "evidence": "产生静电火花引燃泄漏的汽油",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_48C1544FE8",
+      "final_entity_name": "静电火花",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_48C1544FE8",
+      "primary_event_name": "静电火花",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_48C1544FE8"
+      ],
+      "query_event_names": [
+        "静电火花"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "静电火花",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_AC28F8FF24",
+      "source_final_id": "EVT_CASE_48C1544FE8",
+      "source_final_name": "静电火花",
+      "source_query_event_ids": [
+        "EVT_CASE_48C1544FE8"
+      ],
+      "relation": "CAUSES",
+      "target": "油罐车静电火灾",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_DA5365B92C",
+      "target_final_id": "EVT_CASE_F8328EF576",
+      "target_final_name": "油罐车静电火灾",
+      "target_query_event_ids": [
+        "EVT_CASE_F8328EF576",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "因卸油过程中未规范接好静电接地装置，产生静电火花引燃泄漏的汽油",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《消防法》",
+    "《危险化学品安全管理条例》"
+  ],
+  "quality_notes": [
+    "The relationships are based on explicit statements in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": 0,
+    "injuries": 0,
+    "missing": 0,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某高速服务区加油站，一辆油罐车正在向加油站储油罐卸油，因卸油过程中未规范接好静电接地装置，产生静电火花引燃泄漏的汽油，火势迅速蔓延至卸油口，油罐车驾驶员与加油站工作人员紧急撤离，现场有多名加油的过往旅客。",
+    "consequence_text": "无人员伤亡，卸油口周边过火，加油站卸油作业中断，服务区加油站临时封闭，过往车辆无法加油，火势存在蔓延至油罐车、储油罐引发爆炸的重大风险，服务区内人员出现恐慌。",
+    "measure_text": "加油站工作人员立即启动应急预案，切断加油站电源、油路，关闭油罐车卸油阀门，使用灭火器进行初期灭火，同时拨打119报警，疏散服务区内人员与车辆；消防救援队伍赶赴现场，采用泡沫覆盖法扑灭明火，对油罐车、储油罐进行持续冷却，防止爆炸；交警部门封闭服务区入口，疏导过往车辆绕行相邻服务区加油；应急管理部门对事故原因开展调查，依据《消防法》《危险化学品安全管理条例》对加油站、油罐车运输企业进行追责，3小时后险情排除，加油站恢复正常运营。"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "case_id": "039_边境公路巡逻车与走私车辆冲撞事故_afef4888",
+  "title": "边境公路巡逻车与走私车辆冲撞事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "边境巡逻车与走私货车发生冲撞，造成人员受伤和车辆损毁，道路交通封闭。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_3D68393BCE",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_455EA9F7EF",
+      "name": "车辆冲撞",
+      "entity_type": "Event",
+      "evidence": "货车加速冲撞巡逻车",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_3D68393BCE",
+      "final_entity_name": "车辆冲撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_3D68393BCE",
+      "primary_event_name": "车辆冲撞",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_3D68393BCE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆冲撞",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_097B47FCD3",
+      "name": "车辆滞留",
+      "entity_type": "Event",
+      "evidence": "车辆滞留约3公里",
+      "confidence": 0.7,
+      "normalized_id": "EVT_VEHICLE_BACKLOG",
+      "normalized_name": "车辆积压",
+      "normalized_score": 0.194,
+      "matched_alias": "车辆滞留",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_VEHICLE_BACKLOG",
+      "final_entity_name": "车辆积压",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_VEHICLE_BACKLOG",
+      "primary_event_name": "车辆积压",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_8EA57CFF06",
+      "name": "道路封闭",
+      "entity_type": "Event",
+      "evidence": "边境公路单向交通封闭",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_18E5D99FD5",
+      "final_entity_name": "道路封闭",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_18E5D99FD5",
+      "primary_event_name": "道路封闭",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_18E5D99FD5"
+      ],
+      "query_event_names": [
+        "道路封闭"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "道路封闭",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_8EA57CFF06",
+      "source_final_id": "EVT_CASE_18E5D99FD5",
+      "source_final_name": "道路封闭",
+      "source_query_event_ids": [
+        "EVT_CASE_18E5D99FD5"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆滞留",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_097B47FCD3",
+      "target_final_id": "EVT_VEHICLE_BACKLOG",
+      "target_final_name": "车辆积压",
+      "target_query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "evidence": "边境公路单向交通封闭，车辆滞留约3公里",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "中华人民共和国出境入境管理法",
+    "道路交通安全法",
+    "刑法"
+  ],
+  "quality_notes": [
+    "信息较为完整，可信度较高。",
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某边境公路巡逻路段，边境管理支队巡逻车正在执行巡逻任务，发现一辆涉嫌走私的重型货车，示意其停车接受检查，货车拒不停车，反而加速冲撞巡逻车，巡逻车被撞后失控撞上路边护栏，车身严重变形，车内3名边境民警被困，走私货车冲卡后继续逃窜。",
+    "consequence_text": "造成3名边境民警不同程度受伤，巡逻车完全损毁，边境公路单向交通封闭，车辆滞留约3公里，走私货车冲卡逃窜，存在危害边境安全的重大风险。",
+    "measure_text": "边境管理支队立即启动应急预案，协调交警部门封闭事故路段，设置警戒区域，同时组织警力对逃窜走私货车进行拦截；消防救援队伍赶赴现场，使用破拆工具解救被困民警；医疗部门派遣救护车转运受伤民警至医院；交警部门开展现场勘查，协助追查走私货车；最终在边境卡口成功拦截走私货车，抓获涉案人员，查获走私货物；依据《中华人民共和国出境入境管理法》《道路交通安全法》《刑法》对涉案人员进行从严处置，3小时后道路恢复通行。"
+  }
+}

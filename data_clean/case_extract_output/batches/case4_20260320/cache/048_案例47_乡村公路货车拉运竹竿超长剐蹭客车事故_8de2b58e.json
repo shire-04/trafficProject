@@ -1,0 +1,136 @@
+{
+  "case_id": "048_案例47_乡村公路货车拉运竹竿超长剐蹭客车事故_8de2b58e",
+  "title": "案例47：乡村公路货车拉运竹竿超长剐蹭客车事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "乡村公路货车超长竹竿剐蹭客车，造成人员受伤和车辆受损，道路拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F4AFE9A596",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_7E430D45A2",
+      "name": "车辆剐蹭",
+      "entity_type": "Event",
+      "evidence": "一辆货车拉运竹竿，超长超出车尾3米，未设置警示标志，与对向行驶的客运班车会车时，超长竹竿剐蹭客车车身与车窗",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F4AFE9A596",
+      "final_entity_name": "车辆剐蹭",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F4AFE9A596",
+      "primary_event_name": "车辆剐蹭",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F4AFE9A596",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆剐蹭",
+        "车辆积压",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_EC8F4C1166",
+      "name": "车辆滞留",
+      "entity_type": "Event",
+      "evidence": "乡村公路拥堵，车辆滞留2公里",
+      "confidence": 0.7,
+      "normalized_id": "EVT_VEHICLE_BACKLOG",
+      "normalized_name": "车辆积压",
+      "normalized_score": 0.2088,
+      "matched_alias": "车辆滞留",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_VEHICLE_BACKLOG",
+      "final_entity_name": "车辆积压",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_VEHICLE_BACKLOG",
+      "primary_event_name": "车辆积压",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆剐蹭",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_7E430D45A2",
+      "source_final_id": "EVT_CASE_F4AFE9A596",
+      "source_final_name": "车辆剐蹭",
+      "source_query_event_ids": [
+        "EVT_CASE_F4AFE9A596",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆滞留",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_EC8F4C1166",
+      "target_final_id": "EVT_VEHICLE_BACKLOG",
+      "target_final_name": "车辆积压",
+      "target_query_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "evidence": "客车与竹竿受损，乡村公路拥堵，车辆滞留2公里",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "超长装载违规"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 2,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "乡村公路，一辆货车拉运竹竿，超长超出车尾3米，未设置警示标志，与对向行驶的客运班车会车时，超长竹竿剐蹭客车车身与车窗，客车玻璃破碎，乘客受到惊吓。",
+    "consequence_text": "2名乘客被碎玻璃划伤，客车与竹竿受损，乡村公路拥堵，车辆滞留2公里，超长装载违规，易引发重大伤亡。",
+    "measure_text": "交警到场，调处事故责任，对货车超长装载行为处罚；医疗人员对伤者进行包扎；切割超长竹竿，清理现场，恢复交通；加强乡村公路货车超长装载管控，1小时后道路恢复通行。"
+  }
+}

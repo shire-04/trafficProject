@@ -1,0 +1,129 @@
+{
+  "case_id": "048_海岛环岛公路潮汐淹没车辆被困事故_d013820b",
+  "title": "海岛环岛公路潮汐淹没车辆被困事故",
+  "source_file": "交通应急处理案例6.txt",
+  "summary": "海岛环岛公路因天文大潮涨潮，海水淹没路面，导致3辆轿车和2辆SUV被困，8人被困车顶。消防救援队伍已将人员安全转移，道路封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_EMERGENCY",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_METEO_ROAD"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_E0207F4F36",
+      "name": "道路潮汐淹没车辆被困",
+      "entity_type": "Event",
+      "evidence": "某海岛旅游景区环岛临海公路，恰逢天文大潮涨潮，海水快速漫过路面，水深达60厘米，3辆小型轿车、2辆SUV驶入淹没路段后相继熄火，车内共8人被困车顶",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_EMERGENCY",
+      "normalized_name": "公路交通突发事件",
+      "normalized_score": 0.0,
+      "matched_alias": "公路交通突发事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_EMERGENCY",
+      "final_entity_name": "公路交通突发事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_EMERGENCY",
+      "primary_event_name": "公路交通突发事件",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_METEO_ROAD"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "公路气象灾害"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_METEO_ROAD"
+      ],
+      "query_event_names": [
+        "公路交通突发事件",
+        "车辆积压",
+        "公路气象灾害"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_6E7344E9E3",
+      "name": "潮汐",
+      "entity_type": "Event",
+      "evidence": "恰逢天文大潮涨潮",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_3DADFD6D44",
+      "final_entity_name": "潮汐",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_3DADFD6D44",
+      "primary_event_name": "潮汐",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_3DADFD6D44"
+      ],
+      "query_event_names": [
+        "潮汐"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "潮汐",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_6E7344E9E3",
+      "source_final_id": "EVT_CASE_3DADFD6D44",
+      "source_final_name": "潮汐",
+      "source_query_event_ids": [
+        "EVT_CASE_3DADFD6D44"
+      ],
+      "relation": "CAUSES",
+      "target": "道路潮汐淹没车辆被困",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_E0207F4F36",
+      "target_final_id": "EVT_ROAD_EMERGENCY",
+      "target_final_name": "公路交通突发事件",
+      "target_query_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_METEO_ROAD"
+      ],
+      "evidence": "恰逢天文大潮涨潮，海水快速漫过路面，3辆小型轿车、2辆SUV驶入淹没路段后相继熄火，车内共8人被困车顶",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《旅游安全管理办法》",
+    "《沿海海域潮汐管理办法》"
+  ],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog. Some relationships could be inferred with higher confidence if more context was available."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某海岛旅游景区环岛临海公路，恰逢天文大潮涨潮，海水快速漫过路面，水深达60厘米，3辆小型轿车、2辆SUV驶入淹没路段后相继熄火，车内共8人被困车顶，潮水持续上涨，车辆有被冲走、完全淹没的风险，周边无高处避险区域。",
+    "consequence_text": "造成8人被困车顶，无人员伤亡，车辆浸泡受损，环岛公路完全封闭，海岛旅游交通受阻，潮水上涨导致被困人员面临溺水风险，海岛救援力量有限，救援难度大。",
+    "measure_text": "海岛景区应急管理部门立即启动海洋潮汐突发事件应急预案，协调海事部门、消防救援队伍携带冲锋舟、救生衣赶赴现场；海洋渔业部门实时监测潮汐变化，预判涨潮峰值；消防救援队伍使用冲锋舟将被困人员全部安全转移至岸边；交警部门封闭环岛公路，设置潮汐警示标志，严禁车辆、人员在涨潮时段进入；路政部门待潮水退去后，拖移被困车辆，对道路进行安全检测；依据《旅游安全管理办法》《沿海海域潮汐管理办法》开展处置，2小时后被困人员全部安全转移。"
+  }
+}

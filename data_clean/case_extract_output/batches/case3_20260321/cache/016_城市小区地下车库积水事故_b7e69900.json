@@ -1,0 +1,267 @@
+{
+  "case_id": "016_城市小区地下车库积水事故_b7e69900",
+  "title": "城市小区地下车库积水事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "某城市小区地下车库因暴雨导致排水系统堵塞，路面积水，一辆小型轿车驶入积水后熄火，车内2人被困，车库内10余辆车辆被淹。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_METEO_ROAD",
+    "expanded_event_ids": [
+      "EVT_RAINSTORM"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_BBCF12E032",
+      "name": "道路积水",
+      "entity_type": "Event",
+      "evidence": "路面积水最深达50厘米，一辆小型轿车驶入积水后熄火",
+      "confidence": 0.9,
+      "normalized_id": "EVT_METEO_ROAD",
+      "normalized_name": "公路气象灾害",
+      "normalized_score": 0.0,
+      "matched_alias": "公路气象灾害",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_METEO_ROAD",
+      "final_entity_name": "公路气象灾害",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_METEO_ROAD",
+      "primary_event_name": "公路气象灾害",
+      "expanded_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "expanded_event_names": [
+        "暴雨"
+      ],
+      "query_event_ids": [
+        "EVT_METEO_ROAD",
+        "EVT_RAINSTORM"
+      ],
+      "query_event_names": [
+        "公路气象灾害",
+        "暴雨"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_D6529C01D4",
+      "name": "暴雨",
+      "entity_type": "Event",
+      "evidence": "因暴雨导致车库排水系统堵塞",
+      "confidence": 0.8,
+      "normalized_id": "EVT_RAINSTORM",
+      "normalized_name": "暴雨",
+      "normalized_score": 0.1784,
+      "matched_alias": "暴雨",
+      "resolution_type": "alias_match",
+      "final_entity_id": "EVT_RAINSTORM",
+      "final_entity_name": "暴雨",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_RAINSTORM",
+      "primary_event_name": "暴雨",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "query_event_names": [
+        "暴雨"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_DECDC942A1",
+      "name": "排水系统堵塞",
+      "entity_type": "Event",
+      "evidence": "因暴雨导致车库排水系统堵塞",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_977FDFD762",
+      "final_entity_name": "排水系统堵塞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_977FDFD762",
+      "primary_event_name": "排水系统堵塞",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_977FDFD762"
+      ],
+      "query_event_names": [
+        "排水系统堵塞"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_DD77CE1353",
+      "name": "排水应急预案",
+      "entity_type": "Action",
+      "evidence": "小区物业立即启动排水应急预案",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.7167,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_2BACE2AFD6",
+      "final_entity_name": "排水应急预案",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_F37A1C0FDD",
+      "name": "排水泵",
+      "entity_type": "Resource",
+      "evidence": "调动排水泵排出积水",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.425,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_8CC958EC6D",
+      "final_entity_name": "排水泵",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "暴雨",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_D6529C01D4",
+      "source_final_id": "EVT_RAINSTORM",
+      "source_final_name": "暴雨",
+      "source_query_event_ids": [
+        "EVT_RAINSTORM"
+      ],
+      "relation": "CAUSES",
+      "target": "排水系统堵塞",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_DECDC942A1",
+      "target_final_id": "EVT_CASE_977FDFD762",
+      "target_final_name": "排水系统堵塞",
+      "target_query_event_ids": [
+        "EVT_CASE_977FDFD762"
+      ],
+      "evidence": "因暴雨导致车库排水系统堵塞",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "排水系统堵塞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_DECDC942A1",
+      "source_final_id": "EVT_CASE_977FDFD762",
+      "source_final_name": "排水系统堵塞",
+      "source_query_event_ids": [
+        "EVT_CASE_977FDFD762"
+      ],
+      "relation": "CAUSES",
+      "target": "道路积水",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_BBCF12E032",
+      "target_final_id": "EVT_METEO_ROAD",
+      "target_final_name": "公路气象灾害",
+      "target_query_event_ids": [
+        "EVT_METEO_ROAD",
+        "EVT_RAINSTORM"
+      ],
+      "evidence": "因暴雨导致车库排水系统堵塞，路面积水",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "排水应急预案",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_DD77CE1353",
+      "source_final_id": "MEA_CASE_2BACE2AFD6",
+      "source_final_name": "排水应急预案",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "排水泵",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_F37A1C0FDD",
+      "target_final_id": "RES_CASE_8CC958EC6D",
+      "target_final_name": "排水泵",
+      "target_query_event_ids": [],
+      "evidence": "启动排水应急预案，调动排水泵排出积水",
+      "confidence": 0.85,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "道路积水",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_BBCF12E032",
+      "source_final_id": "EVT_METEO_ROAD",
+      "source_final_name": "公路气象灾害",
+      "source_query_event_ids": [
+        "EVT_METEO_ROAD",
+        "EVT_RAINSTORM"
+      ],
+      "relation": "TRIGGERS",
+      "target": "排水应急预案",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_DD77CE1353",
+      "target_final_id": "MEA_CASE_2BACE2AFD6",
+      "target_final_name": "排水应急预案",
+      "target_query_event_ids": [],
+      "evidence": "路面积水后启动排水应急预案",
+      "confidence": 0.75,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《物业管理条例》",
+    "《中华人民共和国突发事件应对法》"
+  ],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在遗漏或不准确的情况。",
+    "confidence score is estimated."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某城市小区地下车库，因暴雨导致车库排水系统堵塞，路面积水最深达50厘米，一辆小型轿车驶入积水后熄火，车内2人被困，积水持续上涨，车库内有10余辆车辆被淹。",
+    "consequence_text": "造成2人被困车内，10余辆车辆不同程度受损，车库内空气质量下降，存在车辆漏电伤人的风险，小区业主无法正常停车，出行受到影响。",
+    "measure_text": "小区物业立即启动排水应急预案，调动排水泵排出积水，清理排水口杂物；消防救援队伍赶赴现场，解救被困人员；交警部门疏导小区业主绕行；医疗部门对被困人员进行身体检查；依据《物业管理条例》《中华人民共和国突发事件应对法》开展处置，2小时后积水排净，车库逐步恢复使用。"
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "case_id": "005_城市地下车库车辆碰撞起火事故_4670e54d",
+  "title": "城市地下车库车辆碰撞起火事故",
+  "source_file": "交通应急处理案例3.txt",
+  "summary": "某城市小区地下车库发生车辆碰撞起火事故，造成4辆车辆烧毁，无人员伤亡。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_86B072C171",
+    "expanded_event_ids": [
+      "EVT_LONG_TUNNEL_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_5ECAE62F9C",
+      "name": "车辆碰撞起火",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车在倒车入库时，与后方停放的一辆SUV发生碰撞，碰撞导致轿车电路短路引发起火，火势迅速蔓延至周边3辆车辆",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_86B072C171",
+      "final_entity_name": "车辆碰撞起火",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_86B072C171",
+      "primary_event_name": "车辆碰撞起火",
+      "expanded_event_ids": [
+        "EVT_LONG_TUNNEL_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "特长隧道安全事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_86B072C171",
+        "EVT_LONG_TUNNEL_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞起火",
+        "特长隧道安全事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_LONG_TUNNEL_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "特长隧道安全事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_10BD03C227",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车在倒车入库时，与后方停放的一辆SUV发生碰撞",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9BDDC88CCC",
+      "final_entity_name": "车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9BDDC88CCC",
+      "primary_event_name": "车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_260543E6D2",
+      "name": "起火",
+      "entity_type": "Event",
+      "evidence": "碰撞导致轿车电路短路引发起火",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_768E76F1F3",
+      "final_entity_name": "起火",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_768E76F1F3",
+      "primary_event_name": "起火",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_768E76F1F3"
+      ],
+      "query_event_names": [
+        "起火"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_10BD03C227",
+      "source_final_id": "EVT_CASE_9BDDC88CCC",
+      "source_final_name": "车辆碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "起火",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_260543E6D2",
+      "target_final_id": "EVT_CASE_768E76F1F3",
+      "target_final_name": "起火",
+      "target_query_event_ids": [
+        "EVT_CASE_768E76F1F3"
+      ],
+      "evidence": "碰撞导致轿车电路短路引发起火",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《消防法》"
+  ],
+  "quality_notes": [
+    "信息较为完整，事件描述清晰。",
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某城市小区地下车库，一辆小型轿车在倒车入库时，因驾驶员未观察后方，与后方停放的一辆SUV发生碰撞，碰撞导致轿车电路短路引发起火，火势迅速蔓延至周边3辆车辆，车库内有多名车主和保安。",
+    "consequence_text": "造成4辆车辆不同程度烧毁，无人员伤亡，车库内烟雾弥漫，能见度不足5米，存在烟雾中毒、火势蔓延至车库配电房的风险，小区地下车库临时封闭，业主车辆无法停放。",
+    "measure_text": "小区保安立即拨打119、122报警，启动车库排烟系统，疏散车内人员和保安；消防救援队伍赶赴现场，采用水罐消防车扑灭明火，排烟通风排出烟雾；交警部门到场勘查事故现场，认定责任；物业部门对受损车辆进行登记，协助车主处理善后；依据《消防法》开展事故调查，1.5小时后车库清理完毕，恢复正常使用。"
+  }
+}

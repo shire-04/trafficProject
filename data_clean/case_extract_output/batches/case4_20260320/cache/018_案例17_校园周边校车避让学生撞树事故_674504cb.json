@@ -1,0 +1,210 @@
+{
+  "case_id": "018_案例17_校园周边校车避让学生撞树事故_674504cb",
+  "title": "案例17：校园周边校车避让学生撞树事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "校车在校园周边因避让学生撞树，造成学生轻微伤，车辆受损，道路拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_FAB524EA05",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_0D3FD89D03",
+      "name": "车辆撞树",
+      "entity_type": "Event",
+      "evidence": "校车驾驶员紧急避让，猛打方向盘撞上路边行道树，车头轻微变形",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_FAB524EA05",
+      "final_entity_name": "车辆撞树",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_FAB524EA05",
+      "primary_event_name": "车辆撞树",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_FAB524EA05",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "车辆撞树",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_A8C6200C09",
+      "name": "校车",
+      "entity_type": "Resource",
+      "evidence": "一辆校车正常行驶",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_09E43A9CF9",
+      "final_entity_name": "校车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_8DFFE3D69C",
+      "name": "紧急避让",
+      "entity_type": "Action",
+      "evidence": "校车驾驶员紧急避让",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_B8803D4F47",
+      "final_entity_name": "紧急避让",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_94322F2954",
+      "name": "撞树",
+      "entity_type": "Action",
+      "evidence": "猛打方向盘撞上路边行道树",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_93CB94C545",
+      "final_entity_name": "撞树",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "紧急避让",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_8DFFE3D69C",
+      "source_final_id": "MEA_CASE_B8803D4F47",
+      "source_final_name": "紧急避让",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "校车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_A8C6200C09",
+      "target_final_id": "RES_CASE_09E43A9CF9",
+      "target_final_name": "校车",
+      "target_query_event_ids": [],
+      "evidence": "校车驾驶员紧急避让",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆撞树",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_0D3FD89D03",
+      "source_final_id": "EVT_CASE_FAB524EA05",
+      "source_final_name": "车辆撞树",
+      "source_query_event_ids": [
+        "EVT_CASE_FAB524EA05",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "relation": "TRIGGERS",
+      "target": "紧急避让",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_8DFFE3D69C",
+      "target_final_id": "MEA_CASE_B8803D4F47",
+      "target_final_name": "紧急避让",
+      "target_query_event_ids": [],
+      "evidence": "校车驾驶员紧急避让",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆撞树",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_0D3FD89D03",
+      "source_final_id": "EVT_CASE_FAB524EA05",
+      "source_final_name": "车辆撞树",
+      "source_query_event_ids": [
+        "EVT_CASE_FAB524EA05",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "relation": "TRIGGERS",
+      "target": "撞树",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_94322F2954",
+      "target_final_id": "MEA_CASE_93CB94C545",
+      "target_final_name": "撞树",
+      "target_query_event_ids": [],
+      "evidence": "猛打方向盘撞上路边行道树",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog. Some relationships might be implicit and require further context for higher confidence.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 4,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "小学门口上下学时段，一辆校车正常行驶，突然有2名学生横穿马路，校车驾驶员紧急避让，猛打方向盘撞上路边行道树，车头轻微变形，车内多名学生受到惊吓，部分学生磕碰受伤。",
+    "consequence_text": "造成4名学生轻微磕碰伤，驾驶员无伤亡，校车车头受损，校园周边道路拥堵，家长聚集围观，情绪紧张，易引发交通混乱与家校纠纷。",
+    "measure_text": "校方立即启动校园应急预案，安抚学生情绪，拨打120、122报警；交警到场疏导交通，勘查现场，认定事故责任；医疗人员对受伤学生进行检查，转运至医院观察；校车公司调配备用校车转运剩余学生，清理现场；后续在校园门口加装护学岗、减速带和警示标志，加强学生交通安全教育，1小时后道路恢复通行。"
+  }
+}

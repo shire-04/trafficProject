@@ -1,0 +1,248 @@
+{
+  "case_id": "019_案例19_城市地下通道电动车逆行碰撞事故_12e40307",
+  "title": "案例19：城市地下通道电动车逆行碰撞事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "城市地下通道内，电动自行车逆行超速与正常行驶的电动自行车、共享单车相撞，造成人员轻微擦伤和车辆受损，通道拥堵。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_CDD39AAD13",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ROAD_EMERGENCY",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_C3502FFDCE",
+      "name": "电动自行车碰撞",
+      "entity_type": "Event",
+      "evidence": "一辆电动自行车逆行超速行驶，与正常骑行的2辆电动车、1辆共享单车相撞，车辆全部倒地，骑行人员摔倒",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_CDD39AAD13",
+      "final_entity_name": "电动自行车逆行碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_CDD39AAD13",
+      "primary_event_name": "电动自行车逆行碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路交通突发事件",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_CDD39AAD13",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "电动自行车逆行碰撞",
+        "公路中断",
+        "公路交通突发事件",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路交通突发事件",
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_1426CC3EFF",
+      "name": "电动自行车",
+      "entity_type": "Resource",
+      "evidence": "一辆电动自行车逆行超速行驶",
+      "confidence": 0.95,
+      "normalized_id": "RES_CASE_8AE47E20B6",
+      "normalized_name": "电动自行车",
+      "normalized_score": 1.0,
+      "matched_alias": "电动自行车",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_CASE_8AE47E20B6",
+      "final_entity_name": "电动自行车",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_9E24BDD820",
+      "name": "逆行",
+      "entity_type": "Action",
+      "evidence": "一辆电动自行车逆行超速行驶",
+      "confidence": 0.85,
+      "normalized_id": "MEA_CASE_FEE3C04977",
+      "normalized_name": "逆行",
+      "normalized_score": 1.0,
+      "matched_alias": "逆行",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_FEE3C04977",
+      "final_entity_name": "逆行",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_4F7DC0FBDC",
+      "name": "超速行驶",
+      "entity_type": "Action",
+      "evidence": "一辆电动自行车逆行超速行驶",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_0B78E0C051",
+      "normalized_name": "超速行驶",
+      "normalized_score": 1.0,
+      "matched_alias": "超速行驶",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_0B78E0C051",
+      "final_entity_name": "超速行驶",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "逆行",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_9E24BDD820",
+      "source_final_id": "MEA_CASE_FEE3C04977",
+      "source_final_name": "逆行",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "电动自行车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_1426CC3EFF",
+      "target_final_id": "RES_CASE_8AE47E20B6",
+      "target_final_name": "电动自行车",
+      "target_query_event_ids": [],
+      "evidence": "一辆电动自行车逆行超速行驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "电动自行车碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_C3502FFDCE",
+      "source_final_id": "EVT_CASE_CDD39AAD13",
+      "source_final_name": "电动自行车逆行碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_CDD39AAD13",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "relation": "TRIGGERS",
+      "target": "逆行",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_9E24BDD820",
+      "target_final_id": "MEA_CASE_FEE3C04977",
+      "target_final_name": "逆行",
+      "target_query_event_ids": [],
+      "evidence": "一辆电动自行车逆行超速行驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "超速行驶",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_4F7DC0FBDC",
+      "source_final_id": "MEA_CASE_0B78E0C051",
+      "source_final_name": "超速行驶",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "电动自行车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_1426CC3EFF",
+      "target_final_id": "RES_CASE_8AE47E20B6",
+      "target_final_name": "电动自行车",
+      "target_query_event_ids": [],
+      "evidence": "一辆电动自行车逆行超速行驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "电动自行车碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_C3502FFDCE",
+      "source_final_id": "EVT_CASE_CDD39AAD13",
+      "source_final_name": "电动自行车逆行碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_CDD39AAD13",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "relation": "TRIGGERS",
+      "target": "超速行驶",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_4F7DC0FBDC",
+      "target_final_id": "MEA_CASE_0B78E0C051",
+      "target_final_name": "超速行驶",
+      "target_query_event_ids": [],
+      "evidence": "一辆电动自行车逆行超速行驶",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本中的明确信息，避免了猜测。",
+    "confidence score reflects the clarity of the evidence in the text.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 3,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "人行与非机动车共用地下通道，一辆电动自行车逆行超速行驶，与正常骑行的2辆电动车、1辆共享单车相撞，车辆全部倒地，骑行人员摔倒，部分人员腿部、手部擦伤，通道内光线较暗，人流较大。",
+    "consequence_text": "3名骑行者轻微擦伤，车辆不同程度受损，地下通道拥堵，行人与非机动车混行混乱，逆行行为易引发后续事故，群众通行受阻。",
+    "measure_text": "交警与城管到场，疏散通道内人流车流，控制逆行骑行者，开展现场调处；医疗人员对伤者进行包扎；清理倒地车辆，恢复通道通行；在地下通道入口加装逆行警示标志，加强非机动车通行管理，1小时后通道恢复正常。"
+  }
+}

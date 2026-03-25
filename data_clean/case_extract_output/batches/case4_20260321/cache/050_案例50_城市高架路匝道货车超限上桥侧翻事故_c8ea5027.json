@@ -1,0 +1,156 @@
+{
+  "case_id": "050_案例50_城市高架路匝道货车超限上桥侧翻事故_c8ea5027",
+  "title": "案例50：城市高架路匝道货车超限上桥侧翻事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "城市高架路匝道入口，一辆超重货车因超限检测设备故障违规上匝道，因匝道转弯半径小、车速过快导致侧翻，占用匝道并造成货物散落、车辆变形。驾驶员轻微受伤，匝道护栏受损，匝道完全封闭，后方车辆滞留，存在漏油起火风险。交警、消防、路政部门采取措施，最终恢复通行。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_INTERRUPTION",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_D000F3778B",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "货车因超重、车速过快侧翻，占用整个匝道",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.0,
+      "matched_alias": "公路中断",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "公路中断",
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_0782996411",
+      "name": "超限检测设备故障",
+      "entity_type": "Event",
+      "evidence": "超限检测设备故障",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_76776359A6",
+      "final_entity_name": "超限检测设备故障",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_76776359A6",
+      "primary_event_name": "超限检测设备故障",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_76776359A6"
+      ],
+      "query_event_names": [
+        "超限检测设备故障"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_7DFC0F9B18",
+      "name": "漏油起火",
+      "entity_type": "Event",
+      "evidence": "侧翻车辆有漏油起火风险",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_65282199FE",
+      "final_entity_name": "漏油起火",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_65282199FE",
+      "primary_event_name": "漏油起火",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_65282199FE"
+      ],
+      "query_event_names": [
+        "漏油起火"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "超限检测设备故障",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_0782996411",
+      "source_final_id": "EVT_CASE_76776359A6",
+      "source_final_name": "超限检测设备故障",
+      "source_query_event_ids": [
+        "EVT_CASE_76776359A6"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧翻",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_D000F3778B",
+      "target_final_id": "EVT_ROAD_INTERRUPTION",
+      "target_final_name": "公路中断",
+      "target_query_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "超限检测设备故障，一辆超重重型货车违规驶入高架匝道，匝道转弯半径小，货车因超重、车速过快侧翻",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本中的明确信息，避免了猜测。",
+    "confidence score reflects the clarity of the evidence in the text."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "城市高架路匝道入口，超限检测设备故障，一辆超重重型货车违规驶入高架匝道，匝道转弯半径小，货车因超重、车速过快侧翻，占用整个匝道，货物散落，车辆变形。",
+    "consequence_text": "驾驶员轻微受伤，货车与匝道护栏受损，高架匝道完全封闭，后方车辆滞留10公里，晚高峰通勤严重受阻，侧翻车辆有漏油起火风险。",
+    "measure_text": "交警快速封闭高架入口与匝道，疏导车辆全线分流；消防人员排查起火隐患，救出驾驶员；路政部门调集大型吊车，扶正货车，清理散落货物；修复匝道护栏，检测高架桥梁安全；督促修复超限检测设备，对超重货车处罚；5小时后匝道恢复通行，高架交通逐步缓解。"
+  }
+}

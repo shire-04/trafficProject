@@ -1,0 +1,282 @@
+{
+  "case_id": "012_城市地下综合管廊出入口施工车辆撞毁围挡坠坑事故_d332a374",
+  "title": "城市地下综合管廊出入口施工车辆撞毁围挡坠坑事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "某市主城区地下综合管廊出入口施工路段，渣土车因驾驶员分心驾驶撞毁围挡坠入基坑侧翻，造成驾驶员重伤被困，施工中断，道路封闭。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_37895FE5E4",
+    "expanded_event_ids": [
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_ROAD_DAMAGE",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_719DAC4338",
+      "name": "车辆坠坑",
+      "entity_type": "Event",
+      "evidence": "一辆重型渣土车因驾驶员分心驾驶，无视警示标志，撞毁施工围挡后坠入管廊施工基坑，渣土车侧翻在基坑内",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_37895FE5E4",
+      "final_entity_name": "车辆坠坑",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_37895FE5E4",
+      "primary_event_name": "车辆坠坑",
+      "expanded_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "公路交通运输生产事故",
+        "公路损毁",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_37895FE5E4",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "车辆坠坑",
+        "公路交通运输生产事故",
+        "公路损毁",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "公路交通运输生产事故",
+        "公路损毁",
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_480BE55AA8",
+      "name": "渣土车",
+      "entity_type": "Resource",
+      "evidence": "一辆重型渣土车",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.425,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_6619311C3D",
+      "final_entity_name": "渣土车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_DB07952BBA",
+      "name": "侧翻",
+      "entity_type": "Action",
+      "evidence": "渣土车侧翻在基坑内",
+      "confidence": 0.85,
+      "normalized_id": "MEA_CASE_0BF2A9DC72",
+      "normalized_name": "侧翻",
+      "normalized_score": 1.0,
+      "matched_alias": "侧翻",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_0BF2A9DC72",
+      "final_entity_name": "侧翻",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_0683F8126C",
+      "name": "交通封闭",
+      "entity_type": "Action",
+      "evidence": "施工路段双向交通封闭",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_E4110A4832",
+      "final_entity_name": "交通封闭",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_FEC5AAB425",
+      "name": "坍塌风险",
+      "entity_type": "Event",
+      "evidence": "基坑边坡有坍塌风险",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_6FEAAF025A",
+      "final_entity_name": "坍塌风险",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_6FEAAF025A",
+      "primary_event_name": "坍塌风险",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_6FEAAF025A"
+      ],
+      "query_event_names": [
+        "坍塌风险"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆坠坑",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_719DAC4338",
+      "source_final_id": "EVT_CASE_37895FE5E4",
+      "source_final_name": "车辆坠坑",
+      "source_query_event_ids": [
+        "EVT_CASE_37895FE5E4",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "relation": "CAUSES",
+      "target": "坍塌风险",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_FEC5AAB425",
+      "target_final_id": "EVT_CASE_6FEAAF025A",
+      "target_final_name": "坍塌风险",
+      "target_query_event_ids": [
+        "EVT_CASE_6FEAAF025A"
+      ],
+      "evidence": "基坑边坡有坍塌风险，易引发二次事故。",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "交通封闭",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_0683F8126C",
+      "source_final_id": "MEA_CASE_E4110A4832",
+      "source_final_name": "交通封闭",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "渣土车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_480BE55AA8",
+      "target_final_id": "RES_CASE_6619311C3D",
+      "target_final_name": "渣土车",
+      "target_query_event_ids": [],
+      "evidence": "施工路段双向交通封闭",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "侧翻",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_DB07952BBA",
+      "source_final_id": "MEA_CASE_0BF2A9DC72",
+      "source_final_name": "侧翻",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "渣土车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_480BE55AA8",
+      "target_final_id": "RES_CASE_6619311C3D",
+      "target_final_name": "渣土车",
+      "target_query_event_ids": [],
+      "evidence": "渣土车侧翻在基坑内",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "车辆坠坑",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_719DAC4338",
+      "source_final_id": "EVT_CASE_37895FE5E4",
+      "source_final_name": "车辆坠坑",
+      "source_query_event_ids": [
+        "EVT_CASE_37895FE5E4",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_ROAD_DAMAGE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "relation": "TRIGGERS",
+      "target": "交通封闭",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_0683F8126C",
+      "target_final_id": "MEA_CASE_E4110A4832",
+      "target_final_name": "交通封闭",
+      "target_query_event_ids": [],
+      "evidence": "造成...施工路段双向交通封闭",
+      "confidence": 0.75,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《建设工程安全生产管理条例》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "Relationships are based on explicit mentions in the text.",
+    "Confidence scores reflect the clarity and directness of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市主城区地下综合管廊出入口施工路段，施工单位已设置封闭围挡和警示标志，一辆重型渣土车因驾驶员分心驾驶，无视警示标志，撞毁施工围挡后坠入管廊施工基坑，基坑深度6米，渣土车侧翻在基坑内，驾驶员被困车内，基坑周边有施工材料散落。",
+    "consequence_text": "造成渣土车驾驶员1人重伤被困，车辆完全损毁，管廊施工完全中断，施工路段双向交通封闭，周边主干道拥堵，基坑边坡有坍塌风险，易引发二次事故。",
+    "measure_text": "应急管理部门启动《建设工程施工突发事件应急预案》，协调消防救援队伍、医疗部门、住建部门赶赴现场；消防救援队伍使用破拆工具、起重机解救被困驾驶员，对基坑边坡进行临时加固，防止坍塌；医疗部门对受伤驾驶员进行紧急救治后转运至医院；交警部门封闭施工路段，疏导过往车辆绕行；住建部门责令施工单位暂停施工，全面排查安全隐患，完善围挡与警示设施；依据《建设工程安全生产管理条例》《道路交通安全法》开展事故调查，3小时后救援工作结束，道路逐步恢复通行。"
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "case_id": "021_高速公路跨江大桥车辆自燃致桥面铺装受损事故_c808f0b7",
+  "title": "高速公路跨江大桥车辆自燃致桥面铺装受损事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "某跨江高速公路大桥发生重型半挂货车自燃事故，导致桥面铺装受损，交通中断。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_61047CDF1B",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG",
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ROAD_DAMAGE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_604A108C74",
+      "name": "车辆自燃",
+      "entity_type": "Event",
+      "evidence": "一辆重型半挂货车行驶中，轮胎起火引发车辆自燃",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_61047CDF1B",
+      "final_entity_name": "车辆自燃",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_61047CDF1B",
+      "primary_event_name": "车辆自燃",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "车辆积压",
+        "公路中断",
+        "公路损毁",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_61047CDF1B",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆自燃",
+        "车辆积压",
+        "公路中断",
+        "公路损毁",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "车辆积压",
+        "公路中断",
+        "公路损毁",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_16E2C5CCD6",
+      "name": "桥面铺装受损",
+      "entity_type": "Event",
+      "evidence": "导致桥面沥青铺装层开裂、破损",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_4E5DB8871B",
+      "final_entity_name": "桥面铺装受损",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_4E5DB8871B",
+      "primary_event_name": "桥面铺装受损",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_4E5DB8871B"
+      ],
+      "query_event_names": [
+        "桥面铺装受损"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_902D88F074",
+      "name": "交通中断",
+      "entity_type": "Event",
+      "evidence": "大桥双向交通封闭，后方车辆滞留约15公里，跨江交通完全中断",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_436A2F6617",
+      "final_entity_name": "交通中断",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_436A2F6617",
+      "primary_event_name": "交通中断",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_436A2F6617"
+      ],
+      "query_event_names": [
+        "交通中断"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆自燃",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_604A108C74",
+      "source_final_id": "EVT_CASE_61047CDF1B",
+      "source_final_name": "车辆自燃",
+      "source_query_event_ids": [
+        "EVT_CASE_61047CDF1B",
+        "EVT_VEHICLE_BACKLOG",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_DAMAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "桥面铺装受损",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_16E2C5CCD6",
+      "target_final_id": "EVT_CASE_4E5DB8871B",
+      "target_final_name": "桥面铺装受损",
+      "target_query_event_ids": [
+        "EVT_CASE_4E5DB8871B"
+      ],
+      "evidence": "车辆自燃，火势迅速蔓延至整个车体，高温持续灼烧大桥桥面，导致桥面沥青铺装层开裂、破损",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《公路桥涵养护规范》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "事件描述较为清晰，实体抽取准确。",
+    "The confidence scores are estimates based on the clarity of the relationships within the text.",
+    "Some relationships could be inferred but were not included due to the constraint of only using entities from the provided catalog."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某跨江高速公路大桥，一辆重型半挂货车行驶中，轮胎起火引发车辆自燃，火势迅速蔓延至整个车体，高温持续灼烧大桥桥面，导致桥面沥青铺装层开裂、破损，货车驾驶员与副驾及时撤离至安全区域，大桥为双向六车道，车流量大。",
+    "consequence_text": "无人员伤亡，货车完全烧毁，大桥桥面铺装层约20平方米受损，大桥双向交通封闭，后方车辆滞留约15公里，跨江交通完全中断，高温持续灼烧可能导致大桥箱梁结构受损，存在重大安全隐患。",
+    "measure_text": "交警部门立即封闭大桥双向车道，在大桥两端设置警戒区域，疏导车辆从周边过江通道分流绕行；消防救援队伍赶赴现场，扑灭车辆明火，对桥面持续洒水降温，防止箱梁结构受损；交通部门组织桥梁检测专家到场，对大桥结构进行实时安全检测，评估受损情况；路政部门待险情排除后，清理烧毁的车辆残骸，对受损桥面进行临时应急修复；依据《公路桥涵养护规范》《道路交通安全法》开展处置，6小时后大桥恢复临时通行，后续对受损桥面进行全面修复。"
+  }
+}

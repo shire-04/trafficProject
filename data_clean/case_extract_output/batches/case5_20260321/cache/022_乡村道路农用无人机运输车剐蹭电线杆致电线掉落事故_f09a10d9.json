@@ -1,0 +1,151 @@
+{
+  "case_id": "022_乡村道路农用无人机运输车剐蹭电线杆致电线掉落事故_f09a10d9",
+  "title": "乡村道路农用无人机运输车剐蹭电线杆致电线掉落事故",
+  "source_file": "交通应急处理案例5.txt",
+  "summary": "乡村道路农用无人机运输车剐蹭电线杆导致电线掉落，存在触电风险。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_DE0B859808",
+    "expanded_event_ids": [
+      "EVT_ROAD_DAMAGE",
+      "EVT_ROAD_INTERRUPTION"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_6AE044461A",
+      "name": "车辆剐蹭电线杆",
+      "entity_type": "Event",
+      "evidence": "一辆装载农用植保无人机的轻型货车，因装载的无人机机架超高，行驶中剐蹭路边低压电线杆，导致电线杆倾斜、电线掉落至路面",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_DE0B859808",
+      "final_entity_name": "车辆剐蹭电线杆",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_DE0B859808",
+      "primary_event_name": "车辆剐蹭电线杆",
+      "expanded_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "expanded_event_names": [
+        "公路损毁",
+        "公路中断"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_DE0B859808",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "query_event_names": [
+        "车辆剐蹭电线杆",
+        "公路损毁",
+        "公路中断"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_INTERRUPTION"
+      ],
+      "alias_patch_target_names": [
+        "公路损毁",
+        "公路中断"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_C7B7C78410",
+      "name": "电线",
+      "entity_type": "Resource",
+      "evidence": "导致电线杆倾斜、电线掉落至路面",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.425,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_622DAF6621",
+      "final_entity_name": "电线",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_900B68CC02",
+      "name": "修复线路",
+      "entity_type": "Action",
+      "evidence": "对受损线路、电线杆进行全面修复",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_7F1E894CA7",
+      "final_entity_name": "修复线路",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "修复线路",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_900B68CC02",
+      "source_final_id": "MEA_CASE_7F1E894CA7",
+      "source_final_name": "修复线路",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "电线",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_C7B7C78410",
+      "target_final_id": "RES_CASE_622DAF6621",
+      "target_final_name": "电线",
+      "target_query_event_ids": [],
+      "evidence": "供电部门对受损线路、电线杆进行全面修复",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [
+    "《电力设施保护条例》",
+    "《道路交通安全法》"
+  ],
+  "quality_notes": [
+    "The relationships are based on direct statements in the text.",
+    "Confidence scores reflect the clarity of the relationship in the text."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某乡村田间道路，一辆装载农用植保无人机的轻型货车，因装载的无人机机架超高，行驶中剐蹭路边低压电线杆，导致电线杆倾斜、电线掉落至路面，货车紧急停下，驾驶员未及时撤离，掉落的电线带电，周边有正在田间作业的村民。",
+    "consequence_text": "无人员伤亡，货车与无人机机架受损，低压电线掉落路面，存在人员触电的重大风险，乡村田间道路封闭，周边农田作业中断，电线掉落可能引发田间秸秆起火。",
+    "measure_text": "当地供电部门接到报警后，立即切断该线路电源，赶赴现场处置；交警部门封闭事故路段，设置警戒区域，严禁车辆、人员靠近带电区域；消防救援队伍到场排查触电、起火隐患，协助供电部门清理掉落电线；路政部门拖移事故车辆，对倾斜电线杆进行临时加固；供电部门对受损线路、电线杆进行全面修复；依据《电力设施保护条例》《道路交通安全法》对货车超高装载行为进行处罚与警示教育，2小时后线路修复完毕，道路恢复通行。"
+  }
+}

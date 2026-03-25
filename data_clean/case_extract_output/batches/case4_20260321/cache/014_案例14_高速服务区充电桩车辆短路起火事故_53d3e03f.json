@@ -1,0 +1,293 @@
+{
+  "case_id": "014_案例14_高速服务区充电桩车辆短路起火事故_53d3e03f",
+  "title": "案例14：高速服务区充电桩车辆短路起火事故",
+  "source_file": "交通应急处理案例4.txt",
+  "summary": "高速服务区充电桩区域，纯电动轿车充电时因电池管理系统故障引发车辆起火，造成充电桩受损，周边车辆受威胁，服务区交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_71A0CC4ACB",
+    "expanded_event_ids": [
+      "EVT_LONG_TUNNEL_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_D758EFEEF5",
+      "name": "新能源汽车起火",
+      "entity_type": "Event",
+      "evidence": "一辆纯电动轿车充电时，电池管理系统故障引发短路，车辆底部迅速起火",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_71A0CC4ACB",
+      "final_entity_name": "新能源汽车起火",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_71A0CC4ACB",
+      "primary_event_name": "新能源汽车起火",
+      "expanded_event_ids": [
+        "EVT_LONG_TUNNEL_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "特长隧道安全事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_71A0CC4ACB",
+        "EVT_LONG_TUNNEL_ACCIDENT"
+      ],
+      "query_event_names": [
+        "新能源汽车起火",
+        "特长隧道安全事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_LONG_TUNNEL_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "特长隧道安全事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_1B25A5B6A1",
+      "name": "充电桩",
+      "entity_type": "Resource",
+      "evidence": "充电桩区域，充电桩线路受损",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_EC2C091FF1",
+      "final_entity_name": "充电桩",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_F8EAFE89DC",
+      "name": "电池管理系统故障",
+      "entity_type": "Event",
+      "evidence": "电池管理系统故障引发短路",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_4C20266F7A",
+      "final_entity_name": "电池管理系统故障",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_4C20266F7A",
+      "primary_event_name": "电池管理系统故障",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_4C20266F7A"
+      ],
+      "query_event_names": [
+        "电池管理系统故障"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_1DB2FA20F1",
+      "name": "短路",
+      "entity_type": "Event",
+      "evidence": "电池管理系统故障引发短路",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_1FC7D86F38",
+      "final_entity_name": "短路",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_1FC7D86F38",
+      "primary_event_name": "短路",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_1FC7D86F38"
+      ],
+      "query_event_names": [
+        "短路"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_B8DBBF2BE7",
+      "name": "切断电源",
+      "entity_type": "Action",
+      "evidence": "切断充电桩总电源",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_7D3350A778",
+      "final_entity_name": "切断电源",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_71FA20C5CE",
+      "name": "灭火",
+      "entity_type": "Action",
+      "evidence": "使用干粉灭火器初期灭火，采用专用电池灭火装备压制火势",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_5330B223E5",
+      "normalized_name": "灭火",
+      "normalized_score": 1.0,
+      "matched_alias": "灭火",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_5330B223E5",
+      "final_entity_name": "灭火",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "电池管理系统故障",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_F8EAFE89DC",
+      "source_final_id": "EVT_CASE_4C20266F7A",
+      "source_final_name": "电池管理系统故障",
+      "source_query_event_ids": [
+        "EVT_CASE_4C20266F7A"
+      ],
+      "relation": "CAUSES",
+      "target": "短路",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_1DB2FA20F1",
+      "target_final_id": "EVT_CASE_1FC7D86F38",
+      "target_final_name": "短路",
+      "target_query_event_ids": [
+        "EVT_CASE_1FC7D86F38"
+      ],
+      "evidence": "电池管理系统故障引发短路",
+      "confidence": 0.95,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "短路",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_1DB2FA20F1",
+      "source_final_id": "EVT_CASE_1FC7D86F38",
+      "source_final_name": "短路",
+      "source_query_event_ids": [
+        "EVT_CASE_1FC7D86F38"
+      ],
+      "relation": "CAUSES",
+      "target": "新能源汽车起火",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_D758EFEEF5",
+      "target_final_id": "EVT_CASE_71A0CC4ACB",
+      "target_final_name": "新能源汽车起火",
+      "target_query_event_ids": [
+        "EVT_CASE_71A0CC4ACB",
+        "EVT_LONG_TUNNEL_ACCIDENT"
+      ],
+      "evidence": "短路，车辆底部迅速起火",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "切断电源",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_B8DBBF2BE7",
+      "source_final_id": "MEA_CASE_7D3350A778",
+      "source_final_name": "切断电源",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "充电桩",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_1B25A5B6A1",
+      "target_final_id": "RES_CASE_EC2C091FF1",
+      "target_final_name": "充电桩",
+      "target_query_event_ids": [],
+      "evidence": "服务区工作人员立即切断充电桩总电源",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "新能源汽车起火",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_D758EFEEF5",
+      "source_final_id": "EVT_CASE_71A0CC4ACB",
+      "source_final_name": "新能源汽车起火",
+      "source_query_event_ids": [
+        "EVT_CASE_71A0CC4ACB",
+        "EVT_LONG_TUNNEL_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "灭火",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_71FA20C5CE",
+      "target_final_id": "MEA_CASE_5330B223E5",
+      "target_final_name": "灭火",
+      "target_query_event_ids": [],
+      "evidence": "车辆底部迅速起火，使用干粉灭火器初期灭火；消防人员到场，采用专用电池灭火装备压制火势",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "The relationships are based on the provided text and entity catalog.",
+    "Confidence scores are estimates based on the clarity of the evidence."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "高速服务区新能源充电桩区域，一辆纯电动轿车充电时，电池管理系统故障引发短路，车辆底部迅速起火，浓烟滚滚，充电桩线路受损，周边停放3辆新能源轿车，距离加油站仅80米。",
+    "consequence_text": "无人员伤亡，起火车辆完全烧毁，充电桩报废，火势易蔓延至周边车辆与加油站，引发重大爆炸事故，服务区充电桩区域封闭，新能源车辆无法充电，服务区局部拥堵。",
+    "measure_text": "服务区工作人员立即切断充电桩总电源，使用干粉灭火器初期灭火，拨打119报警；消防人员到场，采用专用电池灭火装备压制火势，冷却周边车辆与加油站设施；交警封闭服务区入口，疏导车辆分流；电力部门检测电路安全，清理事故现场；后续督促充电桩运营单位加强设备检修，3小时后服务区恢复正常运营。"
+  }
+}
