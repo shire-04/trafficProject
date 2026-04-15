@@ -1,0 +1,142 @@
+{
+  "case_id": "001_城市十字路口两车轻微追尾事故_b4d61ea1",
+  "title": "城市十字路口两车轻微追尾事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "某市主干道十字路口发生两车追尾事故，造成车辆轻微受损和交通拥堵，无人员伤亡。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_4D219D5D07",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_907CD6D369",
+      "name": "追尾事故",
+      "entity_type": "Event",
+      "evidence": "一辆SUV因驾驶员跟车过近、注意力不集中，刹车不及，导致前保险杠轻微撞击前车后保险杠。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_4D219D5D07",
+      "final_entity_name": "追尾事故",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_4D219D5D07",
+      "primary_event_name": "追尾事故",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路中断",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "追尾事故",
+        "交通事故",
+        "公路中断",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "公路中断",
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_DA0ADBF367",
+      "name": "红灯",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车在红灯亮起时正常刹车",
+      "confidence": 0.6,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_F20BD59416",
+      "final_entity_name": "红灯",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F20BD59416",
+      "primary_event_name": "红灯",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_F20BD59416"
+      ],
+      "query_event_names": [
+        "红灯"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "追尾事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_907CD6D369",
+      "source_final_id": "EVT_CASE_4D219D5D07",
+      "source_final_name": "追尾事故",
+      "source_query_event_ids": [
+        "EVT_CASE_4D219D5D07",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "relation": "CAUSES",
+      "target": "红灯",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_DA0ADBF367",
+      "target_final_id": "EVT_CASE_F20BD59416",
+      "target_final_name": "红灯",
+      "target_query_event_ids": [
+        "EVT_CASE_F20BD59416"
+      ],
+      "evidence": "无人员伤亡，两辆事故车辆仅出现保险杠轻微凹陷和漆面刮擦，均能正常行驶。事故占用一条直行车道，导致该路口短暂通行缓慢，后方车辆出现约500米的积压。",
+      "confidence": 0.6,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本中的直接描述，未进行推断。",
+    "红灯亮起触发了刹车行为，刹车行为间接导致了追尾事故，这里只抽取了红灯直接触发追尾事故的关系。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市主干道十字路口，早高峰期间车流量较大。一辆小型轿车在红灯亮起时正常刹车，后方跟随的一辆SUV因驾驶员跟车过近、注意力不集中，刹车不及，导致前保险杠轻微撞击前车后保险杠。",
+    "consequence_text": "无人员伤亡，两辆事故车辆仅出现保险杠轻微凹陷和漆面刮擦，均能正常行驶。事故占用一条直行车道，导致该路口短暂通行缓慢，后方车辆出现约500米的积压。",
+    "measure_text": "交警巡逻铁骑5分钟内到达现场，确认双方均无人员受伤且车辆可移动后，对现场进行拍照取证；引导双方驾驶员将车辆移至不影响交通的路边；指导双方使用交管APP进行“快处快赔”责任认定；15分钟后路口交通完全恢复正常通行。"
+  }
+}

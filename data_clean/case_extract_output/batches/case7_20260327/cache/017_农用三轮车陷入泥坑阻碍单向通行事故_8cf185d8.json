@@ -1,0 +1,71 @@
+{
+  "case_id": "017_农用三轮车陷入泥坑阻碍单向通行事故_8cf185d8",
+  "title": "农用三轮车陷入泥坑阻碍单向通行事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "农用三轮车在泥泞路面陷入泥坑，阻碍了交通，后在村民帮助下脱困。",
+  "confidence": 0.9,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_BLOCKAGE",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_0635FF43CE",
+      "name": "道路交通阻塞",
+      "entity_type": "Event",
+      "evidence": "三轮车斜停在路面上，导致该狭窄路段只能勉强单向交替通行。",
+      "confidence": 0.75,
+      "normalized_id": "EVT_ROAD_BLOCKAGE",
+      "normalized_name": "公路阻塞",
+      "normalized_score": 0.0,
+      "matched_alias": "公路阻塞",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_BLOCKAGE",
+      "final_entity_name": "公路阻塞",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_BLOCKAGE",
+      "primary_event_name": "公路阻塞",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "公路阻塞",
+        "公路中断",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在不确定性。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某农村乡镇土路，刚下过雨路面泥泞。一辆空载的农用机动三轮车在会车时主动靠边，不慎右侧车轮陷入路肩的软泥坑中打滑，无法自行脱困。",
+    "consequence_text": "无人员伤亡，车辆无受损。三轮车斜停在路面上，导致该狭窄路段只能勉强单向交替通行。",
+    "measure_text": "过路的几位村民见状，自发上前帮忙；有人在坑底垫上砖头和树枝增加摩擦力，其余人在车后合力推车；驾驶员配合给油，仅用5分钟便将三轮车成功推出泥坑；道路恢复双向正常通行。"
+  }
+}

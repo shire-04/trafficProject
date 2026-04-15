@@ -1,0 +1,171 @@
+{
+  "case_id": "018_旅游大巴车景区停车场倒车碰树事故_c0299ac6",
+  "title": "旅游大巴车景区停车场倒车碰树事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "旅游大巴车在景区停车场倒车时，后保险杠碰撞到行道树，无人员受伤，树木和车辆均无大碍。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_A950E1F9BF",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT",
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_2E7B17736A",
+      "name": "车辆碰撞树木",
+      "entity_type": "Event",
+      "evidence": "驾驶员倒车未注意观察盲区，车尾后保险杠轻轻碰到了后方绿化带里的一棵行道树。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_A950E1F9BF",
+      "final_entity_name": "车辆碰撞树木",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_A950E1F9BF",
+      "primary_event_name": "车辆碰撞树木",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_A950E1F9BF",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "车辆碰撞树木",
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "交通事故",
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_8F4A1049A8",
+      "name": "驾驶员",
+      "entity_type": "Department",
+      "evidence": "驾驶员倒车未注意观察盲区",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3859,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_DFE92BD53C",
+      "final_entity_name": "驾驶员",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "department_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_1AF27F45A9",
+      "name": "倒车",
+      "entity_type": "Action",
+      "evidence": "驾驶员倒车未注意观察盲区",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_DDCBEE7C3A",
+      "final_entity_name": "倒车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "倒车",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_1AF27F45A9",
+      "source_final_id": "MEA_CASE_DDCBEE7C3A",
+      "source_final_name": "倒车",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "驾驶员",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_8F4A1049A8",
+      "target_final_id": "ORG_CASE_DFE92BD53C",
+      "target_final_name": "驾驶员",
+      "target_query_event_ids": [],
+      "evidence": "驾驶员倒车未注意观察盲区",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆碰撞树木",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_2E7B17736A",
+      "source_final_id": "EVT_CASE_A950E1F9BF",
+      "source_final_name": "车辆碰撞树木",
+      "source_query_event_ids": [
+        "EVT_CASE_A950E1F9BF",
+        "EVT_TRAFFIC_ACCIDENT",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "relation": "TRIGGERS",
+      "target": "倒车",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_1AF27F45A9",
+      "target_final_id": "MEA_CASE_DDCBEE7C3A",
+      "target_final_name": "倒车",
+      "target_query_event_ids": [],
+      "evidence": "驾驶员倒车未注意观察盲区",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在不确定性。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某景区大型露天停车场内，一辆载有30名游客的旅游大巴车在准备驶离时，驾驶员倒车未注意观察盲区，车尾后保险杠轻轻碰到了后方绿化带里的一棵行道树。",
+    "consequence_text": "无游客受伤，树木无断裂。大巴车后保险杠出现轻微裂纹。车辆完全不影响继续行驶和安全。",
+    "measure_text": "导游安抚车内游客情绪；驾驶员下车查看确认损失轻微后，拍下照片发给所属客运公司报备；车辆未在原地长时间停留，直接载客驶离停车场继续下一段行程；整个过程耗时不到5分钟。"
+  }
+}

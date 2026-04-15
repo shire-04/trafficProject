@@ -1,0 +1,70 @@
+{
+  "case_id": "003_乡村公路轻型货车纸箱散落事故_9c9522ce",
+  "title": "乡村公路轻型货车纸箱散落事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "乡村两车道公路上，一辆轻型货车因车厢绳索松动导致十余个空纸箱散落，未造成人员伤亡和车辆受损，但对交通造成一定影响。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_46F3F2A6FE",
+    "expanded_event_ids": [
+      "EVT_ROAD_BLOCKAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_4DE2DACA72",
+      "name": "货物散落",
+      "entity_type": "Event",
+      "evidence": "因车厢绳索松动，导致十余个空纸箱散落至对向车道及路边。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_46F3F2A6FE",
+      "final_entity_name": "货物散落",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_46F3F2A6FE",
+      "primary_event_name": "货物散落",
+      "expanded_event_ids": [
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "expanded_event_names": [
+        "公路阻塞"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_46F3F2A6FE",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "query_event_names": [
+        "货物散落",
+        "公路阻塞"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路阻塞"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某乡村两车道公路，一辆装载快递纸箱的轻型货车在行驶中，因车厢绳索松动，导致十余个空纸箱散落至对向车道及路边。当时天气晴朗，过往车辆较少。",
+    "consequence_text": "无人员伤亡和车辆受损。散落的纸箱占用了对向车道，导致对向偶尔驶来的车辆需要减速绕行，未引发明显交通拥堵，也无次生安全风险。",
+    "measure_text": "货车驾驶员发现后立即靠边停车，开启双闪；周边热心村民与巡逻至此的乡镇交管员协助驾驶员将散落的纸箱搬回路边并重新装车固定；交管员对驾驶员装载不规范的行为进行批评教育；20分钟后散落物清理完毕，道路恢复正常。"
+  }
+}

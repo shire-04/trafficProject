@@ -1,0 +1,140 @@
+{
+  "case_id": "015_共享单车雨天滑倒单方事故_9ae6c75d",
+  "title": "共享单车雨天滑倒单方事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "雨天路滑，共享单车骑行者因捏前刹过猛导致车辆侧滑摔倒，造成轻微擦伤。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F4726E4011",
+    "expanded_event_ids": [
+      "EVT_ROAD_ICE",
+      "EVT_ROAD_EMERGENCY",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_7130376D3B",
+      "name": "车辆侧滑",
+      "entity_type": "Event",
+      "evidence": "捏前刹过猛导致前轮抱死，连人带车侧滑摔倒。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F4726E4011",
+      "final_entity_name": "车辆侧滑",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F4726E4011",
+      "primary_event_name": "车辆侧滑",
+      "expanded_event_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "道路积冰",
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F4726E4011",
+        "EVT_ROAD_ICE",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆侧滑",
+        "道路积冰",
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "道路积冰",
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_3396484538",
+      "name": "雨天",
+      "entity_type": "Event",
+      "evidence": "小雨天气路面湿滑",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_E0847BE751",
+      "final_entity_name": "雨天",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_E0847BE751",
+      "primary_event_name": "雨天",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_E0847BE751"
+      ],
+      "query_event_names": [
+        "雨天"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "雨天",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_3396484538",
+      "source_final_id": "EVT_CASE_E0847BE751",
+      "source_final_name": "雨天",
+      "source_query_event_ids": [
+        "EVT_CASE_E0847BE751"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆侧滑",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_7130376D3B",
+      "target_final_id": "EVT_CASE_F4726E4011",
+      "target_final_name": "车辆侧滑",
+      "target_query_event_ids": [
+        "EVT_CASE_F4726E4011",
+        "EVT_ROAD_ICE",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "evidence": "某市非机动车道，小雨天气路面湿滑，一名年轻男子骑行共享单车在经过有积水的减速带时，捏前刹过猛导致前轮抱死，连人带车侧滑摔倒。",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本中的直接因果关系。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市非机动车道，小雨天气路面湿滑，一名年轻男子骑行共享单车在经过有积水的减速带时，捏前刹过猛导致前轮抱死，连人带车侧滑摔倒。",
+    "consequence_text": "造成骑行者膝盖和手肘轻微表皮擦伤，裤子破损，共享单车无明显损坏。未与其他行人或车辆发生碰撞。",
+    "measure_text": "周边路过的行人上前询问是否需要帮助，骑行者表示无大碍自行站起；骑行者将单车扶起停放至路边规范划线区域，自行前往附近的药店购买碘伏进行简单消毒处理；未引发交通拥堵，无需交警和医疗部门介入。"
+  }
+}

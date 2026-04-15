@@ -1,0 +1,132 @@
+{
+  "case_id": "009_城市主干道绿化树枝掉落砸车事故_696abce8",
+  "title": "城市主干道绿化树枝掉落砸车事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "某市主干道因大风天气，行道树枝断裂砸中出租车，造成车辆受损，交通受到影响。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F1015EFD7A",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_METEO_ROAD"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_2AAE9A1DFA",
+      "name": "树木倒伏砸车",
+      "entity_type": "Event",
+      "evidence": "行道树上一截约手臂粗的枯树枝突然断裂掉落，正好砸中下方正常行驶的一辆出租车车顶",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F1015EFD7A",
+      "final_entity_name": "树木倒伏砸车",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F1015EFD7A",
+      "primary_event_name": "树木倒伏砸车",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_METEO_ROAD"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "公路气象灾害"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F1015EFD7A",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_METEO_ROAD"
+      ],
+      "query_event_names": [
+        "树木倒伏砸车",
+        "公路交通突发事件",
+        "公路气象灾害"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_METEO_ROAD"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件",
+        "公路气象灾害"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_BF19C6035C",
+      "name": "大风",
+      "entity_type": "Event",
+      "evidence": "受大风天气影响",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_99B78A6A1D",
+      "final_entity_name": "大风",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_99B78A6A1D",
+      "primary_event_name": "大风",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_99B78A6A1D"
+      ],
+      "query_event_names": [
+        "大风"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "大风",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_BF19C6035C",
+      "source_final_id": "EVT_CASE_99B78A6A1D",
+      "source_final_name": "大风",
+      "source_query_event_ids": [
+        "EVT_CASE_99B78A6A1D"
+      ],
+      "relation": "CAUSES",
+      "target": "树木倒伏砸车",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_2AAE9A1DFA",
+      "target_final_id": "EVT_CASE_F1015EFD7A",
+      "target_final_name": "树木倒伏砸车",
+      "target_query_event_ids": [
+        "EVT_CASE_F1015EFD7A",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_METEO_ROAD"
+      ],
+      "evidence": "受大风天气影响，行道树上一截约手臂粗的枯树枝突然断裂掉落",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市主干道，受大风天气影响，行道树上一截约手臂粗的枯树枝突然断裂掉落，正好砸中下方正常行驶的一辆出租车车顶，出租车随即靠边停车。",
+    "consequence_text": "无人员伤亡。出租车车顶出现轻微凹陷，漆面受损，车辆可继续行驶。掉落的枯枝停留在最右侧车道，影响了非机动车和部分右转机动车的通行。",
+    "measure_text": "交警巡逻车辆发现后，立即靠边警戒；两名交警徒手将枯树枝拖移至路边绿化带内，消除路面障碍；引导出租车驾驶员联系保险公司及园林绿化部门协商理赔事宜；10分钟后交通隐患排除。"
+  }
+}

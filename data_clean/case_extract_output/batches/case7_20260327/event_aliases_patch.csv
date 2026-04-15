@@ -1,0 +1,4 @@
+﻿entity_id,entity_name,entity_type,alias,alias_type,source
+EVT_ROAD_BLOCKAGE,公路阻塞,Event,货物散落,scene_expression,案例抽取自动补充:003_乡村公路轻型货车纸箱散落事故_9c9522ce
+EVT_CONSTRUCTION_ACCIDENT,公路工程建设事故,Event,道路施工安全事故,scene_expression,案例抽取自动补充:013_道路施工临时围挡倾倒阻碍交通事故_dd8e4e79
+EVT_ROAD_EMERGENCY,公路交通突发事件,Event,轻微交通事故,scene_expression,案例抽取自动补充:015_学校周边接送车辆轻微碰瓷纠纷_4356839f

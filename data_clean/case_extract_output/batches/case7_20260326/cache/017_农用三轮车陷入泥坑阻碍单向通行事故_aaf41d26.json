@@ -1,0 +1,165 @@
+{
+  "case_id": "017_农用三轮车陷入泥坑阻碍单向通行事故_aaf41d26",
+  "title": "农用三轮车陷入泥坑阻碍单向通行事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "农用三轮车在泥泞路面陷入泥坑，阻碍了交通，后在村民帮助下脱困。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_BLOCKAGE",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_75BFECE192",
+      "name": "道路交通阻塞",
+      "entity_type": "Event",
+      "evidence": "三轮车斜停在路面上，导致该狭窄路段只能勉强单向交替通行。",
+      "confidence": 0.75,
+      "normalized_id": "EVT_ROAD_BLOCKAGE",
+      "normalized_name": "公路阻塞",
+      "normalized_score": 0.0,
+      "matched_alias": "公路阻塞",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_BLOCKAGE",
+      "final_entity_name": "公路阻塞",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_BLOCKAGE",
+      "primary_event_name": "公路阻塞",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "公路阻塞",
+        "公路中断",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_E1FBB7E4AB",
+      "name": "泥坑",
+      "entity_type": "Resource",
+      "evidence": "右侧车轮陷入路肩的软泥坑中",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.5333,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_8D45F081F4",
+      "final_entity_name": "泥坑",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_7D32E530C5",
+      "name": "脱困",
+      "entity_type": "Action",
+      "evidence": "将三轮车成功推出泥坑",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2643,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_98EAFFD8DB",
+      "final_entity_name": "脱困",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "脱困",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_7D32E530C5",
+      "source_final_id": "MEA_CASE_98EAFFD8DB",
+      "source_final_name": "脱困",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "泥坑",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_E1FBB7E4AB",
+      "target_final_id": "RES_CASE_8D45F081F4",
+      "target_final_name": "泥坑",
+      "target_query_event_ids": [],
+      "evidence": "将三轮车成功推出泥坑",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "道路交通阻塞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_75BFECE192",
+      "source_final_id": "EVT_ROAD_BLOCKAGE",
+      "source_final_name": "公路阻塞",
+      "source_query_event_ids": [
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "relation": "TRIGGERS",
+      "target": "脱困",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_7D32E530C5",
+      "target_final_id": "MEA_CASE_98EAFFD8DB",
+      "target_final_name": "脱困",
+      "target_query_event_ids": [],
+      "evidence": "将三轮车成功推出泥坑",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在不确定性。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某农村乡镇土路，刚下过雨路面泥泞。一辆空载的农用机动三轮车在会车时主动靠边，不慎右侧车轮陷入路肩的软泥坑中打滑，无法自行脱困。",
+    "consequence_text": "无人员伤亡，车辆无受损。三轮车斜停在路面上，导致该狭窄路段只能勉强单向交替通行。",
+    "measure_text": "过路的几位村民见状，自发上前帮忙；有人在坑底垫上砖头和树枝增加摩擦力，其余人在车后合力推车；驾驶员配合给油，仅用5分钟便将三轮车成功推出泥坑；道路恢复双向正常通行。"
+  }
+}

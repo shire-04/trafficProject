@@ -1,0 +1,220 @@
+{
+  "case_id": "019_夜间路灯故障路段压坑爆胎单方事故_4bd61221",
+  "title": "夜间路灯故障路段压坑爆胎单方事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "夜间路灯故障导致路面坑洼，小型轿车压坑爆胎，造成车辆轻微损坏，驾驶员自行更换备胎。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_83B85C87D6",
+    "expanded_event_ids": [
+      "EVT_ROAD_DAMAGE",
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_D06E733B9F",
+      "name": "车辆爆胎",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车行驶至此时，未能避开路面上的一个较深的小坑洼，右前轮重重压过导致轮胎瞬间爆胎。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_83B85C87D6",
+      "final_entity_name": "车辆爆胎",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_83B85C87D6",
+      "primary_event_name": "车辆爆胎",
+      "expanded_event_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "公路损毁",
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_83B85C87D6",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "车辆爆胎",
+        "公路损毁",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "公路损毁",
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_77FF1AEF37",
+      "name": "路灯故障",
+      "entity_type": "Event",
+      "evidence": "夜间一盏路灯损坏导致局部视线较暗。",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_F32DBD6816",
+      "final_entity_name": "路灯故障",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F32DBD6816",
+      "primary_event_name": "路灯故障",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_F32DBD6816"
+      ],
+      "query_event_names": [
+        "路灯故障"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_571E0A27C4",
+      "name": "路面坑洼",
+      "entity_type": "Event",
+      "evidence": "未能避开路面上的一个较深的小坑洼",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_DE340ABF0A",
+      "final_entity_name": "路面坑洼",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_DE340ABF0A",
+      "primary_event_name": "路面坑洼",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_DE340ABF0A"
+      ],
+      "query_event_names": [
+        "路面坑洼"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_3F105FCD43",
+      "name": "轮毂变形",
+      "entity_type": "Event",
+      "evidence": "轿车右前轮轮毂轻微变形",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_A8F3F3756A",
+      "final_entity_name": "轮毂变形",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_A8F3F3756A",
+      "primary_event_name": "轮毂变形",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_A8F3F3756A"
+      ],
+      "query_event_names": [
+        "轮毂变形"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_811E2F39BA",
+      "name": "轮胎报废",
+      "entity_type": "Event",
+      "evidence": "轮胎报废",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_3766EFE085",
+      "final_entity_name": "轮胎报废",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_3766EFE085",
+      "primary_event_name": "轮胎报废",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_3766EFE085"
+      ],
+      "query_event_names": [
+        "轮胎报废"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "路面坑洼",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_571E0A27C4",
+      "source_final_id": "EVT_CASE_DE340ABF0A",
+      "source_final_name": "路面坑洼",
+      "source_query_event_ids": [
+        "EVT_CASE_DE340ABF0A"
+      ],
+      "relation": "CAUSES",
+      "target": "车辆爆胎",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_D06E733B9F",
+      "target_final_id": "EVT_CASE_83B85C87D6",
+      "target_final_name": "车辆爆胎",
+      "target_query_event_ids": [
+        "EVT_CASE_83B85C87D6",
+        "EVT_ROAD_DAMAGE",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "evidence": "未能避开路面上的一个较深的小坑洼，右前轮重重压过导致轮胎瞬间爆胎。",
+      "confidence": 0.9,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在不确定性。",
+    "部分关系依赖于上下文理解，可能存在偏差。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某城市郊区次干道，夜间一盏路灯损坏导致局部视线较暗。一辆小型轿车行驶至此时，未能避开路面上的一个较深的小坑洼，右前轮重重压过导致轮胎瞬间爆胎。",
+    "consequence_text": "无人员受伤，未涉及其他车辆。轿车右前轮轮毂轻微变形、轮胎报废，车辆慢慢滑行至路边安全地带停下。",
+    "measure_text": "驾驶员自行下车，在车后设置好警示标志；因带有备胎和千斤顶，驾驶员自己动手花费约20分钟更换了备胎；随后驾驶车辆缓慢驶离现场前往修理厂；未报警，未对交通造成影响。"
+  }
+}

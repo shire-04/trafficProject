@@ -1,0 +1,71 @@
+{
+  "case_id": "020_快递三轮车转弯过急侧翻事故_e5bf69bd",
+  "title": "快递三轮车转弯过急侧翻事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "快递三轮车在转弯时因车速过快和重心偏高侧翻，造成快递员轻微崴脚，部分包裹受损。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_ENVIRONMENT",
+    "expanded_event_ids": [
+      "EVT_ROAD_ICE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_BBE25E0C4C",
+      "name": "车辆侧翻",
+      "entity_type": "Event",
+      "evidence": "某城市社区内部道路，一名快递员驾驶装满包裹的电动三轮车，在路口拐弯时因车速稍快且重心偏高，车辆失去平衡发生侧翻。",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ENVIRONMENT",
+      "normalized_name": "环境污染事件",
+      "normalized_score": 0.0,
+      "matched_alias": "环境污染事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ENVIRONMENT",
+      "final_entity_name": "环境污染事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ENVIRONMENT",
+      "primary_event_name": "环境污染事件",
+      "expanded_event_ids": [
+        "EVT_ROAD_ICE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "道路积冰",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_ENVIRONMENT",
+        "EVT_ROAD_ICE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "环境污染事件",
+        "道路积冰",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某城市社区内部道路，一名快递员驾驶装满包裹的电动三轮车，在路口拐弯时因车速稍快且重心偏高，车辆失去平衡发生侧翻。",
+    "consequence_text": "快递员轻微崴脚，自行站起无大碍。部分包裹从车厢掉落在社区道路上，包裹外包装轻微弄脏，无贵重物品损坏。三轮车后视镜碎裂。",
+    "measure_text": "路过的社区居民和物业保安上前，协助快递员将三轮车扶正；大家一起帮忙将散落的包裹重新装回车厢；快递员休息几分钟后确认脚伤无碍，继续在小区内派件；事故未影响外部市政道路交通。"
+  }
+}

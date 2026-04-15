@@ -1,0 +1,66 @@
+{
+  "case_id": "002_城市快速路私家车抛锚阻断单车道事故_a065de5e",
+  "title": "城市快速路私家车抛锚阻断单车道事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "城市快速路一辆小型轿车因水温过高抛锚，占用单车道，导致交通缓行，交警处理后恢复畅通。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_INTERRUPTION",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_D68FF66772",
+      "name": "车辆抛锚",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车在行驶过程中突发水温过高报警，随后发动机熄火抛锚在最右侧行车道内。",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.0,
+      "matched_alias": "公路中断",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "公路中断",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市城市快速路（限速80km/h）平直路段，一辆小型轿车在行驶过程中突发水温过高报警，随后发动机熄火抛锚在最右侧行车道内。驾驶员开启了双闪灯，但未在车后放置三角警示牌。",
+    "consequence_text": "无人员伤亡和车辆碰撞。抛锚车辆占用最右侧一条行车道，导致该路段车流出现瓶颈，过往车辆纷纷变道避让，通行效率下降，局部出现缓行。",
+    "measure_text": "交警部门通过视频巡查发现警情后，立即指令路面警力前往；交警到达现场后，立即在抛锚车后方150米处摆放反光锥桶和警示牌；呼叫路政拖车前往救援；拖车到达后将故障车辆安全拖离快速路；交警对驾驶员未按规定放置警示标志的行为进行口头警告，30分钟后道路恢复畅通。"
+  }
+}

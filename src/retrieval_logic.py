@@ -45,6 +45,24 @@ def _debug_log(event: str, **payload: object) -> None:
     logger.info("%s | %s", event, json.dumps(payload, ensure_ascii=False, default=str))
 
 
+def _read_retrieval_mode() -> str:
+    mode = str(os.getenv("TRAFFIC_RETRIEVAL_MODE", "dual")).strip().lower()
+    if mode in {"neo4j", "graph", "kg"}:
+        return "neo4j"
+    if mode in {"chroma", "vector"}:
+        return "chroma"
+    return "dual"
+
+
+def _read_chroma_n_results() -> int:
+    raw = str(os.getenv("TRAFFIC_CHROMA_N_RESULTS", "10")).strip()
+    try:
+        value = int(raw)
+    except ValueError:
+        value = 10
+    return max(3, min(20, value))
+
+
 def _char_ngrams(text: str, size: int = 2) -> set[str]:
     cleaned = re.sub(r"\s+", "", str(text or "").strip())
     if not cleaned:
@@ -333,7 +351,7 @@ class DualRetrievalService:
                 Neo4jConstraint(
                     rule=f"触发预警：{item['name']}",
                     source_node='EventLevel',
-                    relation='TRIGGERS',
+                    relation='TRIGGERS_WARNING',
                     target_node=item['name'],
                 )
             )
@@ -343,7 +361,7 @@ class DualRetrievalService:
                 Neo4jConstraint(
                     rule=f"触发响应：{item['name']}",
                     source_node='EventLevel',
-                    relation='TRIGGERS',
+                    relation='TRIGGERS_RESPONSE',
                     target_node=item['name'],
                 )
             )
@@ -381,6 +399,8 @@ class DualRetrievalService:
         return constraints
 
     def retrieve(self, incident: IncidentInput, entities: ExtractedEntities) -> RetrievalContext:
+        retrieval_mode = _read_retrieval_mode()
+        chroma_n_results = _read_chroma_n_results()
         query_terms = self.build_query_terms(incident, entities)
         matched_events = [
             {"id": item.node_id, "name": item.normalized_name}
@@ -396,8 +416,18 @@ class DualRetrievalService:
             'severity': entities.severity,
             'source': 'AGENT1' if entities.severity != 'UNKNOWN' else 'NONE',
         }
-        graph_context = self._fetch_graph_context_for_severity(event_ids, severity_info['severity'])
-        constraints = self._build_constraints(matched_events or expanded_events, graph_context)
+        graph_context = {
+            'warnings': [],
+            'responses': [],
+            'actions': [],
+            'implemented_by': [],
+            'resources': [],
+        }
+        constraints: List[Neo4jConstraint] = []
+        if retrieval_mode in {"dual", "neo4j"}:
+            graph_context = self._fetch_graph_context_for_severity(event_ids, severity_info['severity'])
+            constraints = self._build_constraints(matched_events or expanded_events, graph_context)
+
         evidence_query = self._build_evidence_query(
             incident=incident,
             entities=entities,
@@ -406,16 +436,18 @@ class DualRetrievalService:
             query_terms=query_terms,
         )
 
-        evidence_results = self.vector_store.search_evidence(
-            query_text=evidence_query,
-            n_results=5,
-            accident_type=entities.incident_type or None,
-            weather=entities.weather or None,
-            severity=None if severity_info['severity'] == 'UNKNOWN' else severity_info['severity'],
-        )
+        evidence_results = []
+        if retrieval_mode in {"dual", "chroma"}:
+            evidence_results = self.vector_store.search_evidence(
+                query_text=evidence_query,
+                n_results=chroma_n_results,
+                accident_type=entities.incident_type or None,
+                weather=entities.weather or None,
+                severity=None if severity_info['severity'] == 'UNKNOWN' else severity_info['severity'],
+            )
 
-        if not evidence_results:
-            evidence_results = self.vector_store.search_evidence(query_text=incident.raw_text, n_results=5)
+        if retrieval_mode in {"dual", "chroma"} and not evidence_results:
+            evidence_results = self.vector_store.search_evidence(query_text=incident.raw_text, n_results=chroma_n_results)
 
         evidences = [
             ChromaEvidence(
@@ -429,6 +461,7 @@ class DualRetrievalService:
 
         _debug_log(
             "retrieval_result",
+            retrieval_mode=retrieval_mode,
             incident_type=entities.incident_type,
             incident_type_raw=entities.incident_type_raw,
             query_term_count=len(query_terms),
@@ -436,6 +469,7 @@ class DualRetrievalService:
             expanded_event_count=len(expanded_events),
             constraint_count=len(constraints),
             evidence_count=len(evidences),
+            chroma_n_results=chroma_n_results,
             severity=severity_info['severity'],
             severity_source=severity_info['source'],
             evidence_query_preview=_short_text(evidence_query, limit=500),

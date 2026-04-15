@@ -1,0 +1,70 @@
+{
+  "case_id": "008_商场地下车库溜车剐蹭事故_a3b70295",
+  "title": "商场地下车库溜车剐蹭事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "某商场地下车库发生车辆溜车剐蹭事故，SUV因未拉手刹后溜，碰撞到前方小轿车。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F7E4BBE896",
+    "expanded_event_ids": [
+      "EVT_ROAD_BLOCKAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_7CC229BF93",
+      "name": "车辆溜车",
+      "entity_type": "Event",
+      "evidence": "因忘记拉手刹，车辆在微小坡度上发生缓慢后溜",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F7E4BBE896",
+      "final_entity_name": "车辆溜车",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F7E4BBE896",
+      "primary_event_name": "车辆溜车",
+      "expanded_event_ids": [
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "expanded_event_names": [
+        "公路阻塞"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F7E4BBE896",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "query_event_names": [
+        "车辆溜车",
+        "公路阻塞"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路阻塞"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于事故描述中的直接因果关系。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某大型商场地下车库，一辆SUV驾驶员在寻找车位时临时停车接听电话，因忘记拉手刹，车辆在微小坡度上发生缓慢后溜，尾部顶到后方停放的一辆小轿车车头。",
+    "consequence_text": "无人员伤亡。后方小轿车前车牌轻微变形，前保险杠有划痕；SUV后保险杠轻微受损。事故未对地下车库的主通道通行造成重大影响。",
+    "measure_text": "商场地下车库保安听到动静后前往查看，协助联系后车车主到场；保安引导双方将车辆移至不影响其他车辆进出的空位；双方确认车损极小后，私下协商赔偿了几百元了结；20分钟后现场处理完毕。"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "case_id": "013_道路施工临时围挡倾倒阻碍交通事故_dd8e4e79",
+  "title": "道路施工临时围挡倾倒阻碍交通事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "道路施工围挡倾倒导致非机动车道受阻，引发交通秩序混乱。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CONSTRUCTION_ACCIDENT",
+    "expanded_event_ids": [
+      "EVT_CONSTRUCTION_SAFETY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_1795A7825A",
+      "name": "道路施工安全事故",
+      "entity_type": "Event",
+      "evidence": "某城市次干道正在进行自来水管网改造，路边设置了轻质塑料水马围挡。受突发阵风影响，3个未注满水的围挡倾倒在非机动车道和部分机动车道上。",
+      "confidence": 0.9,
+      "normalized_id": "EVT_CONSTRUCTION_ACCIDENT",
+      "normalized_name": "公路工程建设事故",
+      "normalized_score": 0.0,
+      "matched_alias": "公路工程建设事故",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_CONSTRUCTION_ACCIDENT",
+      "final_entity_name": "公路工程建设事故",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_CONSTRUCTION_ACCIDENT",
+      "primary_event_name": "公路工程建设事故",
+      "expanded_event_ids": [
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "expanded_event_names": [
+        "施工安全事故"
+      ],
+      "query_event_ids": [
+        "EVT_CONSTRUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "query_event_names": [
+        "公路工程建设事故",
+        "施工安全事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_CONSTRUCTION_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路工程建设事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_3362E35F0D",
+      "name": "自来水管网改造",
+      "entity_type": "Action",
+      "evidence": "某城市次干道正在进行自来水管网改造",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2347,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_0BD5E10FA1",
+      "final_entity_name": "自来水管网改造",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "道路施工安全事故",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_1795A7825A",
+      "source_final_id": "EVT_CONSTRUCTION_ACCIDENT",
+      "source_final_name": "公路工程建设事故",
+      "source_query_event_ids": [
+        "EVT_CONSTRUCTION_ACCIDENT",
+        "EVT_CONSTRUCTION_SAFETY"
+      ],
+      "relation": "TRIGGERS",
+      "target": "自来水管网改造",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_3362E35F0D",
+      "target_final_id": "MEA_CASE_0BD5E10FA1",
+      "target_final_name": "自来水管网改造",
+      "target_query_event_ids": [],
+      "evidence": "某城市次干道正在进行自来水管网改造",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某城市次干道正在进行自来水管网改造，路边设置了轻质塑料水马围挡。受突发阵风影响，3个未注满水的围挡倾倒在非机动车道和部分机动车道上。",
+    "consequence_text": "无人员伤亡和车辆碰撞。倾倒的围挡阻碍了非机动车的通行，导致电动车被迫借用机动车道，引发短暂的交通秩序混乱。",
+    "measure_text": "附近执勤的辅警发现后，立即上前将倾倒的水马围挡重新扶起，并从路边绿化带取土压实底部；联系施工方负责人要求立即为其注水加固；5分钟内障碍消除，非机动车道恢复畅通。"
+  }
+}

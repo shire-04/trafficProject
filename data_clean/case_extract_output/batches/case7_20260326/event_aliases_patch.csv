@@ -1,0 +1,6 @@
+﻿entity_id,entity_name,entity_type,alias,alias_type,source
+EVT_ROAD_EMERGENCY,公路交通突发事件,Event,车辆抛锚,scene_expression,案例抽取自动补充:002_城市快速路私家车抛锚阻断单车道事故_f2054a0c
+EVT_ROAD_BLOCKAGE,公路阻塞,Event,货物散落,scene_expression,案例抽取自动补充:003_乡村公路轻型货车纸箱散落事故_0e8fe05c
+EVT_TRAFFIC_ACCIDENT,交通事故,Event,车辆碰撞行人,scene_expression,案例抽取自动补充:004_小区门口电动自行车与行人轻微碰撞事故_3e12673c
+EVT_CONSTRUCTION_ACCIDENT,公路工程建设事故,Event,道路施工安全事故,scene_expression,案例抽取自动补充:013_道路施工临时围挡倾倒阻碍交通事故_dd8e4e79
+EVT_ROAD_EMERGENCY,公路交通突发事件,Event,轻微交通事故,scene_expression,案例抽取自动补充:015_学校周边接送车辆轻微碰瓷纠纷_4356839f

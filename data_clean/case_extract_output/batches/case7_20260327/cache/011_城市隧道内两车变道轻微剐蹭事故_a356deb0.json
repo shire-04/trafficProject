@@ -1,0 +1,148 @@
+{
+  "case_id": "011_城市隧道内两车变道轻微剐蹭事故_a356deb0",
+  "title": "城市隧道内两车变道轻微剐蹭事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "城市隧道内两车因变道发生轻微剐蹭，未造成人员伤亡，隧道交通短暂受阻后恢复。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F4AFE9A596",
+    "expanded_event_ids": [
+      "EVT_ROAD_BLOCKAGE",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_0765BA4C44",
+      "name": "车辆剐蹭",
+      "entity_type": "Event",
+      "evidence": "一辆白色轿车在虚线路段向左变道时，未观察后方来车，与直行的黑色轿车发生侧面轻微剐蹭。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F4AFE9A596",
+      "final_entity_name": "车辆剐蹭",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F4AFE9A596",
+      "primary_event_name": "车辆剐蹭",
+      "expanded_event_ids": [
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路阻塞",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F4AFE9A596",
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆剐蹭",
+        "公路阻塞",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路阻塞",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_FB613C45B4",
+      "name": "变道",
+      "entity_type": "Action",
+      "evidence": "一辆白色轿车在虚线路段向左变道时",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_59284963EB",
+      "final_entity_name": "变道",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_548F76B16F",
+      "name": "隧道",
+      "entity_type": "Resource",
+      "evidence": "某市穿山隧道内",
+      "confidence": 0.9,
+      "normalized_id": "RES_CASE_42E3A09DF1",
+      "normalized_name": "隧道",
+      "normalized_score": 1.0,
+      "matched_alias": "隧道",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_CASE_42E3A09DF1",
+      "final_entity_name": "隧道",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "变道",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_FB613C45B4",
+      "source_final_id": "MEA_CASE_59284963EB",
+      "source_final_name": "变道",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "隧道",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_548F76B16F",
+      "target_final_id": "RES_CASE_42E3A09DF1",
+      "target_final_name": "隧道",
+      "target_query_event_ids": [],
+      "evidence": "某市穿山隧道内（双向四车道），一辆白色轿车在虚线路段向左变道时，未观察后方来车，与直行的黑色轿车发生侧面轻微剐蹭。",
+      "confidence": 0.6,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本中的明确信息，避免了猜测。",
+    "confidence score reflects the clarity of the evidence supporting each relation."
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市穿山隧道内（双向四车道），一辆白色轿车在虚线路段向左变道时，未观察后方来车，与直行的黑色轿车发生侧面轻微剐蹭。",
+    "consequence_text": "无人员伤亡。两车侧面车门处均有划痕，车辆行驶机件未受损。两车停在隧道行车道内查看损失，导致隧道内后方车流迅速减速积压。",
+    "measure_text": "隧道管理中心通过监控发现警情，立即通过隧道广播喊话，要求双方驾驶员开启双闪，在确认安全后立刻将车辆开出隧道再处理；交警在隧道出口处等待，对驶出的两车进行责任认定，判定变道车全责；整个过程用时10分钟，隧道交通迅速恢复。"
+  }
+}

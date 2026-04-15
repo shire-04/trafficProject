@@ -1,0 +1,136 @@
+{
+  "case_id": "014_高速公路应急车道违停换胎未设警示事故_c628b222",
+  "title": "高速公路应急车道违停换胎未设警示事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "高速公路应急车道内，轿车因右后轮扎钉漏气停靠应急车道换胎，未按规定设置警示标志，存在安全隐患。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_EMERGENCY",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_12852BEEDE",
+      "name": "应急车道违停",
+      "entity_type": "Event",
+      "evidence": "一辆轿车右后轮扎钉漏气，驾驶员将车停在应急车道内准备自行更换备胎，但仅开启了双闪灯，未在车后放置三角警示牌",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_EMERGENCY",
+      "normalized_name": "公路交通突发事件",
+      "normalized_score": 0.0,
+      "matched_alias": "公路交通突发事件",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_EMERGENCY",
+      "final_entity_name": "公路交通突发事件",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_EMERGENCY",
+      "primary_event_name": "公路交通突发事件",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "公路交通突发事件",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_DDE7B5B168",
+      "name": "三角警示牌",
+      "entity_type": "Resource",
+      "evidence": "未在车后放置三角警示牌；交警迅速在150米外放置三角警示牌",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.2111,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_56323FE07E",
+      "final_entity_name": "三角警示牌",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_E93F2F5F7A",
+      "name": "换胎",
+      "entity_type": "Action",
+      "evidence": "准备自行更换备胎；协助驾驶员在10分钟内快速换好备胎",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3533,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_4330D8A549",
+      "final_entity_name": "换胎",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "换胎",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_E93F2F5F7A",
+      "source_final_id": "MEA_CASE_4330D8A549",
+      "source_final_name": "换胎",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "三角警示牌",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_DDE7B5B168",
+      "target_final_id": "RES_CASE_56323FE07E",
+      "target_final_name": "三角警示牌",
+      "target_query_event_ids": [],
+      "evidence": "但仅开启了双闪灯，未在车后放置三角警示牌",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某高速公路平直路段，一辆轿车右后轮扎钉漏气，驾驶员将车停在应急车道内准备自行更换备胎，但仅开启了双闪灯，未在车后放置三角警示牌，且车内乘客在车旁围观。",
+    "consequence_text": "无人员受伤及碰撞。但在高速公路应急车道违规作业且不设警示标志，极易引发后方疲劳驾驶车辆追尾的严重次生事故。",
+    "measure_text": "高速交警巡逻发现后，立即在其后方停放警车并拉响警报作为安全屏障；交警迅速在150米外放置三角警示牌，指令车旁乘客全部撤离至护栏外安全地带；交警协助驾驶员在10分钟内快速换好备胎；对驾驶员未按规定放置警示牌的行为扣3分罚款200元，消除安全隐患。"
+  }
+}

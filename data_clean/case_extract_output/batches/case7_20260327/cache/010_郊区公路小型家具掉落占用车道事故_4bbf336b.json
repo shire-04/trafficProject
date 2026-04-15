@@ -1,0 +1,77 @@
+{
+  "case_id": "010_郊区公路小型家具掉落占用车道事故_4bbf336b",
+  "title": "郊区公路小型家具掉落占用车道事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "郊区公路上，小货车未绑扎牢固导致床垫掉落，占用车道，造成交通隐患。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_005E5257B8",
+    "expanded_event_ids": [
+      "EVT_ROAD_INTERRUPTION",
+      "EVT_ROAD_EMERGENCY"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_0B52688950",
+      "name": "道路障碍",
+      "entity_type": "Event",
+      "evidence": "一张单人床垫从车厢滑落，掉在道路正中央。床垫体积较大，占据了半条车道。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_005E5257B8",
+      "final_entity_name": "道路障碍",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_005E5257B8",
+      "primary_event_name": "道路障碍",
+      "expanded_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "expanded_event_names": [
+        "公路中断",
+        "公路交通突发事件"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_005E5257B8",
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "query_event_names": [
+        "道路障碍",
+        "公路中断",
+        "公路交通突发事件"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_ROAD_EMERGENCY"
+      ],
+      "alias_patch_target_names": [
+        "公路中断",
+        "公路交通突发事件"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于提供的实体目录，未进行新的实体识别。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某郊区公路上，一辆敞篷小货车在帮居民搬家时，因绑扎不牢，一张单人床垫从车厢滑落，掉在道路正中央。货车驾驶员未发现并继续驶离。",
+    "consequence_text": "无人员受伤及车辆受损。床垫体积较大，占据了半条车道，过往车辆纷纷刹车减速绕行，存在夜间视线不良时被碾压引发事故的隐患。",
+    "measure_text": "路过的热心群众拨打122报警；辖区交警中队警车到达现场，开启警灯提示后方车辆；两名交警合力将较轻的床垫抬至路外安全地带妥善放置；随后通过监控查找货车车主通知其领回；15分钟内路面障碍清除。"
+  }
+}

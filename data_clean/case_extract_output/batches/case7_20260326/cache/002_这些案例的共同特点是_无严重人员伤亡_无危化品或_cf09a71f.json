@@ -1,0 +1,23 @@
+{
+  "case_id": "002_这些案例的共同特点是_无严重人员伤亡_无危化品或_cf09a71f",
+  "title": "这些案例的共同特点是：**无严重人员伤亡、无危化品或复杂次生灾害、无需重型救援装备、处置流程标准化且耗时短（通常在1小时内即可恢复）**。",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "",
+  "confidence": 0.0,
+  "event_resolution": {
+    "primary_event_id": "",
+    "expanded_event_ids": []
+  },
+  "entities": [],
+  "relations": [],
+  "legal_references": [],
+  "quality_notes": [
+    "实体数量不足，跳过关系抽取"
+  ],
+  "casualties": {},
+  "raw_case": {
+    "accident_text": "",
+    "consequence_text": "",
+    "measure_text": ""
+  }
+}

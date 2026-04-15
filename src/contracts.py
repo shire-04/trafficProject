@@ -35,6 +35,9 @@ class ExtractedEntities:
     severity: str = "UNKNOWN"
     severity_reason: str = ""
     severity_confidence: float = 0.0
+    difficulty: str = "UNKNOWN"
+    difficulty_reason: str = ""
+    difficulty_confidence: float = 0.0
     weather: str = ""
     hazards: List[str] = field(default_factory=list)
     vehicles: List[str] = field(default_factory=list)
@@ -104,6 +107,30 @@ class ReviewResult:
     risk_notes: List[str] = field(default_factory=list)
     retry_count: int = 0
     failure_type: str = ""
+    executability_score: float = 0.0
+    safety_score: float = 0.0
+    compliance_score: float = 0.0
+    overall_score: float = 0.0
+    score_threshold: float = 0.0
+    score_delta: float = 0.0
+    ineffective_revision_count: int = 0
+
+
+@dataclass
+class RoutingDecision:
+    """Auto 模式的路由决策信息。"""
+
+    requested_mode: str = ""
+    effective_mode: str = ""
+    route_target: str = ""
+    difficulty: str = "UNKNOWN"
+    reason: str = ""
+    confidence: float = 0.0
+    used_llm: bool = False
+    fallback_to_g5: bool = False
+    fallback_reason: str = ""
+    rule_hit_count: int = 0
+    rule_hits: List[str] = field(default_factory=list)
 
 
 @dataclass
@@ -116,6 +143,8 @@ class PipelineResult:
     draft: StrategyDraft
     review: ReviewResult
     final_strategy: str
+    initial_draft: Optional[StrategyDraft] = None
+    routing: Optional[RoutingDecision] = None
     human_handoff: bool = False
 
     def to_dict(self) -> Dict[str, Any]:

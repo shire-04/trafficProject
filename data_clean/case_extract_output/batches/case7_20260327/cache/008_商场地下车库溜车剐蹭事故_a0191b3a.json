@@ -1,0 +1,140 @@
+{
+  "case_id": "008_商场地下车库溜车剐蹭事故_a0191b3a",
+  "title": "商场地下车库溜车剐蹭事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "某商场地下车库发生车辆溜车剐蹭事故，SUV因未拉手刹后溜，碰撞到前方小轿车。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_F7E4BBE896",
+    "expanded_event_ids": [
+      "EVT_ROAD_BLOCKAGE"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_0E28DDC68E",
+      "name": "车辆溜车",
+      "entity_type": "Event",
+      "evidence": "车辆在微小坡度上发生缓慢后溜",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_F7E4BBE896",
+      "final_entity_name": "车辆溜车",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F7E4BBE896",
+      "primary_event_name": "车辆溜车",
+      "expanded_event_ids": [
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "expanded_event_names": [
+        "公路阻塞"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_F7E4BBE896",
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "query_event_names": [
+        "车辆溜车",
+        "公路阻塞"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_BLOCKAGE"
+      ],
+      "alias_patch_target_names": [
+        "公路阻塞"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_3C3FB8CB4F",
+      "name": "剐蹭",
+      "entity_type": "Action",
+      "evidence": "剐蹭事故",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_0FB4540844",
+      "normalized_name": "剐蹭",
+      "normalized_score": 1.0,
+      "matched_alias": "剐蹭",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_0FB4540844",
+      "final_entity_name": "剐蹭",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_DEPA_16891D11B4",
+      "name": "商场地下车库保安",
+      "entity_type": "Department",
+      "evidence": "商场地下车库保安",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3024,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "ORG_CASE_96C9CE85BD",
+      "final_entity_name": "商场地下车库保安",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "department_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "剐蹭",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_3C3FB8CB4F",
+      "source_final_id": "MEA_CASE_0FB4540844",
+      "source_final_name": "剐蹭",
+      "source_query_event_ids": [],
+      "relation": "IMPLEMENTED_BY",
+      "target": "商场地下车库保安",
+      "target_type": "Department",
+      "target_temp_id": "TMP_DEPA_16891D11B4",
+      "target_final_id": "ORG_CASE_96C9CE85BD",
+      "target_final_name": "商场地下车库保安",
+      "target_query_event_ids": [],
+      "evidence": "商场地下车库保安听到动静后前往查看，协助联系后车车主到场；保安引导双方将车辆移至不影响其他车辆进出的空位",
+      "confidence": 0.7,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某大型商场地下车库，一辆SUV驾驶员在寻找车位时临时停车接听电话，因忘记拉手刹，车辆在微小坡度上发生缓慢后溜，尾部顶到后方停放的一辆小轿车车头。",
+    "consequence_text": "无人员伤亡。后方小轿车前车牌轻微变形，前保险杠有划痕；SUV后保险杠轻微受损。事故未对地下车库的主通道通行造成重大影响。",
+    "measure_text": "商场地下车库保安听到动静后前往查看，协助联系后车车主到场；保安引导双方将车辆移至不影响其他车辆进出的空位；双方确认车损极小后，私下协商赔偿了几百元了结；20分钟后现场处理完毕。"
+  }
+}

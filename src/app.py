@@ -19,8 +19,34 @@ def run_new_pipeline(user_input: str, image_bytes: bytes | None, show_debug: boo
     finally:
         orchestrator.close()
 
+    routing = getattr(result, "routing", None)
+    revised_rounds = max(0, int(getattr(result.review, "retry_count", 0) or 0))
+    is_revised = revised_rounds > 0
+    initial_draft = getattr(result, "initial_draft", None) or result.draft
+    final_draft = result.draft
+
     st.divider()
     st.subheader("📢 LLM + 双库编排会议纪要")
+
+    if routing:
+        with st.chat_message("assistant", avatar="🛣️"):
+            st.write("**路由专家** 已完成难度判定与链路分流。")
+            st.json(
+                {
+                    "requested_mode": routing.requested_mode,
+                    "effective_mode": routing.effective_mode,
+                    "route_target": routing.route_target,
+                    "difficulty": routing.difficulty,
+                    "reason": routing.reason,
+                    "confidence": routing.confidence,
+                    "used_llm": routing.used_llm,
+                    "fallback_to_g5": routing.fallback_to_g5,
+                    "fallback_reason": routing.fallback_reason,
+                    "rule_hit_count": routing.rule_hit_count,
+                    "rule_hits": routing.rule_hits,
+                },
+                expanded=False,
+            )
 
     with st.chat_message("assistant", avatar="📞"):
         st.write("**接警解析专家** 已完成结构化抽取。")
@@ -41,6 +67,9 @@ def run_new_pipeline(user_input: str, image_bytes: bytes | None, show_debug: boo
                 "severity": result.entities.severity,
                 "severity_reason": result.entities.severity_reason,
                 "severity_confidence": result.entities.severity_confidence,
+                "difficulty": result.entities.difficulty,
+                "difficulty_reason": result.entities.difficulty_reason,
+                "difficulty_confidence": result.entities.difficulty_confidence,
                 "weather": result.entities.weather,
                 "hazards": result.entities.hazards,
                 "vehicles": result.entities.vehicles,
@@ -69,9 +98,11 @@ def run_new_pipeline(user_input: str, image_bytes: bytes | None, show_debug: boo
         st.write(f"- 向量证据数：`{len(result.context.chroma_evidence)}`")
 
     with st.chat_message("assistant", avatar="👮"):
-        st.write("**指挥调度专家** 已输出单方案。")
-        st.write(f"聚焦：{result.draft.focus}")
-        for index, step in enumerate(result.draft.steps, start=1):
+        st.write("**指挥调度专家** 已输出初版方案。")
+        if is_revised:
+            st.caption(f"该初版随后经历 {revised_rounds} 轮审查修订。")
+        st.write(f"聚焦：{initial_draft.focus}")
+        for index, step in enumerate(initial_draft.steps, start=1):
             st.markdown(f"{index}. {step}")
 
     with st.chat_message("assistant", avatar="🛡️"):
@@ -91,17 +122,20 @@ def run_new_pipeline(user_input: str, image_bytes: bytes | None, show_debug: boo
             st.warning("⚠️ 新编排链路仍需人工接管")
 
     st.divider()
-    st.header("🚦 最终下达管控策略")
-    for index, step in enumerate(result.draft.steps, start=1):
+    if is_revised:
+        st.header("🚦 最终下达管控策略（修订后终稿）")
+    else:
+        st.header("🚦 最终下达管控策略（与初版一致）")
+    for index, step in enumerate(final_draft.steps, start=1):
         st.markdown(f"{index}. {step}")
 
-    if result.draft.required_resources:
+    if final_draft.required_resources:
         st.subheader("🧰 资源需求")
-        st.write("、".join(result.draft.required_resources))
+        st.write("、".join(final_draft.required_resources))
 
-    if result.draft.legal_references:
+    if final_draft.legal_references:
         st.subheader("📚 法规依据")
-        st.write("、".join(result.draft.legal_references))
+        st.write("、".join(final_draft.legal_references))
 
     if result.human_handoff:
         st.warning("当前结果建议人工复核后再下达。")
@@ -159,12 +193,23 @@ def run_new_pipeline(user_input: str, image_bytes: bytes | None, show_debug: boo
                         ],
                     },
                     "review": review_payload,
+                    "routing": {
+                        "requested_mode": routing.requested_mode if routing else "",
+                        "effective_mode": routing.effective_mode if routing else "",
+                        "route_target": routing.route_target if routing else "",
+                        "difficulty": routing.difficulty if routing else "",
+                        "confidence": routing.confidence if routing else 0.0,
+                        "fallback_to_g5": routing.fallback_to_g5 if routing else False,
+                        "fallback_reason": routing.fallback_reason if routing else "",
+                        "rule_hit_count": routing.rule_hit_count if routing else 0,
+                        "rule_hits": routing.rule_hits if routing else [],
+                    },
                 }
             )
 # --- 页面配置 ---
 st.set_page_config(page_title="E-KELL 交通管控智脑", layout="wide")
 
-st.title("🚦 基于知识图谱的交通管控策略生成系统")
+st.title("🚦 基于大语言模型的交通管控策略生成系统")
 st.markdown("*E-KELL Traffic: Knowledge-Enhanced LLM for Traffic Emergency Response*")
 
 # --- 侧边栏：系统状态 ---
@@ -172,7 +217,7 @@ with st.sidebar:
     st.header("系统状态")
     st.success("✅ Neo4j 知识图谱已连接")
     st.success("✅ ChromaDB 向量库已就绪")
-    st.info("🧠 当前运行: LLM + 双库编排链路")
+    st.info("🧠 当前运行: Auto 动态路由（easy→G3，medium/hard→G5）")
     st.header("📸 现场多模态输入")
     uploaded_file = st.file_uploader("上传事故现场照片", type=['jpg', 'png'])
     if uploaded_file:

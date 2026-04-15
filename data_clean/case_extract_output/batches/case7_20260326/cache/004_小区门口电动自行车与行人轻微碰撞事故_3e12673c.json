@@ -1,0 +1,184 @@
+{
+  "case_id": "004_小区门口电动自行车与行人轻微碰撞事故_3e12673c",
+  "title": "小区门口电动自行车与行人轻微碰撞事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "电动自行车与行人发生轻微碰撞，造成行人手掌轻微擦伤，电动自行车侧翻。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_236A5A2A08",
+    "expanded_event_ids": [
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_B4DC1AA056",
+      "name": "电动自行车碰撞行人",
+      "entity_type": "Event",
+      "evidence": "一辆外卖电动自行车因急于送单车速较快，在拐弯处与一名刚走出小区的行人发生轻微碰撞",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_236A5A2A08",
+      "final_entity_name": "电动自行车碰撞行人",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_236A5A2A08",
+      "primary_event_name": "电动自行车碰撞行人",
+      "expanded_event_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_236A5A2A08",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "电动自行车碰撞行人",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_75E5269AFD",
+      "name": "电动自行车",
+      "entity_type": "Resource",
+      "evidence": "一辆外卖电动自行车",
+      "confidence": 0.95,
+      "normalized_id": "RES_CASE_8AE47E20B6",
+      "normalized_name": "电动自行车",
+      "normalized_score": 1.0,
+      "matched_alias": "电动自行车",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_CASE_8AE47E20B6",
+      "final_entity_name": "电动自行车",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_civilian_vehicle"
+    },
+    {
+      "entity_temp_id": "TMP_RESO_81CAA06F81",
+      "name": "行人",
+      "entity_type": "Resource",
+      "evidence": "一名刚走出小区的行人",
+      "confidence": 0.95,
+      "normalized_id": "RES_CASE_DA80C609AB",
+      "normalized_name": "行人",
+      "normalized_score": 1.0,
+      "matched_alias": "行人",
+      "resolution_type": "existing_match",
+      "final_entity_id": "RES_CASE_DA80C609AB",
+      "final_entity_name": "行人",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_D19C0C153A",
+      "name": "碰撞",
+      "entity_type": "Action",
+      "evidence": "发生轻微碰撞",
+      "confidence": 0.8,
+      "normalized_id": "MEA_CASE_6B219E66DE",
+      "normalized_name": "碰撞",
+      "normalized_score": 1.0,
+      "matched_alias": "碰撞",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_6B219E66DE",
+      "final_entity_name": "碰撞",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "碰撞",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_D19C0C153A",
+      "source_final_id": "MEA_CASE_6B219E66DE",
+      "source_final_name": "碰撞",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "电动自行车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_75E5269AFD",
+      "target_final_id": "RES_CASE_8AE47E20B6",
+      "target_final_name": "电动自行车",
+      "target_query_event_ids": [],
+      "evidence": "一辆外卖电动自行车因急于送单车速较快，在拐弯处与一名刚走出小区的行人发生轻微碰撞",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "source": "碰撞",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_D19C0C153A",
+      "source_final_id": "MEA_CASE_6B219E66DE",
+      "source_final_name": "碰撞",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "行人",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_81CAA06F81",
+      "target_final_id": "RES_CASE_DA80C609AB",
+      "target_final_name": "行人",
+      "target_query_event_ids": [],
+      "evidence": "一辆外卖电动自行车因急于送单车速较快，在拐弯处与一名刚走出小区的行人发生轻微碰撞",
+      "confidence": 0.8,
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": 1,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某城市住宅小区大门口，一辆外卖电动自行车因急于送单车速较快，在拐弯处与一名刚走出小区的行人发生轻微碰撞，导致行人跌坐倒地，电动自行车侧翻。",
+    "consequence_text": "造成行人手掌轻微擦伤，电动自行车骑行者无碍，外卖餐盒轻微受损。事故发生在小区门口缓冲区域，未对主干道机动车通行造成影响，仅引起少数居民围观。",
+    "measure_text": "小区保安立即上前查看情况，维持秩序并提供急救药箱为行人进行简单的创口清理和创可贴包扎；辖区交警到场了解情况后，判定电动自行车全责；在交警调解下，骑行者当场向行人道歉并赔偿少量医药费，双方达成和解；30分钟内现场处理完毕。"
+  }
+}

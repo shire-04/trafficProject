@@ -38,6 +38,7 @@ EVT_CASE_32CFF871B5,道路阻断,突发事件,PlanEntity;Event
 EVT_CASE_3608E528C9,驾驶员昏迷,突发事件,PlanEntity;Event
 EVT_CASE_363C4CEB8B,道路漫水,突发事件,PlanEntity;Event
 EVT_CASE_3756E1200B,浮桥倾斜,突发事件,PlanEntity;Event
+EVT_CASE_3766EFE085,轮胎报废,突发事件,PlanEntity;Event
 EVT_CASE_37895FE5E4,车辆坠坑,突发事件,PlanEntity;Event
 EVT_CASE_3862706509,车辆冲撞行人,突发事件,PlanEntity;Event
 EVT_CASE_3B6CFC25B4,车辆滞留,突发事件,PlanEntity;Event
@@ -51,6 +52,7 @@ EVT_CASE_42AEE3CEDE,车辆失控,突发事件,PlanEntity;Event
 EVT_CASE_4322946C4A,拖拉机与电动三轮车碰撞,突发事件,PlanEntity;Event
 EVT_CASE_436A2F6617,交通中断,突发事件,PlanEntity;Event
 EVT_CASE_449056D669,雪崩,突发事件,PlanEntity;Event
+EVT_CASE_46F3F2A6FE,货物散落,突发事件,PlanEntity;Event
 EVT_CASE_48C1544FE8,静电火花,突发事件,PlanEntity;Event
 EVT_CASE_4D219D5D07,追尾事故,突发事件,PlanEntity;Event
 EVT_CASE_4E5DB8871B,桥面铺装受损,突发事件,PlanEntity;Event
@@ -94,7 +96,10 @@ EVT_CASE_7FF0D5B34D,雾凇,突发事件,PlanEntity;Event
 EVT_CASE_8035ADE77D,隧道追尾事故,突发事件,PlanEntity;Event
 EVT_CASE_806E5440A3,天文大潮,突发事件,PlanEntity;Event
 EVT_CASE_82B38E516C,牲畜横穿,突发事件,PlanEntity;Event
+EVT_CASE_83B85C87D6,车辆爆胎,突发事件,PlanEntity;Event
 EVT_CASE_85237B46E2,交通拥堵,突发事件,PlanEntity;Event
+EVT_CASE_877516B43D,拥堵,突发事件,PlanEntity;Event
+EVT_CASE_8A08402BEF,路面湿滑,突发事件,PlanEntity;Event
 EVT_CASE_8B7F0B5FB2,车辆失控冲撞,突发事件,PlanEntity;Event
 EVT_CASE_8D34029A60,桥梁车辆坠江,突发事件,PlanEntity;Event
 EVT_CASE_8E0C915D4D,ETC设备故障,突发事件,PlanEntity;Event
@@ -105,6 +110,8 @@ EVT_CASE_977FDFD762,排水系统堵塞,突发事件,PlanEntity;Event
 EVT_CASE_987220FC67,车辆抛锚,突发事件,PlanEntity;Event
 EVT_CASE_98E1B4C0E6,车辆刹车过热起火,突发事件,PlanEntity;Event
 EVT_CASE_9965519510,轨道交通车辆卡轨,突发事件,PlanEntity;Event
+EVT_CASE_99B78A6A1D,大风,突发事件,PlanEntity;Event
+EVT_CASE_9B7EAD055E,轻微交通事故,突发事件,PlanEntity;Event
 EVT_CASE_9BDDC88CCC,车辆碰撞,突发事件,PlanEntity;Event
 EVT_CASE_9CC62EF2EB,车辆侧翻,突发事件,PlanEntity;Event
 EVT_CASE_9D52E07713,油罐车卸油起火,突发事件,PlanEntity;Event
@@ -138,17 +145,21 @@ EVT_CASE_D11990E045,客车坠崖,突发事件,PlanEntity;Event
 EVT_CASE_D44DBBBD83,渣土遗撒,突发事件,PlanEntity;Event
 EVT_CASE_D9AAF014A1,机动车与非机动车交通事故,突发事件,PlanEntity;Event
 EVT_CASE_DC3A3BC3D2,燃气管道破损泄漏,突发事件,PlanEntity;Event
+EVT_CASE_DE340ABF0A,路面坑洼,突发事件,PlanEntity;Event
 EVT_CASE_DE6262D6FC,剐蹭,突发事件,PlanEntity;Event
 EVT_CASE_DE8891D1DD,校车与货车碰撞,突发事件,PlanEntity;Event
 EVT_CASE_DF0FEEC823,货物散落引发交通事故,突发事件,PlanEntity;Event
+EVT_CASE_E0847BE751,雨天,突发事件,PlanEntity;Event
 EVT_CASE_E68012F9D4,车辆涉水熄火,突发事件,PlanEntity;Event
 EVT_CASE_E70C4DE1FA,河水污染,突发事件,PlanEntity;Event
 EVT_CASE_E7F27BD021,施工车辆碰撞行人,突发事件,PlanEntity;Event
 EVT_CASE_EA546C3294,隧道积水车辆被困,突发事件,PlanEntity;Event
 EVT_CASE_EEA13BF4CE,观光自行车与轿车碰撞,突发事件,PlanEntity;Event
+EVT_CASE_F1015EFD7A,树木倒伏砸车,突发事件,PlanEntity;Event
 EVT_CASE_F4726E4011,车辆侧滑,突发事件,PlanEntity;Event
 EVT_CASE_F4732BEE88,暴风雪,突发事件,PlanEntity;Event
 EVT_CASE_F4AFE9A596,车辆剐蹭,突发事件,PlanEntity;Event
+EVT_CASE_F4B6AB6F10,颠簸路段,突发事件,PlanEntity;Event
 EVT_CASE_F5EC6BBB9F,爆炸,突发事件,PlanEntity;Event
 EVT_CASE_F674C61725,海水漫路,突发事件,PlanEntity;Event
 EVT_CASE_F78D7DF899,轮椅车侧翻,突发事件,PlanEntity;Event
@@ -230,6 +241,7 @@ MEA_CASE_073BB06D8A,抬起,措施,PlanEntity;Action
 MEA_CASE_08CD8158BD,撞断,措施,PlanEntity;Action
 MEA_CASE_0A481121C2,失控撞击护栏,措施,PlanEntity;Action
 MEA_CASE_0B78E0C051,超速行驶,措施,PlanEntity;Action
+MEA_CASE_0BD5E10FA1,自来水管网改造,措施,PlanEntity;Action
 MEA_CASE_0BF2A9DC72,侧翻,措施,PlanEntity;Action
 MEA_CASE_0F03A10F01,超车,措施,PlanEntity;Action
 MEA_CASE_0FB4540844,剐蹭,措施,PlanEntity;Action
@@ -238,6 +250,7 @@ MEA_CASE_1130894FD2,避让行人,措施,PlanEntity;Action
 MEA_CASE_12987E1F14,整改安全隐患,措施,PlanEntity;Action
 MEA_CASE_13F54D4CC6,疏导车辆,措施,PlanEntity;Action
 MEA_CASE_18D4FA011E,挪车,措施,PlanEntity;Action
+MEA_CASE_1A0150D454,爆胎,措施,PlanEntity;Action
 MEA_CASE_1BCFC5476A,疏散,措施,PlanEntity;Action
 MEA_CASE_1D820D42D2,设置警戒区域,措施,PlanEntity;Action
 MEA_CASE_1EE950A88B,占道行驶,措施,PlanEntity;Action
@@ -260,8 +273,10 @@ MEA_CASE_39D13A1B81,堵漏,措施,PlanEntity;Action
 MEA_CASE_3B62149796,泡沫覆盖法,措施,PlanEntity;Action
 MEA_CASE_3BEB23D29A,责任认定,措施,PlanEntity;Action
 MEA_CASE_3FC63D4C10,轮胎爆裂,措施,PlanEntity;Action
+MEA_CASE_4330D8A549,换胎,措施,PlanEntity;Action
 MEA_CASE_44EB3016DE,调查,措施,PlanEntity;Action
 MEA_CASE_450A825FE7,拖移车辆,措施,PlanEntity;Action
+MEA_CASE_45F3E1F032,调取行车记录仪,措施,PlanEntity;Action
 MEA_CASE_462CC5958C,清理现场,措施,PlanEntity;Action
 MEA_CASE_46E14B4BB4,占道卸车,措施,PlanEntity;Action
 MEA_CASE_4896A23CBC,车辆绕行,措施,PlanEntity;Action
@@ -273,6 +288,7 @@ MEA_CASE_5330B223E5,灭火,措施,PlanEntity;Action
 MEA_CASE_53ED0B4B6F,遗撒,措施,PlanEntity;Action
 MEA_CASE_543551F273,暂停施工,措施,PlanEntity;Action
 MEA_CASE_54A66F8CF9,补水,措施,PlanEntity;Action
+MEA_CASE_59284963EB,变道,措施,PlanEntity;Action
 MEA_CASE_5E9CDA061E,电池短路,措施,PlanEntity;Action
 MEA_CASE_5FC20D97EE,分心驾驶,措施,PlanEntity;Action
 MEA_CASE_609511AD21,封存,措施,PlanEntity;Action
@@ -284,6 +300,7 @@ MEA_CASE_6B219E66DE,碰撞,措施,PlanEntity;Action
 MEA_CASE_6BA428A393,正面碰撞,措施,PlanEntity;Action
 MEA_CASE_71DCBFE52F,追责,措施,PlanEntity;Action
 MEA_CASE_7273C6481F,违规变道,措施,PlanEntity;Action
+MEA_CASE_72B697126A,争抢车道,措施,PlanEntity;Action
 MEA_CASE_72BE7C7A01,急刹车,措施,PlanEntity;Action
 MEA_CASE_72E84ECB20,道路封闭,措施,PlanEntity;Action
 MEA_CASE_7582192483,抛锚,措施,PlanEntity;Action
@@ -300,12 +317,14 @@ MEA_CASE_81A36333D4,监测,措施,PlanEntity;Action
 MEA_CASE_81A3AA00B6,暂停测试,措施,PlanEntity;Action
 MEA_CASE_841676482D,修复受损护栏,措施,PlanEntity;Action
 MEA_CASE_87C818ACA4,采样监测,措施,PlanEntity;Action
+MEA_CASE_8F94438FD6,尾门未锁紧,措施,PlanEntity;Action
 MEA_CASE_8FF9372275,消防救援,措施,PlanEntity;Action
 MEA_CASE_90733D6AFA,打捞,措施,PlanEntity;Action
 MEA_CASE_93A78D3315,应急预案启动,措施,PlanEntity;Action
 MEA_CASE_93B737DA07,驾驶员分心驾驶,措施,PlanEntity;Action
 MEA_CASE_96C3E54EF1,疏散群众,措施,PlanEntity;Action
 MEA_CASE_98BE43F4B1,刑事立案调查,措施,PlanEntity;Action
+MEA_CASE_98EAFFD8DB,脱困,措施,PlanEntity;Action
 MEA_CASE_99ADE4B56A,封闭车道,措施,PlanEntity;Action
 MEA_CASE_99B1ABF38B,封闭,措施,PlanEntity;Action
 MEA_CASE_99E1D246E3,驾驶员操作不当,措施,PlanEntity;Action
@@ -358,6 +377,7 @@ MEA_CASE_C5E66BF637,转运人员,措施,PlanEntity;Action
 MEA_CASE_C84BF577DD,违规载人,措施,PlanEntity;Action
 MEA_CASE_C8E4DC71F6,车辆倾覆,措施,PlanEntity;Action
 MEA_CASE_CC6AD1D7DA,路面维修,措施,PlanEntity;Action
+MEA_CASE_CCA1C043AF,绳索松动,措施,PlanEntity;Action
 MEA_CASE_CD64025533,车辆失控,措施,PlanEntity;Action
 MEA_CASE_CE138D0F05,设置警戒标志,措施,PlanEntity;Action
 MEA_CASE_CE6589A97A,车辆转移,措施,PlanEntity;Action
@@ -372,6 +392,7 @@ MEA_CASE_D569E11F2C,应急处置,措施,PlanEntity;Action
 MEA_CASE_D6C81BD9E5,侧滑,措施,PlanEntity;Action
 MEA_CASE_D6EBF96E6B,清理路面落石,措施,PlanEntity;Action
 MEA_CASE_D9A7C36974,拖移事故车辆,措施,PlanEntity;Action
+MEA_CASE_DDCBEE7C3A,倒车,措施,PlanEntity;Action
 MEA_CASE_E0D63B2EA6,匝道倒车,措施,PlanEntity;Action
 MEA_CASE_E14F2F1AAA,全面检测,措施,PlanEntity;Action
 MEA_CASE_E291015EBA,降温,措施,PlanEntity;Action
@@ -393,6 +414,7 @@ MEA_CASE_F85C37DD34,拖移,措施,PlanEntity;Action
 MEA_CASE_F96A8C6D8D,临时加固,措施,PlanEntity;Action
 MEA_CASE_F9A9A6FAD1,转运,措施,PlanEntity;Action
 MEA_CASE_FAA92C55C2,车辆冲撞,措施,PlanEntity;Action
+MEA_CASE_FB41145C9D,驾驶员疏忽,措施,PlanEntity;Action
 MEA_CASE_FC7FB5C70A,协调,措施,PlanEntity;Action
 MEA_CASE_FEE3C04977,逆行,措施,PlanEntity;Action
 MEA_CASE_FFCFDC93C4,护栏修复,措施,PlanEntity;Action
@@ -502,6 +524,7 @@ ORG_CASE_D7C9B35C28,自动驾驶测试企业,部门,PlanEntity;Department
 ORG_CASE_DA3B807A38,交警,部门,PlanEntity;Department
 ORG_CASE_DDF9288564,航展组委会,部门,PlanEntity;Department
 ORG_CASE_DF699C3933,海关,部门,PlanEntity;Department
+ORG_CASE_DFE92BD53C,驾驶员,部门,PlanEntity;Department
 ORG_CASE_E2BC3C05B7,大桥管理部门,部门,PlanEntity;Department
 ORG_CASE_E4BC9E3125,路政人员,部门,PlanEntity;Department
 ORG_CASE_E5E7F0AEC0,医疗人员,部门,PlanEntity;Department
@@ -562,9 +585,11 @@ RES_CASE_26F80A5E99,重型厢式货车,应急资源,PlanEntity;Resource
 RES_CASE_2A142E9A69,浮桥,应急资源,PlanEntity;Resource
 RES_CASE_325A82726F,护栏,应急资源,PlanEntity;Resource
 RES_CASE_334F483C4E,清扫车,应急资源,PlanEntity;Resource
+RES_CASE_37394CF457,ETC车道,应急资源,PlanEntity;Resource
 RES_CASE_3C97168640,重型集装箱货车,应急资源,PlanEntity;Resource
 RES_CASE_42E3A09DF1,隧道,应急资源,PlanEntity;Resource
 RES_CASE_54576A6949,油漆,应急资源,PlanEntity;Resource
+RES_CASE_56323FE07E,三角警示牌,应急资源,PlanEntity;Resource
 RES_CASE_576BB65B46,收割机,应急资源,PlanEntity;Resource
 RES_CASE_5A9FE29D77,大型吊车,应急资源,PlanEntity;Resource
 RES_CASE_5BCE950EDA,有轨电车,应急资源,PlanEntity;Resource
@@ -586,6 +611,7 @@ RES_CASE_82206ABC9F,共享电单车,应急资源,PlanEntity;Resource
 RES_CASE_8AE47E20B6,电动自行车,应急资源,PlanEntity;Resource
 RES_CASE_8CC958EC6D,排水泵,应急资源,PlanEntity;Resource
 RES_CASE_8D16A7E2EC,小型货车,应急资源,PlanEntity;Resource
+RES_CASE_8D45F081F4,泥坑,应急资源,PlanEntity;Resource
 RES_CASE_A35E463D8D,乡镇卫生院救护车,应急资源,PlanEntity;Resource
 RES_CASE_A5DA8B7EB3,巡逻车,应急资源,PlanEntity;Resource
 RES_CASE_AA3D1994D1,道路养护车,应急资源,PlanEntity;Resource
@@ -600,6 +626,7 @@ RES_CASE_C1E4441EF6,拖拉机,应急资源,PlanEntity;Resource
 RES_CASE_C3722A0388,破拆工具,应急资源,PlanEntity;Resource
 RES_CASE_C54C46856D,渡船,应急资源,PlanEntity;Resource
 RES_CASE_D5B0647912,液化天然气,应急资源,PlanEntity;Resource
+RES_CASE_D5B7A41324,应急车道,应急资源,PlanEntity;Resource
 RES_CASE_D729373386,挂壁公路,应急资源,PlanEntity;Resource
 RES_CASE_D7EB68391B,电动三轮车,应急资源,PlanEntity;Resource
 RES_CASE_DA80C609AB,行人,应急资源,PlanEntity;Resource
@@ -610,6 +637,7 @@ RES_CASE_E193A7EA9F,货运火车,应急资源,PlanEntity;Resource
 RES_CASE_E2EABB49A8,青藏高原国道,应急资源,PlanEntity;Resource
 RES_CASE_E88979D653,私家车,应急资源,PlanEntity;Resource
 RES_CASE_E9925C188F,出殡队列,应急资源,PlanEntity;Resource
+RES_CASE_EBFF834422,出租车,应急资源,PlanEntity;Resource
 RES_CASE_ED2B7670D7,汽油,应急资源,PlanEntity;Resource
 RES_CASE_EF8A921669,液压扩张器,应急资源,PlanEntity;Resource
 RES_CASE_F1D0288F3D,氢氧化钠溶液,应急资源,PlanEntity;Resource

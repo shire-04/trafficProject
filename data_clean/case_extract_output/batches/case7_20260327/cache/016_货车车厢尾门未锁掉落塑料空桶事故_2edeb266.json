@@ -1,0 +1,173 @@
+{
+  "case_id": "016_货车车厢尾门未锁掉落塑料空桶事故_2edeb266",
+  "title": "货车车厢尾门未锁掉落塑料空桶事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "货车因尾门未锁紧，在颠簸路段导致车内塑料空桶掉落。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_46F3F2A6FE",
+    "expanded_event_ids": [
+      "EVT_PRODUCTION_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_31CDA646D6",
+      "name": "货物散落",
+      "entity_type": "Event",
+      "evidence": "车内5个轻质塑料空桶掉落滚至路面。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_46F3F2A6FE",
+      "final_entity_name": "货物散落",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_46F3F2A6FE",
+      "primary_event_name": "货物散落",
+      "expanded_event_ids": [
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路交通运输生产事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_46F3F2A6FE",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "query_event_names": [
+        "货物散落",
+        "公路交通运输生产事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路交通运输生产事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_FA9003A63D",
+      "name": "尾门未锁紧",
+      "entity_type": "Action",
+      "evidence": "因后尾门插销未锁紧",
+      "confidence": 0.85,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.3024,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_8F94438FD6",
+      "final_entity_name": "尾门未锁紧",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_EVEN_68D7AD269A",
+      "name": "颠簸路段",
+      "entity_type": "Event",
+      "evidence": "在经过颠簸路段时",
+      "confidence": 0.7,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event",
+      "final_entity_id": "EVT_CASE_F4B6AB6F10",
+      "final_entity_name": "颠簸路段",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_F4B6AB6F10",
+      "primary_event_name": "颠簸路段",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [
+        "EVT_CASE_F4B6AB6F10"
+      ],
+      "query_event_names": [
+        "颠簸路段"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "货物散落",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_31CDA646D6",
+      "source_final_id": "EVT_CASE_46F3F2A6FE",
+      "source_final_name": "货物散落",
+      "source_query_event_ids": [
+        "EVT_CASE_46F3F2A6FE",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "尾门未锁紧",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_FA9003A63D",
+      "target_final_id": "MEA_CASE_8F94438FD6",
+      "target_final_name": "尾门未锁紧",
+      "target_query_event_ids": [],
+      "evidence": "因后尾门插销未锁紧",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "货物散落",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_31CDA646D6",
+      "source_final_id": "EVT_CASE_46F3F2A6FE",
+      "source_final_name": "货物散落",
+      "source_query_event_ids": [
+        "EVT_CASE_46F3F2A6FE",
+        "EVT_PRODUCTION_ACCIDENT"
+      ],
+      "relation": "CAUSES",
+      "target": "颠簸路段",
+      "target_type": "Event",
+      "target_temp_id": "TMP_EVEN_68D7AD269A",
+      "target_final_id": "EVT_CASE_F4B6AB6F10",
+      "target_final_name": "颠簸路段",
+      "target_query_event_ids": [
+        "EVT_CASE_F4B6AB6F10"
+      ],
+      "evidence": "无人员伤亡和车辆受损。塑料空桶重量极轻，对过往车辆不构成致命碰撞威胁，但导致后方车辆按喇叭减速避让。",
+      "confidence": 0.6,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本中的直接因果关系和触发关系。",
+    "confidence score is based on the clarity of the relationship in the text.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某省道上，一辆运输塑料制品的轻型栏板货车，因后尾门插销未锁紧，在经过颠簸路段时尾门弹开，车内5个轻质塑料空桶掉落滚至路面。",
+    "consequence_text": "无人员伤亡和车辆受损。塑料空桶重量极轻，对过往车辆不构成致命碰撞威胁，但导致后方车辆按喇叭减速避让。",
+    "measure_text": "货车驾驶员从后视镜发现后，在前方安全位置靠边停车；在确认双向无来车安全的情况下，驾驶员快速跑回路面将几个空桶捡回车厢，并重新锁紧尾门；全程耗时约5分钟，未造成交通中断。"
+  }
+}

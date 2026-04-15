@@ -1,0 +1,23 @@
+{
+  "case_id": "003_以下是文本格式的输出_9e8910a8",
+  "title": "以下是文本格式的输出：",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "",
+  "confidence": 0.0,
+  "event_resolution": {
+    "primary_event_id": "",
+    "expanded_event_ids": []
+  },
+  "entities": [],
+  "relations": [],
+  "legal_references": [],
+  "quality_notes": [
+    "实体数量不足，跳过关系抽取"
+  ],
+  "casualties": {},
+  "raw_case": {
+    "accident_text": "",
+    "consequence_text": "",
+    "measure_text": ""
+  }
+}

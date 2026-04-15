@@ -1,0 +1,248 @@
+{
+  "case_id": "009_公交站台出租车变道碰擦公交车事故_634067fd",
+  "title": "公交站台出租车变道碰擦公交车事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "出租车变道与公交车发生轻微碰撞，造成车辆受损和公交车滞留，未造成人员伤亡。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_9BDDC88CCC",
+    "expanded_event_ids": [
+      "EVT_ROAD_EMERGENCY",
+      "EVT_PRODUCTION_ACCIDENT",
+      "EVT_TRAFFIC_ACCIDENT"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_DA8EB8510A",
+      "name": "车辆碰撞",
+      "entity_type": "Event",
+      "evidence": "出租车右侧后视镜与公交车左前角发生轻微碰擦。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_9BDDC88CCC",
+      "final_entity_name": "车辆碰撞",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_9BDDC88CCC",
+      "primary_event_name": "车辆碰撞",
+      "expanded_event_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "expanded_event_names": [
+        "公路交通突发事件",
+        "公路交通运输生产事故",
+        "交通事故"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "query_event_names": [
+        "车辆碰撞",
+        "公路交通突发事件",
+        "公路交通运输生产事故",
+        "交通事故"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "alias_patch_target_names": [
+        "公路交通突发事件",
+        "公路交通运输生产事故",
+        "交通事故"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_RESO_9AFBDBDA35",
+      "name": "出租车",
+      "entity_type": "Resource",
+      "evidence": "一辆出租车为了抢客突然向右变道",
+      "confidence": 0.95,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.425,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "RES_CASE_EBFF834422",
+      "final_entity_name": "出租车",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "resource_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_37C9DD93E6",
+      "name": "变道",
+      "entity_type": "Action",
+      "evidence": "出租车为了抢客突然向右变道",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.8667,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_59284963EB",
+      "final_entity_name": "变道",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_2BC2364A85",
+      "name": "碰撞",
+      "entity_type": "Action",
+      "evidence": "出租车右侧后视镜与公交车左前角发生轻微碰擦",
+      "confidence": 0.9,
+      "normalized_id": "MEA_CASE_6B219E66DE",
+      "normalized_name": "碰撞",
+      "normalized_score": 1.0,
+      "matched_alias": "碰撞",
+      "resolution_type": "existing_match",
+      "final_entity_id": "MEA_CASE_6B219E66DE",
+      "final_entity_name": "碰撞",
+      "is_new_entity": false,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "action_weak_semantics"
+    }
+  ],
+  "relations": [
+    {
+      "source": "变道",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_37C9DD93E6",
+      "source_final_id": "MEA_CASE_59284963EB",
+      "source_final_name": "变道",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "出租车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_9AFBDBDA35",
+      "target_final_id": "RES_CASE_EBFF834422",
+      "target_final_name": "出租车",
+      "target_query_event_ids": [],
+      "evidence": "出租车为了抢客突然向右变道",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_DA8EB8510A",
+      "source_final_id": "EVT_CASE_9BDDC88CCC",
+      "source_final_name": "车辆碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "变道",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_37C9DD93E6",
+      "target_final_id": "MEA_CASE_59284963EB",
+      "target_final_name": "变道",
+      "target_query_event_ids": [],
+      "evidence": "出租车为了抢客突然向右变道",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "碰撞",
+      "source_type": "Action",
+      "source_temp_id": "TMP_ACTI_2BC2364A85",
+      "source_final_id": "MEA_CASE_6B219E66DE",
+      "source_final_name": "碰撞",
+      "source_query_event_ids": [],
+      "relation": "REQUIRES",
+      "target": "出租车",
+      "target_type": "Resource",
+      "target_temp_id": "TMP_RESO_9AFBDBDA35",
+      "target_final_id": "RES_CASE_EBFF834422",
+      "target_final_name": "出租车",
+      "target_query_event_ids": [],
+      "evidence": "出租车右侧后视镜与公交车左前角发生轻微碰擦",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    },
+    {
+      "source": "车辆碰撞",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_DA8EB8510A",
+      "source_final_id": "EVT_CASE_9BDDC88CCC",
+      "source_final_name": "车辆碰撞",
+      "source_query_event_ids": [
+        "EVT_CASE_9BDDC88CCC",
+        "EVT_ROAD_EMERGENCY",
+        "EVT_PRODUCTION_ACCIDENT",
+        "EVT_TRAFFIC_ACCIDENT"
+      ],
+      "relation": "TRIGGERS",
+      "target": "碰撞",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_2BC2364A85",
+      "target_final_id": "MEA_CASE_6B219E66DE",
+      "target_final_name": "碰撞",
+      "target_query_event_ids": [],
+      "evidence": "出租车右侧后视镜与公交车左前角发生轻微碰擦",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本中的明确信息，避免了猜测。",
+    "confidence score reflects the clarity of the evidence supporting the relation.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": false
+  },
+  "raw_case": {
+    "accident_text": "某市主干道公交站台前，一辆公交车正准备起步驶离站台，左侧一辆出租车为了抢客突然向右变道，导致出租车右侧后视镜与公交车左前角发生轻微碰擦。",
+    "consequence_text": "无人员伤亡。出租车后视镜外壳破裂，公交车左前车漆轻微刮花。公交车因事故停留在站台，导致后方进站的其他公交车排队等待，部分乘客下车换乘。",
+    "measure_text": "交警到场后，迅速拍照固定证据，认定出租车违规变道全责；要求双方立即驶离公交站台，前往附近的交通事故快处中心处理理赔；公交公司安排该车乘客免费换乘后方同线路车辆；10分钟后公交站台恢复正常运转。"
+  }
+}

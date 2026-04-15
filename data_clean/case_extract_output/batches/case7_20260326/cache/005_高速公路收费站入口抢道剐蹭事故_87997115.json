@@ -1,0 +1,77 @@
+{
+  "case_id": "005_高速公路收费站入口抢道剐蹭事故_87997115",
+  "title": "高速公路收费站入口抢道剐蹭事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "高速公路收费站ETC入口处，两车因抢道发生轻微剐蹭，导致ETC通道临时堵塞。",
+  "confidence": 0.8,
+  "event_resolution": {
+    "primary_event_id": "EVT_CASE_FDE92A911A",
+    "expanded_event_ids": [
+      "EVT_ROAD_BLOCKAGE",
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_909951BC0A",
+      "name": "车辆剐蹭",
+      "entity_type": "Event",
+      "evidence": "一辆轿车与一辆MPV因未按序排队，在汇流处争抢进入ETC车道，导致两车侧面发生轻微刮擦。",
+      "confidence": 0.9,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.0,
+      "matched_alias": "",
+      "resolution_type": "new_event_with_expansions",
+      "final_entity_id": "EVT_CASE_FDE92A911A",
+      "final_entity_name": "高速公路收费站抢道剐蹭",
+      "is_new_entity": true,
+      "primary_event_id": "EVT_CASE_FDE92A911A",
+      "primary_event_name": "高速公路收费站抢道剐蹭",
+      "expanded_event_ids": [
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "公路阻塞",
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_CASE_FDE92A911A",
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "高速公路收费站抢道剐蹭",
+        "公路阻塞",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [
+        "EVT_ROAD_BLOCKAGE",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "alias_patch_target_names": [
+        "公路阻塞",
+        "车辆积压"
+      ],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取主要基于事故描述和处理过程，信息较为明确。"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某高速公路收费站ETC入口通道前，一辆轿车与一辆MPV因未按序排队，在汇流处争抢进入ETC车道，导致两车侧面发生轻微刮擦。",
+    "consequence_text": "无人员伤亡。两车车门处出现轻微划痕，车辆均可正常行驶。但两车停在ETC车道入口处争论责任，导致该ETC通道临时堵塞，后方车辆被迫倒车改走其他通道。",
+    "measure_text": "收费站工作人员立即上前摆放隔离桩，引导后方车辆驶入旁边通道，同时通知驻站交警；交警到场后，责令双方立即将车辆驶出收费通道停至服务区广场；经查看行车记录仪，判定变道轿车全责，引导双方走简易理赔程序；10分钟内ETC通道恢复通行。"
+  }
+}

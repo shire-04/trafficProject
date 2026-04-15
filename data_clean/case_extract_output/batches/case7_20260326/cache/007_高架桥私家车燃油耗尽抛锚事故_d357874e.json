@@ -1,0 +1,116 @@
+{
+  "case_id": "007_高架桥私家车燃油耗尽抛锚事故_d357874e",
+  "title": "高架桥私家车燃油耗尽抛锚事故",
+  "source_file": "交通应急处理案例7.txt",
+  "summary": "高架桥上私家车因燃油耗尽抛锚，造成短时交通拥堵。",
+  "confidence": 0.85,
+  "event_resolution": {
+    "primary_event_id": "EVT_ROAD_INTERRUPTION",
+    "expanded_event_ids": [
+      "EVT_VEHICLE_BACKLOG"
+    ]
+  },
+  "entities": [
+    {
+      "entity_temp_id": "TMP_EVEN_696A51252C",
+      "name": "车辆抛锚",
+      "entity_type": "Event",
+      "evidence": "一辆小型轿车因驾驶员疏忽，未注意油表报警，导致车辆燃油彻底耗尽，失去动力后滑行停在右侧车道上。",
+      "confidence": 0.9,
+      "normalized_id": "EVT_ROAD_INTERRUPTION",
+      "normalized_name": "公路中断",
+      "normalized_score": 0.0,
+      "matched_alias": "公路中断",
+      "resolution_type": "alias_match_with_expansions",
+      "final_entity_id": "EVT_ROAD_INTERRUPTION",
+      "final_entity_name": "公路中断",
+      "is_new_entity": false,
+      "primary_event_id": "EVT_ROAD_INTERRUPTION",
+      "primary_event_name": "公路中断",
+      "expanded_event_ids": [
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "expanded_event_names": [
+        "车辆积压"
+      ],
+      "query_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "query_event_names": [
+        "公路中断",
+        "车辆积压"
+      ],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    },
+    {
+      "entity_temp_id": "TMP_ACTI_A4E789D23B",
+      "name": "驾驶员疏忽",
+      "entity_type": "Action",
+      "evidence": "一辆小型轿车因驾驶员疏忽，未注意油表报警",
+      "confidence": 0.8,
+      "normalized_id": "",
+      "normalized_name": "",
+      "normalized_score": 0.6429,
+      "matched_alias": "",
+      "resolution_type": "new_entity",
+      "final_entity_id": "MEA_CASE_FB41145C9D",
+      "final_entity_name": "驾驶员疏忽",
+      "is_new_entity": true,
+      "primary_event_id": "",
+      "primary_event_name": "",
+      "expanded_event_ids": [],
+      "expanded_event_names": [],
+      "query_event_ids": [],
+      "query_event_names": [],
+      "alias_patch_target_ids": [],
+      "alias_patch_target_names": [],
+      "quality_risk_level": "",
+      "quality_risk_reason": ""
+    }
+  ],
+  "relations": [
+    {
+      "source": "车辆抛锚",
+      "source_type": "Event",
+      "source_temp_id": "TMP_EVEN_696A51252C",
+      "source_final_id": "EVT_ROAD_INTERRUPTION",
+      "source_final_name": "公路中断",
+      "source_query_event_ids": [
+        "EVT_ROAD_INTERRUPTION",
+        "EVT_VEHICLE_BACKLOG"
+      ],
+      "relation": "TRIGGERS",
+      "target": "驾驶员疏忽",
+      "target_type": "Action",
+      "target_temp_id": "TMP_ACTI_A4E789D23B",
+      "target_final_id": "MEA_CASE_FB41145C9D",
+      "target_final_name": "驾驶员疏忽",
+      "target_query_event_ids": [],
+      "evidence": "一辆小型轿车因驾驶员疏忽，未注意油表报警",
+      "confidence": 0.62,
+      "quality_risk_level": "MEDIUM",
+      "quality_risk_reason": "relation_fallback_inferred"
+    }
+  ],
+  "legal_references": [],
+  "quality_notes": [
+    "关系抽取基于文本信息，可能存在信息不完整或歧义的情况。",
+    "confidence score is estimated.",
+    "关系抽取为空，已启用规则兜底补抽"
+  ],
+  "casualties": {
+    "deaths": null,
+    "injuries": null,
+    "missing": null,
+    "unknown": true
+  },
+  "raw_case": {
+    "accident_text": "某市高架快速路上，一辆小型轿车因驾驶员疏忽，未注意油表报警，导致车辆燃油彻底耗尽，失去动力后滑行停在右侧车道上。",
+    "consequence_text": "无人员伤亡及碰撞。抛锚车辆占用一条车道，导致高架桥后方出现短时缓行拥堵，无其他次生风险。",
+    "measure_text": "交警铁骑到达现场后，在后方做好警戒；因车辆无法启动且高架桥严禁停车，两名交警与驾驶员合力将车辆推行至前方约50米的应急停靠带内；驾驶员联系保险公司请求送油服务；交警对驾驶员上高架前未检查车况进行批评教育，15分钟后主线车道恢复通行。"
+  }
+}
